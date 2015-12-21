@@ -1,0 +1,104 @@
+encoding: "utf-8"
+name: "Doug's Software Development Exploration"
+description: A blog about software engineering, patterns, programming and languages.
+avatar: http://www.gravatar.com/avatar/71b1b3ffdc9fec49fe58bb0dfa43a402
+
+# Github Configuration
+highligher: pygments
+# GitHub Pages Metadata (see https://help.github.com/articles/repository-metadata-on-github-pages/)
+github:
+  {
+    "pages_hostname": "github.io",
+    "owner_gravatar_url": "http://www.gravatar.com/avatar/71b1b3ffdc9fec49fe58bb0dfa43a402",
+    "url": "http://dbc60.github.io/", // (or the CNAME)
+  }
+
+# My Configuration
+include:      [
+              ]
+
+# Exclude these files from your production _site
+exclude:      [
+                'config.rb',
+                'Gemfile',
+                'Gemfile.lock',
+              ]
+
+gems:         [
+                'jekyll-sitemap',
+                'jekyll-paginate'
+              ]
+
+# timezone:    nil
+# encoding:    nil
+
+# future:      true
+# show_drafts: false
+# limit_posts: 0
+# highlighter: pygments
+
+#permalink: /:title/
+permalink: date
+#permalink: /blog/:year/:title/
+#paginate_path: '/blog/page:num'
+#permalink: /:year/:title/
+#permalink: /:slug/
+paginate_path: '/page:num'
+paginate:      5
+
+markdown:       kramdown
+markdown_ext:   markdown,mkdown,mkdn,mkd,md
+
+kramdown:
+  input: GFM   # GFM - Github Flavored Markdown.
+  syntax_highlighter: rouge
+
+# Other settings
+#   auto_ids: true
+#   footnote_nr: 1
+#   entity_output: as_char
+#   toc_levels: 1..6
+#   smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :expanded
+  sass_dir: _scss
+
+# Your website URL used for Sitemap.xml and your RSS feed
+url: https://dbc60.github.io
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email: doug.cuthbertson@gmail.com
+  facebook:
+  flickr:
+  github: dbc60
+  instagram:
+  linkedin: douglas-cuthbertson-0487001
+  pinterest:
+  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
+  twitter: DougCuthbertson
+  stackoverflow: users/165347/doug-cuthbertson
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: +DougCuthbertson
+  author: Douglas Cuthbertson
+  year: 2015
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus: cuthbertson
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics:
+
+# If you're hosting your site at a Project repository on GitHub pages
+# (https://yourusername.github.io/repository-name)
+# and NOT your User repository (https://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+baseurl: ""
+
+#
+# !! You don't need to change any of the configuration flags below !!
+#

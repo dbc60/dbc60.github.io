@@ -1,0 +1,13 @@
+<meta charset="utf-8" />
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="{{ site.name }}">
+
+  {% if page.title %}
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="twitter:title" content="{{ page.title }}">
+  {% endif %}

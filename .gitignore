@@ -1,0 +1,20 @@
+# Cache
+.sass-cache/
+*.sassc
+*.scssc
+
+# Thumbnails
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Jekyll
+_site
