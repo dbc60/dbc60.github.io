@@ -1,762 +1,236 @@
+/***************/
+/* MEYER RESET */
+/***************/
+/* line 6, ../_sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 27, ../_sass/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, ../_sass/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 34, ../_sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, ../_sass/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 40, ../_sass/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, ../_sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 54, ../_sass/_reset.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 58, ../_sass/_reset.scss */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /**************/
 /* VARIABLES  */
 /**************/
-/**************/
-/* BASE RULES */
-/**************/
-/* line 16, ../_sass/style.scss */
-html {
-  font-size: 100%;
+@font-face {
+  font-family: 'Nexa Rust Slab';
+  src: url("/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.eot");
+  src: url("/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.woff2") format("woff2"), url("/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.woff") format("woff"), url("/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.ttf") format("truetype"), url("/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.svg#nexa_rust_slabblack_shadow_01") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url("/fonts/Noto/NotoSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* =======================
+   New Grid
+
+   How It Works:
+    .section
+	splits up the page horizontally. You'll
+	need a few of these to break up the content,
+	and you can use them in your main wrapper,
+	or within other divs.
+
+	.col
+	divides the section into columns. Each
+	column has a left margin except the first
+	one. Using
+
+	    .col:first-child { margin-left: 0; }
+
+	means you don't need to use class="last"
+	anywhere. It works in all browsers since IE6.
+
+	.group
+	solves floating problems, by forcing the
+	section to self clear its children (aka the
+	clearfix hack). This is good in Firefox 3.5+,
+	Safari 4+, Chrome, Opera 9+ and IE 6+.
+
+	.span_1_of_3
+	specifies the width of the column. Using
+	percentages means it's 100% fluid.
+
+	@media queries
+	as soon as the screen size gets less than 480
+	pixels the columns stack and the margins
+	disappear.
+   ========================== */
+/*  SECTIONS  */
+/* line 124, ../_sass/_grid.scss */
+section.group {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
 }
 
-/* line 20, ../_sass/style.scss */
-body {
-  background: #fff;
-  font: 18px/1.4 "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  color: #333;
+/*  COLUMN SETUP  */
+/* line 131, ../_sass/_grid.scss */
+.col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 0.8333333333%;
 }
 
-/* line 27, ../_sass/style.scss */
-.container {
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 0 10px;
-  width: 100%;
+/* line 136, ../_sass/_grid.scss */
+.col:first-child {
+  margin-left: 0;
 }
 
-/* line 34, ../_sass/style.scss */
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  color: #000;
-  font-weight: bold;
-  line-height: 1.7;
-  margin: 1em 0 15px;
-  padding: 0;
-}
-@media screen and (max-width: 640px) {
-  /* line 34, ../_sass/style.scss */
-  h1, h2, h3, h4, h5, h6 {
-    line-height: 1.4;
-  }
-}
-
-/* line 48, ../_sass/style.scss */
-h1 {
-  font-size: 30px;
-}
-/* line 50, ../_sass/style.scss */
-h1 a {
-  color: inherit;
-}
-
-/* line 55, ../_sass/style.scss */
-h2 {
-  font-size: 24px;
-}
-
-/* line 59, ../_sass/style.scss */
-h3 {
-  font-size: 20px;
-}
-
-/* line 63, ../_sass/style.scss */
-h4 {
-  font-size: 18px;
-  color: #666;
-}
-
-/* line 68, ../_sass/style.scss */
-p {
-  margin: 15px 0;
-}
-
-/* line 72, ../_sass/style.scss */
-a {
-  color: #4183C4;
-  text-decoration: none;
-  cursor: pointer;
-}
-/* line 76, ../_sass/style.scss */
-a:hover, a:active {
-  color: #4183C4;
-}
-
-/* line 81, ../_sass/style.scss */
-ul, ol {
-  margin: 15px 0;
-  padding-left: 30px;
-}
-
-/* line 86, ../_sass/style.scss */
-ul {
-  list-style-type: disc;
-}
-
-/* line 90, ../_sass/style.scss */
-ol {
-  list-style-type: decimal;
-}
-
-/* line 94, ../_sass/style.scss */
-ol ul, ul ol, ul ul, ol ol {
-  margin: 0;
-}
-
-/* line 98, ../_sass/style.scss */
-ul ul, ol ul {
-  list-style-type: circle;
-}
-
-/* line 102, ../_sass/style.scss */
-em, i {
-  font-style: italic;
-}
-
-/* line 106, ../_sass/style.scss */
-strong, b {
-  font-weight: bold;
-}
-
-/* line 110, ../_sass/style.scss */
-img {
-  max-width: 100%;
-}
-
-/* line 115, ../_sass/style.scss */
-.gmnoprint img {
-  max-width: none;
-}
-
-/* line 119, ../_sass/style.scss */
-.date {
-  font-style: italic;
-  color: #666;
-}
-
-/* line 125, ../_sass/style.scss */
-::-moz-selection {
-  color: #000;
-  background: #eee;
-}
-
-/* line 129, ../_sass/style.scss */
-::selection {
-  color: #000;
-  background: #eee;
-}
-
-/* line 136, ../_sass/style.scss */
-.clearfix:before,
-.clearfix:after {
-  content: " ";
+/*  GROUPING  */
+/* line 139, ../_sass/_grid.scss */
+.group:before,
+.group:after {
+  content: "";
   display: table;
 }
 
-/* line 142, ../_sass/style.scss */
-.clearfix:after {
+/* line 141, ../_sass/_grid.scss */
+.group:after {
   clear: both;
 }
 
-/*********************/
-/* LAYOUT / SECTIONS */
-/*********************/
-/* line 154, ../_sass/style.scss */
-.wrapper-masthead {
-  margin-bottom: 50px;
+/* line 142, ../_sass/_grid.scss */
+.group {
+  zoom: 1;
+  /* For IE 6/7 */
 }
 
-/* line 158, ../_sass/style.scss */
-.masthead {
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
+/*  GRID OF TWELVE  */
+/* line 144, ../_sass/_grid.scss */
+.span_12_of_12 {
+  width: 100%;
 }
-@media screen and (max-width: 640px) {
-  /* line 158, ../_sass/style.scss */
-  .masthead {
-    text-align: center;
+
+/* line 148, ../_sass/_grid.scss */
+.span_11_of_12 {
+  width: 91.59%;
+}
+
+/* line 151, ../_sass/_grid.scss */
+.span_10_of_12 {
+  width: 83.19%;
+}
+
+/* line 155, ../_sass/_grid.scss */
+.span_9_of_12 {
+  width: 74.79%;
+}
+
+/* line 159, ../_sass/_grid.scss */
+.span_8_of_12 {
+  width: 66.38%;
+}
+
+/* line 163, ../_sass/_grid.scss */
+.span_7_of_12 {
+  width: 57.98%;
+}
+
+/* line 167, ../_sass/_grid.scss */
+.span_6_of_12 {
+  width: 49.58%;
+}
+
+/* line 171, ../_sass/_grid.scss */
+.span_5_of_12 {
+  width: 41.18%;
+}
+
+/* line 175, ../_sass/_grid.scss */
+.span_4_of_12 {
+  width: 32.77%;
+}
+
+/* line 179, ../_sass/_grid.scss */
+.span_3_of_12 {
+  width: 24.37%;
+}
+
+/* line 183, ../_sass/_grid.scss */
+.span_2_of_12 {
+  width: 15.97%;
+}
+
+/* line 187, ../_sass/_grid.scss */
+.span_1_of_12 {
+  width: 7.569%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+  /* line 193, ../_sass/_grid.scss */
+  .col {
+    margin: 1% 0 1% 0%;
+  }
+
+  /* line 195, ../_sass/_grid.scss */
+  .span_1_of_12, .span_2_of_12, .span_3_of_12, .span_4_of_12, .span_5_of_12, .span_6_of_12, .span_7_of_12, .span_8_of_12, .span_9_of_12, .span_10_of_12, .span_11_of_12, .span_12_of_12 {
+    width: 100%;
   }
 }
-
-/* line 167, ../_sass/style.scss */
-.site-avatar {
-  float: left;
-  width: 70px;
-  height: 70px;
-  margin-right: 15px;
-}
-@media screen and (max-width: 640px) {
-  /* line 167, ../_sass/style.scss */
-  .site-avatar {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-}
-/* line 179, ../_sass/style.scss */
-.site-avatar img {
-  border-radius: 5px;
-}
-
-/* line 184, ../_sass/style.scss */
-.site-info {
-  float: left;
-}
-@media screen and (max-width: 640px) {
-  /* line 184, ../_sass/style.scss */
-  .site-info {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-}
-
-/* line 194, ../_sass/style.scss */
-.site-name {
-  margin: 0;
-  color: #333;
-  cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 28px;
-  letter-spacing: 1px;
-}
-
-/* line 204, ../_sass/style.scss */
-.site-description {
-  margin: -5px 0 0 0;
-  color: #666;
-  font-size: 16px;
-}
-@media screen and (max-width: 640px) {
-  /* line 204, ../_sass/style.scss */
-  .site-description {
-    margin: 3px 0;
-  }
-}
-
-/* line 214, ../_sass/style.scss */
-nav {
-  float: right;
-  margin-top: 23px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-}
-@media screen and (max-width: 640px) {
-  /* line 214, ../_sass/style.scss */
-  nav {
-    float: none;
-    margin-top: 9px;
-    display: block;
-    font-size: 16px;
-  }
-}
-/* line 227, ../_sass/style.scss */
-nav a {
-  margin-left: 20px;
-  color: #333;
-  text-align: right;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-@media screen and (max-width: 640px) {
-  /* line 227, ../_sass/style.scss */
-  nav a {
-    margin: 0 10px;
-    color: #4183C4;
-  }
-}
-
-/* line 245, ../_sass/style.scss */
-.posts > .post {
-  margin: 0;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 51, 102, 0.4);
-  height: 135px;
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-
-@media (max-width: 30em) {
-  /* line 259, ../_sass/style.scss */
-  .post {
-    height: 100px;
-  }
-}
-/* line 264, ../_sass/style.scss */
-.posts > .post:last-child {
-  padding-bottom: 1em;
-  border-bottom: none;
-}
-
-/* line 270, ../_sass/style.scss */
-.post blockquote {
-  margin: 1.8em .8em;
-  border-left: 2px solid #666;
-  padding: 0.1em 1em;
-  color: #666;
-  font-size: 22px;
-  font-style: italic;
-}
-/* line 279, ../_sass/style.scss */
-.post .post > .entry {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  color: #000;
-}
-/* line 284, ../_sass/style.scss */
-.post .comments {
-  margin-top: 10px;
-}
-/* line 288, ../_sass/style.scss */
-.post .read-more {
-  text-transform: uppercase;
-  font-size: 15px;
-}
-
-/* line 294, ../_sass/style.scss */
-.wrapper-footer {
-  margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: #eee;
-}
-
-/* line 301, ../_sass/style.scss */
-footer {
-  padding: 20px 0;
-  text-align: center;
-}
-
-/* line 2, ../_sass/_highlights.scss */
-.highlight {
-  background-color: #efefef;
-  padding: 7px 7px 7px 10px;
-  border: 1px solid #ddd;
-  -moz-box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
-  margin: 20px 0 20px 0;
-  overflow: scroll;
-}
-
-/* line 13, ../_sass/_highlights.scss */
-code {
-  font-family: 'Bitstream Vera Sans Mono','Courier', monospace;
-}
-
-/* line 17, ../_sass/_highlights.scss */
-.highlight .c {
-  color: #586E75;
-}
-
-/* Comment */
-/* line 18, ../_sass/_highlights.scss */
-.highlight .err {
-  color: #93A1A1;
-}
-
-/* Error */
-/* line 19, ../_sass/_highlights.scss */
-.highlight .g {
-  color: #93A1A1;
-}
-
-/* Generic */
-/* line 20, ../_sass/_highlights.scss */
-.highlight .k {
-  color: #859900;
-}
-
-/* Keyword */
-/* line 21, ../_sass/_highlights.scss */
-.highlight .l {
-  color: #93A1A1;
-}
-
-/* Literal */
-/* line 22, ../_sass/_highlights.scss */
-.highlight .n {
-  color: #93A1A1;
-}
-
-/* Name */
-/* line 23, ../_sass/_highlights.scss */
-.highlight .o {
-  color: #859900;
-}
-
-/* Operator */
-/* line 24, ../_sass/_highlights.scss */
-.highlight .x {
-  color: #CB4B16;
-}
-
-/* Other */
-/* line 25, ../_sass/_highlights.scss */
-.highlight .p {
-  color: #93A1A1;
-}
-
-/* Punctuation */
-/* line 26, ../_sass/_highlights.scss */
-.highlight .cm {
-  color: #586E75;
-}
-
-/* Comment.Multiline */
-/* line 27, ../_sass/_highlights.scss */
-.highlight .cp {
-  color: #859900;
-}
-
-/* Comment.Preproc */
-/* line 28, ../_sass/_highlights.scss */
-.highlight .c1 {
-  color: #586E75;
-}
-
-/* Comment.Single */
-/* line 29, ../_sass/_highlights.scss */
-.highlight .cs {
-  color: #859900;
-}
-
-/* Comment.Special */
-/* line 30, ../_sass/_highlights.scss */
-.highlight .gd {
-  color: #2AA198;
-}
-
-/* Generic.Deleted */
-/* line 31, ../_sass/_highlights.scss */
-.highlight .ge {
-  color: #93A1A1;
-  font-style: italic;
-}
-
-/* Generic.Emph */
-/* line 32, ../_sass/_highlights.scss */
-.highlight .gr {
-  color: #DC322F;
-}
-
-/* Generic.Error */
-/* line 33, ../_sass/_highlights.scss */
-.highlight .gh {
-  color: #CB4B16;
-}
-
-/* Generic.Heading */
-/* line 34, ../_sass/_highlights.scss */
-.highlight .gi {
-  color: #859900;
-}
-
-/* Generic.Inserted */
-/* line 35, ../_sass/_highlights.scss */
-.highlight .go {
-  color: #93A1A1;
-}
-
-/* Generic.Output */
-/* line 36, ../_sass/_highlights.scss */
-.highlight .gp {
-  color: #93A1A1;
-}
-
-/* Generic.Prompt */
-/* line 37, ../_sass/_highlights.scss */
-.highlight .gs {
-  color: #93A1A1;
-  font-weight: bold;
-}
-
-/* Generic.Strong */
-/* line 38, ../_sass/_highlights.scss */
-.highlight .gu {
-  color: #CB4B16;
-}
-
-/* Generic.Subheading */
-/* line 39, ../_sass/_highlights.scss */
-.highlight .gt {
-  color: #93A1A1;
-}
-
-/* Generic.Traceback */
-/* line 40, ../_sass/_highlights.scss */
-.highlight .kc {
-  color: #CB4B16;
-}
-
-/* Keyword.Constant */
-/* line 41, ../_sass/_highlights.scss */
-.highlight .kd {
-  color: #268BD2;
-}
-
-/* Keyword.Declaration */
-/* line 42, ../_sass/_highlights.scss */
-.highlight .kn {
-  color: #859900;
-}
-
-/* Keyword.Namespace */
-/* line 43, ../_sass/_highlights.scss */
-.highlight .kp {
-  color: #859900;
-}
-
-/* Keyword.Pseudo */
-/* line 44, ../_sass/_highlights.scss */
-.highlight .kr {
-  color: #268BD2;
-}
-
-/* Keyword.Reserved */
-/* line 45, ../_sass/_highlights.scss */
-.highlight .kt {
-  color: #DC322F;
-}
-
-/* Keyword.Type */
-/* line 46, ../_sass/_highlights.scss */
-.highlight .ld {
-  color: #93A1A1;
-}
-
-/* Literal.Date */
-/* line 47, ../_sass/_highlights.scss */
-.highlight .m {
-  color: #2AA198;
-}
-
-/* Literal.Number */
-/* line 48, ../_sass/_highlights.scss */
-.highlight .s {
-  color: #2AA198;
-}
-
-/* Literal.String */
-/* line 49, ../_sass/_highlights.scss */
-.highlight .na {
-  color: #93A1A1;
-}
-
-/* Name.Attribute */
-/* line 50, ../_sass/_highlights.scss */
-.highlight .nb {
-  color: #B58900;
-}
-
-/* Name.Builtin */
-/* line 51, ../_sass/_highlights.scss */
-.highlight .nc {
-  color: #268BD2;
-}
-
-/* Name.Class */
-/* line 52, ../_sass/_highlights.scss */
-.highlight .no {
-  color: #CB4B16;
-}
-
-/* Name.Constant */
-/* line 53, ../_sass/_highlights.scss */
-.highlight .nd {
-  color: #268BD2;
-}
-
-/* Name.Decorator */
-/* line 54, ../_sass/_highlights.scss */
-.highlight .ni {
-  color: #CB4B16;
-}
-
-/* Name.Entity */
-/* line 55, ../_sass/_highlights.scss */
-.highlight .ne {
-  color: #CB4B16;
-}
-
-/* Name.Exception */
-/* line 56, ../_sass/_highlights.scss */
-.highlight .nf {
-  color: #268BD2;
-}
-
-/* Name.Function */
-/* line 57, ../_sass/_highlights.scss */
-.highlight .nl {
-  color: #93A1A1;
-}
-
-/* Name.Label */
-/* line 58, ../_sass/_highlights.scss */
-.highlight .nn {
-  color: #93A1A1;
-}
-
-/* Name.Namespace */
-/* line 59, ../_sass/_highlights.scss */
-.highlight .nx {
-  color: #555;
-}
-
-/* Name.Other */
-/* line 60, ../_sass/_highlights.scss */
-.highlight .py {
-  color: #93A1A1;
-}
-
-/* Name.Property */
-/* line 61, ../_sass/_highlights.scss */
-.highlight .nt {
-  color: #268BD2;
-}
-
-/* Name.Tag */
-/* line 62, ../_sass/_highlights.scss */
-.highlight .nv {
-  color: #268BD2;
-}
-
-/* Name.Variable */
-/* line 63, ../_sass/_highlights.scss */
-.highlight .ow {
-  color: #859900;
-}
-
-/* Operator.Word */
-/* line 64, ../_sass/_highlights.scss */
-.highlight .w {
-  color: #93A1A1;
-}
-
-/* Text.Whitespace */
-/* line 65, ../_sass/_highlights.scss */
-.highlight .mf {
-  color: #2AA198;
-}
-
-/* Literal.Number.Float */
-/* line 66, ../_sass/_highlights.scss */
-.highlight .mh {
-  color: #2AA198;
-}
-
-/* Literal.Number.Hex */
-/* line 67, ../_sass/_highlights.scss */
-.highlight .mi {
-  color: #2AA198;
-}
-
-/* Literal.Number.Integer */
-/* line 68, ../_sass/_highlights.scss */
-.highlight .mo {
-  color: #2AA198;
-}
-
-/* Literal.Number.Oct */
-/* line 69, ../_sass/_highlights.scss */
-.highlight .sb {
-  color: #586E75;
-}
-
-/* Literal.String.Backtick */
-/* line 70, ../_sass/_highlights.scss */
-.highlight .sc {
-  color: #2AA198;
-}
-
-/* Literal.String.Char */
-/* line 71, ../_sass/_highlights.scss */
-.highlight .sd {
-  color: #93A1A1;
-}
-
-/* Literal.String.Doc */
-/* line 72, ../_sass/_highlights.scss */
-.highlight .s2 {
-  color: #2AA198;
-}
-
-/* Literal.String.Double */
-/* line 73, ../_sass/_highlights.scss */
-.highlight .se {
-  color: #CB4B16;
-}
-
-/* Literal.String.Escape */
-/* line 74, ../_sass/_highlights.scss */
-.highlight .sh {
-  color: #93A1A1;
-}
-
-/* Literal.String.Heredoc */
-/* line 75, ../_sass/_highlights.scss */
-.highlight .si {
-  color: #2AA198;
-}
-
-/* Literal.String.Interpol */
-/* line 76, ../_sass/_highlights.scss */
-.highlight .sx {
-  color: #2AA198;
-}
-
-/* Literal.String.Other */
-/* line 77, ../_sass/_highlights.scss */
-.highlight .sr {
-  color: #DC322F;
-}
-
-/* Literal.String.Regex */
-/* line 78, ../_sass/_highlights.scss */
-.highlight .s1 {
-  color: #2AA198;
-}
-
-/* Literal.String.Single */
-/* line 79, ../_sass/_highlights.scss */
-.highlight .ss {
-  color: #2AA198;
-}
-
-/* Literal.String.Symbol */
-/* line 80, ../_sass/_highlights.scss */
-.highlight .bp {
-  color: #268BD2;
-}
-
-/* Name.Builtin.Pseudo */
-/* line 81, ../_sass/_highlights.scss */
-.highlight .vc {
-  color: #268BD2;
-}
-
-/* Name.Variable.Class */
-/* line 82, ../_sass/_highlights.scss */
-.highlight .vg {
-  color: #268BD2;
-}
-
-/* Name.Variable.Global */
-/* line 83, ../_sass/_highlights.scss */
-.highlight .vi {
-  color: #268BD2;
-}
-
-/* Name.Variable.Instance */
-/* line 84, ../_sass/_highlights.scss */
-.highlight .il {
-  color: #2AA198;
-}
-
-/* Literal.Number.Integer.Long */
 /* line 1, ../_sass/_svg-icons.scss */
 .svg-icon {
   width: 40px;
@@ -814,4 +288,391 @@ code {
 /* line 18, ../_sass/_svg-icons.scss */
 .svg-icon.googleplus {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQwcHgiIGhlaWdodD0iNDBweCIgdmlld0JveD0iMCAwIDYwIDYwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDx0aXRsZT5Hb29nbGUgKzwvdGl0bGU+CiAgICA8ZGVzY3JpcHRpb24+Q3JlYXRlZCB3aXRoIFNrZXRjaCAoaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoKTwvZGVzY3JpcHRpb24+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8ZyBpZD0iR29vZ2xlLSsiIHNrZXRjaDp0eXBlPSJNU0FydGJvYXJkR3JvdXAiPgogICAgICAgICAgICA8ZyBza2V0Y2g6dHlwZT0iTVNMYXllckdyb3VwIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjExMjI5MDM0NCwyOS41MDgxOTY3IEMwLjExMjI5MDM0NCwxMy4yMTEyNjg5IDEzLjM0MjY1MDYsMCAyOS42NjMxMjksMCBDNDUuOTgzNjA3MywwIDU5LjIxMzk2NzYsMTMuMjExMjY4OSA1OS4yMTM5Njc2LDI5LjUwODE5NjcgQzU5LjIxMzk2NzYsNDUuODA1MTI0NiA0NS45ODM2MDczLDU5LjAxNjM5MzQgMjkuNjYzMTI5LDU5LjAxNjM5MzQgQzEzLjM0MjY1MDYsNTkuMDE2MzkzNCAwLjExMjI5MDM0NCw0NS44MDUxMjQ2IDAuMTEyMjkwMzQ0LDI5LjUwODE5NjcgWiBNMC4xMTIyOTAzNDQsMjkuNTA4MTk2NyIgZmlsbD0iI0QzNDgzNiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTU4LjI5NTc2NzIsMjIuNzE1NzA0OSBMNTEuMzA3NTkxNSwyMi43MTU3MDQ5IEw1MS4zMDc1OTE1LDMwLjQ2OTIwNzkgTDQ4LjAxMzY2MjMsMzAuNDY5MjA3OSBMNDguMDEzNjYyMywyMi43MTU3MDQ5IEw0MC4zMjc4Njg5LDIyLjcxNTcwNDkgTDQwLjMyNzg2ODksMTkuNDg4NjU5IEw0OC4wMTM2NjIzLDE5LjQ4ODY1OSBMNDguMDEzNjYyMywxMS44MDMyNzg3IEw1MS4zMDc1OTE1LDExLjgwMzI3ODcgTDUxLjMwNzU5MTUsMTkuNDg4NjU5IEw1Ny4xNzUyNDk2LDE5LjQ4ODY1OSBDNTcuNjA4NjI1NiwyMC41MzUzODMzIDU3Ljk4MzUwNDMsMjEuNjEyNDcyNiA1OC4yOTU3NjcyLDIyLjcxNTcwNDkgWiBNNTguMjk1NzY3MiwyMi43MTU3MDQ5IiBpZD0iU2hhcGUiIGZpbGw9IiNGRkZGRkYiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik04LjIzMDMzODgzLDQ4LjYwNTA4MTEgQzkuMDU2NjMyNTQsNDcuMjE3NTUzNiAxMC4zMzc4NjM5LDQ1Ljg1MzQgMTIuMjM1OTMwOCw0NC43MzIzODI4IEMxNi41MTg2MjMxLDQyLjExMjA5MjEgMjIuMjg2NjQyMSw0MS43NjYwMTU5IDI1LjQwNTgyODMsNDEuNTY4MjU4MSBDMjQuNDQwMzY1OSw0MC4zMzIyNzE5IDIzLjMyNjM3MDgsMzkuMDIyMTI2NSAyMy4zMjYzNzA4LDM2Ljg3MTUxMDUgQzIzLjMyNjM3MDgsMzUuNzA5NjgzNSAyMy42NzI5NDcxLDM1LjAxNzUzMTIgMjQuMDE5NTIzMywzNC4yMDE3ODAzIEMyMy4yNTIxMDQ1LDM0LjI3NTkzOTUgMjIuNTA5NDQxMSwzNC4zNTAwOTg2IDIxLjgxNjI4ODYsMzQuMzUwMDk4NiBDMTQuNTEzNDMxOSwzNC4zNTAwOTg2IDEwLjM3OTI3MjMsMjguOTExNzU5MyAxMC4zNzkyNzIzLDIzLjU0NzU3OTEgQzEwLjM3OTI3MjMsMjAuMzgzNDU0NCAxMS44Mzk4NDM3LDE2Ljg2ODMwOTYgMTQuNzg1NzQxOCwxNC4zMjQ2NSBDMTguNzIxODU3OCwxMS4wOTM3ODIgMjMuNDAwNjM3MiwxMC41NDI1MzIxIDI3LjExMzk1NDIsMTAuNTQyNTMyMSBMNDEuMjk4ODI1LDEwLjU0MjUzMjEgTDM2Ljg5MjM1NTUsMTMuMDE2OTc2NSBMMzIuNjM0NDE4NywxMy4wMTY5NzY1IEMzNC4yMTg3NjczLDE0LjMyNDY1IDM3LjUxMTI0MTcsMTcuMDc1OTU1MyAzNy41MTEyNDE3LDIyLjMxMTU5MjkgQzM3LjUxMTI0MTcsMjcuNDAzODU2MSAzNC42MTQ4NTQ0LDI5LjgwMTY2OTQgMzEuNzQzMjIyNiwzMi4wNzU4ODQgQzMwLjgyNzI3MTEsMzIuOTY1Nzk0MSAyOS44MTIyOTc4LDMzLjkyOTg2MzMgMjkuODEyMjk3OCwzNS40Mzc3NjY1IEMyOS44MTIyOTc4LDM2Ljk0NTY2OTcgMzAuODI3MjcxMSwzNy43ODYxNDAzIDMxLjU5NDY5LDM4LjQwNDEzMzQgTDM0LjA3MDIzNDYsNDAuMzMyMjcxOSBDMzcuMTE1MTU0NSw0Mi44NTM2ODM4IDM5Ljg2MzAwOTEsNDUuMjAyMDU3NiAzOS44NjMwMDkxLDQ5Ljk0ODI0NDcgQzM5Ljg2MzAwOTEsNTMuMDc4MTc5MiAzOC40MDAyNTI5LDU2LjIxOTY2MDMgMzUuNTUwMTgxMSw1OC42MzA1MzAyIEMzNC4wMTY3MDEyLDU4Ljg4MDE3NzUgMzIuNDQzNTc1Myw1OS4wMTE5NjcxIDMwLjg0MDQzMjQsNTkuMDE2MjgzOSBDMzMuNzM0NDYwMyw1Ny43NDg2MzExIDM1LjIzMzc0MDYsNTUuNDI5MjU1NiAzNS4yMzM3NDA2LDUyLjY0MjY5NDYgQzM1LjIzMzc0MDYsNDkuMTMyNDkzOCAzMi45ODA5OTUsNDcuMjc4NTE0NSAyNy43MzI4NDAzLDQzLjU0NTgzNjEgQzI3LjE4ODIyMDUsNDMuNDk2Mzk2NiAyNi44NDE2NDQyLDQzLjQ5NjM5NjYgMjYuMTQ4NDkxNyw0My40OTYzOTY2IEMyNS41Mjk2MDU2LDQzLjQ5NjM5NjYgMjEuODE2Mjg4Niw0My42MTk5OTUzIDE4LjkxOTkwMTQsNDQuNTg0MDY0NSBDMTcuNDA5ODE5MSw0NS4xMjc4OTg0IDEzLjAwMzM0OTcsNDYuNzg0MTIgMTMuMDAzMzQ5Nyw1MS42Nzg2MjU0IEMxMy4wMDMzNDk3LDUyLjIxMDUzODQgMTMuMDYwMDU2Myw1Mi43MjYyMzA4IDEzLjE3MDY5NTEsNTMuMjIyOTAwMSBDNS45MTIzMTMsNDcuODQ2Mjg5OCA5LjA1NjYzMjU5LDQ4LjYwNTA4MjQgOC4yMzAzMzg4Myw0OC42MDUwODExIFogTTMxLjQ0NjE1NzMsMjUuNDc1NzE3NiBDMzEuNDQ2MTU3MywyMC41MDcwNTMgMjguNTAwMjU5MiwxMi44MTE4MDI4IDIyLjc4MTc1MSwxMi44MTE4MDI4IEMyMC45OTkzNTg5LDEyLjgxMTgwMjggMTkuMDY4NDM0LDEzLjcwNjY1NjggMTcuOTU0NDM5LDE1LjA4MzU0NTUgQzE2Ljc5MDkzMywxNi41MjcxNzc0IDE2LjQ0NDM1NjcsMTguMzgxMTU2NyAxNi40NDQzNTY3LDIwLjE2MDk3NjkgQzE2LjQ0NDM1NjcsMjQuNzgzNTY1MyAxOS4xMTc5NDQ5LDMyLjQyMTk2MDEgMjUuMDU5MjUyMSwzMi40MjE5NjAxIEMyNi43NjczNzc5LDMyLjQyMTk2MDEgMjguNjI0MDM2NCwzMS41ODE0ODk1IDI5LjczODAzMTUsMzAuNDkzODIxNiBDMzEuMzIyMzgwMSwyOC45MTE3NTkzIDMxLjQ0NjE1NzMsMjYuNzExNzAzOCAzMS40NDYxNTczLDI1LjQ3NTcxNzYgWiBNMzEuNDQ2MTU3MywyNS40NzU3MTc2IiBpZD0iUGF0aCIgZmlsbD0iI0ZGRkZGRiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTU5LjI3OTM3MzcsMjkuNjg1ODI1MiBDNTkuMjc5MzczNyw0NS45ODI3NTMxIDQ2LjA0OTAxMzQsNTkuMTk0MDIxOSAyOS43Mjg1MzUxLDU5LjE5NDAyMTkgQzIzLjY3NTY1NjMsNTkuMTk0MDIxOSAxOC4wNDc4MjA4LDU3LjM3NjgyMiAxMy4zNjI0NDAyLDU0LjI1OTA0NjkgTDQ3LjIyMjY2MTUsNS45MDE2MzkzNCBDNTQuNTM0NTU5NSwxMS4yNzMzNTAxIDU5LjI3OTM3MzcsMTkuOTI2MjgxNiA1OS4yNzkzNzM3LDI5LjY4NTgyNTIgWiBNNTkuMjc5MzczNywyOS42ODU4MjUyIiBpZD0icmVmbGVjIiBmaWxsLW9wYWNpdHk9IjAuMDgiIGZpbGw9IiMwMDAwMDAiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);
+}
+
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+/* line 15, ../_sass/html5boilerplate.scss */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+/* line 29, ../_sass/html5boilerplate.scss */
+::-moz-selection {
+  background: #7fdbff;
+  text-shadow: none;
+}
+
+/* line 34, ../_sass/html5boilerplate.scss */
+::selection {
+  background: #7fdbff;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+/* line 43, ../_sass/html5boilerplate.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #888888;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+/* line 59, ../_sass/html5boilerplate.scss */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 72, ../_sass/html5boilerplate.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 82, ../_sass/html5boilerplate.scss */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+/* line 90, ../_sass/html5boilerplate.scss */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers:
+ */
+/* line 125, ../_sass/html5boilerplate.scss */
+.hidden {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+/* line 134, ../_sass/html5boilerplate.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+/* line 151, ../_sass/html5boilerplate.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+/* line 165, ../_sass/html5boilerplate.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 181, ../_sass/html5boilerplate.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 187, ../_sass/html5boilerplate.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  /* line 215, ../_sass/html5boilerplate.scss */
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+       http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 225, ../_sass/html5boilerplate.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 230, ../_sass/html5boilerplate.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 234, ../_sass/html5boilerplate.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  /* line 243, ../_sass/html5boilerplate.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* line 248, ../_sass/html5boilerplate.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  /* line 259, ../_sass/html5boilerplate.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 263, ../_sass/html5boilerplate.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 268, ../_sass/html5boilerplate.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  /* line 272, ../_sass/html5boilerplate.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 279, ../_sass/html5boilerplate.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+/* ====== Additional Styling ====== */
+/* line 18, ../_sass/style.scss */
+#top {
+  margin-bottom: 1em;
+  background-color: #aaaaaa;
+}
+
+/* line 24, ../_sass/style.scss */
+#maincolumn {
+  display: inline;
+  float: left;
+  width: 821px;
+  margin: 0 3.5px;
+  background-color: #01ff70;
+}
+
+/* line 29, ../_sass/style.scss */
+#sidebar {
+  display: inline;
+  float: left;
+  width: 614px;
+  margin: 0 3.5px;
+  background-color: #39cccc;
+}
+
+/* line 36, ../_sass/style.scss */
+.group {
+  background-color: #39cccc;
+}
+
+/**************/
+/* BASE RULES */
+/**************/
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 46, ../_sass/style.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* line 54, ../_sass/style.scss */
+pre code {
+  white-space: pre;
+  overflow: auto;
+  display: block;
+  padding: 1em;
+  background-color: #bfbfcc;
+}
+
+/* line 62, ../_sass/style.scss */
+body {
+  font-family: "Helvetica Neue", Helvetica, "Noto Sans", Arial, sans-serif;
+}
+
+/* line 67, ../_sass/style.scss */
+header img {
+  padding: 0 2em;
+}
+/* line 71, ../_sass/style.scss */
+header h1 {
+  font-family: "Nexa Rust Slab", Georgia, serif;
+  margin: 0 1em;
+  font-size: 2em;
+  margin-bottom: 0.4em;
+  color: #111111;
+}
+/* line 79, ../_sass/style.scss */
+header p {
+  font-family: "Nexa Rust Slab", Georgia, serif;
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+/* line 88, ../_sass/style.scss */
+header nav ul {
+  font-family: "Nexa Rust Slab", Georgia, serif;
+  font-size: 1em;
+  padding: 1em 0em 0em 1em;
+  list-style: none;
+}
+/* line 97, ../_sass/style.scss */
+header nav li {
+  display: inline-block;
+}
+/* line 100, ../_sass/style.scss */
+header nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+/* line 108, ../_sass/style.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nexa Rust Slab", Georgia, serif;
+}
+
+/* line 112, ../_sass/style.scss */
+.archive h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* line 143, ../_sass/style.scss */
+footer {
+  display: inline;
+  float: left;
+  width: 614px;
+  margin: 0 3.5px;
+}
+
+/* line 154, ../_sass/style.scss */
+p {
+  margin: 0.5em 0;
 }

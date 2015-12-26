@@ -1,15 +1,13 @@
 ---
 layout: post
 title: Real Time Linux
-excerpt: ... learn to build and run real-time applications.
+excerpt: My goal is to learn how to install a real-time Linux kernel...
 ---
 
-My goal here is to learn how to install a real-time linux kernel and use it to build and run real-time applications.
+My goal is to learn how to install a real-time Linux kernel and use it to build and run real-time applications.
 
 ## Getting Started
-I'm starting out by running CentOS 7 on a VirtualBox VM. I used the minimal install to keep things as clean and simple as possible.
-
-One of the first things I did was to update the kernel via ```yum -y update kernel```. After rebooting, the kernel version is:
+I'm starting out by running CentOS 7 on a VirtualBox VM. I used the minimal install to keep things as clean and simple as possible. One of the first things I did was to update the kernel via ```yum -y update kernel```. After rebooting, the kernel version is:
 
     > uname -r
     3.10.0-229.el7.x86_64
@@ -21,7 +19,7 @@ Now to prepare to build a custom kernel:
     [doug@new-host-3 ~]$ sudo yum install hmaccalc zlib-devel binutils-devel elfutils-libelf-devel
     [doug@new-host-3 ~]$ mkdir -p ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
     [doug@new-host-3 ~]$ echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
-    [doug@new-host-3 ~]$ sudo yum install rpm-build redhat-rpm-config asciidoc hmaccalc perl-ExtUtils-Embed pesign xmlto 
+    [doug@new-host-3 ~]$ sudo yum install rpm-build redhat-rpm-config asciidoc hmaccalc perl-ExtUtils-Embed pesign xmlto
     [doug@new-host-3 ~]$ sudo yum install audit-libs-devel binutils-devel elfutils-devel elfutils-libelf-devel
     [doug@new-host-3 ~]$ sudo yum install ncurses-devel newt-devel numactl-devel pciutils-devel python-devel zlib-devel
 

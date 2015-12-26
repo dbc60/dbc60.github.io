@@ -1,24 +1,109 @@
-
 /**************/
 /* VARIABLES  */
 /**************/
 
-// Colors
-$blue: #4183C4;
+// Colors from http://clrs.cc/
+$Navy: #001f3f;
+$Blue: #0074d9;
+$Aqua: #7fdbff;
+$Teal: #39cccc;
+$Olive: #3d9970;
+$Green: #2ecc40;
+$Lime: #01ff70;
+$Yellow: #ffdc00;
+$Orange: #ff851b;
+$Red: #ff4136;
+$Maroon: #85144b;
+$Fuschsia: #f012be;
+$Purple: #b10dc9;
+$Black: #111111;
+$NearlyBlack: #222222;
+$Gray: #aaaaaa;
+$DarkGray: #888888;
+$LightGray: #bbbbbb;
+$Silver: #dddddd;
+$White: #ffffff;
+$CodeBackgroundColor: #bfbfcc;
 
-// Grays
-$black: #000;
-$darkerGray: #222;
-$darkGray: #333;
-$gray: #666;
-$lightGray: #eee;
-$white: #fff;
+$cssMiddot: "\00b7";
 
 // Font stacks
+// Relative URLs are allowed in the 'url()' function and are relative to the URL of the stylesheet (not the
+// URL of the web page).
+// @font-face {
+//     font-family: 'nexa_rust_extrasfree';
+//     src: url('/fonts/NexaRustFree/NexaRustExtras-Free-webfont.eot');
+//     src: url('/fonts/NexaRustFree/NexaRustExtras-Free-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('/fonts/NexaRustFree/NexaRustExtras-Free-webfont.woff2') format('woff2'),
+//          url('/fonts/NexaRustFree/NexaRustExtras-Free-webfont.woff') format('woff'),
+//          url('/fonts/NexaRustFree/NexaRustExtras-Free-webfont.ttf') format('truetype'),
+//          url('/fonts/NexaRustFree/NexaRustExtras-Free-webfont.svg#nexa_rust_extrasfree') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+//
+// @font-face {
+//     font-family: 'nexa_rust_handmadeextended';
+//     src: url('/fonts/NexaRustFree/NexaRustHandmade-Extended-Free-webfont.eot');
+//     src: url('/fonts/NexaRustFree/NexaRustHandmade-Extended-Free-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('/fonts/NexaRustFree/NexaRustHandmade-Extended-Free-webfont.woff2') format('woff2'),
+//          url('/fonts/NexaRustFree/NexaRustHandmade-Extended-Free-webfont.woff') format('woff'),
+//          url('/fonts/NexaRustFree/NexaRustHandmade-Extended-Free-webfont.ttf') format('truetype'),
+//          url('/fonts/NexaRustFree/NexaRustHandmade-Extended-Free-webfont.svg#nexa_rust_handmadeextended') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'nexa_rust_sansblack';
+//     src: url('/fonts/NexaRustFree/NexaRustSans-Black-Free-webfont.eot');
+//     src: url('/fonts/NexaRustFree/NexaRustSans-Black-Free-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('/fonts/NexaRustFree/NexaRustSans-Black-Free-webfont.woff2') format('woff2'),
+//          url('/fonts/NexaRustFree/NexaRustSans-Black-Free-webfont.woff') format('woff'),
+//          url('/fonts/NexaRustFree/NexaRustSans-Black-Free-webfont.ttf') format('truetype'),
+//          url('/fonts/NexaRustFree/NexaRustSans-Black-Free-webfont.svg#nexa_rust_sansblack') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'nexa_rust_script_l0regular';
+//     src: url('/fonts/NexaRustFree/NexaRustScriptL-0-Free-webfont.eot');
+//     src: url('/fonts/NexaRustFree/NexaRustScriptL-0-Free-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('/fonts/NexaRustFree/NexaRustScriptL-0-Free-webfont.woff2') format('woff2'),
+//          url('/fonts/NexaRustFree/NexaRustScriptL-0-Free-webfont.woff') format('woff'),
+//          url('/fonts/NexaRustFree/NexaRustScriptL-0-Free-webfont.ttf') format('truetype'),
+//          url('/fonts/NexaRustFree/NexaRustScriptL-0-Free-webfont.svg#nexa_rust_script_l0regular') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+@font-face {
+    font-family: 'Nexa Rust Slab';
+    src: url('/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.eot');
+    src: url('/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.woff2') format('woff2'),
+         url('/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.woff') format('woff'),
+         url('/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.ttf') format('truetype'),
+         url('/fonts/NexaRustFree/NexaRustSlab-BlackShadow01-Free-webfont.svg#nexa_rust_slabblack_shadow_01') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('/fonts/Noto/NotoSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$georgia: Georgia, serif;
-$body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$Georgia: Georgia, serif;
+//$body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: "Helvetica Neue", Helvetica, 'Noto Sans', Arial, sans-serif;
+$heading-font-family: 'Nexa Rust Slab', $Georgia;
+$alternative-heading-font-family: $Georgia;
 
 // Mobile breakpoints
 @mixin mobile {

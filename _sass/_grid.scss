@@ -1,0 +1,198 @@
+/////////////////
+// Semantic.gs // for SCSS: http://sass-lang.com/
+// This version is from https://github.com/Nosenation/Light-SCSS-Semantic.gs
+// rather than the original grid.scss at https://github.com/tylertate/semantic.gs
+// I decided on this because of the pull request "SCSS calculation fixes #63"
+// at https://github.com/tylertate/semantic.gs/pull/63
+/////////////////
+
+// Default variables for the grid which you can freely override.
+// These values define a 960px grid.
+$column-width: 62px;
+$gutter-width: 7px;
+$columns: 14;
+
+// Remove the definition below for a pixel-based layout
+//$total-width: 100%;
+
+// Utility function — you should never need to modify this
+@function gridsystem-width($c:$columns) {
+	@return ($column-width + $gutter-width) * $c;
+}
+
+// Set $total-width to 100% for a fluid layout
+$total-width: gridsystem-width($columns);
+
+// Convenience function for calculating the $total-width / $calculated-width.
+// Given a number of columns, return the width in pixels
+@function gridsystem-ratio($c:$columns) {
+	@if ($total-width == 100%) {
+		@return $total-width / gridsystem-width($c);
+	} @else {
+		@return $total-width / gridsystem-width($columns);
+	}
+}
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin clearfix() {
+	*zoom:1;
+	&:before,
+	&:after {
+	    content:"";
+	    display:table;
+	}
+	&:after {
+	    clear:both;
+	}
+}
+
+//////////
+// GRID //
+//////////
+
+// body {
+// 	width: 100%;
+// 	@include clearfix();
+// }
+
+// Given a width in columns, return?
+@mixin row($c:$columns) {
+	display: block;
+	@if ($total-width == 100%) {
+    		width: auto;
+    		margin: 0 (-.5 * $gutter-width * gridsystem-ratio($c));
+    	} @else {
+		width: (gridsystem-width($c) * gridsystem-ratio());
+		margin: 0 (-.5 * $gutter-width * gridsystem-ratio());
+    	}
+	@include clearfix();
+}
+
+@mixin column($x, $c:$columns) {
+	display: inline;
+	float: left;
+	width: ((gridsystem-width($x)-$gutter-width) * gridsystem-ratio($c));
+    	margin: 0 (.5 * $gutter-width * gridsystem-ratio($c));
+}
+
+@mixin push($offset:1) {
+	margin-left: ((gridsystem-width($offset) - $gutter-width + ($gutter-width*.5)) * gridsystem-ratio());
+}
+
+@mixin pull($offset:1) {
+	margin-right: ((gridsystem-width($offset) - $gutter-width + ($gutter-width*.5)) * gridsystem-ratio());
+}
+
+
+/* =======================
+   New Grid
+
+   How It Works:
+    .section
+	splits up the page horizontally. You'll
+	need a few of these to break up the content,
+	and you can use them in your main wrapper,
+	or within other divs.
+
+	.col
+	divides the section into columns. Each
+	column has a left margin except the first
+	one. Using
+
+	    .col:first-child { margin-left: 0; }
+
+	means you don't need to use class="last"
+	anywhere. It works in all browsers since IE6.
+
+	.group
+	solves floating problems, by forcing the
+	section to self clear its children (aka the
+	clearfix hack). This is good in Firefox 3.5+,
+	Safari 4+, Chrome, Opera 9+ and IE 6+.
+
+	.span_1_of_3
+	specifies the width of the column. Using
+	percentages means it's 100% fluid.
+
+	@media queries
+	as soon as the screen size gets less than 480
+	pixels the columns stack and the margins
+	disappear.
+   ========================== */
+
+/*  SECTIONS  */
+section.group {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 0.8333333333%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF TWELVE  */
+.span_12_of_12 {
+	width: 100%;
+}
+
+.span_11_of_12 {
+  	width: 91.59%;
+}
+.span_10_of_12 {
+  	width: 83.19%;
+}
+
+.span_9_of_12 {
+  	width: 74.79%;
+}
+
+.span_8_of_12 {
+  	width: 66.38%;
+}
+
+.span_7_of_12 {
+  	width: 57.98%;
+}
+
+.span_6_of_12 {
+  	width: 49.58%;
+}
+
+.span_5_of_12 {
+  	width: 41.18%;
+}
+
+.span_4_of_12 {
+  	width: 32.77%;
+}
+
+.span_3_of_12 {
+  	width: 24.37%;
+}
+
+.span_2_of_12 {
+  	width: 15.97%;
+}
+
+.span_1_of_12 {
+  	width: 7.569%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+
+    .span_1_of_12, .span_2_of_12, .span_3_of_12, .span_4_of_12, .span_5_of_12, .span_6_of_12, .span_7_of_12, .span_8_of_12, .span_9_of_12, .span_10_of_12, .span_11_of_12, .span_12_of_12 {
+	width: 100%;
+	}
+}
