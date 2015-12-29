@@ -2,155 +2,564 @@
 // IMPORTS
 //
 
-@import 'reset';
 @import 'variables';
-@import 'grid';
 @import 'svg-icons';
-@import 'html5boilerplate';
 
-////////////
-// LAYOUT //
-////////////
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 
-/* ====== Additional Styling ====== */
-
-// header
-#top {
-    margin-bottom: 1em;
-    background-color: $Gray;
-}
-
-// main column & sidebar
-#maincolumn {
-    @include column(12);
-    background-color: $Lime;
-}
-
-#sidebar {
-    @include column(9);
-    //@include push();
-    //@include pull();
-    background-color: $Teal;
-}
-
-.group {
-    background-color: $Teal;
-}
-
-/**************/
-/* BASE RULES */
-/**************/
-/**
- * Address odd `em`-unit font size rendering in all browsers.
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
  */
-code,
-kbd,
-pre,
-samp {
-    font-family: monospace, monospace;
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    // color: #222;
     font-size: 1em;
+    line-height: 1.4;
 }
 
-pre code {
-	white-space: pre;
-	overflow: auto;
-	display: block;
-	padding: 1em;
-	background-color: $CodeBackgroundColor;
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* Add in default body font */
 body {
-    font-family: $body-font-family;
+    font-family: Arial, sans-serif;
 }
 
+/* Adding some background colors so we can see where our boxes are */
 header {
+    background-color:#DC6F65;
+    width: $fixed-width;
+    height: 150px;
+    background-image: url(/img/aquarium-slice.jpg);
+}
+
+header h1 {
+    //text-indent: -3000px;
+    visibility: hidden;
+}
+
+/* Positioning for our logo image */
+ img#headerimg {
+   position:relative;
+   top: 7px;
+   left: $left-logo-and-menu;
+ }
+
+/* Change colors in the footer. Change height and add background image. */
+ footer {
+    background-color:#2C5463;
+    color: #FFFFFF;
+    background-image: url(/img/blue_fade.png);
+    height: 120px;
+    clear: both;
+
+    /* CSS3 Gradients for footer*/
+    background-image: -webkit-linear-gradient(top, #2c5463, #162b33);
+    background-image:    -moz-linear-gradient(top, #2c5463, #162b33);
+    background-image:     -ms-linear-gradient(top, #2c5463, #162b33);
+    background-image:      -o-linear-gradient(top, #2c5463, #162b33);
+}
+
+/* Different link colors in the footer */
+footer a:link {
+    color: #D8D8D8;
+}
+
+footer a:visited {
+    color: #FFFFFF;
+}
+
+
+/* BEGIN FOOTER TEXT STYLES */
+
+footer p#about {
+  width:300px;
+  /* margin order: top, right, bottom, left */
+  margin:20px 50px 0px 10px; /* Play with these to suit */
+  float:left; /* Other elements in the footer will wrap to the right of this */
+}
+
+footer section#footerlist {
+  float:right; /* Place this on the other side of the footer */
+  padding-right:10px;
+  margin-top:10px; /* Play with this */
+}
+
+footer section#footerlist ul  {
+  padding-left:0px; /* Unindent the list so it lines up with the h3 above it. */
+}
+
+footer section#footerlist ul li {
+  list-style-type:none; /* Remove default discs from list items. */
+}
+
+footer section#footerlist h3 {
+  margin-top:0px;
+}
+
+footer p#footercopy {
+  clear:both;
+  text-align:center;
+  font-size:0.9em; /* Slightly smaller text for copyright text. */
+}
+
+/* END FOOTER STYLES */
+
+
+
+
+/* Add some padding to our boxes. This overrides the browser defaults that added a
+   1em */
+ aside, footer {
+   padding: 10px;
+ }
+
+/* Give a width to our content area and center it. */
+ div#container {
+    background-color: #DBDBDB;
+    width:$fixed-width; /* This width works well on screens that are 1024px wide */
+    margin:auto; /*  This causes unspecified margins to be calculated automatically and equally.
+                    It ensures the container will be centered on the page. */
+    margin-top:20px; /* This moves the whole page (header included) down the page a little bit, so
+                       it isn't tightly against the browser's chrome */
+    border: 3px solid #4B4B4B;
+    border-radius: 20px;
+    overflow:hidden; /* Hack to mitigate clipping of corners */
+}
+
+/*
+    Here we line up the content area and sidebar. We know that our container is 960px wide. If we want
+    our sidebar to be 200px wide, that leaves 760px for content and nice wide videos. Initially, we might
+    think that we want to write:
+
+        section#main { width: 760px; }
+        aside { width: 200px; }
+
+    but that wouldn't work. The sidebar would end up below the content container. The key is to
+    remember:
+
+        Total box width = box size + margins + padding + border widths
+
+    We put 10px of padding on "section#main#, aside and footer above. This means these
+    elements are 20px wider than specified. The sidebar would be 220px wide and the content area would be
+    780px wide, so the total size of section#main and aside would overflow the specified 960px width of
+    the div#container.
+
+    To fix this, we need to shave 20px of width from each of them to get them to sit side-by-side. So, we
+    use 740px for section#main and 180px for the aside element. We also float the main section to the left,
+    and float the sidebar to the right.
+*/
+
+/* Using display: flex; to make the sidebar column the same length as the main content.
+   See: http://tutorialzine.com/2014/10/easiest-way-equal-height-sidebar/ for details.
+   */
+#boxes {
+    display: flex;
+}
+
+section#main {
+    background-color: #EBEBEB;
+    /* This makes the element grow and take all available space, not taken by the sidebar */
+    flex-grow:1;
+    width: 710px;
+    float: left;
+    //float: right;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 20px;
+}
+
+/* Specify fonts for section H1s and article Ps. Note that
+    <link href='http://fonts.googleapis.com/css?family=Kreon' rel='stylesheet' type='text/css'>
+   was added to _includes/head.html to make the Kreon font-family available. */
+ section#main article h1 {
+   font-family: Kreon, serif;
+   font-size: 2.0em;
+   margin-bottom: 20px;
+   margin-top: 20px;
+ }
+
+ section#main article p {
+   font-family: Tahoma;
+   font-size: 1.2em;
+   letter-spacing: 1.25px;
+   line-height: 1.25em;
+ }
+
+/* Styling for image div with caption */
+section#main .article_img {
+    float:left;
+    width:200px;
+    padding:5px;
+    border:1px solid gray;
+    margin: 5px 20px 5px 0px;
+}
+
+/* Styling for caption within image div */
+section#main .article_img p {
+    margin-top:0px;
+    margin-bottom:0px;
+    font-size:0.8em;
+    font-style:italic;
+    padding-top:5px;
+}
+
+aside {
+    background-color:#8CCAF0;
+    //width: 180px;
+    width: auto;
+    float: right;
+    //float: left;
+    display: table-cell;
+}
+
+aside h2 {
+    font-family: Kreon, serif;
+    font-size: 1.0em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+aside ul li {
+    font-family: Georgia;
+    font-size: 0.9em;
+    line-height: 1.25em;
+}
+
+
+/* Adding set of rules for navigation menu */
+
+/* START NAV MENU */
+nav {
+  background-color:#2C5463; /* Changed this bg color */
+  height:40px;
+}
+
+
+nav ul {
+  font-family: Arial, Verdana;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: block;
+  position: relative;
+  float: left;
+}
+
+nav li ul {
+  display: none;
+}
+
+nav ul li:first-child a {
+  display: block;
+  text-decoration: none;
+  /* padding order: top, right, bottom, left */
+  padding: 7px 15px 3px 0px;
+  background: #2C5463;
+  color: #ffffff;
+  margin-left: 0px;
+  white-space: nowrap;
+  height:30px; /* Width and height of top-level nav items */
+  width: 90px;
+  text-align: center;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  /* padding: top, right, bottom, left */
+  padding: 7px 15px 3px 15px;
+  background: #2C5463;
+  color: #ffffff;
+  margin-left: 0px;
+  white-space: nowrap;
+  height:30px; /* Width and height of top-level nav items */
+  width:90px;
+  text-align:center;
+}
+
+nav ul li a:hover {
+  background: #617F8A;
+}
+
+nav li:hover ul {
+  display: block;
+  position: absolute;
+  height:30px;
+}
+
+nav li:hover li {
+  float: none;
+  font-size: 11px;
+
+}
+
+nav li:hover a {
+  background: #3A464F;
+  height:30px; /* Height of lower-level nav items is shorter than main level */
+}
+
+nav li:hover li a:hover {
+  background: #95A9B1;
+}
+
+nav ul li ul li a {
+    text-align:left; /* Top-level items are centered, but nested list items are left-aligned */
+}
+
+/* END NAV MENU */
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
     img {
-    padding: 0 2em;
-  }
-
-  h1 {
-    font-family: $heading-font-family;
-    margin: 0 1em;
-    font-size: 2em;
-    margin-bottom: 0.4em;
-    color: $Black;
-  }
-
-  p {
-    font-family: $heading-font-family;
-    margin-left: 2em;
-	margin-bottom: 0.5em;
-  }
-
-  // TODO(doug): Figure out the SASS code to make this element inherit/use the same background-color as the
-  // element in which it is contained (a <header> element in the case of _includes/header.html).
-  nav {
-    ul {
-        //margin: 0;
-        font-family: $heading-font-family;
-        font-size: 1em;
-        // top | right | bottom | left
-        padding: 1em 0em 0em 1em;
-        list-style: none;
+        page-break-inside: avoid;
     }
 
-    li {
-        display: inline-block;}
-
-    a {
-        display: block;
-        padding: 6px 12px;
-        text-decoration: none;
+    img {
+        max-width: 100% !important;
     }
-  }
-}
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $heading-font-family;
-}
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
 
-.archive h1, h2, h3, h4, h5, h6 {
-    font-family: $alternative_heading-font-family;
-    font-style: normal;
-    font-weight: bold;
-}
-
-// h1 a {
-//     text-decoration: none;
-// }
-
-// a {
-// 	color: $Black;
-// }
-//
-// h2 {
-//     font-size: 1.5em;
-// 	padding: 0.4em 0;
-//     color: $Black;
-// }
-//
-//
-// .body-content {
-//     background-color: $Gray;
-//     color: $Black;
-//     text-align: left;
-//     @include pull(1);
-// 	margin-left: 1em;
-//     margin-bottom: 1em;
-// 	padding: 0 38px 40px 0;
-// }
-//
-footer {
-  @include column(9);
-}
-
-// // Use in HTML like: <h2><b>Victors <abbr class="amp" title="And">&amp;</abbr> Villains</b></h2>
-// .amp {
-//     font-family: Baskerville, Garamond, Palatino, "Palatino Linotype", "Hoefler Text", "Times New Roman", serif;
-//     font-style: italic;
-//     font-weight: normal;
-// }
-
-p {
-	margin: 0.5em 0;
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }

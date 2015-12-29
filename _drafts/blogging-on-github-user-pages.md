@@ -27,7 +27,7 @@ I need to learn about the following to get this blog setup the way I want it.
 - How to structure the HTML layout to make it easy to style
 - Write CSS to style the HTML
 - Compass configuration
-- Using SASS to create style sheets
+- Using SASS to create stylesheets
 - Practice Git branching and get used to a workflow
 - Bundler to keep the gems up-to-date
 - DNS to setup a CNAME and sorting out how to keep some content on my Digital Ocean droplet, while having a blog on GitHub user pages (with the option of moving it to the droplet w/o creating an SEO fiasco). GitHub wants a CNAME, not an A-record. There's also a lot of information on the web regarding subdomains vs subfolders.

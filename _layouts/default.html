@@ -1,19 +1,65 @@
 <!DOCTYPE html>
 <html>
+    {% include head.html %}
 
-  {% include head.html %}
+    <body>
+        <div id="container">
+            {% include header.html %}
 
-  <body>
-    <section id="top">
-      {% include header.html %}
-    </section>
+            {% include navigation.html %}
 
-    <section id="maincolumn">
-      {{ content }}
-    </section>
+            <div id="boxes">  <!-- New div wrapper around the two boxes whose height we want to match -->
+                <section id="main" role="main">
+                    {{ content }}
+                </section>
 
-    <section id="sidebar">
-      {% include footer.html %}
-    </section>      
-  </body>
+                {% include sidebar.html %}
+            </div>
+
+            {% include footer.html %}
+        </div>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+        <!-- MathJax configuration -->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" }
+                },
+                // Center justify equations in code and markdown cells. Elsewhere
+                // we use CSS to left justify single line equations in code cells.
+                displayAlign: 'center',
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 0}},
+                    linebreaks: { automatic: true },
+                    scale: 175
+                }
+            });
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ site.baseurl }}/js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+
+        <script src="{{ site.baseurl }}/js/plugins.js"></script>
+        <script src="{{ site.baseurl }}/js/main.js"></script>
+
+        {% include analytics.html %}
+
+        <!-- Trigger the Javascript that will give us equal height boxes  -->
+        <!-- TAKE OUT SAME HEIGHT JAVASCRIPT
+        <script type="text/javascript" charset="utf-8">
+            $(document).ready(function(){
+             /* Make boxes same height */
+             $('#boxes').sameHeights();
+            });
+        </script>
+        TAKE OUT SAME HEIGHT JAVASCRIPT -->
+
+    </body>
 </html>
