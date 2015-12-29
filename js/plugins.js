@@ -22,20 +22,3 @@
 }());
 
 // Place any jQuery/helper plugins in here.
-/*
-    Plugin to make variable height divs equal heights
-    Thanks to Adham Dannaway, via:
-    http://www.cre8ivecommando.com/equal-height-columns-using-jquery-6164/
-*/
-$.fn.sameHeights = function() {
-    $(this).each(function(){
-    var tallest = 0;
-
-    $(this).children().each(function(i){
-        if (tallest < $(this).height()) { tallest = $(this).height(); }
-    });
-    $(this).children().css({'height': tallest});
-});
-
-return this;
-};
