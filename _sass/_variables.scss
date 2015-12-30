@@ -2,7 +2,8 @@
 /* VARIABLES  */
 /**************/
 
-// Colors from http://clrs.cc/
+// Colors from http://clrs.cc/. These are easier on the eyes than the default HTML/CSS
+// colors of the same name.
 $Navy: #001f3f;
 $Blue: #0074d9;
 $Aqua: #7fdbff;
@@ -17,18 +18,65 @@ $Maroon: #85144b;
 $Fuschsia: #f012be;
 $Purple: #b10dc9;
 $Black: #111111;
-$NearlyBlack: #222222;
 $Gray: #aaaaaa;
-$DarkGray: #888888;
-$LightGray: #bbbbbb;
 $Silver: #dddddd;
 $White: #ffffff;
-$CodeBackgroundColor: #bfbfcc;
+
+// Additional color definitions
+$NearlyBlack: #222222;
+$DarkGray: #888888;
+$PaleGray: #EBEBEB;
+$LightGray: #bfbfcc;
+$MediumGray: #bbbbbb;
+$PaleCornflowerBlue: #abcdef;
+$DarkReef: #CEF0AD;
+$Cosmic: #794d60;
+$DarkCosmic: #784859;
+$Dingley: #597848;
+
+$Cornflower: #8CCAF0; // lighter than cornflowerblue
+$Chambray: #475877;
+$BlackPearl: #1E272C;
+$Ghost: #C0BFC7;
+
+// SASS style sheet */
+// Palette color codes */
+// Palette URL: http://paletton.com/#uid=13q0u0kllllaFw0g0qFqFg0w0aF */
+
+// Feel free to copy&paste color codes to your application */
+
+// As hex codes */
+$color-primary-0: #27586B;	// Main Primary color */
+$color-primary-1: #6D92A0;
+$color-primary-2: #457485;
+$color-primary-3: #103E50;
+$color-primary-4: #022735;
+
+// As RGBa codes */
+$rgba-primary-0: rgba( 39, 88,107,1);	// Main Primary color */
+$rgba-primary-1: rgba(109,146,160,1);
+$rgba-primary-2: rgba( 69,116,133,1);
+$rgba-primary-3: rgba( 16, 62, 80,1);
+$rgba-primary-4: rgba(  2, 39, 53,1);
+
+
+$sidebar_background_color: $color-primary-1;
+$navbar_background_light: $color-primary-2;
+$navbar_background_dark: $color-primary-4;
+$navbar_border_color: $color-primary-2;
+$footer_border_color: $color-primary-2;
+$selection_background: $color-primary-2;
+$main_background: $DarkGray;
+$main_color: rgba(255, 255, 255, 0.8);
+$text_color: $main_color;
+$link_color: $color-primary-3;
+$hover_color: $color-primary-4;
+$heading_h2_color: $color-primary-0;
+$time_color: rgba(255, 255, 255, 0.5);
 
 $cssMiddot: "\00b7";
-
 $fixed-width: 960px;
-$left-logo-and-menu: 15px;
+$left_logo_and_menu: 15px;
 
 // Font stacks
 // Relative URLs are allowed in the 'url()' function and are relative to the URL of the stylesheet (not the
@@ -103,9 +151,10 @@ $left-logo-and-menu: 15px;
 $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $Georgia: Georgia, serif;
+$NexaRustSlab: 'Nexa Rust Slab';
 //$body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $body-font-family: "Helvetica Neue", Helvetica, 'Noto Sans', Arial, sans-serif;
-$heading-font-family: 'Nexa Rust Slab', $Georgia;
+$heading-font-family: $Georgia;
 $alternative-heading-font-family: $Georgia;
 
 // Mobile breakpoints

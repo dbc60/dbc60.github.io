@@ -4,9 +4,6 @@ title: Blog Configuration Notes
 excerpt:
 categories: [notes, jekyll]
 ---
-## Jekyll
-I started this blog by forking Barry Clark's [Jekyll Now](https://github.com/barryclark/jekyll-now) repository. It's not a bad place to start, but I found Jekyll has a lot of knobs to fiddle with. I wanted to know more, so I'm keeping a few notes here and some of the links from his [README](https://github.com/barryclark/jekyll-now/blob/master/README.md).
-
 ### Things to Remember
 - Use the page layout (```layout: page```) in the YAML front matter for static pages.
 

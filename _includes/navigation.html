@@ -1,19 +1,6 @@
 <nav>
     <ul>
         <li><a href="{{ site.baseurl }}/">Home</a></li>
-        <li><a href="{{ site.baseurl }}/about">About Me</a></li>
-        <!-- <li><a href="{{ site.baseurl }}/archive">Archive</a></li> -->
-        <li><a href="Archives">Archives</a>
-            <ul>
-                {%for post in site.posts %}
-                {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-                {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-                {% if year != nyear %}
-                <li><a href="{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }}</a></li>
-                {% endif %}
-                <!--<li><time>{{ post.date | date:"%d %b" }}</time><a href="{{ post.url }}">{{ post.title }}</a></li> -->
-            {% endfor %}
-            </ul>
-        </li>
+        <li><a href="{{ site.baseurl }}/about">About</a></li>
     </ul>
 </nav>

@@ -32,12 +32,12 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: $selection_background;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: $selection_background;
     text-shadow: none;
 }
 
@@ -107,48 +107,72 @@ body {
     font-family: Arial, sans-serif;
 }
 
+h2 {
+    color: $heading_h2_color;
+}
+
+a:link {
+    color: $link_color;
+}
+a:hover, a:visited {
+    color: $hover_color;
+}
+
+.archive {
+    color: $time_color;
+}
+
 /* Adding some background colors so we can see where our boxes are */
 header {
-    background-color:#DC6F65;
+    background: linear-gradient(to bottom, $navbar_background_light, $navbar_background_dark);
     width: $fixed-width;
     height: 150px;
     background-image: url(/img/aquarium-slice.jpg);
 }
 
 header h1 {
-    //text-indent: -3000px;
-    visibility: hidden;
+    visibility: visible;
+    font-family: $heading-font-family;
+    font-size: 1.8em;
+    padding: 0px 0 0px $left_logo_and_menu;
+    color: $main_color;
+    margin-top: 0.2em;
+    margin-bottom: 0;
+}
+
+header p {
+    visibility: visible;
+    font-family: $body-font-family;
+    font-size: 1.0em;
+    padding: 0px 0 0px $left_logo_and_menu;
+    color: $main_color;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* Positioning for our logo image */
  img#headerimg {
    position:relative;
    top: 7px;
-   left: $left-logo-and-menu;
+   left: $left_logo_and_menu;
  }
 
 /* Change colors in the footer. Change height and add background image. */
  footer {
-    background-color:#2C5463;
-    color: #FFFFFF;
-    background-image: url(/img/blue_fade.png);
+    background: linear-gradient(to bottom, $navbar_background_light, $navbar_background_dark);
+    border-top: thick solid $footer_border_color;
+    color: $White;
     height: 120px;
     clear: both;
-
-    /* CSS3 Gradients for footer*/
-    background-image: -webkit-linear-gradient(top, #2c5463, #162b33);
-    background-image:    -moz-linear-gradient(top, #2c5463, #162b33);
-    background-image:     -ms-linear-gradient(top, #2c5463, #162b33);
-    background-image:      -o-linear-gradient(top, #2c5463, #162b33);
 }
 
 /* Different link colors in the footer */
 footer a:link {
-    color: #D8D8D8;
+    color: $DarkGray;
 }
 
 footer a:visited {
-    color: #FFFFFF;
+    color: $White;
 }
 
 
@@ -196,6 +220,28 @@ footer p#footercopy {
    padding: 10px;
  }
 
+ aside {
+     background-color: $sidebar_background_color;
+     width: auto;
+     float: right;
+     //float: left;
+ }
+
+ aside h2 {
+     font-family: $heading-font-family;
+     font-size: 1.0em;
+     margin-bottom: 20px;
+     margin-top: 20px;
+     color: $heading_h2_color;
+ }
+
+ aside ul li {
+     font-family: $Georgia;
+     font-size: 0.9em;
+     line-height: 1.25em;
+ }
+
+
 /* Give a width to our content area and center it. */
  div#container {
     background-color: #DBDBDB;
@@ -240,7 +286,7 @@ footer p#footercopy {
 }
 
 section#main {
-    background-color: #EBEBEB;
+    background-color: $main_background;
     /* This makes the element grow and take all available space, not taken by the sidebar */
     flex-grow:1;
     width: 710px;
@@ -249,23 +295,25 @@ section#main {
     padding-left: 25px;
     padding-right: 25px;
     padding-bottom: 20px;
+    color: $main_color;
 }
 
 /* Specify fonts for section H1s and article Ps. Note that
     <link href='http://fonts.googleapis.com/css?family=Kreon' rel='stylesheet' type='text/css'>
    was added to _includes/head.html to make the Kreon font-family available. */
  section#main article h1 {
-   font-family: Kreon, serif;
+   font-family: $heading-font-family;
    font-size: 2.0em;
    margin-bottom: 20px;
    margin-top: 20px;
  }
 
  section#main article p {
-   font-family: Tahoma;
+   font-family: $body-font-family;
    font-size: 1.2em;
    letter-spacing: 1.25px;
    line-height: 1.25em;
+   color: $text_color;
  }
 
 /* Styling for image div with caption */
@@ -273,7 +321,7 @@ section#main .article_img {
     float:left;
     width:200px;
     padding:5px;
-    border:1px solid gray;
+    border:1px solid $text_color;
     margin: 5px 20px 5px 0px;
 }
 
@@ -286,35 +334,13 @@ section#main .article_img p {
     padding-top:5px;
 }
 
-aside {
-    background-color:#8CCAF0;
-    //width: 180px;
-    width: auto;
-    float: right;
-    //float: left;
-    display: table-cell;
-}
-
-aside h2 {
-    font-family: Kreon, serif;
-    font-size: 1.0em;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-aside ul li {
-    font-family: Georgia;
-    font-size: 0.9em;
-    line-height: 1.25em;
-}
-
-
 /* Adding set of rules for navigation menu */
 
 /* START NAV MENU */
 nav {
-  background-color:#2C5463; /* Changed this bg color */
-  height:40px;
+  background-color: $navbar_background_light;
+  border-bottom: thick solid $navbar_border_color;
+  height: 40px;
 }
 
 
@@ -341,8 +367,8 @@ nav ul li:first-child a {
   text-decoration: none;
   /* padding order: top, right, bottom, left */
   padding: 7px 15px 3px 0px;
-  background: #2C5463;
-  color: #ffffff;
+  background: $navbar_background_light;
+  color: $main_color;
   margin-left: 0px;
   white-space: nowrap;
   height:30px; /* Width and height of top-level nav items */
@@ -355,8 +381,8 @@ nav ul li a {
   text-decoration: none;
   /* padding: top, right, bottom, left */
   padding: 7px 15px 3px 15px;
-  background: #2C5463;
-  color: #ffffff;
+  background: $navbar_background_light;
+  color: $main_color;
   margin-left: 0px;
   white-space: nowrap;
   height:30px; /* Width and height of top-level nav items */

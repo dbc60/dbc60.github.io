@@ -1,8 +1,8 @@
 <aside>
     <!-- Added sidebar content -->
     <section id="sidebar">
-        <h2>This Year's Posts</h2>
-        {%for post in site.posts %}
+        <h2>{{ 'now' | date: "%Y" }}</h2>
+        {% for post in site.posts %}
           {% unless post.next %}
             <ul class="this">
           {% else %}
