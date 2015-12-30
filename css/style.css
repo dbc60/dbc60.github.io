@@ -199,7 +199,7 @@ header {
   background: linear-gradient(to bottom, #457485, #022735);
   width: 960px;
   height: 150px;
-  background-image: url(/img/aquarium-slice.jpg);
+  background-image: url(../img/aquarium-slice.jpg);
 }
 
 /* line 133, ../_sass/style.scss */
