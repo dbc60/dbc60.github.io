@@ -52,6 +52,7 @@ permalink: /blog/:year/:title/
 #paginate_path: '/blog/:year/:title/page:num/'
 #paginate:      5
 
+excerpt_separator: "<!--more-->"
 markdown:       kramdown
 markdown_ext:   markdown,mkdown,mkdn,mkd,md
 
