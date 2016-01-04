@@ -66,12 +66,14 @@ $navbar_background_dark: $color-primary-4;
 $navbar_border_color: $color-primary-2;
 $footer_border_color: $color-primary-2;
 $selection_background: $color-primary-2;
-$main_background: $DarkGray;
+//$main_background: $DarkGray;
+$main_background: #49483e;
+
 $main_color: rgba(255, 255, 255, 0.8);
 $text_color: $main_color;
 $link_color: $color-primary-3;
 $hover_color: $color-primary-4;
-$heading_h2_color: $color-primary-0;
+$heading_h2_color: $color-primary-2;
 $time_color: rgba(255, 255, 255, 0.5);
 
 $cssMiddot: "\00b7";

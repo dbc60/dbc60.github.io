@@ -4,6 +4,11 @@
 
 @import 'variables';
 @import 'svg-icons';
+//@import 'pygments/default';
+@import 'pygments/monokai';
+//@import 'pygments/paraiso-dark';
+//@import 'pygments/manni';
+
 
 /*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 
@@ -555,7 +560,7 @@ nav ul li ul li a {
 
     pre,
     blockquote {
-        border: 1px solid #999;
+        //border: 1px solid #999;
         page-break-inside: avoid;
     }
 

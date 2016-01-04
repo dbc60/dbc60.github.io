@@ -6,3 +6,4 @@ gem "github-pages"
 # I also like compass and sass (.scss), so I'm including these gems, too.
 gem "sass"
 gem "compass"
+gem "rouge"

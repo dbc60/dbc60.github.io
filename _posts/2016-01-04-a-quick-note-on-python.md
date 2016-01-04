@@ -21,7 +21,7 @@ def cycle_length(n):
 
     while (n != 1):
         if (n % 2):
-            # n is odd, so mulitply by 3 and add 1
+            # n is odd, so multiply by 3 and add 1
             n = 3 * n + 1
         else:
             # n is even, so divide by 2
