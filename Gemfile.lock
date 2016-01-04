@@ -155,7 +155,6 @@ DEPENDENCIES
   compass
   github-pages
   rouge
-  sass
 
 BUNDLED WITH
    1.11.2

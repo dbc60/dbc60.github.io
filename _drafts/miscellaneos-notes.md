@@ -4,8 +4,9 @@ title: Miscellaneous Notes
 excerpt:
 categories: [notes, jekyll]
 ---
-
-The directory structure in your repository and the configuration of Jekyll and Compass are tied closely together. It's important to tell Jekyll to exclude the Compass configuration file and the bundler Gemfile and Gemfile.lock files. Include the following in your _config.yml file:
+The directory structure in your repository and the configuration of Jekyll and Compass are tied closely together.
+<!--more-->
+It's important to tell Jekyll to exclude the Compass configuration file and the bundler Gemfile and Gemfile.lock files. Include the following in your _config.yml file:
 
 ```
 # Exclude these files from your production _site

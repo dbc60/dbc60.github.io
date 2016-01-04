@@ -4,6 +4,7 @@ title: Writing Notes
 category: blog
 tags: [writing]
 ---
+<!--more-->
 ## Point of View
 [This article](http://writingcommons.org/index.php/open-text/style/point-of-view/635-understanding-second-person-point-of-view-wizard-activity) is the best and most enjoyable description of how to use the first, second and third person points of view.
 

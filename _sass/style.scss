@@ -119,8 +119,11 @@ h2 {
 a:link {
     color: $link_color;
 }
-a:hover, a:visited {
+a:hover {
     color: $hover_color;
+}
+a:visited {
+    color: $visited_color;
 }
 
 .archive {

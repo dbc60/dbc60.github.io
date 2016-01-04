@@ -559,57 +559,62 @@ body {
 
 /* line 115, ../_sass/style.scss */
 h2 {
-  color: #457485;
+  color: #dddddd;
 }
 
 /* line 119, ../_sass/style.scss */
 a:link {
-  color: #103E50;
+  color: #002533;
 }
 
 /* line 122, ../_sass/style.scss */
-a:hover, a:visited {
-  color: #022735;
+a:hover {
+  color: #abcdef;
 }
 
-/* line 126, ../_sass/style.scss */
+/* line 125, ../_sass/style.scss */
+a:visited {
+  color: #111111;
+}
+
+/* line 129, ../_sass/style.scss */
 .archive {
   color: rgba(255, 255, 255, 0.5);
 }
 
 /* Adding some background colors so we can see where our boxes are */
-/* line 131, ../_sass/style.scss */
+/* line 134, ../_sass/style.scss */
 header {
-  background: linear-gradient(to bottom, #457485, #022735);
+  background: linear-gradient(to bottom, #27586B, #002533);
   width: 960px;
   height: 150px;
   background-image: url(../img/aquarium-slice.jpg);
 }
 
-/* line 138, ../_sass/style.scss */
+/* line 141, ../_sass/style.scss */
 header h1 {
   visibility: visible;
   font-family: Georgia, serif;
   font-size: 1.8em;
   padding: 0px 0 0px 15px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #dddddd;
   margin-top: 0.2em;
   margin-bottom: 0;
 }
 
-/* line 148, ../_sass/style.scss */
+/* line 151, ../_sass/style.scss */
 header p {
   visibility: visible;
   font-family: "Helvetica Neue", Helvetica, "Noto Sans", Arial, sans-serif;
   font-size: 1.0em;
   padding: 0px 0 0px 15px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #dddddd;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 /* Positioning for our logo image */
-/* line 159, ../_sass/style.scss */
+/* line 162, ../_sass/style.scss */
 img#headerimg {
   position: relative;
   top: 7px;
@@ -617,9 +622,9 @@ img#headerimg {
 }
 
 /* Change colors in the footer. Change height and add background image. */
-/* line 166, ../_sass/style.scss */
+/* line 169, ../_sass/style.scss */
 footer {
-  background: linear-gradient(to bottom, #457485, #022735);
+  background: linear-gradient(to bottom, #27586B, #002533);
   border-top: thick solid #457485;
   color: #ffffff;
   height: 120px;
@@ -627,18 +632,18 @@ footer {
 }
 
 /* Different link colors in the footer */
-/* line 175, ../_sass/style.scss */
+/* line 178, ../_sass/style.scss */
 footer a:link {
   color: #888888;
 }
 
-/* line 179, ../_sass/style.scss */
+/* line 182, ../_sass/style.scss */
 footer a:visited {
   color: #ffffff;
 }
 
 /* BEGIN FOOTER TEXT STYLES */
-/* line 186, ../_sass/style.scss */
+/* line 189, ../_sass/style.scss */
 footer p#about {
   width: 300px;
   /* margin order: top, right, bottom, left */
@@ -648,7 +653,7 @@ footer p#about {
   /* Other elements in the footer will wrap to the right of this */
 }
 
-/* line 193, ../_sass/style.scss */
+/* line 196, ../_sass/style.scss */
 footer section#footerlist {
   float: right;
   /* Place this on the other side of the footer */
@@ -657,24 +662,24 @@ footer section#footerlist {
   /* Play with this */
 }
 
-/* line 199, ../_sass/style.scss */
+/* line 202, ../_sass/style.scss */
 footer section#footerlist ul {
   padding-left: 0px;
   /* Unindent the list so it lines up with the h3 above it. */
 }
 
-/* line 203, ../_sass/style.scss */
+/* line 206, ../_sass/style.scss */
 footer section#footerlist ul li {
   list-style-type: none;
   /* Remove default discs from list items. */
 }
 
-/* line 207, ../_sass/style.scss */
+/* line 210, ../_sass/style.scss */
 footer section#footerlist h3 {
   margin-top: 0px;
 }
 
-/* line 211, ../_sass/style.scss */
+/* line 214, ../_sass/style.scss */
 footer p#footercopy {
   clear: both;
   text-align: center;
@@ -685,28 +690,28 @@ footer p#footercopy {
 /* END FOOTER STYLES */
 /* Add some padding to our boxes. This overrides the browser defaults that added a
    1em */
-/* line 224, ../_sass/style.scss */
+/* line 227, ../_sass/style.scss */
 aside, footer {
   padding: 10px;
 }
 
-/* line 228, ../_sass/style.scss */
+/* line 231, ../_sass/style.scss */
 aside {
-  background-color: #6D92A0;
+  background-color: #457485;
   width: auto;
   float: right;
 }
 
-/* line 235, ../_sass/style.scss */
+/* line 238, ../_sass/style.scss */
 aside h2 {
   font-family: Georgia, serif;
   font-size: 1.0em;
   margin-bottom: 20px;
   margin-top: 20px;
-  color: #457485;
+  color: #dddddd;
 }
 
-/* line 243, ../_sass/style.scss */
+/* line 246, ../_sass/style.scss */
 aside ul li {
   font-family: Georgia, serif;
   font-size: 0.9em;
@@ -714,7 +719,7 @@ aside ul li {
 }
 
 /* Give a width to our content area and center it. */
-/* line 251, ../_sass/style.scss */
+/* line 254, ../_sass/style.scss */
 div#container {
   background-color: #DBDBDB;
   width: 960px;
@@ -756,14 +761,14 @@ div#container {
 /* Using display: flex; to make the sidebar column the same length as the main content.
    See: http://tutorialzine.com/2014/10/easiest-way-equal-height-sidebar/ for details.
    */
-/* line 289, ../_sass/style.scss */
+/* line 292, ../_sass/style.scss */
 #boxes {
   display: flex;
 }
 
-/* line 293, ../_sass/style.scss */
+/* line 296, ../_sass/style.scss */
 section#main {
-  background-color: #49483e;
+  background-color: #59584e;
   /* This makes the element grow and take all available space, not taken by the sidebar */
   flex-grow: 1;
   width: 710px;
@@ -771,13 +776,13 @@ section#main {
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 20px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #dddddd;
 }
 
 /* Specify fonts for section H1s and article Ps. Note that
     <link href='http://fonts.googleapis.com/css?family=Kreon' rel='stylesheet' type='text/css'>
    was added to _includes/head.html to make the Kreon font-family available. */
-/* line 309, ../_sass/style.scss */
+/* line 312, ../_sass/style.scss */
 section#main article h1 {
   font-family: Georgia, serif;
   font-size: 2.0em;
@@ -785,27 +790,27 @@ section#main article h1 {
   margin-top: 20px;
 }
 
-/* line 316, ../_sass/style.scss */
+/* line 319, ../_sass/style.scss */
 section#main article p {
   font-family: "Helvetica Neue", Helvetica, "Noto Sans", Arial, sans-serif;
   font-size: 1.2em;
   letter-spacing: 1.25px;
   line-height: 1.25em;
-  color: rgba(255, 255, 255, 0.8);
+  color: #dddddd;
 }
 
 /* Styling for image div with caption */
-/* line 325, ../_sass/style.scss */
+/* line 328, ../_sass/style.scss */
 section#main .article_img {
   float: left;
   width: 200px;
   padding: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid #dddddd;
   margin: 5px 20px 5px 0px;
 }
 
 /* Styling for caption within image div */
-/* line 334, ../_sass/style.scss */
+/* line 337, ../_sass/style.scss */
 section#main .article_img p {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -816,14 +821,14 @@ section#main .article_img p {
 
 /* Adding set of rules for navigation menu */
 /* START NAV MENU */
-/* line 345, ../_sass/style.scss */
+/* line 348, ../_sass/style.scss */
 nav {
-  background-color: #457485;
-  border-bottom: thick solid #457485;
+  background-color: #27586B;
+  border-bottom: thick solid #27586B;
   height: 40px;
 }
 
-/* line 352, ../_sass/style.scss */
+/* line 355, ../_sass/style.scss */
 nav ul {
   font-family: Arial, Verdana;
   font-size: 20px;
@@ -832,26 +837,26 @@ nav ul {
   list-style: none;
 }
 
-/* line 360, ../_sass/style.scss */
+/* line 363, ../_sass/style.scss */
 nav ul li {
   display: block;
   position: relative;
   float: left;
 }
 
-/* line 366, ../_sass/style.scss */
+/* line 369, ../_sass/style.scss */
 nav li ul {
   display: none;
 }
 
-/* line 370, ../_sass/style.scss */
+/* line 373, ../_sass/style.scss */
 nav ul li:first-child a {
   display: block;
   text-decoration: none;
   /* padding order: top, right, bottom, left */
   padding: 7px 15px 3px 0px;
-  background: #457485;
-  color: rgba(255, 255, 255, 0.8);
+  background: #27586B;
+  color: #dddddd;
   margin-left: 0px;
   white-space: nowrap;
   height: 30px;
@@ -860,14 +865,14 @@ nav ul li:first-child a {
   text-align: center;
 }
 
-/* line 384, ../_sass/style.scss */
+/* line 387, ../_sass/style.scss */
 nav ul li a {
   display: block;
   text-decoration: none;
   /* padding: top, right, bottom, left */
   padding: 7px 15px 3px 15px;
-  background: #457485;
-  color: rgba(255, 255, 255, 0.8);
+  background: #27586B;
+  color: #dddddd;
   margin-left: 0px;
   white-space: nowrap;
   height: 30px;
@@ -876,37 +881,37 @@ nav ul li a {
   text-align: center;
 }
 
-/* line 398, ../_sass/style.scss */
+/* line 401, ../_sass/style.scss */
 nav ul li a:hover {
   background: #617F8A;
 }
 
-/* line 402, ../_sass/style.scss */
+/* line 405, ../_sass/style.scss */
 nav li:hover ul {
   display: block;
   position: absolute;
   height: 30px;
 }
 
-/* line 408, ../_sass/style.scss */
+/* line 411, ../_sass/style.scss */
 nav li:hover li {
   float: none;
   font-size: 11px;
 }
 
-/* line 414, ../_sass/style.scss */
+/* line 417, ../_sass/style.scss */
 nav li:hover a {
   background: #3A464F;
   height: 30px;
   /* Height of lower-level nav items is shorter than main level */
 }
 
-/* line 419, ../_sass/style.scss */
+/* line 422, ../_sass/style.scss */
 nav li:hover li a:hover {
   background: #95A9B1;
 }
 
-/* line 423, ../_sass/style.scss */
+/* line 426, ../_sass/style.scss */
 nav ul li ul li a {
   text-align: left;
   /* Top-level items are centered, but nested list items are left-aligned */
@@ -919,7 +924,7 @@ nav ul li ul li a {
 /*
  * Hide visually and from screen readers:
  */
-/* line 438, ../_sass/style.scss */
+/* line 441, ../_sass/style.scss */
 .hidden {
   display: none !important;
 }
@@ -928,7 +933,7 @@ nav ul li ul li a {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 447, ../_sass/style.scss */
+/* line 450, ../_sass/style.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -945,7 +950,7 @@ nav ul li ul li a {
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-/* line 464, ../_sass/style.scss */
+/* line 467, ../_sass/style.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -959,7 +964,7 @@ nav ul li ul li a {
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-/* line 478, ../_sass/style.scss */
+/* line 481, ../_sass/style.scss */
 .invisible {
   visibility: hidden;
 }
@@ -975,7 +980,7 @@ nav ul li ul li a {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 494, ../_sass/style.scss */
+/* line 497, ../_sass/style.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -984,7 +989,7 @@ nav ul li ul li a {
   /* 2 */
 }
 
-/* line 500, ../_sass/style.scss */
+/* line 503, ../_sass/style.scss */
 .clearfix:after {
   clear: both;
 }
@@ -1006,7 +1011,7 @@ nav ul li ul li a {
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 @media print {
-  /* line 528, ../_sass/style.scss */
+  /* line 531, ../_sass/style.scss */
   *,
   *:before,
   *:after {
@@ -1018,18 +1023,18 @@ nav ul li ul li a {
     text-shadow: none !important;
   }
 
-  /* line 538, ../_sass/style.scss */
+  /* line 541, ../_sass/style.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 543, ../_sass/style.scss */
+  /* line 546, ../_sass/style.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 547, ../_sass/style.scss */
+  /* line 550, ../_sass/style.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -1038,13 +1043,13 @@ nav ul li ul li a {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 556, ../_sass/style.scss */
+  /* line 559, ../_sass/style.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 561, ../_sass/style.scss */
+  /* line 564, ../_sass/style.scss */
   pre,
   blockquote {
     page-break-inside: avoid;
@@ -1054,23 +1059,23 @@ nav ul li ul li a {
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  /* line 572, ../_sass/style.scss */
+  /* line 575, ../_sass/style.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 576, ../_sass/style.scss */
+  /* line 579, ../_sass/style.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 581, ../_sass/style.scss */
+  /* line 584, ../_sass/style.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 585, ../_sass/style.scss */
+  /* line 588, ../_sass/style.scss */
   p,
   h2,
   h3 {
@@ -1078,7 +1083,7 @@ nav ul li ul li a {
     widows: 3;
   }
 
-  /* line 592, ../_sass/style.scss */
+  /* line 595, ../_sass/style.scss */
   h2,
   h3 {
     page-break-after: avoid;

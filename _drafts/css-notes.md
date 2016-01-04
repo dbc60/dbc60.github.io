@@ -3,7 +3,10 @@ layout: post
 title: CSS and Sass Notes
 category: blog
 tags: [css, compass, sass]
+excerpt: I can't memorize 30 separate CSS selectors, unless they're organized.
 ---
+
+<!--more-->
 ## CSS Selectors
 I found a set of 30 CSS selectors in the article "[The 30 CSS Selectors You Must Memorize](http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)." I can't memorize 30 separate items easily, but these selectors can be classified into coherent groups. First, here's the list of all 30 selectors from the article:
 

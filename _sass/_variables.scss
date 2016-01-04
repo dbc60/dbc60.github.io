@@ -33,6 +33,7 @@ $DarkReef: #CEF0AD;
 $Cosmic: #794d60;
 $DarkCosmic: #784859;
 $Dingley: #597848;
+$BackgroundGray: #59584e;
 
 $Cornflower: #8CCAF0; // lighter than cornflowerblue
 $Chambray: #475877;
@@ -42,38 +43,44 @@ $Ghost: #C0BFC7;
 // SASS style sheet */
 // Palette color codes */
 // Palette URL: http://paletton.com/#uid=13q0u0kllllaFw0g0qFqFg0w0aF */
+$PrimaryMiddleBlue: #27586B;
+$PrimaryLightestBlue: #6D92A0;
+$PrimaryLightBlue: #457485;
+$PrimaryDarkBlue: #205E70;
+$PrimaryDarkestBlue: #002533;
 
-// Feel free to copy&paste color codes to your application */
+$color-primary-0: $PrimaryMiddleBlue;
+$color-primary-1: $PrimaryLightestBlue;
+$color-primary-2: $PrimaryLightBlue;
+$color-primary-3: $PrimaryDarkBlue;
+$color-primary-4: $PrimaryDarkestBlue;
 
-// As hex codes */
-$color-primary-0: #27586B;	// Main Primary color */
-$color-primary-1: #6D92A0;
-$color-primary-2: #457485;
-$color-primary-3: #103E50;
-$color-primary-4: #022735;
+// Sidebar
+//$sidebar_background_color: $color-primary-1;
+$sidebar_background_color: $color-primary-2;
 
-// As RGBa codes */
-$rgba-primary-0: rgba( 39, 88,107,1);	// Main Primary color */
-$rgba-primary-1: rgba(109,146,160,1);
-$rgba-primary-2: rgba( 69,116,133,1);
-$rgba-primary-3: rgba( 16, 62, 80,1);
-$rgba-primary-4: rgba(  2, 39, 53,1);
-
-
-$sidebar_background_color: $color-primary-1;
-$navbar_background_light: $color-primary-2;
+// Navigation
+$navbar_background_light: $color-primary-0;
+$navbar_border_color: $navbar_background_light;
 $navbar_background_dark: $color-primary-4;
-$navbar_border_color: $color-primary-2;
+
+// Footer
 $footer_border_color: $color-primary-2;
 $selection_background: $color-primary-2;
-//$main_background: $DarkGray;
-$main_background: #49483e;
 
-$main_color: rgba(255, 255, 255, 0.8);
+//$main_background: $DarkGray;
+$main_background: $BackgroundGray;
+
+$main_color: $Silver; //was rgba(255, 255, 255, 0.8);
 $text_color: $main_color;
-$link_color: $color-primary-3;
-$hover_color: $color-primary-4;
-$heading_h2_color: $color-primary-2;
+
+// Links
+$link_color: $color-primary-4;
+$hover_color: $PaleCornflowerBlue;
+$visited_color: $Black;
+
+// H2 headings
+$heading_h2_color: $main-color;
 $time_color: rgba(255, 255, 255, 0.5);
 
 $cssMiddot: "\00b7";

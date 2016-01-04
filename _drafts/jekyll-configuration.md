@@ -6,7 +6,9 @@ category: blog
 tags: [jekyll, yaml]
 ---
 
-Jekyll is so easy to get up and running. According to the (Jekyll website)[https://jekyllrb.com] all you have to do to install Jekyll, create a new blog project and start a web server that watches for changes is:
+Jekyll is so easy to get up and running.
+<!--more-->
+According to the (Jekyll website)[https://jekyllrb.com] all you have to do to install Jekyll, create a new blog project and start a web server that watches for changes is:
 
     gem install jekyll
     jekyll new my-blog
