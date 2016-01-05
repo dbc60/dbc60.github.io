@@ -625,7 +625,7 @@ img#headerimg {
 /* line 169, ../_sass/style.scss */
 footer {
   background: linear-gradient(to bottom, #27586B, #002533);
-  border-top: thick solid #457485;
+  border-top: thick solid #27586B;
   color: #ffffff;
   height: 120px;
   clear: both;
