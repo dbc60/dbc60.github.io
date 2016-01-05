@@ -5,7 +5,7 @@ description: An exploration of software development
 avatar: http://www.gravatar.com/avatar/71b1b3ffdc9fec49fe58bb0dfa43a402
 
 # Github Configuration
-highligher: pygments   # The default highlighter for GitHub Pages
+highlighter: pygments   # The default highlighter for GitHub Pages
 #highlighter: rouge   # Maybe one day GitHub Pages will support rouge
 
 # GitHub Pages Metadata (see https://help.github.com/articles/repository-metadata-on-github-pages/)
