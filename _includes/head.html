@@ -1,5 +1,4 @@
 <head>
-    {% include meta.html %}
 
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -20,7 +19,9 @@
         type="application/rss+xml"
         title="{{ site.name }} - {{ site.description }}"
         href="{{ site.baseurl }}/feed.xml" >
-    <link
+    <!-- <link
         rel="canonical"
-        href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+        href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"> -->
+
+    {% include meta.html %}
 </head>

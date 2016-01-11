@@ -4,6 +4,7 @@ title: API Design
 excerpt: API design is about eliminating discontinuities.
 ---
 Certainly one aspect of API design is to make the API as regular and as easy to use as possible. I like this quote:
+
 <!--more-->
 > The primary goal of component API design is to eliminate API discontinuities.
   -- Casey Muratori
