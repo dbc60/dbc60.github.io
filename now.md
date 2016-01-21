@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: What am I doing now?
 permalink: /now/
 excerpt: What have I done lately?
 ---
