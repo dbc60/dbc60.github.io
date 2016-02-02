@@ -716,7 +716,7 @@ aside h2 {
 aside ul li {
   font-family: Georgia, serif;
   font-size: 0.9em;
-  line-height: 1.25em;
+  line-height: 1.25;
 }
 
 /* Give a width to our content area and center it. */
@@ -796,7 +796,7 @@ section#main article p {
   font-family: "Helvetica Neue", Helvetica, "Noto Sans", Arial, sans-serif;
   font-size: 1.2em;
   letter-spacing: 1.25px;
-  line-height: 1.25em;
+  line-height: 1.25;
   color: #dddddd;
 }
 
@@ -810,8 +810,15 @@ section#main .article_img {
   margin: 5px 20px 5px 0px;
 }
 
+/* line 336, ../_sass/style.scss */
+section#main .article_img2 {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 20px 5px 0px;
+}
+
 /* Styling for caption within image div */
-/* line 337, ../_sass/style.scss */
+/* line 343, ../_sass/style.scss */
 section#main .article_img p {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -822,14 +829,14 @@ section#main .article_img p {
 
 /* Adding set of rules for navigation menu */
 /* START NAV MENU */
-/* line 348, ../_sass/style.scss */
+/* line 354, ../_sass/style.scss */
 nav {
   background-color: #27586B;
   border-bottom: thick solid #27586B;
   height: 40px;
 }
 
-/* line 355, ../_sass/style.scss */
+/* line 361, ../_sass/style.scss */
 nav ul {
   font-family: Arial, Verdana;
   font-size: 20px;
@@ -838,19 +845,19 @@ nav ul {
   list-style: none;
 }
 
-/* line 363, ../_sass/style.scss */
+/* line 369, ../_sass/style.scss */
 nav ul li {
   display: block;
   position: relative;
   float: left;
 }
 
-/* line 369, ../_sass/style.scss */
+/* line 375, ../_sass/style.scss */
 nav li ul {
   display: none;
 }
 
-/* line 373, ../_sass/style.scss */
+/* line 379, ../_sass/style.scss */
 nav ul li:first-child a {
   display: block;
   text-decoration: none;
@@ -866,7 +873,7 @@ nav ul li:first-child a {
   text-align: center;
 }
 
-/* line 387, ../_sass/style.scss */
+/* line 393, ../_sass/style.scss */
 nav ul li a {
   display: block;
   text-decoration: none;
@@ -882,37 +889,37 @@ nav ul li a {
   text-align: center;
 }
 
-/* line 401, ../_sass/style.scss */
+/* line 407, ../_sass/style.scss */
 nav ul li a:hover {
   background: #617F8A;
 }
 
-/* line 405, ../_sass/style.scss */
+/* line 411, ../_sass/style.scss */
 nav li:hover ul {
   display: block;
   position: absolute;
   height: 30px;
 }
 
-/* line 411, ../_sass/style.scss */
+/* line 417, ../_sass/style.scss */
 nav li:hover li {
   float: none;
   font-size: 11px;
 }
 
-/* line 417, ../_sass/style.scss */
+/* line 423, ../_sass/style.scss */
 nav li:hover a {
   background: #3A464F;
   height: 30px;
   /* Height of lower-level nav items is shorter than main level */
 }
 
-/* line 422, ../_sass/style.scss */
+/* line 428, ../_sass/style.scss */
 nav li:hover li a:hover {
   background: #95A9B1;
 }
 
-/* line 426, ../_sass/style.scss */
+/* line 432, ../_sass/style.scss */
 nav ul li ul li a {
   text-align: left;
   /* Top-level items are centered, but nested list items are left-aligned */
@@ -925,7 +932,7 @@ nav ul li ul li a {
 /*
  * Hide visually and from screen readers:
  */
-/* line 441, ../_sass/style.scss */
+/* line 447, ../_sass/style.scss */
 .hidden {
   display: none !important;
 }
@@ -934,7 +941,7 @@ nav ul li ul li a {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 450, ../_sass/style.scss */
+/* line 456, ../_sass/style.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -951,7 +958,7 @@ nav ul li ul li a {
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-/* line 467, ../_sass/style.scss */
+/* line 473, ../_sass/style.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -965,7 +972,7 @@ nav ul li ul li a {
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-/* line 481, ../_sass/style.scss */
+/* line 487, ../_sass/style.scss */
 .invisible {
   visibility: hidden;
 }
@@ -981,7 +988,7 @@ nav ul li ul li a {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 497, ../_sass/style.scss */
+/* line 503, ../_sass/style.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -990,7 +997,7 @@ nav ul li ul li a {
   /* 2 */
 }
 
-/* line 503, ../_sass/style.scss */
+/* line 509, ../_sass/style.scss */
 .clearfix:after {
   clear: both;
 }
@@ -1012,7 +1019,7 @@ nav ul li ul li a {
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 @media print {
-  /* line 531, ../_sass/style.scss */
+  /* line 537, ../_sass/style.scss */
   *,
   *:before,
   *:after {
@@ -1024,18 +1031,18 @@ nav ul li ul li a {
     text-shadow: none !important;
   }
 
-  /* line 541, ../_sass/style.scss */
+  /* line 547, ../_sass/style.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 546, ../_sass/style.scss */
+  /* line 552, ../_sass/style.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 550, ../_sass/style.scss */
+  /* line 556, ../_sass/style.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -1044,13 +1051,13 @@ nav ul li ul li a {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 559, ../_sass/style.scss */
+  /* line 565, ../_sass/style.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 564, ../_sass/style.scss */
+  /* line 570, ../_sass/style.scss */
   pre,
   blockquote {
     page-break-inside: avoid;
@@ -1060,23 +1067,23 @@ nav ul li ul li a {
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  /* line 575, ../_sass/style.scss */
+  /* line 581, ../_sass/style.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 579, ../_sass/style.scss */
+  /* line 585, ../_sass/style.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 584, ../_sass/style.scss */
+  /* line 590, ../_sass/style.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 588, ../_sass/style.scss */
+  /* line 594, ../_sass/style.scss */
   p,
   h2,
   h3 {
@@ -1084,7 +1091,7 @@ nav ul li ul li a {
     widows: 3;
   }
 
-  /* line 595, ../_sass/style.scss */
+  /* line 601, ../_sass/style.scss */
   h2,
   h3 {
     page-break-after: avoid;

@@ -1,0 +1,7 @@
+digraph Distruptor {
+    RingBuffer[shape=record, label="{<r0> RingBuffer | <r1> | <r2>}"];
+        EntryFactory [shape=record, label="{<r0> \<\<interface\>\>\nEntryFactory | <r1>}"];
+        RingBuffer -> EntryFactory[style=dotted, label=fill, tailport=<r0>, headport=<r0>, taillabel=1];
+        RingBuffer -> Entry[headlabel="1..*", tailport=<r1>, dir=both, arrowtail=diamond];
+        Entry [shape=record, label="{<r0> \<\<interface\>\>\nEntry | <r1>}"];
+}

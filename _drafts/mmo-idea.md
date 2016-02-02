@@ -1,10 +1,13 @@
 ---
 layout: post
-title: MMORPG Idea
+title: Museum MMORPG
 category: games
 tags: [mmo,games,rpg]
 ---
-I've just read an article in The Atlantic, [When a Video-Game World Ends](http://www.theatlantic.com/entertainment/archive/2016/01/when-a-video-game-world-ends/423360/?single_page=true). It made me wonder whether it would be fun to have an MMO where the story starts in a distopian world, probably post-apocolypse. Players find relics through archeological digs with the goal of bringing back past civilizations or building new ones with the relics as their foundation. I wonder what conflicts could ensue, how could information from the past be used, interpreted, misinterpreted and abused as players work together and against other groups to bring some kind of hope or glory to their otherwise meager existence.
+I've just read an article in The Atlantic, [When a Video-Game World Ends](http://www.theatlantic.com/entertainment/archive/2016/01/when-a-video-game-world-ends/423360/?single_page=true). It made me wonder whether it would be fun to have an MMO where the story starts in a dystopian world, probably post-apocolypse, and players find relics through archeological digs with the goal of bringing back past civilizations or building new ones with the relics as their foundation.
+
+<!--more-->
+I wonder what conflicts could ensue, how could information from the past be used, interpreted, misinterpreted and abused as players work together and against other groups to bring some kind of hope or glory to their otherwise meager existence.
 
 Where do players start and what are they doing? Are they like Star Wars bounty hunters, or merely waiting tables in a dusty cantina on the Outer Rim? How do events unfold to open opportunities for players to get out of a mundane life and on the path to achievement, hope and glory?
 
