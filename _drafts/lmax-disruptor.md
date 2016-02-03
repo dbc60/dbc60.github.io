@@ -54,12 +54,6 @@ Once a sequence value is claimed, this entry in the ring buffer is available to 
 ### The Class Diagram
 <img class="article_img2" src="/img/disruptor.svg">
 
-## References
-- [A Comparison of the Disruptor](http://stackoverflow.com/questions/6559308/how-does-lmaxs-disruptor-pattern-work) on stackoverflow.
-- [Getting Started with CoralQueue](http://www.coralblocks.com/index.php/2014/06/getting-started-with-coralqueue/) has a description of a Disruptor implementation.
-- [Dissecting the Disruptor: Demystifying Memory Barriers](http://mechanitis.blogspot.com/2011/08/dissecting-disruptor-why-its-so-fast.html).
-- [Memory Barrier](https://en.wikipedia.org/wiki/Memory_barrier) on Wikipedia.
-
 ## Quick Overview
 There's a nice [comparison of the Disruptor](http://stackoverflow.com/questions/6559308/how-does-lmaxs-disruptor-pattern-work) to a queue, the Actor model and the Staged Event-Driven Architecture (SEDA) on stackoverflow, by Michael Barking. It goes as follows:
 
@@ -211,3 +205,25 @@ In a similar manner, there can be any number of consumers. Each time a consumer 
 For individual consumers, the ones with their own ID generator, the next thing to check is the ability to batch consume. The slots in the buffer are examined in order from the one index by the `consumerCallId` to the one indexed by the recent `producerCallId`. They are examined in a loop by comparing the flag value written in the flag array, against a flag value generated for the consumerCallId. If the flags match it means that the producers filling the slots have committed their changes. If not, the loop is broken, and the highest committed change ID is returned. The slots from `consumerCallId` to received in change ID can be consumed in batch.
 
 If a group of consumers read together (the ones with a shared ID generator), each one only takes a single call ID, and only the slot for that single call ID is checked and returned.
+
+## References
+- [LMAX Exchange](https://www.lmax.com/)
+- [A Comparison of the Disruptor](http://stackoverflow.com/questions/6559308/how-does-lmaxs-disruptor-pattern-work) on stackoverflow.
+- [Getting Started with CoralQueue](http://www.coralblocks.com/index.php/2014/06/getting-started-with-coralqueue/) has a description of a Disruptor implementation.
+- [Dissecting the Disruptor: Demystifying Memory Barriers](http://mechanitis.blogspot.com/2011/08/dissecting-disruptor-why-its-so-fast.html).
+- [Memory Barrier](https://en.wikipedia.org/wiki/Memory_barrier) on Wikipedia.
+- [comparison of the Disruptor](http://stackoverflow.com/questions/6559308/how-does-lmaxs-disruptor-pattern-work) to a queue, the Actor model and the Staged Event-Driven Architecture (SEDA)
+[Acquire and Release Semantics](http://preshing.com/20120913/acquire-and-release-semantics/), by Jeff Preshing
+* [Acquire and Release Fences](http://preshing.com/20130922/acquire-and-release-fences/)
+* [Acquire and Release Fences Don't Work the Way You'd Expect](http://preshing.com/20131125/acquire-and-release-fences-dont-work-the-way-youd-expect/)
+* [Memory Barriers Are Like Source Control Operation](http://preshing.com/20120710/memory-barriers-are-like-source-control-operations/)
+* [The Purpose of memory_order_consume in C++11](http://preshing.com/20140709/the-purpose-of-memory_order_consume-in-cpp11/)
+* [Double-Checked Locking is Fixed in C++11](http://preshing.com/20130930/double-checked-locking-is-fixed-in-cpp11/)
+* [The Synchronizes-With Relation](http://preshing.com/20130823/the-synchronizes-with-relation/)
+* [Atomic vs. Non-Atomic Operations](http://preshing.com/20130618/atomic-vs-non-atomic-operations/)
+* [The World's Simplest Lock-Free Hash Table](http://preshing.com/20130605/the-worlds-simplest-lock-free-hash-table/)
+* [Improved Support for Bidirectional Fences](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2633.html) from the "Programming Language C++, Library/Concurrency Subgroup" on 2008-05-16.
+* [Mintomic](http://mintomic.github.io/), a library provides an API for lock-free programming in C and C++ (no C++11 compilers required).
+* [Lockless Programming Considerations for Xbox 360 and Microsoft Windows](https://msdn.microsoft.com/en-us/library/windows/desktop/ee418650.aspx)
+- [Acquire and Release Fences Don't Work the Way You'd Expect](http://preshing.com/20131125/acquire-and-release-fences-dont-work-the-way-youd-expect/)
+- [Why the "volatile" type class should not be used](https://www.kernel.org/doc/Documentation/volatile-considered-harmful.txt)
