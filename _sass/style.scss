@@ -131,14 +131,14 @@ a:visited {
 }
 
 /* Adding some background colors so we can see where our boxes are */
-header {
+header.site-header {
     background: linear-gradient(to bottom, $navbar_background_light, $navbar_background_dark);
     width: $fixed-width;
     height: 150px;
     background-image: url(../img/aquarium-slice.jpg);
 }
 
-header h1 {
+header.site-header h1 {
     visibility: visible;
     font-family: $heading-font-family;
     font-size: 1.8em;
@@ -148,7 +148,7 @@ header h1 {
     margin-bottom: 0;
 }
 
-header p {
+header.site-header p {
     visibility: visible;
     font-family: $body-font-family;
     font-size: 1.0em;
@@ -602,4 +602,14 @@ nav ul li ul li a {
     h3 {
         page-break-after: avoid;
     }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 0.25rem;
+  text-align: left;
+  border: 1px solid #ccc;
 }

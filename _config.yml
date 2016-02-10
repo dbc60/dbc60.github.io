@@ -1,5 +1,6 @@
+# Site settings
 encoding: utf-8
-name: Dream Sketch Code
+title: Dream Sketch Code
 author: Douglas Cuthbertson
 description: An exploration of software development
 avatar: http://www.gravatar.com/avatar/71b1b3ffdc9fec49fe58bb0dfa43a402
@@ -71,10 +72,6 @@ kramdown:
     coderay_line_numbers: true
     coderay_css: class
 
-# markdown: redcarpet
-# redcarpet:
-#     extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript",
-#                  "tables", "with_toc_data"]
 markdown_ext:   markdown,mkdown,mkdn,mkd,md
 
 #  syntax_highlighter: pygments # Change to rouge after updating to Jekyll 3.0

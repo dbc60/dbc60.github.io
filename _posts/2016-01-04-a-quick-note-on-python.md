@@ -1,8 +1,8 @@
 ---
 layout: post
 title: A Quick Note on Python
-category: programming
-tags: [python]
+category: blog
+tags: [python, programming]
 ---
 I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, [Python Programming: Learn Python in One Video](https://www.youtube.com/watch?v=N4mEzFDjqtA&list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&index=2), by [Derek Banas](https://www.youtube.com/user/derekbanas).
 
