@@ -1,5 +1,5 @@
 # Cache
-.sass-cache/
+.sass-cache
 *.sassc
 *.scssc
 
@@ -18,3 +18,4 @@ $RECYCLE.BIN/
 
 # Jekyll
 _site
+.jekyll-metadata
