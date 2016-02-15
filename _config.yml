@@ -44,13 +44,9 @@ gems:         [
 # show_drafts: false
 # limit_posts: 0
 
-#permalink: /:title/
-#permalink: date
-permalink: /blog/:year/:title/
+permalink: date
 
 #paginate_path: '/blog/page:num'
-#permalink: /:year/:title/
-#permalink: /:slug/
 # Pagination can automatically generate the appropriate files and folders you need for paginated listings.
 # It only works within HTML file (like your /index.html file). Jekyll 2 has pagination built-in. You'll need
 # to include the jekyll-paginate plugin-in in your Gemfile and in _config.yml under "gems" for Jekyll 3. make
