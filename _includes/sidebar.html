@@ -1,8 +1,8 @@
-<aside>
+<aside id="sidebar">
     <!-- Added sidebar content -->
     <section id="sidebar">
-        <h2>{{ 'now' | date: "%Y" }}</h2>
-        {% for post in site.posts %}
+        <h4>{{ 'now' | date: "%Y" }}</h4>
+        {% for post in site.categories['blog'] %}
           {% unless post.next %}
             <ul class="this">
           {% else %}
@@ -10,7 +10,7 @@
             {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
             {% if year != nyear %}
               </ul>
-              <h2>{{ post.date | date: '%Y' }}</h2>
+              <h4>{{ post.date | date: '%Y' }}</h4>
               <ul class="past">
             {% endif %}
           {% endunless %}

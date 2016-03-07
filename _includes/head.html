@@ -23,5 +23,41 @@
         rel="canonical"
         href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"> -->
 
+    <!-- MathJax -->
+    <!-- MathJax configuration -->
+    <!-- for configuration options see
+         https://docs.mathjax.org/en/v2.5-latest/options/HTML-CSS.html#configure-html-css
+
+         For CSS style objects see
+         https://docs.mathjax.org/en/v2.5-latest/options/HTML-CSS.html#configure-html-css
+     -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: true
+            },
+            "HTML-CSS": {
+                preferredFont: "TeX",
+                availableFonts: ["STIX","TeX"],
+                styles: {
+                    ".MathJax .merror": {
+                        color:   "#dd0000",
+                        padding: "1px 3px",
+                        "font-style": "normal",
+                        "font-size":  "90%"
+                    }
+                },
+                linebreaks: { automatic: true },
+                scale: 100
+            }
+        });
+    </script>
+
+    <!-- Load MathJax -->
+    <script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+    </script>
     {% include meta.html %}
 </head>
