@@ -11,32 +11,32 @@
    Custom styles
    ========================================================================== */
 
-   /*
-    * A better looking default horizontal rule
-    */
-   hr {
-       display: block;
-       height: 1px;
-       border: 0;
-       border-top: 1px solid #ccc;
-       margin: 1em 0;
-       padding: 0;
-   }
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
 
-   /*
-    * Remove the gap between audio, canvas, iframes,
-    * images, videos and the bottom of their containers:
-    * https://github.com/h5bp/html5-boilerplate/issues/440
-    */
-   // NOTE(doug): This is needed for the little CC-BY-SA icon in the license.
-   audio,
-   canvas,
-   iframe,
-   img,
-   svg,
-   video {
-       vertical-align: middle;
-   }
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+// NOTE(doug): This is needed for the little CC-BY-SA icon in the license.
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
 
 :link {color: $link_color;}
 :link:hover {color: $hover_color;}
