@@ -127,3 +127,25 @@ The redundant link to `/css/normalize.css` is gone. The meta data needed some re
 ```
 
 I slapped in the Jekyll SEO tag at some point without considering what it generates. I found it automatically generates the `<title>` and `<meta property="og:title" content="{site or post title} />"` content, so I can safely remove those.
+
+##
+
+## Design Intent
+An article by Nate Berkopec popped up on [Hacker News](http://news.ycombinator.com). It's about how the judicious use of WebFonts made the [RubyGems site much faster](https://www.nateberkopec.com/2015/11/30/how-changing-webfonts-made-rubygems-10x-faster.html.). Berkopec used the intent of the site's design to determine where WebFonts needed to be used, and other system fonts could be substituted to make the site load faster. One of the conclusions reached was to use Google Fonts, in no small part due to the way these fonts are cached.
+
+Here's the CSS for including a thin, 100 weight version of the very popular Roboto font.
+```css
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v15/2tsd397wLxj96qwHyNIkxHYhjbSpvc47ee6xR_80Hnw.woff2) format('woff2');
+}
+```
+
+What's the intent of the design for my site and how can I use that to guide how it uses fonts and CSS?
+
+- ?
+
+## References
+- [How Changing the WebFonts Made Rubygems.org 10x Faster](https://www.nateberkopec.com/2015/11/30/how-changing-webfonts-made-rubygems-10x-faster.html.)
