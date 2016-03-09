@@ -4,7 +4,7 @@ title: The Pursuit of Happiness Gels in the Imagination
 category: blog
 tags: [happiness,imagination,inspiration,comics]
 ---
-but action needs to be taken in the real world.
+Imagination is good, but action needs to be taken in the real world.
 
 <!--more-->
 
