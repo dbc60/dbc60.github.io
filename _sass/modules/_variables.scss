@@ -1,65 +1,7 @@
 /**************/
 /* VARIABLES  */
 /**************/
-
-@function color_lumanance($color) {
-  // Adapted from: https://gist.github.com/voxpelli/6304812, which was adapted from:
-  // https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
-  // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
-  $rgba: red($color), green($color), blue($color);
-  $rgba2: ();
-
-  @for $i from 1 through 3 {
-    $rgb: nth($rgba, $i);
-    $rgb: $rgb / 255;
-
-    $rgb: if($rgb < .03928, $rgb / 12.92, pow(($rgb + .055) / 1.055, 2.4));
-
-    $rgba2: append($rgba2, $rgb);
-  }
-
-  @return (.2126 * nth($rgba2, 1) + .7152 * nth($rgba2, 2) + 0.0722 * nth($rgba2, 3)) * 100;
-}
-
-@function contrast_ratio($color1, $color2) {
-  // Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
-  // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
-  $luma1: color_lumanance($color1) + 5;
-  $luma2: color_lumanance($color2) + 5;
-  $ratio: $luma1 / $luma2;
-
-  @if $luma1 < $luma2 {
-    $ratio: 1 / $ratio;
-  }
-
-  @return $ratio;
-}
-
-@function text-contrast($color, $bgcolor: $color) {
-  $threshold: 7.0; // 4.5 = WCAG AA,7= WCAG AAA
-  $list: 20 30 40 50 60 70 80 90 100;
-  @each $percent in $list {
-    $lighter: lighten($bgcolor, $percent);
-    $darker: darken($bgcolor, $percent);
-    $darker-ratio: contrast_ratio($color, $darker);
-    $lighter-ratio: contrast_ratio($color, $lighter);
-
-    @if($lighter-ratio > $darker-ratio) {
-      @if ($lighter-ratio > $threshold) {
-        @return $lighter;
-      }
-    }
-
-    @if($darker-ratio > $lighter-ratio) {
-      @if ($darker-ratio > $threshold) {
-        @return $darker;
-      }
-    }
-  }
-
-  @return if(lightness($color) < 51, #FFF, #000)
-}
-
+@import "modules/color-contrast";
 
 // Colors from http://clrs.cc/. These are easier on the eyes than the default HTML/CSS
 // colors of the same name.
@@ -107,7 +49,7 @@ $BackgroundGray: $Merlin;
 // Palette color codes */
 // Palette URL: http://paletton.com/#uid=13q0u0kllllaFw0g0qFqFg0w0aF
 // A monochromatic color palette, also known as the Pastel preset with a base color of #27586B
-//$PrimaryMiddleBlue: #27586B;    // base
+//$Primary$body_width #27586B;    // base
 $PrimaryMiddleBlue: #30515d;
 $PrimaryLightestBlue: #6D92A0;
 $PrimaryLightBlue: #457485;
@@ -120,10 +62,8 @@ $color-primary-2: $PrimaryLightBlue;
 $color-primary-3: $PrimaryDarkBlue;
 $color-primary-4: $PrimaryDarkestBlue;
 
-// Sidebar
-//$sidebar_background_color: $color-primary-1;
-//$sidebar_background_color: $color-primary-2;
-$sidebar_background_color: $color-primary-0;
+// Right column - the sidebar
+$right_column_background_color: $color-primary-0;
 
 // Navigation
 $navbar_background_light: $color-primary-0;
@@ -134,27 +74,36 @@ $navbar_background_dark: $color-primary-4;
 $footer_border_color: $navbar_background_light;
 $selection_background: $color-primary-2;
 
-//$main_background_color: $DarkGray;
-$main_background_color: $BackgroundGray;
+//$left_column_background_color: $DarkGray;
+$left_column_background_color: $BackgroundGray;
+$code_block_background_color: $BlackPearl;
+$inline_code_background_color: $left_column_background_color - #111111;
 
-//$main_color: was rgba(255, 255, 255, 0.8);
-$main_color: text-contrast($main_background_color);
-$text_color: $main_color;
+$body_width: 1200px;
+$left_column_width: $body_width * 19 / 24;
+$left_column_color: text-contrast($left_column_background_color);
+$left_column_horizontal_padding: 25px;
+$left_column_vertical_padding: 20px;
+$text_color: $left_column_color;
+$excerpt_color: $Olive;
+$post_date_color: $Cornflower;
+
+$right_column_padding: 10px;
+$right_column_width: $body_width - $left_column_width - $right_column_padding * 2;
 
 // Links
 //$link_color: $Teal;
 $link_color: $OysterBay;
-$hover_color: text-contrast($main_background_color);
-$visited_color: text-contrast($main_background_color);
+$hover_color: text-contrast($left_column_background_color);
+$visited_color: text-contrast($left_column_background_color);
 $visited_hover_color: $Whisper;
 $link_active_color: $Green;
 
 // H2 headings
-$heading_h2_color: $main-color;
+$heading_h2_color: $left_column_color;
 $time_color: rgba(255, 255, 255, 0.5);
 
 $cssMiddot: "\00b7";
-$fixed-width: 960px;
 $left_logo_and_menu: 15px;
 
 // Font stacks

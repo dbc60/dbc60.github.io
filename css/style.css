@@ -516,281 +516,359 @@ th {
  * Syntax highlighting styles
  */
 /* line 4, ../_sass/_syntax-highlighting.scss */
-.highlight {
-  background: #111111;
+code.highlighter-rouge {
+  background-color: #38372e;
+  font-size: 90%;
 }
-/* line 7, ../_sass/_syntax-highlighting.scss */
-.highlighter-rouge .highlight {
-  background: #1E272C;
+
+/* line 9, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge {
+  background-color: #1E272C;
+  overflow: auto;
 }
-/* line 10, ../_sass/_syntax-highlighting.scss */
-.highlight .c {
+/* line 13, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .c {
   color: #776e71;
 }
-/* line 11, ../_sass/_syntax-highlighting.scss */
-.highlight .err {
+/* line 14, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .err {
   color: #ef6155;
   border: 1px solid #FF0000;
 }
-/* line 12, ../_sass/_syntax-highlighting.scss */
-.highlight .k {
+/* line 15, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .k {
   color: #815ba4;
 }
-/* line 13, ../_sass/_syntax-highlighting.scss */
-.highlight .l {
+/* line 16, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .l {
   color: #f99b15;
 }
-/* line 14, ../_sass/_syntax-highlighting.scss */
-.highlight .n {
-  color: #e7e9db;
-}
-/* line 15, ../_sass/_syntax-highlighting.scss */
-.highlight .o {
-  color: #5bc4bf;
-}
-/* line 16, ../_sass/_syntax-highlighting.scss */
-.highlight .p {
-  color: #e7e9db;
-}
 /* line 17, ../_sass/_syntax-highlighting.scss */
-.highlight .cm {
-  color: #776e71;
+.highlighter-rouge .n {
+  color: #e7e9db;
 }
 /* line 18, ../_sass/_syntax-highlighting.scss */
-.highlight .cp {
-  color: #776e71;
+.highlighter-rouge .o {
+  color: #5bc4bf;
 }
 /* line 19, ../_sass/_syntax-highlighting.scss */
-.highlight .c1 {
-  color: #776e71;
+.highlighter-rouge .p {
+  color: #e7e9db;
 }
 /* line 20, ../_sass/_syntax-highlighting.scss */
-.highlight .cs {
+.highlighter-rouge .cm {
   color: #776e71;
 }
 /* line 21, ../_sass/_syntax-highlighting.scss */
-.highlight .gd {
-  color: #ef6155;
+.highlighter-rouge .cp {
+  color: #776e71;
 }
 /* line 22, ../_sass/_syntax-highlighting.scss */
-.highlight .ge {
-  font-style: italic;
+.highlighter-rouge .c1 {
+  color: #776e71;
 }
 /* line 23, ../_sass/_syntax-highlighting.scss */
-.highlight .gh {
-  color: #e7e9db;
-  font-weight: bold;
+.highlighter-rouge .cs {
+  color: #776e71;
 }
 /* line 24, ../_sass/_syntax-highlighting.scss */
-.highlight .gi {
-  color: #48b685;
+.highlighter-rouge .gd {
+  color: #ef6155;
 }
 /* line 25, ../_sass/_syntax-highlighting.scss */
-.highlight .gp {
-  color: #776e71;
-  font-weight: bold;
+.highlighter-rouge .ge {
+  font-style: italic;
 }
 /* line 26, ../_sass/_syntax-highlighting.scss */
-.highlight .gs {
+.highlighter-rouge .gh {
+  color: #e7e9db;
   font-weight: bold;
 }
 /* line 27, ../_sass/_syntax-highlighting.scss */
-.highlight .gu {
+.highlighter-rouge .gi {
+  color: #48b685;
+}
+/* line 28, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .gp {
+  color: #776e71;
+  font-weight: bold;
+}
+/* line 29, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .gs {
+  font-weight: bold;
+}
+/* line 30, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .gu {
   color: #5bc4bf;
   font-weight: bold;
 }
-/* line 28, ../_sass/_syntax-highlighting.scss */
-.highlight .kc {
-  color: #815ba4;
-}
-/* line 29, ../_sass/_syntax-highlighting.scss */
-.highlight .kd {
-  color: #815ba4;
-}
-/* line 30, ../_sass/_syntax-highlighting.scss */
-.highlight .kn {
-  color: #5bc4bf;
-}
 /* line 31, ../_sass/_syntax-highlighting.scss */
-.highlight .kp {
+.highlighter-rouge .kc {
   color: #815ba4;
 }
 /* line 32, ../_sass/_syntax-highlighting.scss */
-.highlight .kr {
+.highlighter-rouge .kd {
   color: #815ba4;
 }
 /* line 33, ../_sass/_syntax-highlighting.scss */
-.highlight .kt {
-  color: #fec418;
-}
-/* line 34, ../_sass/_syntax-highlighting.scss */
-.highlight .ld {
-  color: #48b685;
-}
-/* line 35, ../_sass/_syntax-highlighting.scss */
-.highlight .m {
-  color: #f99b15;
-}
-/* line 36, ../_sass/_syntax-highlighting.scss */
-.highlight .s {
-  color: #48b685;
-}
-/* line 37, ../_sass/_syntax-highlighting.scss */
-.highlight .na {
-  color: #06b6ef;
-}
-/* line 38, ../_sass/_syntax-highlighting.scss */
-.highlight .nb {
-  color: #e7e9db;
-}
-/* line 39, ../_sass/_syntax-highlighting.scss */
-.highlight .nc {
-  color: #fec418;
-}
-/* line 40, ../_sass/_syntax-highlighting.scss */
-.highlight .no {
-  color: #ef6155;
-}
-/* line 41, ../_sass/_syntax-highlighting.scss */
-.highlight .nd {
+.highlighter-rouge .kn {
   color: #5bc4bf;
 }
-/* line 42, ../_sass/_syntax-highlighting.scss */
-.highlight .ni {
+/* line 34, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .kp {
+  color: #815ba4;
+}
+/* line 35, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .kr {
+  color: #815ba4;
+}
+/* line 36, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .kt {
+  color: #fec418;
+}
+/* line 37, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .ld {
+  color: #48b685;
+}
+/* line 38, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .m {
+  color: #f99b15;
+}
+/* line 39, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .s {
+  color: #48b685;
+}
+/* line 40, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .na {
+  color: #06b6ef;
+}
+/* line 41, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .nb {
   color: #e7e9db;
 }
+/* line 42, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .nc {
+  color: #fec418;
+}
 /* line 43, ../_sass/_syntax-highlighting.scss */
-.highlight .ne {
+.highlighter-rouge .no {
   color: #ef6155;
 }
 /* line 44, ../_sass/_syntax-highlighting.scss */
-.highlight .nf {
-  color: #06b6ef;
+.highlighter-rouge .nd {
+  color: #5bc4bf;
 }
 /* line 45, ../_sass/_syntax-highlighting.scss */
-.highlight .nl {
+.highlighter-rouge .ni {
   color: #e7e9db;
 }
 /* line 46, ../_sass/_syntax-highlighting.scss */
-.highlight .nn {
-  color: #fec418;
+.highlighter-rouge .ne {
+  color: #ef6155;
 }
 /* line 47, ../_sass/_syntax-highlighting.scss */
-.highlight .nx {
+.highlighter-rouge .nf {
   color: #06b6ef;
 }
 /* line 48, ../_sass/_syntax-highlighting.scss */
-.highlight .py {
+.highlighter-rouge .nl {
   color: #e7e9db;
 }
 /* line 49, ../_sass/_syntax-highlighting.scss */
-.highlight .nt {
-  color: #5bc4bf;
+.highlighter-rouge .nn {
+  color: #fec418;
 }
 /* line 50, ../_sass/_syntax-highlighting.scss */
-.highlight .nv {
-  color: #ef6155;
+.highlighter-rouge .nx {
+  color: #06b6ef;
 }
 /* line 51, ../_sass/_syntax-highlighting.scss */
-.highlight .ow {
-  color: #5bc4bf;
-}
-/* line 52, ../_sass/_syntax-highlighting.scss */
-.highlight .w {
+.highlighter-rouge .py {
   color: #e7e9db;
 }
+/* line 52, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .nt {
+  color: #5bc4bf;
+}
 /* line 53, ../_sass/_syntax-highlighting.scss */
-.highlight .mb {
-  color: #f99b15;
+.highlighter-rouge .nv {
+  color: #ef6155;
 }
 /* line 54, ../_sass/_syntax-highlighting.scss */
-.highlight .mf {
-  color: #f99b15;
+.highlighter-rouge .ow {
+  color: #5bc4bf;
 }
 /* line 55, ../_sass/_syntax-highlighting.scss */
-.highlight .mh {
-  color: #f99b15;
+.highlighter-rouge .w {
+  color: #e7e9db;
 }
 /* line 56, ../_sass/_syntax-highlighting.scss */
-.highlight .mi {
+.highlighter-rouge .mb {
   color: #f99b15;
 }
 /* line 57, ../_sass/_syntax-highlighting.scss */
-.highlight .mo {
+.highlighter-rouge .mf {
   color: #f99b15;
 }
 /* line 58, ../_sass/_syntax-highlighting.scss */
-.highlight .sb {
-  color: #48b685;
+.highlighter-rouge .mh {
+  color: #f99b15;
 }
 /* line 59, ../_sass/_syntax-highlighting.scss */
-.highlight .sc {
-  color: #e7e9db;
+.highlighter-rouge .mi {
+  color: #f99b15;
 }
 /* line 60, ../_sass/_syntax-highlighting.scss */
-.highlight .sd {
-  color: #776e71;
+.highlighter-rouge .mo {
+  color: #f99b15;
 }
 /* line 61, ../_sass/_syntax-highlighting.scss */
-.highlight .s2 {
+.highlighter-rouge .sb {
   color: #48b685;
 }
 /* line 62, ../_sass/_syntax-highlighting.scss */
-.highlight .se {
-  color: #f99b15;
+.highlighter-rouge .sc {
+  color: #e7e9db;
 }
 /* line 63, ../_sass/_syntax-highlighting.scss */
-.highlight .sh {
-  color: #48b685;
+.highlighter-rouge .sd {
+  color: #776e71;
 }
 /* line 64, ../_sass/_syntax-highlighting.scss */
-.highlight .si {
-  color: #f99b15;
-}
-/* line 65, ../_sass/_syntax-highlighting.scss */
-.highlight .sx {
+.highlighter-rouge .s2 {
   color: #48b685;
 }
+/* line 65, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .se {
+  color: #f99b15;
+}
 /* line 66, ../_sass/_syntax-highlighting.scss */
-.highlight .sr {
+.highlighter-rouge .sh {
   color: #48b685;
 }
 /* line 67, ../_sass/_syntax-highlighting.scss */
-.highlight .s1 {
-  color: #48b685;
+.highlighter-rouge .si {
+  color: #f99b15;
 }
 /* line 68, ../_sass/_syntax-highlighting.scss */
-.highlight .ss {
+.highlighter-rouge .sx {
   color: #48b685;
 }
 /* line 69, ../_sass/_syntax-highlighting.scss */
-.highlight .bp {
-  color: #e7e9db;
+.highlighter-rouge .sr {
+  color: #48b685;
 }
 /* line 70, ../_sass/_syntax-highlighting.scss */
-.highlight .vc {
-  color: #ef6155;
+.highlighter-rouge .s1 {
+  color: #48b685;
 }
 /* line 71, ../_sass/_syntax-highlighting.scss */
-.highlight .vg {
-  color: #ef6155;
+.highlighter-rouge .ss {
+  color: #48b685;
 }
 /* line 72, ../_sass/_syntax-highlighting.scss */
-.highlight .vi {
-  color: #ef6155;
+.highlighter-rouge .bp {
+  color: #e7e9db;
 }
 /* line 73, ../_sass/_syntax-highlighting.scss */
-.highlight .il {
+.highlighter-rouge .vc {
+  color: #ef6155;
+}
+/* line 74, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .vg {
+  color: #ef6155;
+}
+/* line 75, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .vi {
+  color: #ef6155;
+}
+/* line 76, ../_sass/_syntax-highlighting.scss */
+.highlighter-rouge .il {
   color: #f99b15;
 }
 
 /* ==========================================================================
    Custom styles
    ========================================================================== */
+/* line 12, ../_sass/style.scss */
+body {
+  font-size: 100%;
+}
+
+/* line 16, ../_sass/style.scss */
+html > body {
+  font-size: 16px;
+}
+
+/* line 22, ../_sass/style.scss */
+#container {
+  background-color: #30515d;
+  width: 1200px;
+  margin: auto;
+  /* This causes unspecified margins to be calculated automatically and equally.
+     It ensures the container will be centered on the page. */
+  margin-top: 20px;
+  /* This moves the whole page (header included) down the page a little bit, so
+     it isn't tightly against the browser's chrome */
+  border: 3px solid #4B4B4B;
+  border-radius: 20px;
+  overflow: hidden;
+  /* Hack to mitigate clipping of corners */
+}
+
 /*
- * A better looking default horizontal rule
- */
-/* line 17, ../_sass/style.scss */
+  Using display: flex; to make the sidebar column the same length as the main content.
+  See: http://tutorialzine.com/2014/10/easiest-way-equal-height-sidebar/ for details.
+*/
+/* line 38, ../_sass/style.scss */
+#boxes {
+  background-color: #30515d;
+}
+
+/* line 43, ../_sass/style.scss */
+#left-column {
+  background-color: #49483f;
+  /* This makes the element grow and take all available space, not taken by the sidebar */
+  width: 950px;
+  float: left;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+  color: #f7f7f6;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* line 58, ../_sass/style.scss */
+#right-column {
+  background-color: #30515d;
+  width: 230px;
+  float: right;
+  padding: 10px;
+}
+
+/* line 65, ../_sass/style.scss */
+#right-column h4 {
+  font-family: Georgia, serif;
+  font-size: 1.0em;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #f7f7f6;
+}
+
+/* line 73, ../_sass/style.scss */
+#right-column ul li {
+  font-family: Georgia, serif;
+  font-size: 0.9em;
+  line-height: 1.25;
+}
+
+/*
+* A better looking default horizontal rule
+*/
+/* line 83, ../_sass/style.scss */
 hr {
   display: block;
   height: 1px;
@@ -800,12 +878,66 @@ hr {
   padding: 0;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-/* line 32, ../_sass/style.scss */
+/* line 92, ../_sass/style.scss */
+:link {
+  color: #ccf1f1;
+}
+
+/* line 93, ../_sass/style.scss */
+:link:hover {
+  color: #f7f7f6;
+}
+
+/* line 94, ../_sass/style.scss */
+:visited {
+  color: #f7f7f6;
+}
+
+/* line 95, ../_sass/style.scss */
+:visited:hover {
+  color: #e9e9e9;
+}
+
+/* line 96, ../_sass/style.scss */
+:link:active, :visited:active {
+  color: #2ecc40;
+}
+
+/* line 98, ../_sass/style.scss */
+.archive {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* line 115, ../_sass/style.scss */
+#site-title {
+  color: #f7f7f6;
+  margin-top: 0.5rem;
+  margin-bottom: 0.05rem;
+  font-size: 175%;
+}
+
+/* line 122, ../_sass/style.scss */
+#site-sub-title {
+  color: #f7f7f6;
+  margin: 0;
+  font-size: 125%;
+}
+
+/* line 130, ../_sass/style.scss */
+div#title-wrapper {
+  background: linear-gradient(to bottom, #30515d, #002533);
+  height: 150px;
+  background-image: url(../img/aquarium-slice.jpg);
+}
+
+/* line 137, ../_sass/style.scss */
+img#header-img {
+  position: relative;
+  top: 7px;
+  left: 15px;
+}
+
+/* line 149, ../_sass/style.scss */
 audio,
 canvas,
 iframe,
@@ -815,85 +947,7 @@ video {
   vertical-align: middle;
 }
 
-/* line 41, ../_sass/style.scss */
-:link {
-  color: #ccf1f1;
-}
-
-/* line 42, ../_sass/style.scss */
-:link:hover {
-  color: #f7f7f6;
-}
-
-/* line 43, ../_sass/style.scss */
-:visited {
-  color: #f7f7f6;
-}
-
-/* line 44, ../_sass/style.scss */
-:visited:hover {
-  color: #e9e9e9;
-}
-
-/* line 45, ../_sass/style.scss */
-:link:active, :visited:active {
-  color: #2ecc40;
-}
-
-/* line 47, ../_sass/style.scss */
-.archive {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/* line 64, ../_sass/style.scss */
-h1.title {
-  color: #f7f7f6;
-  margin-top: 0.5rem;
-  margin-bottom: 0.05rem;
-  font-size: 175%;
-}
-
-/* line 71, ../_sass/style.scss */
-h2.sub-title {
-  color: #f7f7f6;
-  margin: 0;
-  font-size: 125%;
-}
-
-/* line 79, ../_sass/style.scss */
-header.site-header {
-  background: linear-gradient(to bottom, #30515d, #002533);
-  width: 960px;
-  height: 150px;
-  background-image: url(../img/aquarium-slice.jpg);
-}
-
-/* line 87, ../_sass/style.scss */
-header.site-header h4 {
-  visibility: visible;
-  padding: 0px 0 0px 15px;
-  color: #f7f7f6;
-  margin-top: 0.2em;
-  margin-bottom: 0;
-}
-
-/* line 97, ../_sass/style.scss */
-header.site-header p {
-  visibility: visible;
-  padding: 0px 0 0px 15px;
-  color: #f7f7f6;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* line 108, ../_sass/style.scss */
-img#headerimg {
-  position: relative;
-  top: 7px;
-  left: 15px;
-}
-
-/* line 115, ../_sass/style.scss */
+/* line 159, ../_sass/style.scss */
 footer {
   background: linear-gradient(to bottom, #30515d, #002533);
   border-top: thick solid #30515d;
@@ -902,164 +956,82 @@ footer {
   clear: both;
 }
 
-/* line 124, ../_sass/style.scss */
+/* line 168, ../_sass/style.scss */
 footer a:link {
   color: #888888;
 }
 
-/* line 128, ../_sass/style.scss */
+/* line 172, ../_sass/style.scss */
 footer a:visited {
   color: #ffffff;
 }
 
-/* line 135, ../_sass/style.scss */
+/* line 177, ../_sass/style.scss */
 footer p#about {
   width: 300px;
   margin: 20px 50px 0px 10px;
   float: left;
 }
 
-/* line 142, ../_sass/style.scss */
+/* line 184, ../_sass/style.scss */
 footer section#footerlist {
   float: right;
   padding-right: 10px;
   margin-top: 10px;
 }
 
-/* line 148, ../_sass/style.scss */
+/* line 190, ../_sass/style.scss */
 footer section#footerlist ul {
   padding-left: 0px;
 }
 
-/* line 152, ../_sass/style.scss */
+/* line 194, ../_sass/style.scss */
 footer section#footerlist ul li {
   list-style-type: none;
 }
 
-/* line 156, ../_sass/style.scss */
+/* line 198, ../_sass/style.scss */
 footer section#footerlist h3 {
   margin-top: 0px;
 }
 
-/* line 160, ../_sass/style.scss */
+/* line 202, ../_sass/style.scss */
 footer p#footercopy {
   clear: both;
   text-align: center;
 }
 
-/* line 170, ../_sass/style.scss */
-aside, footer {
+/* line 212, ../_sass/style.scss */
+footer {
   padding: 10px;
 }
 
-/* line 174, ../_sass/style.scss */
-aside {
-  background-color: #30515d;
-  width: auto;
-  float: right;
-}
-
-/* line 181, ../_sass/style.scss */
-aside h4 {
+/* Specify fonts for section headers and article Ps. Note that
+  <link href='http://fonts.googleapis.com/css?family=Kreon' rel='stylesheet' type='text/css'>
+ was added to _includes/head.html to make the Kreon font-family available. */
+/* line 219, ../_sass/style.scss */
+h2.roll-post-title {
   font-family: Georgia, serif;
-  font-size: 1.0em;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  color: #f7f7f6;
-}
-
-/* line 189, ../_sass/style.scss */
-aside ul li {
-  font-family: Georgia, serif;
-  font-size: 0.9em;
-  line-height: 1.25;
-}
-
-/* line 197, ../_sass/style.scss */
-div#container {
-  background-color: #DBDBDB;
-  width: 960px;
-  /* This width works well on screens that are 1024px wide */
-  margin: auto;
-  /*  This causes unspecified margins to be calculated automatically and equally.
-     It ensures the container will be centered on the page. */
-  margin-top: 20px;
-  /* This moves the whole page (header included) down the page a little bit, so
-    it isn't tightly against the browser's chrome */
-  border: 3px solid #4B4B4B;
-  border-radius: 20px;
-  overflow: hidden;
-  /* Hack to mitigate clipping of corners */
-}
-
-/*
-    Here we line up the content area and sidebar. We know that our container is 960px wide. If we want
-    our sidebar to be 200px wide, that leaves 760px for content and nice wide videos. Initially, we might
-    think that we want to write:
-
-        section#main { width: 760px; }
-        aside { width: 200px; }
-
-    but that wouldn't work. The sidebar would end up below the content container. The key is to
-    remember:
-
-        Total box width = box size + margins + padding + border widths
-
-    Note: There's probably a way to get Sass to calculate the total box width from the other variables, or
-    the width of the main section given the other values.
-
-    We put 10px of padding on "section#main#, aside and footer above. This means these
-    elements are 20px wider than specified. The sidebar would be 220px wide and the content area would be
-    780px wide, so the total size of section#main and aside would overflow the specified 960px width of
-    the div#container.
-
-    To fix this, we need to shave 20px of width from each of them to get them to sit side-by-side. So, we
-    use 740px for section#main and 180px for the aside element. We also float the main section to the left,
-    and float the sidebar to the right.
-*/
-/* Using display: flex; to make the sidebar column the same length as the main content.
-   See: http://tutorialzine.com/2014/10/easiest-way-equal-height-sidebar/ for details.
-   */
-/* line 238, ../_sass/style.scss */
-#boxes {
-  display: flex;
-}
-
-/* line 242, ../_sass/style.scss */
-section#main {
-  background-color: #49483f;
-  /* This makes the element grow and take all available space, not taken by the sidebar */
-  flex-grow: 1;
-  width: 710px;
-  float: left;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 20px;
-  color: #f7f7f6;
-}
-
-/* Specify fonts for section H1s and article Ps. Note that
-    <link href='http://fonts.googleapis.com/css?family=Kreon' rel='stylesheet' type='text/css'>
-   was added to _includes/head.html to make the Kreon font-family available. */
-/* line 258, ../_sass/style.scss */
-section#main article h1 {
-  font-family: Georgia, serif;
-  font-size: 2.0em;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
-/* line 265, ../_sass/style.scss */
-section#main article p {
+/* line 226, ../_sass/style.scss */
+span.post-date {
+  color: #8CCAF0;
+}
+
+/* line 229, ../_sass/style.scss */
+span.excerpt {
   font-family: "Helvetica Neue", Helvetica, "Noto Sans", Arial, sans-serif;
-  font-size: 1.2em;
+  font-size: 1.0em;
   letter-spacing: 1.25px;
   line-height: 1.25;
-  color: #f7f7f6;
+  color: #3d9970;
 }
 
-/* line 274, ../_sass/style.scss */
-section#main .article_img {
+/* line 238, ../_sass/style.scss */
+.article_img {
   float: left;
   width: 200px;
   padding: 5px;
@@ -1067,48 +1039,48 @@ section#main .article_img {
   margin: 5px 20px 5px 0px;
 }
 
-/* line 282, ../_sass/style.scss */
-section#main .article_img2 {
+/* line 246, ../_sass/style.scss */
+.article_img2 {
   width: 100%;
   padding: 5px;
   margin: 5px 20px 5px 0px;
 }
 
-/* line 289, ../_sass/style.scss */
-section#main .article_img p {
+/* line 253, ../_sass/style.scss */
+.article_img p {
   margin-top: 0px;
   margin-bottom: 0px;
   font-style: italic;
   padding-top: 5px;
 }
 
-/* line 301, ../_sass/style.scss */
+/* line 264, ../_sass/style.scss */
 nav {
   background-color: #30515d;
   border-bottom: thick solid #30515d;
   height: 40px;
 }
 
-/* line 308, ../_sass/style.scss */
+/* line 271, ../_sass/style.scss */
 nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 316, ../_sass/style.scss */
+/* line 279, ../_sass/style.scss */
 nav ul li {
   display: block;
   position: relative;
   float: left;
 }
 
-/* line 322, ../_sass/style.scss */
+/* line 285, ../_sass/style.scss */
 nav li ul {
   display: none;
 }
 
-/* line 326, ../_sass/style.scss */
+/* line 289, ../_sass/style.scss */
 nav ul li:first-child a {
   display: block;
   text-decoration: none;
@@ -1122,7 +1094,7 @@ nav ul li:first-child a {
   text-align: center;
 }
 
-/* line 340, ../_sass/style.scss */
+/* line 303, ../_sass/style.scss */
 nav ul li a {
   display: block;
   text-decoration: none;
@@ -1136,35 +1108,35 @@ nav ul li a {
   text-align: center;
 }
 
-/* line 354, ../_sass/style.scss */
+/* line 317, ../_sass/style.scss */
 nav ul li a:hover {
   background: #617F8A;
 }
 
-/* line 358, ../_sass/style.scss */
+/* line 321, ../_sass/style.scss */
 nav li:hover ul {
   display: block;
   position: absolute;
   height: 30px;
 }
 
-/* line 364, ../_sass/style.scss */
+/* line 327, ../_sass/style.scss */
 nav li:hover li {
   float: none;
 }
 
-/* line 370, ../_sass/style.scss */
+/* line 333, ../_sass/style.scss */
 nav li:hover a {
   background: #3A464F;
   height: 30px;
 }
 
-/* line 375, ../_sass/style.scss */
+/* line 338, ../_sass/style.scss */
 nav li:hover li a:hover {
   background: #95A9B1;
 }
 
-/* line 379, ../_sass/style.scss */
+/* line 342, ../_sass/style.scss */
 nav ul li ul li a {
   text-align: left;
 }
@@ -1175,7 +1147,7 @@ nav ul li ul li a {
 /*
  * Hide visually and from screen readers:
  */
-/* line 393, ../_sass/style.scss */
+/* line 356, ../_sass/style.scss */
 .hidden {
   display: none !important;
 }
@@ -1184,7 +1156,7 @@ nav ul li ul li a {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 402, ../_sass/style.scss */
+/* line 365, ../_sass/style.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1201,7 +1173,7 @@ nav ul li ul li a {
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-/* line 419, ../_sass/style.scss */
+/* line 382, ../_sass/style.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -1215,7 +1187,7 @@ nav ul li ul li a {
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-/* line 433, ../_sass/style.scss */
+/* line 396, ../_sass/style.scss */
 .invisible {
   visibility: hidden;
 }
@@ -1231,7 +1203,7 @@ nav ul li ul li a {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 449, ../_sass/style.scss */
+/* line 412, ../_sass/style.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -1240,7 +1212,7 @@ nav ul li ul li a {
   /* 2 */
 }
 
-/* line 455, ../_sass/style.scss */
+/* line 418, ../_sass/style.scss */
 .clearfix:after {
   clear: both;
 }
@@ -1256,7 +1228,7 @@ nav ul li ul li a {
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 @media print {
-  /* line 484, ../_sass/style.scss */
+  /* line 447, ../_sass/style.scss */
   *,
   *:before,
   *:after {
@@ -1266,18 +1238,18 @@ nav ul li ul li a {
     text-shadow: none !important;
   }
 
-  /* line 494, ../_sass/style.scss */
+  /* line 457, ../_sass/style.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 499, ../_sass/style.scss */
+  /* line 462, ../_sass/style.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 503, ../_sass/style.scss */
+  /* line 466, ../_sass/style.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -1286,13 +1258,13 @@ nav ul li ul li a {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 512, ../_sass/style.scss */
+  /* line 475, ../_sass/style.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 517, ../_sass/style.scss */
+  /* line 480, ../_sass/style.scss */
   pre,
   blockquote {
     page-break-inside: avoid;
@@ -1302,23 +1274,23 @@ nav ul li ul li a {
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  /* line 527, ../_sass/style.scss */
+  /* line 490, ../_sass/style.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 531, ../_sass/style.scss */
+  /* line 494, ../_sass/style.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 536, ../_sass/style.scss */
+  /* line 499, ../_sass/style.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 540, ../_sass/style.scss */
+  /* line 503, ../_sass/style.scss */
   p,
   h2,
   h3 {
@@ -1326,7 +1298,7 @@ nav ul li ul li a {
     widows: 3;
   }
 
-  /* line 547, ../_sass/style.scss */
+  /* line 510, ../_sass/style.scss */
   h2,
   h3 {
     page-break-after: avoid;

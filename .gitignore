@@ -19,3 +19,6 @@ $RECYCLE.BIN/
 # Jekyll
 _site
 .jekyll-metadata
+
+# WinMerge
+*.bak

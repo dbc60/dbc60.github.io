@@ -3,13 +3,13 @@ layout: default
 author: Douglas Cuthbertson
 ---
 
-<!-- Display the most recent posts -->
+<!-- Display the 10 most recent posts -->
 
 {% for post in site.categories['blog'] offset: 0 limit: 10 %}
-    <article>
-        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-        <p class="post-date"> {{ post.date | date_to_string }}</p>
+    <article class="blog-roll">
+        <h2 class="roll-post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+        <span class="post-date">{{ post.date | date_to_string }}</span>
 
-        <p class="excerpt">{{ post.excerpt }}</p>
+        <span class="excerpt">{{ post.excerpt }}</span>
     </article>
 {% endfor %}

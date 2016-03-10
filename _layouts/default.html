@@ -3,29 +3,29 @@
     {% include head.html %}
 
     <body>
+        <!-- Note: "overflow: hidden" doesn't work on the <body> element, so a <div id="container">
+             element wraps everything in the body. -->
         <div id="container">
-            {% include header.html %}
+            <header class="site-header">
+                {% include header.html %}
 
-            {% include navigation.html %}
-
+                {% include navigation.html %}
+            </header>   <!-- end class="site-header" -->
             <div id="boxes">  <!-- New div wrapper around the two boxes whose height we want to match -->
-                <section id="main" role="main">
-                    {{ content | replace: '<li>[ ]', '<li class="checkbox"><input type="checkbox" disabled/>' | replace: '<li>[x]', '<li class="checkbox_done"><input type="checkbox" checked disabled/>'  }}
-                </section>
+                <main id="left-column">
+                    {{ content | replace: '<li>[ ]',
+                        '<li class="checkbox"><input type="checkbox" disabled/>'
+                       | replace: '<li>[x]',
+                        '<li class="checkbox_done"><input type="checkbox" checked disabled/>' }}
+                </main>
 
                 {% include sidebar.html %}
-            </div>
+            </div>  <!-- end id="boxes" -->
 
             {% include footer.html %}
-        </div>
+        </div>  <!-- end id="container" -->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ site.baseurl }}/js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-
-        <script src="{{ site.baseurl }}/js/plugins.js"></script>
-        <script src="{{ site.baseurl }}/js/main.js"></script>
-
+        <!-- analytics.html is just a script, so it doesn't need to be in the div container -->
         {% include analytics.html %}
-
     </body>
 </html>
