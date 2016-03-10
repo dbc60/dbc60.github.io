@@ -1,41 +1,92 @@
 //
 // IMPORTS
 //
-
 @import 'normalize';
-@import 'variables';
+@import 'modules/variables';
 @import 'svg-icons';
 @import 'syntax-highlighting';
 
 /* ==========================================================================
    Custom styles
    ========================================================================== */
+body {
+  font-size: 100%;
+}
 
-/*
- * A better looking default horizontal rule
- */
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+html>body {
+  font-size: 16px;
+}
+
+// Give a width to our content area and center it. Note: "overflow: hidden" doesn't work on the
+// <body> element, so a <div id="container"> element wraps everything in the body.
+#container {
+  background-color: $right_column_background_color;
+  width: $body_width;
+  margin: auto; /* This causes unspecified margins to be calculated automatically and equally.
+                   It ensures the container will be centered on the page. */
+  margin-top: 20px; /* This moves the whole page (header included) down the page a little bit, so
+                       it isn't tightly against the browser's chrome */
+  border: 3px solid #4B4B4B;
+  border-radius: 20px;
+  overflow: hidden; /* Hack to mitigate clipping of corners */
 }
 
 /*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-// NOTE(doug): This is needed for the little CC-BY-SA icon in the license.
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
+  Using display: flex; to make the sidebar column the same length as the main content.
+  See: http://tutorialzine.com/2014/10/easiest-way-equal-height-sidebar/ for details.
+*/
+#boxes {
+  //display: flex;
+  background-color: $right_column_background_color;
+}
+
+#left-column {
+  background-color: $left_column_background_color;
+  /* This makes the element grow and take all available space, not taken by the sidebar */
+  width: $left_column_width;
+  float: left;
+  padding-left: $left_column_horizontal_padding;
+  padding-right: $left_column_horizontal_padding;
+  padding-bottom: $left_column_vertical_padding;
+  color: $left_column_color;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#right-column {
+   background-color: $right_column_background_color;
+   width: $right_column_width;
+   float: right;
+   padding: $right_column_padding;
+}
+
+#right-column h4 {
+   font-family: $heading-font-family;
+   font-size: 1.0em;
+   margin-bottom: 20px;
+   margin-top: 20px;
+   color: $heading_h2_color;
+}
+
+#right-column ul li {
+   font-family: $Georgia;
+   font-size: 0.9em;
+   line-height: 1.25;
+}
+
+
+/*
+* A better looking default horizontal rule
+*/
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 :link {color: $link_color;}
@@ -45,7 +96,7 @@ video {
 :link:active, :visited:active {color:$link_active_color;}
 
 .archive {
-    color: $time_color;
+  color: $time_color;
 }
 
 // Tag Cloud - not yet ready, but something to contemplate
@@ -61,76 +112,67 @@ video {
 //     //margin: 0 25px 25px 0;
 // }
 
-h1.title {
-    color: $main_color;
-    margin-top: 0.5rem;
-    margin-bottom: 0.05rem;
-    font-size: 175%;
+#site-title {
+  color: $left_column_color;
+  margin-top: 0.5rem;
+  margin-bottom: 0.05rem;
+  font-size: 175%;
 }
 
-h2.sub-title {
-    color: $main_color;
-    margin: 0;
-    font-size: 125%;
+#site-sub-title {
+  color: $left_column_color;
+  margin: 0;
+  font-size: 125%;
 }
 
 
 // Adding some background colors so we can see where our boxes are
-header.site-header {
-    background: linear-gradient(to bottom, $navbar_background_light, $navbar_background_dark);
-    width: $fixed-width;
-    height: 150px;
-    background-image: url(../img/aquarium-slice.jpg);
-}
-
-// The site header is in
-header.site-header h4 {
-    visibility: visible;
-    //font-family: $heading-font-family;
-    //font-size: 1.8em;
-    padding: 0px 0 0px $left_logo_and_menu;
-    color: $main_color;
-    margin-top: 0.2em;
-    margin-bottom: 0;
-}
-
-header.site-header p {
-    visibility: visible;
-    //font-family: $body-font-family;
-    //font-size: 1.0em;
-    padding: 0px 0 0px $left_logo_and_menu;
-    color: $main_color;
-    margin-top: 0;
-    margin-bottom: 0;
+div#title-wrapper {
+  background: linear-gradient(to bottom, $navbar_background_light, $navbar_background_dark);
+  height: 150px;
+  background-image: url(../img/aquarium-slice.jpg);
 }
 
 // Positioning for our logo image
- img#headerimg {
-   position:relative;
-   top: 7px;
-   left: $left_logo_and_menu;
- }
+img#header-img {
+ position:relative;
+ top: 7px;
+ left: $left_logo_and_menu;
+}
+
+// BEGIN FOOTER TEXT STYLES
+
+// Remove the gap between audio, canvas, iframes,
+// images, videos and the bottom of their containers:
+// https://github.com/h5bp/html5-boilerplate/issues/440
+// NOTE: This is needed for the little CC-BY-SA icon in the license.
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
 
 // Change colors in the footer. Change height and add background image.
- footer {
-    background: linear-gradient(to bottom, $navbar_background_light, $navbar_background_dark);
-    border-top: thick solid $footer_border_color;
-    color: $White;
-    height: 120px;
-    clear: both;
+footer {
+  background: linear-gradient(to bottom, $navbar_background_light, $navbar_background_dark);
+  border-top: thick solid $footer_border_color;
+  color: $White;
+  height: 120px;
+  clear: both;
 }
 
 // Different link colors in the footer
 footer a:link {
-    color: $DarkGray;
+  color: $DarkGray;
 }
 
 footer a:visited {
-    color: $White;
+  color: $White;
 }
 
-
-// BEGIN FOOTER TEXT STYLES
 
 footer p#about {
   width:300px;
@@ -167,133 +209,54 @@ footer p#footercopy {
 
 
 // Add some padding to our boxes. This overrides the browser defaults that added a 1em
- aside, footer {
-   padding: 10px;
- }
-
- aside {
-     background-color: $sidebar_background_color;
-     width: auto;
-     float: right;
-     //float: left;
- }
-
- aside h4 {
-    font-family: $heading-font-family;
-    font-size: 1.0em;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    color: $heading_h2_color;
- }
-
- aside ul li {
-     font-family: $Georgia;
-     font-size: 0.9em;
-     line-height: 1.25;
- }
-
-
-// Give a width to our content area and center it.
- div#container {
-    background-color: #DBDBDB;
-    width:$fixed-width; /* This width works well on screens that are 1024px wide */
-    margin:auto; /*  This causes unspecified margins to be calculated automatically and equally.
-                    It ensures the container will be centered on the page. */
-    margin-top:20px; /* This moves the whole page (header included) down the page a little bit, so
-                       it isn't tightly against the browser's chrome */
-    border: 3px solid #4B4B4B;
-    border-radius: 20px;
-    overflow:hidden; /* Hack to mitigate clipping of corners */
+footer {
+  padding: 10px;
 }
 
-/*
-    Here we line up the content area and sidebar. We know that our container is 960px wide. If we want
-    our sidebar to be 200px wide, that leaves 760px for content and nice wide videos. Initially, we might
-    think that we want to write:
-
-        section#main { width: 760px; }
-        aside { width: 200px; }
-
-    but that wouldn't work. The sidebar would end up below the content container. The key is to
-    remember:
-
-        Total box width = box size + margins + padding + border widths
-
-    Note: There's probably a way to get Sass to calculate the total box width from the other variables, or
-    the width of the main section given the other values.
-
-    We put 10px of padding on "section#main#, aside and footer above. This means these
-    elements are 20px wider than specified. The sidebar would be 220px wide and the content area would be
-    780px wide, so the total size of section#main and aside would overflow the specified 960px width of
-    the div#container.
-
-    To fix this, we need to shave 20px of width from each of them to get them to sit side-by-side. So, we
-    use 740px for section#main and 180px for the aside element. We also float the main section to the left,
-    and float the sidebar to the right.
-*/
-
-/* Using display: flex; to make the sidebar column the same length as the main content.
-   See: http://tutorialzine.com/2014/10/easiest-way-equal-height-sidebar/ for details.
-   */
-#boxes {
-    display: flex;
+/* Specify fonts for section headers and article Ps. Note that
+  <link href='http://fonts.googleapis.com/css?family=Kreon' rel='stylesheet' type='text/css'>
+ was added to _includes/head.html to make the Kreon font-family available. */
+h2.roll-post-title {
+  font-family: $heading-font-family;
+  //font-size: 1.0em;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-section#main {
-    background-color: $main_background_color;
-    /* This makes the element grow and take all available space, not taken by the sidebar */
-    flex-grow:1;
-    width: 710px;
-    float: left;
-    //float: right;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 20px;
-    color: $main_color;
+span.post-date {
+  color: $post_date_color;
 }
-
-/* Specify fonts for section H1s and article Ps. Note that
-    <link href='http://fonts.googleapis.com/css?family=Kreon' rel='stylesheet' type='text/css'>
-   was added to _includes/head.html to make the Kreon font-family available. */
-section#main article h1 {
-   font-family: $heading-font-family;
-   font-size: 2.0em;
-   margin-bottom: 20px;
-   margin-top: 20px;
- }
-
- section#main article p {
-   font-family: $body-font-family;
-   font-size: 1.2em;
-   letter-spacing: 1.25px;
-   line-height: 1.25;
-   color: $text_color;
- }
+span.excerpt {
+  font-family: $body-font-family;
+  font-size: 1.0em;
+  letter-spacing: 1.25px;
+  line-height: 1.25;
+  color: $excerpt_color;
+}
 
 // Styling for image div with caption
-section#main .article_img {
-    float:left;
-    width:200px;
-    padding:5px;
-    border:1px solid $text_color;
-    margin: 5px 20px 5px 0px;
+.article_img {
+  float:left;
+  width:200px;
+  padding:5px;
+  border:1px solid $text_color;
+  margin: 5px 20px 5px 0px;
 }
 
-section#main .article_img2 {
-    width:100%;
-    padding:5px;
-    margin: 5px 20px 5px 0px;
+.article_img2 {
+  width:100%;
+  padding:5px;
+  margin: 5px 20px 5px 0px;
 }
 
 // Styling for caption within image div
-section#main .article_img p {
-    margin-top:0px;
-    margin-bottom:0px;
-    //font-size:0.8em;
-    font-style:italic;
-    padding-top:5px;
+.article_img p {
+  margin-top:0px;
+  margin-bottom:0px;
+  //font-size:0.8em;
+  font-style:italic;
+  padding-top:5px;
 }
-
 
 // Adding set of rules for navigation menu
 
@@ -329,7 +292,7 @@ nav ul li:first-child a {
   // padding order: top, right, bottom, left
   padding: 7px 15px 3px 0px;
   background: $navbar_background_light;
-  color: $main_color;
+  color: $left_column_color;
   margin-left: 0px;
   white-space: nowrap;
   height:30px; // Width and height of top-level nav items
@@ -343,7 +306,7 @@ nav ul li a {
   // padding: top, right, bottom, left
   padding: 7px 15px 3px 15px;
   background: $navbar_background_light;
-  color: $main_color;
+  color: $left_column_color;
   margin-left: 0px;
   white-space: nowrap;
   height:30px; // Width and height of top-level nav items
@@ -377,7 +340,7 @@ nav li:hover li a:hover {
 }
 
 nav ul li ul li a {
-    text-align:left; // Top-level items are centered, but nested list items are left-aligned
+  text-align:left; // Top-level items are centered, but nested list items are left-aligned
 }
 
 // END NAV MENU
@@ -391,7 +354,7 @@ nav ul li ul li a {
  * Hide visually and from screen readers:
  */
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 
@@ -400,14 +363,14 @@ nav ul li ul li a {
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 
@@ -418,12 +381,12 @@ nav ul li ul li a {
  */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
 }
 
 
@@ -431,7 +394,7 @@ nav ul li ul li a {
  * Hide visually and from screen readers, but maintain layout
  */
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 
@@ -448,12 +411,12 @@ nav ul li ul li a {
  */
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 
@@ -464,14 +427,14 @@ nav ul li ul li a {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    // Style adjustments for viewports that meet the condition
+  // Style adjustments for viewports that meet the condition
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    // Style adjustments for high resolution devices
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  // Style adjustments for high resolution devices
 }
 
 /* ==========================================================================
@@ -481,71 +444,71 @@ nav ul li ul li a {
    ========================================================================== */
 
 @media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; // Black prints faster:
-                                // http://www.sanbeiji.com/archives/953
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important; // Black prints faster:
+                            // http://www.sanbeiji.com/archives/953
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
 
 
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
 
-    pre,
-    blockquote {
-        // border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+  pre,
+  blockquote {
+    // border: 1px solid #999;
+    page-break-inside: avoid;
+  }
 
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-    thead {
-        display: table-header-group;
-    }
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-    img {
-        max-width: 100% !important;
-    }
+  img {
+    max-width: 100% !important;
+  }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
