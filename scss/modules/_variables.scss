@@ -1,0 +1,7 @@
+// A width of 60em is about 960 pixels with default fonts.
+$body_width: 60em !default;
+
+// Useful Unicode Characters
+$ballot_box: '\2610' !default;          // Unicode Ballot Box
+$ballot_box_checked: '\2611' !default;  // Unicode Ballot Box with Check
+$cssMiddot: "\00b7" !default;           // Unicode middle dots (...)

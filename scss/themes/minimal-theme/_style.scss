@@ -1,0 +1,203 @@
+/* ==========================================================================
+   Custom styles
+   ========================================================================== */
+
+// References for the basic layout are:
+//
+//  - http://stackoverflow.com/questions/6837603/yet-another-html-css-layout-challenge-full-height-sidebar-with-sticky-footer
+//  - http://jsfiddle.net/2ZhpH/41/
+//
+// Be aware the example above will not handle the height of the sidebar correctly for
+// cases where the main content is small and the sidebar content is longer than the main
+// content. This is due to the sidebar position being absolute.
+//
+// Here's another layout with sidebar and main content bracketed by header and footer.
+// It handles the height of the sidebar and main content better. 
+//  - http://jsfiddle.net/Fggk6/
+//  - Faux Columns: http://alistapart.com/article/fauxcolumns
+//
+// Here is what I derived from it: http://jsfiddle.net/dbc60/tfwrojh0/
+
+body {
+  max-width: $body_width;
+  // padding order: top, right, bottom, left;
+  // padding: 1em 2em; is vertical and horizontal padding. It's specifying the
+  // top and right values and letting the bottom and left values default to
+  // the same values, respectively.
+  margin: 1em auto;
+  padding: 0;
+  font-size: $body_font_size;
+  font-family: sans-serif;
+  background: $White;
+  border: thin solid $foreground_contrast;
+  border-radius: 20px;
+}
+
+#wrapper {
+  height: auto !important;
+  overflow: auto; // this causes the footer to follow the wrapper div
+  border-bottom: thin solid $foreground_contrast;
+}
+
+#header-content {
+  background: linear-gradient(to bottom, lightgray, white);
+  border-bottom: thin solid $foreground_contrast;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  // The border is for debugging
+  //border: thick solid teal;
+}
+
+#masthead {
+  border-bottom: thin solid $foreground_contrast;
+}
+
+h1#site-title, h2#site-subtitle {
+    padding: 0.5em $section_padding_horizontal 0 $section_padding_horizontal;
+}
+
+#banner {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: thin solid $foreground_contrast;
+}
+
+#banner h1 {
+  margin-top: 0;
+}
+
+#banner h2 {
+  margin-bottom: 0;
+}
+
+#masthead-details ul {
+  margin: 0;
+  padding: $section_padding_vertical $section_padding_horizontal;
+  list-style: none;
+}
+
+#masthead-details li {
+  display: inline;
+  // padding order: top, right, bottom, left;
+  padding: 0 1.0em 0 0;
+}
+
+li.left {
+   float: left;
+}
+
+/* ==========================================================================
+   START NAV MENU
+   ========================================================================== */
+#main-navigation {
+  padding: $section_padding_vertical $section_padding_horizontal;
+
+  // The border is for debugging
+  //border: thin solid black;
+}
+
+
+.navigation-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-navigation-item {
+  display: inline;
+  // padding order: top, right, bottom, left;
+  padding: 0 1.2em 0 0;
+}
+
+.main-navigation li::last-child {
+  display: inline;
+  padding: 0;
+}
+
+/* ==========================================================================
+   END NAV MENU
+   ========================================================================== */
+
+
+#content-sidebar-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $body_width;
+  
+  // The border is for debugging
+  //border: thick solid gold;
+}
+
+#main-content {
+  // flex is shorthand for flex-grow: 1, flex-shrink: 1,
+  // flex-basis: $main_content_basis_width 
+  flex: 1 1 $main_content_basis_width;
+  padding: $section_padding_vertical $section_padding_horizontal;
+
+  // The border is for debugging
+  //border: thick solid green;
+}
+
+#side-content {
+  // flex is shorthand for flex-grow: 2, flex-shrink: 2,
+  // flex-basis: $side_content_basis_width 
+  flex: 2 2 $side_content_basis_width;
+  border-left: thin solid $foreground_contrast;
+  
+  // The border is for debugging
+  //border: thick solid blue;
+}
+
+#posts-previous {
+  margin: auto;
+}
+
+h3#header-this-year, h3.header-previous-years {
+  text-align: center;
+}
+
+ul.this-years-posts, ul.past-posts {
+  margin: 0 auto;
+  list-style-position: outside;
+  list-style-type: square;
+}
+
+#footer {
+  /* The clear: both property ensures that our footer element appears after any
+   *  elements which are floated at the left or the right */
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(to bottom, white, lightgray);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  // The border is for debugging
+  //border: thick solid magenta;
+}
+
+#footerlist {
+  flex: 2 2 $side_content_basis_width;
+}
+
+section#footerlist ul {
+  list-style-type: none;
+  float: right;
+  padding-right: $section_padding_horizontal;
+}
+
+@media print {
+  body {
+    max-width: none
+  }
+}
+
+.post-date, .post-meta {
+  font-size: small;
+  margin-bottom: 0.2em;
+}
+
+.roll-post-title, .post-title {
+  margin-bottom: 0.2em;
+}

@@ -1,0 +1,95 @@
+// Note: these always display with 5 digits after the decimal point.
+$base: 2;
+$exponent: 2.4;
+$prec: 12;
+//$pow_result: pow($base,$exponent);
+//$pow_expected: 5.2780316430915770374960078849186;
+$prec2_result: ipow(10,$prec);
+$prec2_expected: 1000000000000;
+$rounded_exponent_result: round($exponent * $prec2_result);
+$rounded_exponent_expected: 2400000000000;
+$denominator_result: gcd($rounded_exponent_result, $prec2_result);
+$denominator_expected: 200000000000;
+//nthRoot(pow($base, $rounded_exponent / $denominator), $prec2 / $denominator, $prec);
+$new_exponent_result: $rounded_exponent_result / $denominator_result;
+$new_exponent_expected: 12;
+$root_result: $prec2_result / $denominator_result;
+$root_expected: 5;
+$new_pow_result: ipow($base, $new_exponent_result);
+$new_pow_expected: 4096;
+$root_result: $prec2_result / $denominator_result;
+$nthroot_result: nthRoot($new_pow_result, $root_result, $prec);
+$nthroot_expected: 5.2780316430915770374960078849186;
+$twelfth_root_4096_result: nthRoot(4096, 12, 12);
+$twelfth_root_4096_expected: 2;
+$ipow_2_12_result: ipow(2,12);
+$ipow_2_12_expected: 4096;
+
+$x: 1;
+$n: 12;
+$num: 4096;
+$reciprical_n: 1/$n;
+$n_minus_1: ($n - 1);
+
+// $x: (1 / $n) * (($n - 1) * $x + $num / ipow($x, $n - 1));
+$reciprical_n_result: 1/$n;
+$reciprical_n_expected: 0.08333333333333333333333333333333;
+$ipow_x_n1_result: ipow($x, $n - 1);
+$ipow_x_n1_expected: 1;
+$product_result: ($n - 1) * $x;
+$product_expected: 11;
+$quotient_result: $num / ipow($x, $n - 1);
+$quotient_expected: 4096;
+$sum_result: $product_result + $quotient_result;
+$sum_expected: 4107;
+$sum__result: ($n - 1) * $x + $num / ipow($x, $n - 1);
+$sum__expected: 4107;
+$itr1_result: $reciprical_n * ($n_minus_1 * $x + $num / ipow($x, $n_minus_1));
+$itr1_expected: 342.25;
+$it2_ipow_itr1_result_11_result: ipow($itr1_result, $n_minus_1);
+$it2_ipow_itr1_result_11_expected: 7547063860811978887756700857.6704;
+
+// Passed
+$ln_54_result: ln(54);
+$ln_54_expected: 3.98898404656;
+
+// Passed
+$e_test1_result: exp($ln_54_result);
+$e_test1_expected: 54.00001;
+
+// Passed
+$two_pow_3_result: pow(2, 3);
+$two_pow_3_expected: 8;
+
+// Passed
+$two_pow_neg_3_result: pow(2, -3);
+$two_pow_neg_3_expected: 0.125;
+
+// Passed
+$two_ipow_zero_result: ipow(2, 0);
+$two_ipow_zero_expected: 1;
+
+// Passed
+$two_pow_zero_result: pow(2, 0);
+$two_pow_zero_expected: 1;
+
+// Passed
+$two_pow_point_5_result: pow(2, 0.5, 0.000001);
+$two_pow_point_5_expected: 1.41421356;
+
+// Passed!
+$two_pow_neg_3_point_5_result: pow(2, -3.5);
+$two_pow_neg_3_point_5_expected: 0.08838834764831844055010554526311;
+
+// Passed
+$pow_result: pow($base,$exponent);
+$pow_expected: 5.2780316430915770374960078849186;
+
+body::before {
+  // The power function in _color-contrast.scss fails!
+  content: 'Result is: ' quote(inspect($pow_result)) '; Expected: ' quote(inspect($pow_expected));
+  //content: quote(inspect(6 * 0.30102999566398119521373889472449 - $ln_54_expected))    ' log(54): ' quote(inspect($ln_54_result));
+    color: green;
+    white-space: pre-wrap;
+}
+

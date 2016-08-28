@@ -1,0 +1,20 @@
+---
+# YAML to ensure Jekyll reads this file and transforms it into CSS
+---
+
+@charset 'UTF-8';
+
+// Clear browser settings
+@import 'base/normalize';
+
+//
+// IMPORTS
+//
+@import 'base/svg-icons';
+@import 'modules/color-contrast';
+@import 'themes/minimal-theme/colors';
+@import 'themes/minimal-theme/variables';
+@import 'themes/minimal-theme/style';
+
+// Add highlighting theme for code blocks
+@import 'code-themes/blue-gray-theme';

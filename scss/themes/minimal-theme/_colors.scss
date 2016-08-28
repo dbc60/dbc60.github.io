@@ -1,0 +1,5 @@
+// Just use the default colors
+@import 'modules/colors';
+
+$background_color: $White;
+$foreground_contrast: text-contrast($background_color);

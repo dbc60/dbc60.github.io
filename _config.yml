@@ -22,30 +22,30 @@ github:
   }
 
 # My Configuration
-include:      [
-              ]
+include:  
 
 # Exclude these files from your production _site
-exclude:      [
-                'config.rb',
-                'Gemfile',
-                'Gemfile.lock',
-                'vendor'
-              ]
+exclude:
+  - 'Gemfile'
+  - 'Gemfile.lock'
+  - '_build'
+  - '_2012'
+  - '_2015'
+  - '_code-morgue'
+  - 'vendor'
+  - '.vscode'
+  - '.git'
+  - '.ipynb_checkpoints'
+  - '.sass-cache'
 
-gems:         [
-                'jekyll-sitemap',
-                'jekyll-paginate',
-                'jekyll-seo-tag'
-              ]
 
-# TODO(doug): What do these settings affect?
+# TODO(doug): What do these settings effect?
 # timezone:    nil
 # future:      true
 # show_drafts: false
 # limit_posts: 0
 
-permalink: date
+permalink: pretty
 
 #paginate_path: '/blog/page:num'
 # Pagination can automatically generate the appropriate files and folders you need for paginated listings.
@@ -60,20 +60,18 @@ permalink: date
 #paginate: 10          # Posts per page on the blog index
 #paginate_path: "posts/:num"  # Directory base for pagination URLs eg. /posts/2/
 #recent_posts: 5       # Posts in the sidebar Recent Posts section
-excerpt_separator: "<!--more-->"
+#excerpt_separator: "<!--more-->"
+
 markdown:       kramdown
 kramdown:
   input: GFM   # GFM - Github Flavored Markdown.
 
 markdown_ext:   markdown,mkdown,mkdn,mkd,md
 
-#  syntax_highlighter: pygments # Change to rouge after updating to Jekyll 3.0
-#  syntax_highlighter: rouge
-
 # Set the Sass partials directory, as we're using @imports
 sass:
-  style: :expanded
-  sass_dir: _sass
+  style: expanded
+  sass_dir: scss
 
 # Includes an icon in the footer for each username you enter
 footer-links:
@@ -103,4 +101,4 @@ google_analytics:
 # (https://yourusername.github.io/repository-name)
 # and NOT your User repository (https://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
+#baseurl: ""

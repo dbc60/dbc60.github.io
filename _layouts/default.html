@@ -1,31 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% include head.html %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="author" content="{{ site.author }}">
+    <!-- added 'minimum-scale=1' based on https://www.ampproject.org/docs/get_started/create/basic_markup.html -->
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta property="og:locale" content="en_US">
+    {% if page.title %}
+    <meta property="twitter:title" content="{{ page.title }}">
+    {% endif %}
+    <!--[if lt IE 9]>
+        <script async src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <body>
-        <!-- Note: "overflow: hidden" doesn't work on the <body> element, so a <div id="container">
-             element wraps everything in the body. -->
-        <div id="container">
-            <header class="site-header">
-                {% include header.html %}
+    <!-- -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/themes/minimal-theme.css" type="text/css" media="screen">
+    <!-- -->
 
-                {% include navigation.html %}
-            </header>   <!-- end class="site-header" -->
-            <div id="boxes">  <!-- New div wrapper around the two boxes whose height we want to match -->
-                <main id="left-column">
-                    {{ content | replace: '<li>[ ]',
-                        '<li class="checkbox"><input type="checkbox" disabled/>'
-                       | replace: '<li>[x]',
-                        '<li class="checkbox_done"><input type="checkbox" checked disabled/>' }}
-                </main>
+    <!-- --
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/themes/unstyled-theme.css" type="text/css" media="screen">
+    <!-- -->
 
-                {% include sidebar.html %}
-            </div>  <!-- end id="boxes" -->
+    <!-- --
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/themes/default-theme.css" type="text/css" media="screen">
+    <!-- -->
 
-            {% include footer.html %}
-        </div>  <!-- end id="container" -->
+    <!-- --
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/themes/blue-gray-theme.css" type="text/css" media="screen">
+    <!-- -->
 
-        <!-- analytics.html is just a script, so it doesn't need to be in the div container -->
-        {% include analytics.html %}
-    </body>
+    <!-- --
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/themes/base16-dark-theme.css" type="text/css" media="screen">
+    <!-- -->
+
+    <!-- --
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/themes/base16-solarized-dark-theme.css" type="text/css" media="screen">
+    <!-- -->
+
+    <!-- --
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/themes/molokai-theme.css" type="text/css" media="screen">
+    <!-- -->
+
+    <!-- Enable the use of HTML5 sectioning elements in legacy IE and basic HTML5 styling for IE 6-9,
+    Safari 4.x (and iPhone 3.x), and Firefox 3.x -->
+    <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="{{ site.title }} - {{ site.description }}"
+        href="{{ site.baseurl }}/feed.xml" >
+
+    <!-- MathJax configuration -->
+    <!-- for configuration options see
+         https://docs.mathjax.org/en/v2.5-latest/options/HTML-CSS.html#configure-html-css
+         For CSS style objects see
+         https://docs.mathjax.org/en/v2.5-latest/options/HTML-CSS.html#configure-html-css
+     -->
+    <script async type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: true
+            },
+            "HTML-CSS": {
+                preferredFont: "TeX",
+                availableFonts: ["STIX","TeX"],
+                styles: {
+                    ".MathJax .merror": {
+                        color:   "#dd0000",
+                        padding: "1px 3px",
+                        "font-style": "normal",
+                        "font-size":  "90%"
+                    }
+                },
+                linebreaks: { automatic: true },
+                scale: 100
+            }
+        });
+    </script>
+
+    <!-- Load MathJax -->
+    <script async type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+    </script>
+  </head>
+
+  <body id="default-page">
+    <!-- Note: "overflow: hidden" doesn't work on the <body> element, so a <div id="page-wrapper">
+         element wraps everything in the body except the footer. -->
+    <div id="wrapper">
+      <header>
+        <div id="header-content" role="banner">
+          <div id="masthead">
+            <div id="banner">
+              <h1 id="site-title">{{ site.title }}</h1>
+              <h2 id="site-subtitle">{{ site.description }}</h2>
+            </div>
+            <div id="masthead-details">
+              <ul>
+                <li class="left">{{ site.time | date_to_string }}</li>
+                <li class="left">{{ site.author }}</li>
+
+                <!-- Calculate and display the Volume and Issue numbers. The Volume
+                     number is based on the number of years of posts in the 'blog'
+                     category. The Issue number is a counting of those posts for
+                     the current year (Volume). -->
+                {% assign volumeNo = 1 %}
+                {% assign issueNo = 0 %}
+                {% assign blogPosts = site.categories['blog'] %}
+                {% assign firstPost = blogPosts | first %}
+                {% assign currentYear = firstPost.date | date: '%Y' %}
+                {% assign yearsString = currentYear %}
+                {% assign years = yearsString | split: ' ' %}
+                {% for post in blogPosts %}
+                  {% assign postYear = post.date | date: '%Y' %}
+                  {% if postYear == currentYear %}
+                    {% assign issueNo = issueNo | plus: 1 %}
+                  {% endif %}
+                  {% unless years contains postYear %}
+                    {% assign volumeNo = volumeNo | plus: 1 %}
+                    {% assign yearsString = yearsString | append: ' ' | append: postYear %}
+                    {% assign years = yearsString | split: ' ' %}
+                  {% endunless %}
+                {% endfor %}
+                <li class="no-border">Vol. {{ volumeNo }}, No. {{ issueNo }} </li>
+
+              </ul>
+            </div>
+          </div>
+
+          <nav id="main-navigation" role="navigation">
+            <ul class="navigation-list">
+              <li class="main-navigation-item"><a href="{{ site.baseurl }}/">Home</a></li>
+              <li class="main-navigation-item"><a href="{{ site.baseurl }}/about/">About</a></li>
+              <li class="main-navigation-item"><a href="{{ site.baseurl }}/now/">Now</a></li>
+              <li class="main-navigation-item"><a href="{{ site.baseurl }}/2016/to-do/">To Do</a></li>
+              <li class="main-navigation-item"><a href="{{ site.baseurl }}/2016/goals/">Goals</a></li>
+              <li class="main-navigation-item"><a href="{{ site.baseurl }}/archive/">Archive</a></li>
+              <li class="main-navigation-item"><a href="{{ site.baseurl }}/notes/">Notes</a></li>
+              <li class="main-navigation-item"><a href="{{ site.baseurl }}/projects/">Projects</a></li>
+            </ul>
+          </nav>
+        </div>  <!-- header-content -->
+      </header>
+
+      <div id="content-sidebar-wrap">
+        <div id="main-content" role="main">
+          <main>
+              {{ content | replace: '<li>[ ]', '<li class="checkbox">' | replace: '<li>[x]', '<li class="checkbox_done">'  }}
+          </main>
+        </div>
+
+        <!-- Added sidebar content -->
+        <div id="side-content">
+          <section class="posts-previous" id="posts-previous">
+            <h3 id="header-this-year">{{ 'now' | date: "%Y" }}</h3>
+            <nav role="navigation">
+              {% for post in site.categories['blog'] %}
+                {% unless post.next %}
+              <ul class="this-years-posts">
+                {% else %}
+                  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+                  {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+                  {% if year != nyear %}
+              </ul>
+              <h3 class="header-previous-years">{{ post.date | date: '%Y' }}</h3>
+              <ul class="past-posts">
+                  {% endif %}
+                {% endunless %}
+                <li class="side-list-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
+              {% endfor %}
+              </ul>
+            </nav>
+          </section>
+        </div>
+
+      </div> <!-- end id="content-sidebar-wrap" -->
+    </div>  <!-- end id="wrapper" -->
+
+    <footer id="footer">
+      <p id="about">{% include svg-icons.html %}</p>
+      <section id="footerlist">
+        <ul>
+          <li>
+            <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
+              {{ site.title }}
+            </span>
+            by
+            <a xmlns:cc="http://creativecommons.org/ns#"
+              href="https://dbc60.github.io"
+              property="cc:attributionName"
+              rel="cc:attributionURL">
+              <author> {{ site.footer-links.author }} </author>
+            </a>
+          </li>
+          <li>Based on work in my
+              <a xmlns:dct="http://purl.org/dc/terms/"
+                href="https://github.com/dbc60/dbc.github.io"
+                rel="dct:source">GitHub</a> repository
+          </li>
+          <li>Licensed under
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <img alt="Creative Commons License"
+                  style="border-width:0"
+                  src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png">
+            </a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+
+    
+    <!-- analytics.html is just a script, so it doesn't need to be in the div page-wrapper -->
+    {% if site.google_analytics %}
+        <!-- Google Analytics -->
+        <script async>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          
+          ga('create', '{{ site.google_analytics }}', 'auto');
+          ga('send', 'pageview', {
+            'page': '{{ page.url }}',
+            'title': '{{ page.title | replace: "'", "\\'" }}'
+          });
+        </script>
+        <!-- End Google Analytics -->
+    {% endif %}
+  </body>
 </html>

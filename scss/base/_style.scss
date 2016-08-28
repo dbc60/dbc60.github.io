@@ -5,12 +5,22 @@
 @import 'modules/variables';
 @import 'svg-icons';
 @import 'syntax-highlighting';
+// @import 'alternative-syntax-highlighting';
 
 /* ==========================================================================
    Custom styles
    ========================================================================== */
 body {
   font-size: 100%;
+  // This animation and the keyframes styling below are an experiment to see if
+  // I can overcome any Flash Of Unstyled Content using a CSS animation. It doesn't
+  // yet help with MathJax rendering of matrices and other mathematical expressions.
+  animation: amp-timeout 0s 10s 1 normal forwards;
+}
+
+@keyframes amp-timeout {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; }
 }
 
 html>body {
@@ -26,7 +36,7 @@ html>body {
                    It ensures the container will be centered on the page. */
   margin-top: 20px; /* This moves the whole page (header included) down the page a little bit, so
                        it isn't tightly against the browser's chrome */
-  border: 3px solid #4B4B4B;
+  border: 3px solid $BorderlineGray;
   border-radius: 20px;
   overflow: hidden; /* Hack to mitigate clipping of corners */
 }
@@ -124,25 +134,12 @@ hr {
 //     //margin: 0 25px 25px 0;
 // }
 
-#site-title {
-  color: $left_column_color;
-  margin-top: 0.5rem;
-  margin-bottom: 0.05rem;
-  font-size: 175%;
-}
-
-#site-sub-title {
-  color: $left_column_color;
-  margin: 0;
-  font-size: 125%;
-}
-
-
 // Adding some background colors so we can see where our boxes are
-div#title-wrapper {
+header#banner {
   background: linear-gradient(to bottom, $navbar_background_light, $navbar_background_dark);
-  height: 150px;
-  background-image: url(../img/aquarium-slice.jpg);
+//  height: 150px;
+  background-repeat: no-repeat;
+  background-image: url(../../../img/base/aquarium-slice.jpg);
 }
 
 // Positioning for our logo image
@@ -246,7 +243,96 @@ span.excerpt {
   color: $excerpt_color;
 }
 
-// Styling for image div with caption
+/* ==========================================================================
+   Table Styling
+   ========================================================================== */
+table {
+  width: 90%;
+  border-collapse: collapse;
+  background: $NearlyBlack;
+}
+
+td, th {
+  border: 1px solid $NearlyBlack;
+  padding: 2px 4px 2px 8px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: $Olive;
+}
+
+tbody tr:nth-child(even) {
+  background-color: $Dingley;
+}
+
+/* Shortcut Tables */
+table.category {
+	font-size: 0.8em;
+}
+
+table.main {
+  width: 90%;
+  margin-left: 0%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+table.sub {
+	width: 88%;
+	padding-left: 2%;
+	margin-left: 2%;
+	margin-top: -5px;
+	margin-bottom: 20px;
+}
+
+table.category td,
+table.category th {
+	padding: 2px 4px 2px 8px;
+	text-align: left;
+	vertical-align: middle;
+	height: 30px;
+}
+
+table.category th {
+	font-weight: bold;
+  border-bottom: 1px solid $NearlyBlack;
+}
+
+td.shortcut {
+	width: 35%;
+}
+
+
+/* Table Helper */
+.plus_minus {
+	text-align: right;
+  padding: 0;
+  float: right;
+}
+
+.plus_minus img {
+	vertical-align: middle;
+	padding-bottom:2px;
+	padding-right: 2px;
+}
+
+.expand {
+	display: none;
+}
+
+.goto_top {
+  float: right;
+  height: 15px;
+  color: #519548;
+  padding-top: 3px;
+  margin-right: 5%;
+  text-align: right;
+}
+
+
+/* ==========================================================================
+   Styling for image div with caption
+   ========================================================================== */
 .article_img {
   float:left;
   width:200px;
@@ -270,9 +356,10 @@ span.excerpt {
   padding-top:5px;
 }
 
-// Adding set of rules for navigation menu
 
-// START NAV MENU
+/* ==========================================================================
+   START NAV MENU
+   ========================================================================== */
 nav {
   background-color: $navbar_background_light;
   border-bottom: thick solid $navbar_border_color;
@@ -301,7 +388,7 @@ nav li ul {
 nav ul li:first-child a {
   display: block;
   text-decoration: none;
-  // padding order: top, right, bottom, left
+  // padding order: top, right, bottom, left;
   padding: 7px 15px 3px 0px;
   background: $navbar_background_light;
   color: $left_column_color;
@@ -343,12 +430,12 @@ nav li:hover li {
 }
 
 nav li:hover a {
-  background: #3A464F;
+  //background: #3A464F;
   height:30px; // Height of lower-level nav items is shorter than main level
 }
 
 nav li:hover li a:hover {
-  background: #95A9B1;
+  //background: #95A9B1;
 }
 
 nav ul li ul li a {
@@ -356,6 +443,22 @@ nav ul li ul li a {
 }
 
 // END NAV MENU
+
+
+/* ==========================================================================
+   Keyboard Style
+   ========================================================================== */
+span.kbd {
+	border-radius: 4px;
+	border-style: outset;
+	border: 1px solid $Black;
+	background: $Merlin;
+	padding: 0px 3px 1px 3px;
+  margin: 0px 0px 0px 0px;
+	vertical-align: baseline;
+	line-height: 1.8em;
+	white-space: nowrap;
+}
 
 
 /* ==========================================================================
@@ -421,15 +524,15 @@ nav ul li ul li a {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clearfix:before,
-.clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
-
-.clearfix:after {
-  clear: both;
-}
+// .clearfix:before,
+// .clearfix:after {
+//   content: " "; /* 1 */
+//   display: table; /* 2 */
+// }
+//
+// .clearfix:after {
+//   clear: both;
+// }
 
 
 /* ==========================================================================
