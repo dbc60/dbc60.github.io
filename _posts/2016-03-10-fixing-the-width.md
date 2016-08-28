@@ -2,16 +2,18 @@
 layout: post
 title: Fixing the Width
 category: blog
-tags: [jekyll, yaml, liquid-templates,
-       markdown,
-       html, css
-       git,
-       mathjax,
-       bundler]
+tags:
+    - jekyll
+    - yaml
+    - liquid-templates
+    - markdown
+    - html
+    - css
+    - git
+    - mathjax
+    - bundler
+excerpt: What an ugly, fragile blog.
 ---
-What an ugly, fragile blog.
-
-<!--more-->
 
 All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.
 

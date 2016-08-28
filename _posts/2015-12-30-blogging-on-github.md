@@ -11,10 +11,9 @@ tags: [jekyll, yaml, liquid-templates,
        bundler,
        dns
        ]
+excerpt: What do you really need to know to setup a blog on GitHub?
 ---
-What do you really need to know to setup a blog on GitHub?
 
-<!--more-->
 
 ## Contents
 {:.no_toc}

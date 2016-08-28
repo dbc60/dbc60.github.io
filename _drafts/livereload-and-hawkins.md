@@ -2,11 +2,11 @@
 layout: post
 title: LiveReload and the Hawkins Plug-in
 category: blog
-tags: [jekyll, config]
+tags:
+    - jekyll
+    - config
+excerpt: Jekyll is a good tool for generating sites from Markdown, but it is a bit fickle and very slow. Nevertheless, I found a nice gem, Hawkins, that will refresh a browser with the LiveReload extension installed.
 ---
-Jekyll is a good tool for generating sites from Markdown, but it is a bit fickle and very slow. Nevertheless, I found a nice gem, Hawkins, that will refresh a browser with the LiveReload extension installed.
-
-<!--more-->
 
 ## Contents
 {:.no_toc}
