@@ -30,6 +30,7 @@ exclude:      [
                 'config.rb',
                 'Gemfile',
                 'Gemfile.lock',
+                'vendor'
               ]
 
 gems:         [
@@ -63,10 +64,6 @@ excerpt_separator: "<!--more-->"
 markdown:       kramdown
 kramdown:
   input: GFM   # GFM - Github Flavored Markdown.
-  enable_coderay: true
-  coderay:
-    coderay_line_numbers: true
-    coderay_css: class
 
 markdown_ext:   markdown,mkdown,mkdn,mkd,md
 

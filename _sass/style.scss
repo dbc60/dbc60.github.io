@@ -76,6 +76,18 @@ html>body {
    line-height: 1.25;
 }
 
+// My check lists
+li.checkbox:before {
+  content: $ballot_box;
+  margin-right: 5px;
+  color: $checklist_color;
+}
+
+li.checkbox_done:before {
+  content: $ballot_box_checked;
+  margin-right: 5px;
+  color: $checklist_color;
+}
 
 /*
 * A better looking default horizontal rule

@@ -1,7 +1,8 @@
 <head>
+    {% include meta.html %}
 
     <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script async src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css" media="screen">
@@ -46,8 +47,7 @@
     </script>
 
     <!-- Load MathJax -->
-    <script type="text/javascript"
+    <script async type="text/javascript"
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
     </script>
-    {% include meta.html %}
 </head>

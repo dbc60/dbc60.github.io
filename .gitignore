@@ -1,4 +1,4 @@
-# Cache
+# SASS Cache
 .sass-cache
 *.sassc
 *.scssc
@@ -22,3 +22,13 @@ _site
 
 # WinMerge
 *.bak
+
+# Jupyter and iPython Notebooks
+.ipynb*
+
+Visual Studio Code Editor
+.vscode
+
+# Bundler
+vendor
+Gemfile.Lock

@@ -79,14 +79,16 @@ $left_column_background_color: $BackgroundGray;
 $code_block_background_color: $BlackPearl;
 $inline_code_background_color: $left_column_background_color - #111111;
 
-$body_width: 1200px;
-$left_column_width: $body_width * 19 / 24;
+$body_width: 1024px;
+$left_column_width: $body_width * 9 / 12;   // 768px
 $left_column_color: text-contrast($left_column_background_color);
 $left_column_horizontal_padding: 25px;
 $left_column_vertical_padding: 20px;
 $text_color: $left_column_color;
 $excerpt_color: $Olive;
 $post_date_color: $Cornflower;
+
+$checklist_color: $Olive;
 
 $right_column_padding: 10px;
 $right_column_width: $body_width - $left_column_width - $right_column_padding * 2;
@@ -98,6 +100,10 @@ $hover_color: text-contrast($left_column_background_color);
 $visited_color: text-contrast($left_column_background_color);
 $visited_hover_color: $Whisper;
 $link_active_color: $Green;
+
+// Useful Unicode Characters
+$ballot_box: '\2610';         // Unicode Ballot Box
+$ballot_box_checked: '\2611'; // Unicode Ballot Box with Check
 
 // H2 headings
 $heading_h2_color: $left_column_color;

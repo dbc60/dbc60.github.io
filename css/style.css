@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -803,7 +804,7 @@ html > body {
 /* line 22, ../_sass/style.scss */
 #container {
   background-color: #30515d;
-  width: 1200px;
+  width: 1024px;
   margin: auto;
   /* This causes unspecified margins to be calculated automatically and equally.
      It ensures the container will be centered on the page. */
@@ -829,7 +830,7 @@ html > body {
 #left-column {
   background-color: #49483f;
   /* This makes the element grow and take all available space, not taken by the sidebar */
-  width: 950px;
+  width: 768px;
   float: left;
   padding-left: 25px;
   padding-right: 25px;
@@ -844,7 +845,7 @@ html > body {
 /* line 58, ../_sass/style.scss */
 #right-column {
   background-color: #30515d;
-  width: 230px;
+  width: 236px;
   float: right;
   padding: 10px;
 }
@@ -865,10 +866,24 @@ html > body {
   line-height: 1.25;
 }
 
+/* line 80, ../_sass/style.scss */
+li.checkbox:before {
+  content: "☐";
+  margin-right: 5px;
+  color: #3d9970;
+}
+
+/* line 86, ../_sass/style.scss */
+li.checkbox_done:before {
+  content: "☑";
+  margin-right: 5px;
+  color: #3d9970;
+}
+
 /*
 * A better looking default horizontal rule
 */
-/* line 83, ../_sass/style.scss */
+/* line 95, ../_sass/style.scss */
 hr {
   display: block;
   height: 1px;
@@ -878,37 +893,37 @@ hr {
   padding: 0;
 }
 
-/* line 92, ../_sass/style.scss */
+/* line 104, ../_sass/style.scss */
 :link {
   color: #ccf1f1;
 }
 
-/* line 93, ../_sass/style.scss */
+/* line 105, ../_sass/style.scss */
 :link:hover {
   color: #f7f7f6;
 }
 
-/* line 94, ../_sass/style.scss */
+/* line 106, ../_sass/style.scss */
 :visited {
   color: #f7f7f6;
 }
 
-/* line 95, ../_sass/style.scss */
+/* line 107, ../_sass/style.scss */
 :visited:hover {
   color: #e9e9e9;
 }
 
-/* line 96, ../_sass/style.scss */
+/* line 108, ../_sass/style.scss */
 :link:active, :visited:active {
   color: #2ecc40;
 }
 
-/* line 98, ../_sass/style.scss */
+/* line 110, ../_sass/style.scss */
 .archive {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 115, ../_sass/style.scss */
+/* line 127, ../_sass/style.scss */
 #site-title {
   color: #f7f7f6;
   margin-top: 0.5rem;
@@ -916,28 +931,28 @@ hr {
   font-size: 175%;
 }
 
-/* line 122, ../_sass/style.scss */
+/* line 134, ../_sass/style.scss */
 #site-sub-title {
   color: #f7f7f6;
   margin: 0;
   font-size: 125%;
 }
 
-/* line 130, ../_sass/style.scss */
+/* line 142, ../_sass/style.scss */
 div#title-wrapper {
   background: linear-gradient(to bottom, #30515d, #002533);
   height: 150px;
   background-image: url(../img/aquarium-slice.jpg);
 }
 
-/* line 137, ../_sass/style.scss */
+/* line 149, ../_sass/style.scss */
 img#header-img {
   position: relative;
   top: 7px;
   left: 15px;
 }
 
-/* line 149, ../_sass/style.scss */
+/* line 161, ../_sass/style.scss */
 audio,
 canvas,
 iframe,
@@ -947,7 +962,7 @@ video {
   vertical-align: middle;
 }
 
-/* line 159, ../_sass/style.scss */
+/* line 171, ../_sass/style.scss */
 footer {
   background: linear-gradient(to bottom, #30515d, #002533);
   border-top: thick solid #30515d;
@@ -956,52 +971,52 @@ footer {
   clear: both;
 }
 
-/* line 168, ../_sass/style.scss */
+/* line 180, ../_sass/style.scss */
 footer a:link {
   color: #888888;
 }
 
-/* line 172, ../_sass/style.scss */
+/* line 184, ../_sass/style.scss */
 footer a:visited {
   color: #ffffff;
 }
 
-/* line 177, ../_sass/style.scss */
+/* line 189, ../_sass/style.scss */
 footer p#about {
   width: 300px;
   margin: 20px 50px 0px 10px;
   float: left;
 }
 
-/* line 184, ../_sass/style.scss */
+/* line 196, ../_sass/style.scss */
 footer section#footerlist {
   float: right;
   padding-right: 10px;
   margin-top: 10px;
 }
 
-/* line 190, ../_sass/style.scss */
+/* line 202, ../_sass/style.scss */
 footer section#footerlist ul {
   padding-left: 0px;
 }
 
-/* line 194, ../_sass/style.scss */
+/* line 206, ../_sass/style.scss */
 footer section#footerlist ul li {
   list-style-type: none;
 }
 
-/* line 198, ../_sass/style.scss */
+/* line 210, ../_sass/style.scss */
 footer section#footerlist h3 {
   margin-top: 0px;
 }
 
-/* line 202, ../_sass/style.scss */
+/* line 214, ../_sass/style.scss */
 footer p#footercopy {
   clear: both;
   text-align: center;
 }
 
-/* line 212, ../_sass/style.scss */
+/* line 224, ../_sass/style.scss */
 footer {
   padding: 10px;
 }
@@ -1009,19 +1024,19 @@ footer {
 /* Specify fonts for section headers and article Ps. Note that
   <link href='http://fonts.googleapis.com/css?family=Kreon' rel='stylesheet' type='text/css'>
  was added to _includes/head.html to make the Kreon font-family available. */
-/* line 219, ../_sass/style.scss */
+/* line 231, ../_sass/style.scss */
 h2.roll-post-title {
   font-family: Georgia, serif;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
-/* line 226, ../_sass/style.scss */
+/* line 238, ../_sass/style.scss */
 span.post-date {
   color: #8CCAF0;
 }
 
-/* line 229, ../_sass/style.scss */
+/* line 241, ../_sass/style.scss */
 span.excerpt {
   font-family: "Helvetica Neue", Helvetica, "Noto Sans", Arial, sans-serif;
   font-size: 1.0em;
@@ -1030,7 +1045,7 @@ span.excerpt {
   color: #3d9970;
 }
 
-/* line 238, ../_sass/style.scss */
+/* line 250, ../_sass/style.scss */
 .article_img {
   float: left;
   width: 200px;
@@ -1039,14 +1054,14 @@ span.excerpt {
   margin: 5px 20px 5px 0px;
 }
 
-/* line 246, ../_sass/style.scss */
+/* line 258, ../_sass/style.scss */
 .article_img2 {
   width: 100%;
   padding: 5px;
   margin: 5px 20px 5px 0px;
 }
 
-/* line 253, ../_sass/style.scss */
+/* line 265, ../_sass/style.scss */
 .article_img p {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -1054,33 +1069,33 @@ span.excerpt {
   padding-top: 5px;
 }
 
-/* line 264, ../_sass/style.scss */
+/* line 276, ../_sass/style.scss */
 nav {
   background-color: #30515d;
   border-bottom: thick solid #30515d;
   height: 40px;
 }
 
-/* line 271, ../_sass/style.scss */
+/* line 283, ../_sass/style.scss */
 nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 279, ../_sass/style.scss */
+/* line 291, ../_sass/style.scss */
 nav ul li {
   display: block;
   position: relative;
   float: left;
 }
 
-/* line 285, ../_sass/style.scss */
+/* line 297, ../_sass/style.scss */
 nav li ul {
   display: none;
 }
 
-/* line 289, ../_sass/style.scss */
+/* line 301, ../_sass/style.scss */
 nav ul li:first-child a {
   display: block;
   text-decoration: none;
@@ -1094,7 +1109,7 @@ nav ul li:first-child a {
   text-align: center;
 }
 
-/* line 303, ../_sass/style.scss */
+/* line 315, ../_sass/style.scss */
 nav ul li a {
   display: block;
   text-decoration: none;
@@ -1108,35 +1123,35 @@ nav ul li a {
   text-align: center;
 }
 
-/* line 317, ../_sass/style.scss */
+/* line 329, ../_sass/style.scss */
 nav ul li a:hover {
   background: #617F8A;
 }
 
-/* line 321, ../_sass/style.scss */
+/* line 333, ../_sass/style.scss */
 nav li:hover ul {
   display: block;
   position: absolute;
   height: 30px;
 }
 
-/* line 327, ../_sass/style.scss */
+/* line 339, ../_sass/style.scss */
 nav li:hover li {
   float: none;
 }
 
-/* line 333, ../_sass/style.scss */
+/* line 345, ../_sass/style.scss */
 nav li:hover a {
   background: #3A464F;
   height: 30px;
 }
 
-/* line 338, ../_sass/style.scss */
+/* line 350, ../_sass/style.scss */
 nav li:hover li a:hover {
   background: #95A9B1;
 }
 
-/* line 342, ../_sass/style.scss */
+/* line 354, ../_sass/style.scss */
 nav ul li ul li a {
   text-align: left;
 }
@@ -1147,7 +1162,7 @@ nav ul li ul li a {
 /*
  * Hide visually and from screen readers:
  */
-/* line 356, ../_sass/style.scss */
+/* line 368, ../_sass/style.scss */
 .hidden {
   display: none !important;
 }
@@ -1156,7 +1171,7 @@ nav ul li ul li a {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 365, ../_sass/style.scss */
+/* line 377, ../_sass/style.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1173,7 +1188,7 @@ nav ul li ul li a {
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-/* line 382, ../_sass/style.scss */
+/* line 394, ../_sass/style.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -1187,7 +1202,7 @@ nav ul li ul li a {
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-/* line 396, ../_sass/style.scss */
+/* line 408, ../_sass/style.scss */
 .invisible {
   visibility: hidden;
 }
@@ -1203,7 +1218,7 @@ nav ul li ul li a {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 412, ../_sass/style.scss */
+/* line 424, ../_sass/style.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -1212,7 +1227,7 @@ nav ul li ul li a {
   /* 2 */
 }
 
-/* line 418, ../_sass/style.scss */
+/* line 430, ../_sass/style.scss */
 .clearfix:after {
   clear: both;
 }
@@ -1228,7 +1243,7 @@ nav ul li ul li a {
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 @media print {
-  /* line 447, ../_sass/style.scss */
+  /* line 459, ../_sass/style.scss */
   *,
   *:before,
   *:after {
@@ -1238,18 +1253,18 @@ nav ul li ul li a {
     text-shadow: none !important;
   }
 
-  /* line 457, ../_sass/style.scss */
+  /* line 469, ../_sass/style.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 462, ../_sass/style.scss */
+  /* line 474, ../_sass/style.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 466, ../_sass/style.scss */
+  /* line 478, ../_sass/style.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -1258,13 +1273,13 @@ nav ul li ul li a {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 475, ../_sass/style.scss */
+  /* line 487, ../_sass/style.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 480, ../_sass/style.scss */
+  /* line 492, ../_sass/style.scss */
   pre,
   blockquote {
     page-break-inside: avoid;
@@ -1274,23 +1289,23 @@ nav ul li ul li a {
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  /* line 490, ../_sass/style.scss */
+  /* line 502, ../_sass/style.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 494, ../_sass/style.scss */
+  /* line 506, ../_sass/style.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 499, ../_sass/style.scss */
+  /* line 511, ../_sass/style.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 503, ../_sass/style.scss */
+  /* line 515, ../_sass/style.scss */
   p,
   h2,
   h3 {
@@ -1298,7 +1313,7 @@ nav ul li ul li a {
     widows: 3;
   }
 
-  /* line 510, ../_sass/style.scss */
+  /* line 522, ../_sass/style.scss */
   h2,
   h3 {
     page-break-after: avoid;
