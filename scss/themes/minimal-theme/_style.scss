@@ -37,6 +37,9 @@ body {
   height: auto !important;
   overflow: auto; // this causes the footer to follow the wrapper div
   border-bottom: thin solid $foreground_contrast;
+
+  // The border is for debugging
+  //border: thick solid darkgray;
 }
 
 #header-content {
@@ -54,7 +57,7 @@ body {
 }
 
 h1#site-title, h2#site-subtitle {
-    padding: 0.5em $section_padding_horizontal 0 $section_padding_horizontal;
+    padding: 0.5em $section_padding_horizontal;
     margin: 0;
 }
 
@@ -135,6 +138,7 @@ li.left {
   // flex-basis: $main_content_basis_width 
   flex: 1 1 $main_content_basis_width;
   padding: $section_padding_vertical $section_padding_horizontal;
+  max-width: $main_content_basis_width;
 
   // The border is for debugging
   //border: thick solid green;
