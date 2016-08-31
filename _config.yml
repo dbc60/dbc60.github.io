@@ -11,7 +11,7 @@ avatar: http://www.gravatar.com/avatar/71b1b3ffdc9fec49fe58bb0dfa43a402
 # with rouge (as of February 1, 2016)! See https://pages.github.com/versions/ for a complete list
 # of gem dependencies. See the announcement here:
 # https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
-highlighter: rouge
+#highlighter: rouge
 
 # GitHub Pages Metadata (see https://help.github.com/articles/repository-metadata-on-github-pages/)
 github:
@@ -38,6 +38,11 @@ exclude:
   - '.ipynb_checkpoints'
   - '.sass-cache'
 
+
+gems:
+  - 'jekyll-sitemap'
+  - 'jekyll-paginate'
+  - 'jekyll-seo-tag'
 
 # TODO(doug): What do these settings effect?
 # timezone:    nil
