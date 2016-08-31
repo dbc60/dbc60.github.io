@@ -171,7 +171,7 @@ ul.this-years-posts, ul.past-posts {
 #footer {
   /* The clear: both property ensures that our footer element appears after any
    *  elements which are floated at the left or the right */
-  clear: both;
+  //clear: both;
   display: flex;
   flex-wrap: wrap;
   background: linear-gradient(to bottom, white, lightgray);
@@ -186,7 +186,7 @@ ul.this-years-posts, ul.past-posts {
   flex: 2 2 $side_content_basis_width;
 }
 
-section#footerlist ul {
+#footerlist ul {
   list-style-type: none;
   float: right;
   padding-right: $section_padding_horizontal;
