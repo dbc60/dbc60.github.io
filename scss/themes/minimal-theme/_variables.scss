@@ -1,8 +1,8 @@
-$body_font_size: 1.2em/1.62em;
+$body_font_size: 1.0em;
 $body_width: 60em;
 $footer-height: 100px;
-$main_content_basis_width: $body_width * 0.7;
-$side_content_basis_width: $body_width * 0.25;
+$main_content_basis_width: $body_width * 0.75;
+$side_content_basis_width: $body_width * 0.20;
 $section_padding_vertical: 0;
 $section_padding_horizontal: 12px;
 @import 'modules/variables';
