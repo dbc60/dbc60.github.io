@@ -206,3 +206,26 @@ ul.this-years-posts, ul.past-posts {
 .roll-post-title, .post-title {
   margin-bottom: 0.2em;
 }
+
+
+/* ==========================================================================
+   Table Styling
+   ========================================================================== */
+table {
+  width: 90%;
+  border-collapse: collapse;
+  background: ghostwhite;
+}
+
+td, th {
+  border: 1px solid $NearlyBlack;
+  padding: 2px 4px 2px 8px;
+}
+
+tbody tr:nth-child(odd) {
+  background: linear-gradient(to bottom, ghostwhite, silver);
+}
+
+tbody tr:nth-child(even) {
+  background: linear-gradient(to bottom, silver, ghostwhite);
+}
