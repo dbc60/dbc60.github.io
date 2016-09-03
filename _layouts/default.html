@@ -131,7 +131,7 @@
             <h3 id="header-this-year">{{ 'now' | date: "%Y" }}</h3>
             <nav>
               {% for post in site.categories['blog'] %}
-                {% unless post.next %}
+                {% if forloop.first %}
               <ul class="this-years-posts">
                 {% else %}
                   {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
@@ -141,7 +141,7 @@
               <h3 class="header-previous-years">{{ post.date | date: '%Y' }}</h3>
               <ul class="past-posts">
                   {% endif %}
-                {% endunless %}
+                {% endif %}
                 <li class="side-list-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
               {% endfor %}
               </ul>
