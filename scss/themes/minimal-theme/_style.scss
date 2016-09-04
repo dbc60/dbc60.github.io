@@ -18,6 +18,12 @@
 //
 // Here is what I derived from it: http://jsfiddle.net/dbc60/tfwrojh0/
 
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   max-width: $body_width;
   // padding order: top, right, bottom, left;
@@ -37,6 +43,7 @@ body {
   height: auto !important;
   overflow: auto; // this causes the footer to follow the wrapper div
   border-bottom: thin solid $foreground_contrast;
+  position: relative;
 
   // The border is for debugging
   //border: thick solid darkgray;
@@ -125,6 +132,7 @@ li.left {
 
 
 #content-sidebar-wrap {
+  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
   max-width: $body_width;
@@ -135,7 +143,8 @@ li.left {
 
 #main-content {
   // flex is shorthand for flex-grow: 1, flex-shrink: 1,
-  // flex-basis: $main_content_basis_width 
+  // flex-basis: $main_content_basis_width
+  -webkit-flex: 1 1 $main_content_basis_width; 
   flex: 1 1 $main_content_basis_width;
   padding: $section_padding_vertical $section_padding_horizontal;
   max-width: $main_content_basis_width;
@@ -147,6 +156,7 @@ li.left {
 #side-content {
   // flex is shorthand for flex-grow: 2, flex-shrink: 2,
   // flex-basis: $side_content_basis_width 
+  -webkit-flex: 2 2 $side_content_basis_width;
   flex: 2 2 $side_content_basis_width;
   border-left: thin solid $foreground_contrast;
   
@@ -212,7 +222,7 @@ ul.this-years-posts, ul.past-posts {
    Table Styling
    ========================================================================== */
 table {
-  width: 90%;
+  max-width: 100%;
   border-collapse: collapse;
   background: ghostwhite;
 }
@@ -228,4 +238,13 @@ tbody tr:nth-child(odd) {
 
 tbody tr:nth-child(even) {
   background: linear-gradient(to bottom, silver, ghostwhite);
+}
+
+
+/* ==========================================================================
+   Image Styling
+   ========================================================================== */
+img.content-image {
+  width: 100%;
+  height: auto;
 }

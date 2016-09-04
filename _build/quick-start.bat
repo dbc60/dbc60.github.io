@@ -10,4 +10,4 @@ REM Hawkins does not appear to work with the --incremental option
 REM start bundle exec jekyll liveserve --incremental --port 4004
 REM liveserve will listen on reload-port 35729. That port can be changed
 REM with the '--reload-port [PORT]' option.
-start bundle exec jekyll liveserve --drafts
+start bundle exec jekyll liveserve --reload-port 35730 --port 4000
