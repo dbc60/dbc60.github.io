@@ -109,7 +109,7 @@
 
           <nav id="main-navigation">
             <ul class="navigation-list">
-              <li class="main-navigation-item"><a href="{{ site.baseurl }}/">Home</a></li>
+              <li class="main-navigation-item"><a href="{{ site.baseurl }}/">Blog</a></li>
               <li class="main-navigation-item"><a href="{{ site.baseurl }}/about/">About</a></li>
               <li class="main-navigation-item"><a href="{{ site.baseurl }}/now/">Now</a></li>
               <li class="main-navigation-item"><a href="{{ site.baseurl }}/archive/">Archive</a></li>
@@ -130,7 +130,12 @@
           <section class="posts-previous" id="posts-previous">
             <h3 id="header-this-year">{{ 'now' | date: "%Y" }}</h3>
             <nav>
-              {% for post in site.categories['blog'] %}
+              {% if page.category %}
+                {% assign sidebarCategory=page.category%}
+              {% else %}
+                {% assign sidebarCategory='blog' %}
+              {% endif %}
+              {% for post in site.categories[sidebarCategory] %}
                 {% if forloop.first %}
               <ul class="this-years-posts">
                 {% else %}
@@ -160,11 +165,10 @@
             <span property="dct:title">
               {{ site.title }}
             </span>
-            by
             <a href="https://dbc60.github.io"
               property="cc:attributionName"
               rel="cc:attributionURL">
-              <div class="author"> {{ site.footer-links.author }} </div>
+              <div class="author">&copy; {{ site.footer-links.author }} {{ site.time | date: '%Y' }}</div>
             </a>
           </li>
           <li>Based on work in my

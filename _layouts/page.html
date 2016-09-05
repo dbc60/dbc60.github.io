@@ -8,12 +8,12 @@ layout: default
     <div class="post-meta">
       {% if page.date %}
         <time class="post-date" datetime="{{ page.date | date_to_string }}" itemprop="datePublished">
-          {{ page.date | date: "%b %-d, %Y" }}
+          posted {{ page.date | date: "%b %-d, %Y" }}
         </time>
       {% endif %}
       {% if page.author %}
         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name">{{ page.author }}</span>
+          <span itemprop="name">by {{ page.author }}</span>
         </span>
       {% endif %}
     </div>
@@ -26,7 +26,4 @@ layout: default
   <section class="post-content" itemprop="articleBody">
       {{ content }}
   </section> <!-- end class="post-content" -->
-  <section>   <!-- disqus section -->
-      {% include disqus.html %}
-  </section>  <!-- end disqus section -->
 </article>  <!-- end class="post" -->

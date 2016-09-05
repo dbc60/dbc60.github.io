@@ -21,8 +21,6 @@ exclude:
   - 'Gemfile'
   - 'Gemfile.lock'
   - '_build'
-  - '_2012'
-  - '_2015'
   - '_code-morgue'
   - 'vendor'
   - '.vscode'
