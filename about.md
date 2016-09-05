@@ -8,7 +8,7 @@ My name is Doug Cuthbertson, and I'm a professional programmer and software engi
 
 I tend to read too much about software development and not write enough code, so my intent is to use this blog to explore some of the aspects of coding and engineering I've enjoyed reading about and put them into practice. Some of the subjects I intend to explore are basic things like organizing development environments for new projects, as well as using design patterns, algorithms and data structures I find interesting.
 
-See my [Now]({% link now.md %}) page for what I've been up to lately.
+See my [Now](/now/) page for what I've been up to lately.
 
 Besides my professional work, I'm a husband and father to two fine young adults. My daughter graduated from Hofstra University in May 2013, and my son is attending his freshman year at Bridgewater State University.
 
