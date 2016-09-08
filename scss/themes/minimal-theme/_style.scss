@@ -254,3 +254,15 @@ img.content-image {
   width: 100%;
   height: auto;
 }
+
+
+// My check lists
+li.checkbox:before {
+  content: $ballot_box;
+  margin-right: 5px;
+}
+
+li.checkbox_done:before {
+  content: $ballot_box_checked;
+  margin-right: 5px;
+}

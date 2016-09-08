@@ -2,9 +2,8 @@
 layout: page
 title: About
 permalink: /about/
-excerpt: I write software, enjoy my family and pursue fitness and happiness through various activities and hobbies.
+excerpt: I am Doug Cuthbertson, and I'm a professional programmer and software engineer living in Chelmsford, Massachusetts. I develop applications and kernel drivers on Microsoft Windows in C and C++.
 ---
-My name is Doug Cuthbertson, and I'm a professional programmer and software engineer living in Chelmsford, Massachusetts. I develop applications and kernel drivers on Microsoft Windows in C and C++. Lately, I'm feeling a strong need to truly learn more about my craft.
 
 I tend to read too much about software development and not write enough code, so my intent is to use this blog to explore some of the aspects of coding and engineering I've enjoyed reading about and put them into practice. Some of the subjects I intend to explore are basic things like organizing development environments for new projects, as well as using design patterns, algorithms and data structures I find interesting.
 
