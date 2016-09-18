@@ -85,12 +85,12 @@
                      the current year (Volume). -->
                 {% assign volumeNo = 1 %}
                 {% assign issueNo = 0 %}
-                {% assign blogPosts = site.categories['blog'] %}
-                {% assign firstPost = blogPosts | first %}
+                {% assign selectedPosts = site.posts %}
+                {% assign firstPost = selectedPosts | first %}
                 {% assign currentYear = firstPost.date | date: '%Y' %}
                 {% assign yearsString = currentYear %}
                 {% assign years = yearsString | split: ' ' %}
-                {% for post in blogPosts %}
+                {% for post in selectedPosts %}
                   {% assign postYear = post.date | date: '%Y' %}
                   {% if postYear == currentYear %}
                     {% assign issueNo = issueNo | plus: 1 %}
@@ -128,27 +128,42 @@
         <!-- Added sidebar content -->
         <div id="side-content">
           <section class="posts-previous" id="posts-previous">
-            <h3 id="header-this-year">{{ 'now' | date: "%Y" }}</h3>
             <nav>
-              {% if page.category %}
-                {% assign sidebarCategory=page.category%}
+              {% assign defaultCategory = "blog" %}
+              {% assign postsArray = site.array %}
+              {% for category in page.categories %}
+                {% assign newPosts = site.categories[category] %}
+                <!-- you would think a simple "concat:" would just work -->
+                {% for post in newPosts %}
+                  {% assign postsArray = postsArray | push: post %}
+                {% endfor %}
+              {% endfor %}
+
+              {% if postsArray.size > 0 %}
+                {% assign postsArray = postsArray | uniq: | sort: 'date' | reverse: %}
               {% else %}
-                {% assign sidebarCategory='blog' %}
+                {% assign postsArray = site.categories[defaultCategory] %}
               {% endif %}
-              {% for post in site.categories[sidebarCategory] %}
+
+              {% for post in postsArray %}
                 {% if forloop.first %}
+              <h3 id="header-this-year">{{ 'now' | date: "%Y" }}</h3>
               <ul class="this-years-posts">
                 {% else %}
                   {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-                  {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+                  {% if post.next %}
+                    {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+                  {% elsif nyear == null %}
+                    {% assign nyear = year %}
+                  {% endif %}
                   {% if year != nyear %}
               </ul>
               <h3 class="header-previous-years">{{ post.date | date: '%Y' }}</h3>
               <ul class="past-posts">
-                  {% endif %}
-                {% endif %}
+                  {% endif %} <!-- if year != nyear -->
+                {% endif %} <!-- if forloop.first -->
                 <li class="side-list-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
-              {% endfor %}
+              {% endfor %} <!-- for post in postsArray -->
               </ul>
             </nav>
           </section>

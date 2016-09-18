@@ -28,6 +28,7 @@ _site
 
 Visual Studio Code Editor
 .vscode
+browse.VC.db
 
 # Bundler
 vendor
