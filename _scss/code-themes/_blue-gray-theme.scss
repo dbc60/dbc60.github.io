@@ -80,7 +80,7 @@ $main-highlight-color: $Lime !default;
 
 
 // Some extra styling for the code blocks
-pre {
+/*pre {
   border: solid 1px $Black;
   padding: 0;
   line-height: 23px;
@@ -89,5 +89,10 @@ pre {
   overflow-x: auto;
   word-break: inherit;
   word-wrap: inherit;
+}
+*/
+// Some extra styling for inline code
+code.highlighter-rouge {
+  background: $Whisper;
 }
 

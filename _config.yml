@@ -66,7 +66,7 @@ markdown_ext:   markdown,mkdown,mkdn,mkd,md
 # Set the Sass partials directory, as we're using @imports
 sass:
   style: expanded
-  sass_dir: scss
+  sass_dir: _scss
 
 # Includes an icon in the footer for each username you enter
 footer-links:
