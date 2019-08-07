@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Doug&#39;s Blog</title>
+    <link>http://douglascuthbertson.com/</link>
+    <description>Recent content on Doug&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://douglascuthbertson.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What I&#39;m Doing Now</title>
+      <link>http://douglascuthbertson.com/now/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/now/</guid>
+      <description>I work for Threat Stack, Inc. in Boston Massachusetts. I&amp;rsquo;m on the Windows Agent Team, and am having a great time working there. My coworkers are very creative and thoughtful when it comes to digital security.
+This page is inspired by Derek Siver&amp;rsquo;s /now page movement. You can see lots of sites which have /now pages.</description>
+    </item>
+    
+    <item>
+      <title>A Dangerous Spectacle</title>
+      <link>http://douglascuthbertson.com/a-dangerous-spectacle/</link>
+      <pubDate>Wed, 09 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/a-dangerous-spectacle/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m truly saddened by the outcome of the 2016 presidential election.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Serving a Blog</title>
+      <link>http://douglascuthbertson.com/serviing-a-blog/</link>
+      <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/serviing-a-blog/</guid>
+      <description>&lt;p&gt;I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://douglascuthbertson.com/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/about/</guid>
+      <description>I am Doug Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I&amp;rsquo;ve been writing software in Go for both Linux and Windows (it&amp;rsquo;s my new favorite programming language).
+I tend to read too much about software development and not write enough code, so my intent is to use this blog to explore some of the aspects of coding and engineering I&amp;rsquo;ve enjoyed reading about and put them into practice.</description>
+    </item>
+    
+    <item>
+      <title>Fixing the Width</title>
+      <link>http://douglascuthbertson.com/fixing-the-width/</link>
+      <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/fixing-the-width/</guid>
+      <description>&lt;p&gt;What an ugly, fragile blog.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Pursuit of Happiness Gels in the Imagination</title>
+      <link>http://douglascuthbertson.com/pursuit-of-happiness/</link>
+      <pubDate>Wed, 09 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/pursuit-of-happiness/</guid>
+      <description>&lt;p&gt;Imagination is good, but action needs to be taken in the real world.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Quick Note on Python</title>
+      <link>http://douglascuthbertson.com/a-quick-note-on-python/</link>
+      <pubDate>Mon, 04 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/a-quick-note-on-python/</guid>
+      <description>&lt;p&gt;I saw an amusing Python tutorial.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Blog on GitHub</title>
+      <link>http://douglascuthbertson.com/blogging-on-github/</link>
+      <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/blogging-on-github/</guid>
+      <description>&lt;p&gt;What do you really need to know to setup a blog on GitHub?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

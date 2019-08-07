@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jekyll on Doug&#39;s Blog</title>
+    <link>http://douglascuthbertson.com/tags/jekyll/</link>
+    <description>Recent content in jekyll on Doug&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Dec 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://douglascuthbertson.com/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Blog on GitHub</title>
+      <link>http://douglascuthbertson.com/blogging-on-github/</link>
+      <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/blogging-on-github/</guid>
+      <description>&lt;p&gt;What do you really need to know to setup a blog on GitHub?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>math on Doug&#39;s Blog</title>
+    <link>http://douglascuthbertson.com/tags/math/</link>
+    <description>Recent content in math on Doug&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Mar 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://douglascuthbertson.com/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fixing the Width</title>
+      <link>http://douglascuthbertson.com/fixing-the-width/</link>
+      <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/fixing-the-width/</guid>
+      <description>&lt;p&gt;What an ugly, fragile blog.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

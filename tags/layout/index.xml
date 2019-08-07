@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>layout on Doug&#39;s Blog</title>
+    <link>http://douglascuthbertson.com/tags/layout/</link>
+    <description>Recent content in layout on Doug&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Sep 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://douglascuthbertson.com/tags/layout/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Serving a Blog</title>
+      <link>http://douglascuthbertson.com/serviing-a-blog/</link>
+      <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/serviing-a-blog/</guid>
+      <description>&lt;p&gt;I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fixing the Width</title>
+      <link>http://douglascuthbertson.com/fixing-the-width/</link>
+      <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/fixing-the-width/</guid>
+      <description>&lt;p&gt;What an ugly, fragile blog.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

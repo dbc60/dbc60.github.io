@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>politics on Doug&#39;s Blog</title>
+    <link>http://douglascuthbertson.com/tags/politics/</link>
+    <description>Recent content in politics on Doug&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://douglascuthbertson.com/tags/politics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Dangerous Spectacle</title>
+      <link>http://douglascuthbertson.com/a-dangerous-spectacle/</link>
+      <pubDate>Wed, 09 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://douglascuthbertson.com/a-dangerous-spectacle/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m truly saddened by the outcome of the 2016 presidential election.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
