@@ -15,10 +15,10 @@
     
     <item>
       <title>A Blog on GitHub</title>
-      <link>http://douglascuthbertson.com/blogging-on-github/</link>
+      <link>http://douglascuthbertson.com/2015/12/a-blog-on-github/</link>
       <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/blogging-on-github/</guid>
+      <guid>http://douglascuthbertson.com/2015/12/a-blog-on-github/</guid>
       <description>&lt;p&gt;What do you really need to know to setup a blog on GitHub?&lt;/p&gt;
 
 &lt;p&gt;I want a platform to write about software development, design patterns, and anything else that came to mind. &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;GitHub user pages&lt;/a&gt; looked like a good place to start. I&amp;rsquo;ve toyed with &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;http://compass-style.org/&#34;&gt;Compass&lt;/a&gt; in the past, so I thought it would be easy to setup. For the most part, it is. Along the way, I discovered a few stumbling blocks that I will share.&lt;/p&gt;

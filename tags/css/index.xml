@@ -15,10 +15,10 @@
     
     <item>
       <title>Serving a Blog</title>
-      <link>http://douglascuthbertson.com/serviing-a-blog/</link>
+      <link>http://douglascuthbertson.com/2016/09/serving-a-blog/</link>
       <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/serviing-a-blog/</guid>
+      <guid>http://douglascuthbertson.com/2016/09/serving-a-blog/</guid>
       <description>&lt;p&gt;I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve tried CMS solutions running on Linux-based servers. One of the first ones I tried many years ago was &lt;a href=&#34;http://cocoon.apache.org/&#34;&gt;Apache Cocoon&lt;/a&gt;. I was enticed by how flexible and programmable it was with its pipeline architecture. It seemed anything was possible. Ultimately, trying to program using XML and XSLT, and configure Java servlets proved to be too complicated. The languages and processes needed to keep the site up and running were too far removed from those for adding content.&lt;/p&gt;
@@ -68,10 +68,10 @@
     
     <item>
       <title>Fixing the Width</title>
-      <link>http://douglascuthbertson.com/fixing-the-width/</link>
+      <link>http://douglascuthbertson.com/2016/03/fixing-the-width/</link>
       <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/fixing-the-width/</guid>
+      <guid>http://douglascuthbertson.com/2016/03/fixing-the-width/</guid>
       <description>&lt;p&gt;What an ugly, fragile blog.&lt;/p&gt;
 
 &lt;p&gt;All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.&lt;/p&gt;
