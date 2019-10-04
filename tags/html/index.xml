@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>html on Doug&#39;s Blog</title>
-    <link>https://douglascuthbertson.com/tags/html/</link>
+    <link>http://douglascuthbertson.com/tags/html/</link>
     <description>Recent content in html on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <lastBuildDate>Thu, 10 Mar 2016 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://douglascuthbertson.com/tags/html/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://douglascuthbertson.com/tags/html/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fixing the Width</title>
-      <link>https://douglascuthbertson.com/2016/03/fixing-the-width/</link>
+      <link>http://douglascuthbertson.com/2016/03/fixing-the-width/</link>
       <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>https://douglascuthbertson.com/2016/03/fixing-the-width/</guid>
+      <guid>http://douglascuthbertson.com/2016/03/fixing-the-width/</guid>
       <description>&lt;p&gt;What an ugly, fragile blog.&lt;/p&gt;
 
 &lt;p&gt;All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.&lt;/p&gt;
