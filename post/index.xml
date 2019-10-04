@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Doug&#39;s Blog</title>
-    <link>http://douglascuthbertson.com/post/</link>
+    <link>https://douglascuthbertson.com/post/</link>
     <description>Recent content in Posts on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <lastBuildDate>Wed, 09 Nov 2016 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="http://douglascuthbertson.com/post/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://douglascuthbertson.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A Dangerous Spectacle</title>
-      <link>http://douglascuthbertson.com/2016/11/a-dangerous-spectacle/</link>
+      <link>https://douglascuthbertson.com/2016/11/a-dangerous-spectacle/</link>
       <pubDate>Wed, 09 Nov 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2016/11/a-dangerous-spectacle/</guid>
+      <guid>https://douglascuthbertson.com/2016/11/a-dangerous-spectacle/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m truly saddened by the outcome of the 2016 presidential election.&lt;/p&gt;
 
 &lt;p&gt;I woke up this morning to find that Donald Trump is our president elect. I feel really awful about it.&lt;/p&gt;
@@ -32,10 +32,10 @@
     
     <item>
       <title>Serving a Blog</title>
-      <link>http://douglascuthbertson.com/2016/09/serving-a-blog/</link>
+      <link>https://douglascuthbertson.com/2016/09/serving-a-blog/</link>
       <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2016/09/serving-a-blog/</guid>
+      <guid>https://douglascuthbertson.com/2016/09/serving-a-blog/</guid>
       <description>&lt;p&gt;I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve tried CMS solutions running on Linux-based servers. One of the first ones I tried many years ago was &lt;a href=&#34;http://cocoon.apache.org/&#34;&gt;Apache Cocoon&lt;/a&gt;. I was enticed by how flexible and programmable it was with its pipeline architecture. It seemed anything was possible. Ultimately, trying to program using XML and XSLT, and configure Java servlets proved to be too complicated. The languages and processes needed to keep the site up and running were too far removed from those for adding content.&lt;/p&gt;
@@ -85,10 +85,10 @@
     
     <item>
       <title>Fixing the Width</title>
-      <link>http://douglascuthbertson.com/2016/03/fixing-the-width/</link>
+      <link>https://douglascuthbertson.com/2016/03/fixing-the-width/</link>
       <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2016/03/fixing-the-width/</guid>
+      <guid>https://douglascuthbertson.com/2016/03/fixing-the-width/</guid>
       <description>&lt;p&gt;What an ugly, fragile blog.&lt;/p&gt;
 
 &lt;p&gt;All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.&lt;/p&gt;
@@ -128,10 +128,10 @@
     
     <item>
       <title>The Pursuit of Happiness Gels in the Imagination</title>
-      <link>http://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</link>
+      <link>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</link>
       <pubDate>Wed, 09 Mar 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</guid>
+      <guid>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</guid>
       <description>&lt;p&gt;Imagination is good, but action needs to be taken in the real world.&lt;/p&gt;
 
 &lt;p&gt;I wonder if the reason I have so many non-fiction books waiting to be read is that I&amp;rsquo;m looking for the thrill of living in a world of fun and self-fulfillment, but I&amp;rsquo;m not willing to create it. I have books on game programming, drawing, sketching, animation, project managment, time management, organizing, clutter reduction, investing and other topics. Even among those I have read, they don&amp;rsquo;t do me much good unless I act upon them.&lt;/p&gt;
@@ -149,10 +149,10 @@
     
     <item>
       <title>A Quick Note on Python</title>
-      <link>http://douglascuthbertson.com/2016/01/a-quick-note-on-python/</link>
+      <link>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</link>
       <pubDate>Mon, 04 Jan 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2016/01/a-quick-note-on-python/</guid>
+      <guid>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</guid>
       <description>&lt;p&gt;I saw an amusing Python tutorial.&lt;/p&gt;
 
 &lt;p&gt;I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, &lt;a href=&#34;https://www.youtube.com/watch?v=N4mEzFDjqtA&amp;amp;list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&amp;amp;index=2&#34;&gt;Python Programming: Learn Python in One Video&lt;/a&gt;, by &lt;a href=&#34;https://www.youtube.com/user/derekbanas&#34;&gt;Derek Banas&lt;/a&gt;.&lt;/p&gt;
@@ -213,10 +213,10 @@ if __name__ == &amp;quot;__main__&amp;quot;:
     
     <item>
       <title>A Blog on GitHub</title>
-      <link>http://douglascuthbertson.com/2015/12/a-blog-on-github/</link>
+      <link>https://douglascuthbertson.com/2015/12/a-blog-on-github/</link>
       <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2015/12/a-blog-on-github/</guid>
+      <guid>https://douglascuthbertson.com/2015/12/a-blog-on-github/</guid>
       <description>&lt;p&gt;What do you really need to know to setup a blog on GitHub?&lt;/p&gt;
 
 &lt;p&gt;I want a platform to write about software development, design patterns, and anything else that came to mind. &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34;&gt;GitHub user pages&lt;/a&gt; looked like a good place to start. I&amp;rsquo;ve toyed with &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;http://compass-style.org/&#34;&gt;Compass&lt;/a&gt; in the past, so I thought it would be easy to setup. For the most part, it is. Along the way, I discovered a few stumbling blocks that I will share.&lt;/p&gt;

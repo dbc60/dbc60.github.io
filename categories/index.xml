@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Doug&#39;s Blog</title>
-    <link>http://douglascuthbertson.com/categories/</link>
+    <link>https://douglascuthbertson.com/categories/</link>
     <description>Recent content in Categories on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <lastBuildDate>Wed, 09 Nov 2016 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="http://douglascuthbertson.com/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://douglascuthbertson.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>blog</title>
-      <link>http://douglascuthbertson.com/categories/blog/</link>
+      <link>https://douglascuthbertson.com/categories/blog/</link>
       <pubDate>Wed, 09 Nov 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/categories/blog/</guid>
+      <guid>https://douglascuthbertson.com/categories/blog/</guid>
       <description></description>
     </item>
     
