@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
-<html lang="en">  <head>
-    
+<html lang="en">
+  <head>    
     
     
     
@@ -83,15 +83,16 @@
     <!-- BEGIN head-scripts.html -->
     <!-- END head-scripts.html -->
 
-  </head>
-<body>
+</head>
+  <body>
+    <header class="main-head">
   <!-- BEGIN layouts/partials/siteHeader.html -->
-  <header class="main-head">
     <h1 class="siteTitle">Doug&#39;s Blog</h1>
     
-  </header>
   <!-- END layouts/partials/siteHeader.html -->
-<nav class="main-nav"><div class="main-nav__items">
+</header>
+
+    <nav class="main-nav"><div class="main-nav__items">
       <a class="main-nav__link " href="http://douglascuthbertson.com/">Home</a>
       <a class="main-nav__link " href="http://douglascuthbertson.com/about/">About</a>
       <a class="main-nav__link " href="http://douglascuthbertson.com/now/">Now</a>
@@ -100,9 +101,9 @@
 
     </nav>
 
+    <ul class="breadcrumb">
     
 
-<ul class="breadcrumb">
   <li class="breadcrumb__item"><a href="http://douglascuthbertson.com/">home</a></li>
   
     
@@ -114,140 +115,77 @@
     
       
   
-</ul>
 
+    </ul>
 
-    <!-- BEGIN Test Test wrapper-content -->
     <div class="wrapper-content">
       
       
       
         <!--sections is (.Site.GetPage '/').Sections-->
       
-      
       <div class="sidebar-content">
-        
-          <!-- BEGIN layouts/partials/secondaryNav.html -->
-  <ul class="wrapper-social-sections">
-    
-    
-    
-    
-    <li class="wrapper-social-items">
-      <span class="wrapper-social-border icon icon-books"> </span>
-      <span class="wrapper-social-border title">contents</span>
-      <ul class="social-items">
-        
-        
-        
-        
-        
-        
-      </ul>
-      <span class="wrapper-social-border icon icon-books"> </span>
-    </li>
-    
-    <li class="wrapper-social-items">
-      <span class="wrapper-social-border icon icon-folder-open"> </span>
-      <span class="wrapper-social-border title">Lists</span>
-      <ul class="social-items">
-        
-        <li class="contents">
-          <a class="secondary-nav__link" href="http://douglascuthbertson.com/categories/">
-            Categories
-          </a>
-        </li>
-        
-        <li class="contents">
-          <a class="secondary-nav__link" href="http://douglascuthbertson.com/tags/">
-            Tags
-          </a>
-        </li>
-        
-      </ul>
-      <span class="wrapper-social-border icon icon-folder-open"> </span>
-    </li>
-    <li class="wrapper-social-items">
-      <span class="wrapper-social-border icon icon-folder-open"> </span>
-      <span class="wrapper-social-border title">Archive</span>
-      
-      
-      
-      
-      <ul class="social-items">
-        
-          
+        <ul class="wrapper-social-sections">
+          <li class="wrapper-social-items">
+            <span class="wrapper-social-border icon icon-books"> </span>
+            <span class="wrapper-social-border title">Contents</span>
             
+            <ul class="social-items">
+
+  <li class="contents">
+    <a class="secondary-nav__link" href="http://douglascuthbertson.com/post/">
+      Posts
+    </a>
+  </li>
+
+</ul> <!-- end <ul class='social-items'> -->
+
             
-          
-          
-          
-          
-          <li class="contents">
-          <a class="secondary-nav__link" href="http://douglascuthbertson.com///">
-            
-          </a>
+            <span class="wrapper-social-border icon icon-books"> </span>
           </li>
-          
-          
-        
-          
+
+          <li class="wrapper-social-items">
+            <span class="wrapper-social-border icon icon-folder-open"> </span>
+            <span class="wrapper-social-border title">Collections</span>
             
-          
-          
-          
-          
-          <li class="contents">
-          <a class="secondary-nav__link" href="http://douglascuthbertson.com//2016/">
-            2016
-          </a>
+            <ul class="social-items">
+  
+  <li class="contents">
+    <a class="secondary-nav__link" href="http://douglascuthbertson.com/2015/">
+      2015
+    </a>
+  </li>
+  
+  <li class="contents">
+    <a class="secondary-nav__link" href="http://douglascuthbertson.com/2016/">
+      2016
+    </a>
+  </li>
+  
+  <li class="contents">
+    <a class="secondary-nav__link" href="http://douglascuthbertson.com/categories/">
+      Categories
+    </a>
+  </li>
+  
+  <li class="contents">
+    <a class="secondary-nav__link" href="http://douglascuthbertson.com/tags/">
+      Tags
+    </a>
+  </li>
+  
+</ul>
+
+            
+            <span class="wrapper-social-border icon icon-folder-open"> </span>
           </li>
-          
-          
-        
-          
-            
-          
-          
-          
-          
-        
-          
-            
-          
-          
-          
-          
-        
-          
-            
-          
-          
-          
-          
-        
-          
-            
-          
-          
-          
-          
-          <li class="contents">
-          <a class="secondary-nav__link" href="http://douglascuthbertson.com//2015/">
-            2015
-          </a>
-          </li>
-          
-          
-        
-      </ul>
-      <span class="wrapper-social-border icon icon-folder-open"> </span>
-    </li>
-    <li class="wrapper-social-items">
-  <span class="wrapper-social-border icon icon-snowflake-o"> </span>
-  <span class="wrapper-social-border title">share</span>
-  <div class="social">
-    
+
+          <li class="wrapper-social-items">
+            <span class="wrapper-social-border icon icon-snowflake-o"> </span>
+            <span class="wrapper-social-border title">Share</span>
+            <div class="social">
+              
+              
 
 
 
@@ -278,14 +216,17 @@
   </li>
 </ul>
 
-  </div>
-  <span class="wrapper-social-border icon icon-snowflake-o"> </span>
-</li>
-<li class="wrapper-social-items">
-  <span class="wrapper-social-border icon icon-compass"> </span>
-  <span class="wrapper-social-border title">follow</span>
-  <div class="social">
-    
+        
+      </div>
+            <span class="wrapper-social-border icon icon-snowflake-o"> </span>
+          </li>
+
+          <li class="wrapper-social-items">
+            <span class="wrapper-social-border icon icon-compass"> </span>
+            <span class="wrapper-social-border title">Follow</span>
+            <div class="social">
+              
+              
 
 
 
@@ -390,73 +331,38 @@
   </li>
 </ul>
 
-  </div>
-  <span class="wrapper-social-border icon icon-compass"> </span>
-</li>
-
-  </ul><!-- END layouts/partials/secondaryNav.html -->
-        
+              
+            </div>
+            <span class="wrapper-social-border icon icon-compass"> </span>
+          </li>
+        </ul>
       </div>
+      <main class="main-content"><!-- BEGIN main layouts/_default/single.html --><div class="content">
+    <section>
+    <h2 class="title-article">Blog Index</h2><header class="article-meta-data"><div class="post-metadata">
+            <time class="post-metadata__timestamp" datetime="0001-01-01">Monday Jan 1, 0001</time>
+              - 1 min read - 11 words.
+            <time class="post-metadata__timestamp" datetime="2019-09-10T08:46"></time><div><time>Last updated: Tuesday Sep 10, 2019 08:46</time></div>
+            </div>
+          </header>
 
-      <main class="main-content"><!-- BEGIN main layouts/archive/single.html -->
 
- 
-   
-    <span class="social-items header-archive-date">2016</span>
-    <ul class="social-items this-years-posts">
-   
-  <li class="side-list-item"><a href="http://douglascuthbertson.com/2016/11/a-dangerous-spectacle/">A Dangerous Spectacle</a></li>
- 
+
+  
+
+
+<section class="c-drop-caps drop-caps__goudy"><p>This is the text in the body of the markdown post.</p>
+</section>
+
+  </section>
     
-    
+    <section class="comments">
       
-      
+    </section>
     
-     
-   
-  <li class="side-list-item"><a href="http://douglascuthbertson.com/2016/09/serving-a-blog/">Serving a Blog</a></li>
- 
-    
-    
-      
-    
-     
-   
-  <li class="side-list-item"><a href="http://douglascuthbertson.com/2016/03/fixing-the-width/">Fixing the Width</a></li>
- 
-    
-    
-      
-    
-     
-   
-  <li class="side-list-item"><a href="http://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/">The Pursuit of Happiness Gels in the Imagination</a></li>
- 
-    
-    
-      
-    
-     
-   
-  <li class="side-list-item"><a href="http://douglascuthbertson.com/2016/01/a-quick-note-on-python/">A Quick Note on Python</a></li>
- 
-    
-    
-      
-    
-    
-      </ul> <!-- end this-years-posts and start the previous year's posts-->
-      <span class="social-items header-archive-date">2015</span>
-      <ul class="social-items past-posts">
-      
-     
-   
-  <li class="side-list-item"><a href="http://douglascuthbertson.com/2015/12/a-blog-on-github/">A Blog on GitHub</a></li>
- 
-</ul> <!-- END main layouts/archive/single.html -->
+  </div><!-- END main layouts/_default/single.html -->
       </main>
     </div> <!-- class wrapper-content -->
-    <!-- END Test Test wrapper-content -->
 
     <!-- I might want to wrap footer and script in blocks -->
     <footer class="main-footer">

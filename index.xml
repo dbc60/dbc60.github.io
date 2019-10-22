@@ -285,15 +285,5 @@ if __name__ == &amp;quot;__main__&amp;quot;:
 &lt;p&gt;There&amp;rsquo;s a lot of work that goes into making a web page look presentable. At the very least, text should be readable, sections should be well aligned, and the color theme should be pleasing to the eye. There is a lot to fiddle with, but I think I&amp;rsquo;ve done an okay job for now. I glad I have a place to write down ideas, write about projects I want to pursue and share some thoughts in general.&lt;/p&gt;</description>
     </item>
     
-    <item>
-      <title>Blog Index</title>
-      <link>http://douglascuthbertson.com/archive/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/archive/</guid>
-      <description>&lt;p&gt;This is the text in the body of the markdown post.&lt;/p&gt;
-</description>
-    </item>
-    
   </channel>
 </rss>
