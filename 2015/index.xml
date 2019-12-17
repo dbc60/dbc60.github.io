@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2015 on Doug&#39;s Blog</title>
-    <link>http://douglascuthbertson.com/2015/</link>
+    <link>douglascuthbertson.com/2015/</link>
     <description>Recent content in 2015 on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,15 +11,15 @@
     <copyright>(c) 2015-2019 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)</copyright>
     <lastBuildDate>Wed, 30 Dec 2015 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="http://douglascuthbertson.com/2015/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="douglascuthbertson.com/2015/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>12</title>
-      <link>http://douglascuthbertson.com/2015/12/</link>
+      <link>douglascuthbertson.com/2015/12/</link>
       <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2015/12/</guid>
+      <guid>douglascuthbertson.com/2015/12/</guid>
       <description></description>
     </item>
     

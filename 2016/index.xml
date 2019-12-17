@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2016 on Doug&#39;s Blog</title>
-    <link>http://douglascuthbertson.com/2016/</link>
+    <link>douglascuthbertson.com/2016/</link>
     <description>Recent content in 2016 on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,42 +11,42 @@
     <copyright>(c) 2015-2019 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)</copyright>
     <lastBuildDate>Wed, 09 Nov 2016 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="http://douglascuthbertson.com/2016/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="douglascuthbertson.com/2016/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>11</title>
-      <link>http://douglascuthbertson.com/2016/11/</link>
+      <link>douglascuthbertson.com/2016/11/</link>
       <pubDate>Wed, 09 Nov 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2016/11/</guid>
+      <guid>douglascuthbertson.com/2016/11/</guid>
       <description></description>
     </item>
     
     <item>
       <title>09</title>
-      <link>http://douglascuthbertson.com/2016/09/</link>
+      <link>douglascuthbertson.com/2016/09/</link>
       <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2016/09/</guid>
+      <guid>douglascuthbertson.com/2016/09/</guid>
       <description></description>
     </item>
     
     <item>
       <title>03</title>
-      <link>http://douglascuthbertson.com/2016/03/</link>
+      <link>douglascuthbertson.com/2016/03/</link>
       <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2016/03/</guid>
+      <guid>douglascuthbertson.com/2016/03/</guid>
       <description></description>
     </item>
     
     <item>
       <title>01</title>
-      <link>http://douglascuthbertson.com/2016/01/</link>
+      <link>douglascuthbertson.com/2016/01/</link>
       <pubDate>Mon, 04 Jan 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>http://douglascuthbertson.com/2016/01/</guid>
+      <guid>douglascuthbertson.com/2016/01/</guid>
       <description></description>
     </item>
     
