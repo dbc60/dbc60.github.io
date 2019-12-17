@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>01 on Doug&#39;s Blog</title>
-    <link>douglascuthbertson.com/2016/01/</link>
+    <link>https://douglascuthbertson.com/2016/01/</link>
     <description>Recent content in 01 on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,15 +11,15 @@
     <copyright>(c) 2015-2019 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)</copyright>
     <lastBuildDate>Mon, 04 Jan 2016 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="douglascuthbertson.com/2016/01/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://douglascuthbertson.com/2016/01/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A Quick Note on Python</title>
-      <link>douglascuthbertson.com/2016/01/a-quick-note-on-python/</link>
+      <link>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</link>
       <pubDate>Mon, 04 Jan 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>douglascuthbertson.com/2016/01/a-quick-note-on-python/</guid>
+      <guid>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</guid>
       <description>&lt;p&gt;I saw an amusing Python tutorial.&lt;/p&gt;
 &lt;p&gt;I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, &lt;a href=&#34;https://www.youtube.com/watch?v=N4mEzFDjqtA&amp;amp;list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&amp;amp;index=2&#34;&gt;Python Programming: Learn Python in One Video&lt;/a&gt;, by &lt;a href=&#34;https://www.youtube.com/user/derekbanas&#34;&gt;Derek Banas&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I had no illusions it was going to cover the language in any depth. Still, it is only about 45 minutes long, so I decided to take a look. It actually hit a lot of highlights and was a nice overview of the language.&lt;/p&gt;
