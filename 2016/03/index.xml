@@ -24,7 +24,7 @@
 &lt;p&gt;All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.&lt;/p&gt;
 &lt;p&gt;I spent a lot of time trying to figure out what was going wrong. One of the problems was using &lt;code&gt;flex-grow: 1;&lt;/code&gt; for the left column and &lt;code&gt;width: auto;&lt;/code&gt; on the right. These settings left too many decisions up to the browser. I now calculate the column widths and margins based on the width of the whole body. The code also floats the two columns to the left and right, respectively. It may not be the best solution, but it will do until I learn how to responsive grid systems work.&lt;/p&gt;
 &lt;p&gt;I also got rid of jQuery and some other JavaScript. It was a holdover from another website I created a while ago. The only JavaScript remaining is for MathJax, which I plan to use for - what else? - math!&lt;/p&gt;
-&lt;p&gt;[
+&lt;p&gt;\[
 \begin{bmatrix}
 a &amp;amp; b &amp;amp; c &amp;amp; d \\&lt;br&gt;
 e &amp;amp; f &amp;amp; g &amp;amp; h \\&lt;br&gt;
@@ -45,7 +45,7 @@ ex + fy + gz + hw \\&lt;br&gt;
 ix + jy + kz +lw  \\&lt;br&gt;
 mx + ny + oz + pw
 \end{bmatrix}
-]&lt;/p&gt;
+\]&lt;/p&gt;
 &lt;p&gt;This blog is still quite ugly, but I&#39;m feeling better about it after putting in a couple of days work to make the width behave the way I want it to. Now to learn more about layout design, typography, Sass, CSS and how best to put to use semantic HTML5 tags, like  &lt;code&gt;&amp;lt;main&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;aside&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;header&amp;gt;&lt;/code&gt; and others.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;2019.07.29 Edit: typos&lt;/em&gt;
 &lt;em&gt;2019.08.07 Edit: tags&lt;/em&gt;&lt;/p&gt;</description>
