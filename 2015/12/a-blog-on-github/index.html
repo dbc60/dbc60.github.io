@@ -45,7 +45,7 @@
     <meta name="twitter:title" content="Doug&#39;s Blog">
 
     <!-- BEGIN hugo.Generator -->
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.64.0-DEV" />
     <!-- END hugo.Generator -->
 
     <meta name="robots" content="index, follow"><meta name="msapplication-TileColor" content="#da532c">
@@ -62,8 +62,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.cd0c30a0b50416b9d733fb7047d5e868c58a1c5dce629e21df8a83280fbcbbc9.css"
-      integrity="sha256-zQwwoLUEFrnXM/twR9XoaMWKHF3OYp4h34qDKA&#43;8u8k="
+      href="https://douglascuthbertson.com/style/style.min.58dd5018f67c82c50079820c22e5125b83f9cb555a806314e3a9fc2d5db5ea4b.css"
+      integrity="sha256-WN1QGPZ8gsUAeYIMIuUSW4P5y1VagGMU46n8LV216ks="
       media="screen">
 
 
@@ -81,9 +81,8 @@
   </title>
 
 
-    
-    <!-- BEGIN head-scripts.html -->
-    <!-- END head-scripts.html -->
+        <!-- BEGIN head__scripts.html -->
+    <!-- END head__scripts.html -->
 
 </head>
   <body>
@@ -187,6 +186,12 @@
   <li class="contents">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/">
       2016
+    </a>
+  </li>
+  
+  <li class="contents">
+    <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/">
+      2020
     </a>
   </li>
   
@@ -382,16 +387,16 @@
 
 
 <section class="c-drop-caps drop-caps_goudy"><p>What do you really need to know to setup a blog on GitHub?</p>
-<p>I want a platform to write about software development, design patterns, and anything else that came to mind. <a href="https://help.github.com/articles/user-organization-and-project-pages/">GitHub user pages</a> looked like a good place to start. I've toyed with <a href="https://jekyllrb.com/">Jekyll</a> and <a href="http://compass-style.org/">Compass</a> in the past, so I thought it would be easy to setup. For the most part, it is. Along the way, I discovered a few stumbling blocks that I will share.</p>
+<p>I want a platform to write about software development, design patterns, and anything else that came to mind. <a href="https://help.github.com/articles/user-organization-and-project-pages/">GitHub user pages</a> looked like a good place to start. I&rsquo;ve toyed with <a href="https://jekyllrb.com/">Jekyll</a> and <a href="http://compass-style.org/">Compass</a> in the past, so I thought it would be easy to setup. For the most part, it is. Along the way, I discovered a few stumbling blocks that I will share.</p>
 <h2 id="initial-setup">Initial Setup</h2>
-<p>The initial steps (create a GitHub repository, install and configure Jekyll) were easy. The first stumbling block I ran into was ensuring the versions of my Ruby gems and my Jekyll configuration were consistent with what GitHub supported. GitHub doesn't yet support Jekyll v3, which is what I have installed on my desktop.</p>
+<p>The initial steps (create a GitHub repository, install and configure Jekyll) were easy. The first stumbling block I ran into was ensuring the versions of my Ruby gems and my Jekyll configuration were consistent with what GitHub supported. GitHub doesn&rsquo;t yet support Jekyll v3, which is what I have installed on my desktop.</p>
 <p>Fortunately they provide excellent <a href="https://help.github.com/articles/using-jekyll-with-pages/">documentation</a>. The most important part is to add <code>gem 'github-pages'</code> to your <code>Gemfile</code>. By running <code>bundle install</code>, you get Jekyll and all the dependencies in the correct version to be compatible with Jekyll on GitHub.</p>
-<p>I also installed <a href="http://compass-style.org/">Compass</a>. It's a nice tool that watches the files in the repository for changes, and recompiles the .scss files as needed. GitHub doesn't use Compass, so you have to commit the CSS files it generates to the repository.</p>
+<p>I also installed <a href="http://compass-style.org/">Compass</a>. It&rsquo;s a nice tool that watches the files in the repository for changes, and recompiles the .scss files as needed. GitHub doesn&rsquo;t use Compass, so you have to commit the CSS files it generates to the repository.</p>
 <h2 id="creating-a-blog">Creating a Blog</h2>
 <p>Reading and following the documentation for GitHub pages, Jekyll and Compass will establish all of the scaffolding you need to start a blog. It will not provide any scaffolding for the structure and contents of the blog itself.</p>
-<p>I thought I'd be able to make a cool blog with responsive CSS so it would be readable on a variety of screen sizes. I learned quickly to keep things simple. I just don't know enough CSS right now to make that happen. I stumbled upon (Googled for &ldquo;html5 sidebar layout&rdquo;) <a href="http://multimedia.journalism.berkeley.edu/tutorials/css-layout/">one good tutorial</a> that enabled me to create the basic structure for this blog. Warning: I had to insert <code>p script { display: block;}</code> to display the code blocks. Each code block is wrapped in a <code>&lt;script&gt;</code> element and is written in an XML <code>&lt;![CDATA[...]]&gt;</code> block. The user agent stylesheet sets <code>script {display: none; }</code>, so I couldn't see the code.</p>
-<p>I made a few adjustments to the styling and HTML to suit my taste. One thing I was delighted to learn was how to make the content area and the sidebar the same height. The tutorial presented a solution in JavaScript, but that didn't work for posts. The disqus comment block wasn't included in the calculation.</p>
-<p>The main content area and the sidebar are both included in <code>div</code> section with the ID <code>boxes</code> (<code>&lt;div id=&quot;boxes&quot;&gt;</code>). All I had to do was style the <code>div</code> with <code>display: flex;</code>. Here's the code and comment from my stylesheet.</p>
+<p>I thought I&rsquo;d be able to make a cool blog with responsive CSS so it would be readable on a variety of screen sizes. I learned quickly to keep things simple. I just don&rsquo;t know enough CSS right now to make that happen. I stumbled upon (Googled for &ldquo;html5 sidebar layout&rdquo;) <a href="http://multimedia.journalism.berkeley.edu/tutorials/css-layout/">one good tutorial</a> that enabled me to create the basic structure for this blog. Warning: I had to insert <code>p script { display: block;}</code> to display the code blocks. Each code block is wrapped in a <code>&lt;script&gt;</code> element and is written in an XML <code>&lt;![CDATA[...]]&gt;</code> block. The user agent stylesheet sets <code>script {display: none; }</code>, so I couldn&rsquo;t see the code.</p>
+<p>I made a few adjustments to the styling and HTML to suit my taste. One thing I was delighted to learn was how to make the content area and the sidebar the same height. The tutorial presented a solution in JavaScript, but that didn&rsquo;t work for posts. The disqus comment block wasn&rsquo;t included in the calculation.</p>
+<p>The main content area and the sidebar are both included in <code>div</code> section with the ID <code>boxes</code> (<code>&lt;div id=&quot;boxes&quot;&gt;</code>). All I had to do was style the <code>div</code> with <code>display: flex;</code>. Here&rsquo;s the code and comment from my stylesheet.</p>
 <pre><code>/* Using display: flex; to make the sidebar column the same length as the main content.
    See: http://tutorialzine.com/2014/10/easiest-way-equal-height-sidebar/ for details.
    */
@@ -399,7 +404,7 @@
     display: flex;
 }
 </code></pre><h2 id="more-to-do">More To Do</h2>
-<p>There's a lot of work that goes into making a web page look presentable. At the very least, text should be readable, sections should be well aligned, and the color theme should be pleasing to the eye. There is a lot to fiddle with, but I think I've done an okay job for now. I glad I have a place to write down ideas, write about projects I want to pursue and share some thoughts in general.</p></section>
+<p>There&rsquo;s a lot of work that goes into making a web page look presentable. At the very least, text should be readable, sections should be well aligned, and the color theme should be pleasing to the eye. There is a lot to fiddle with, but I think I&rsquo;ve done an okay job for now. I glad I have a place to write down ideas, write about projects I want to pursue and share some thoughts in general.</p></section>
 
   </section>
     
@@ -414,7 +419,7 @@
     <!-- I might want to wrap footer and script in blocks -->
     <footer class="main-footer">
     
-      <div class="container">(c) 2015-2019 Douglas Cuthbertson. This work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a>. Made with HTML, CSS, JavaScript, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.</div>
+      <div class="container">(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a>. Made with HTML, CSS, JavaScript, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.</div>
     </footer>
 
     

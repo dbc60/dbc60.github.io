@@ -45,7 +45,7 @@
     <meta name="twitter:title" content="Doug&#39;s Blog">
 
     <!-- BEGIN hugo.Generator -->
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.64.0-DEV" />
     <!-- END hugo.Generator -->
 
     <meta name="robots" content="index, follow"><meta name="msapplication-TileColor" content="#da532c">
@@ -62,8 +62,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.cd0c30a0b50416b9d733fb7047d5e868c58a1c5dce629e21df8a83280fbcbbc9.css"
-      integrity="sha256-zQwwoLUEFrnXM/twR9XoaMWKHF3OYp4h34qDKA&#43;8u8k="
+      href="https://douglascuthbertson.com/style/style.min.58dd5018f67c82c50079820c22e5125b83f9cb555a806314e3a9fc2d5db5ea4b.css"
+      integrity="sha256-WN1QGPZ8gsUAeYIMIuUSW4P5y1VagGMU46n8LV216ks="
       media="screen">
 
 
@@ -81,9 +81,8 @@
   </title>
 
 
-    
-    <!-- BEGIN head-scripts.html -->
-    <!-- END head-scripts.html -->
+        <!-- BEGIN head__scripts.html -->
+    <!-- END head__scripts.html -->
 
 </head>
   <body>
@@ -187,6 +186,12 @@
   <li class="contents">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/">
       2016
+    </a>
+  </li>
+  
+  <li class="contents">
+    <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/">
+      2020
     </a>
   </li>
   
@@ -384,52 +389,52 @@
 <section class="c-drop-caps drop-caps_goudy"><p>I saw an amusing Python tutorial.</p>
 <p>I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, <a href="https://www.youtube.com/watch?v=N4mEzFDjqtA&amp;list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&amp;index=2">Python Programming: Learn Python in One Video</a>, by <a href="https://www.youtube.com/user/derekbanas">Derek Banas</a>.</p>
 <p>I had no illusions it was going to cover the language in any depth. Still, it is only about 45 minutes long, so I decided to take a look. It actually hit a lot of highlights and was a nice overview of the language.</p>
-<p>For example, it introduces the built-in operators and data types. It goes over the <code>for</code> and <code>while</code> loops. It also covers several other programming concepts. If you've never seen Python before, this video is worth a look.</p>
-<p>I recently picked up a copy of Steven Skiena's &ldquo;Programming Challenges&rdquo; and started going through the problems. To see if I learned anything from the video, I tried coding the first puzzle, the <a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=3&amp;page=show_problem&amp;problem=36"><code>3n+1</code> problem</a>. The link is to the puzzle on the <a href="https://uva.onlinejudge.org/">UVa Online Judge</a>, where one can submit code in C, C++, Java or Pascal. Sadly, they don't support Python. Nevertheless, here's my version in Python:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
+<p>For example, it introduces the built-in operators and data types. It goes over the <code>for</code> and <code>while</code> loops. It also covers several other programming concepts. If you&rsquo;ve never seen Python before, this video is worth a look.</p>
+<p>I recently picked up a copy of Steven Skiena&rsquo;s &ldquo;Programming Challenges&rdquo; and started going through the problems. To see if I learned anything from the video, I tried coding the first puzzle, the <a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=3&amp;page=show_problem&amp;problem=36"><code>3n+1</code> problem</a>. The link is to the puzzle on the <a href="https://uva.onlinejudge.org/">UVa Online Judge</a>, where one can submit code in C, C++, Java or Pascal. Sadly, they don&rsquo;t support Python. Nevertheless, here&rsquo;s my version in Python:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
 
-<span style="color:#75715e"># Execute: &#34;python p100.py &lt; data&#34; where &#39;data&#39; is the input file, two integers per line.</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cycle_length</span>(n):
-    result <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span class="c1"># Execute: &#34;python p100.py &lt; data&#34; where &#39;data&#39; is the input file, two integers per line.</span>
+<span class="k">def</span> <span class="nf">cycle_length</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
 
-    <span style="color:#66d9ef">while</span> (n <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span>):
-        <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span>):
-            <span style="color:#75715e"># n is odd, so multiply by 3 and add 1</span>
-            n <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-        <span style="color:#66d9ef">else</span>:
-            <span style="color:#75715e"># n is even, so divide by 2</span>
-            n <span style="color:#f92672">/</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span><span class="p">:</span>
+            <span class="c1"># n is odd, so multiply by 3 and add 1</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># n is even, so divide by 2</span>
+            <span class="n">n</span> <span class="o">/</span><span class="o">=</span> <span class="mi">2</span>
 
-        result <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        <span class="n">result</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
 
-    <span style="color:#66d9ef">return</span> result
+    <span class="k">return</span> <span class="n">result</span>
 
-<span style="color:#75715e"># Each line of input consists of two integers</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> sys<span style="color:#f92672">.</span>stdin:
-        input_list <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>split()
-        input_list <span style="color:#f92672">=</span> list(map(int, input_list))
+<span class="c1"># Each line of input consists of two integers</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
+        <span class="n">input_list</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="p">)</span>
+        <span class="n">input_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">input_list</span><span class="p">)</span><span class="p">)</span>
 
-        <span style="color:#75715e"># reset the max cycle length for each line of input</span>
-        max_cycle_length <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        <span class="c1"># reset the max cycle length for each line of input</span>
+        <span class="n">max_cycle_length</span> <span class="o">=</span> <span class="mi">0</span>
 
-        <span style="color:#75715e"># Make a copy of the original list for output</span>
-        original_list <span style="color:#f92672">=</span> list(input_list)
-        <span style="color:#66d9ef">if</span> input_list[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&gt;</span> input_list[<span style="color:#ae81ff">1</span>]:
-            x <span style="color:#f92672">=</span> input_list[<span style="color:#ae81ff">0</span>]
-            input_list[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> input_list[<span style="color:#ae81ff">1</span>]
-            input_list[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> x
+        <span class="c1"># Make a copy of the original list for output</span>
+        <span class="n">original_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">input_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">input_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">input_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">input_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">input_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
 
-        <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(input_list[<span style="color:#ae81ff">0</span>], input_list[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
-            length <span style="color:#f92672">=</span> cycle_length(n)
-            <span style="color:#66d9ef">if</span> length <span style="color:#f92672">&gt;</span> max_cycle_length:
-                max_cycle_length <span style="color:#f92672">=</span> length
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">input_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span> <span class="n">input_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="p">:</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="n">cycle_length</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">length</span> <span class="o">&gt;</span> <span class="n">max_cycle_length</span><span class="p">:</span>
+                <span class="n">max_cycle_length</span> <span class="o">=</span> <span class="n">length</span>
 
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (original_list[<span style="color:#ae81ff">0</span>], original_list[<span style="color:#ae81ff">1</span>], max_cycle_length))
+        <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span> <span class="n">original_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">,</span> <span class="n">max_cycle_length</span><span class="p">)</span><span class="p">)</span>
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
-    main()
-</code></pre></div><p>I think the only thing here that wasn't covered in the video is reading from stdin.</p></section>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">__main__</span><span class="s2">&#34;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><p>I think the only thing here that wasn&rsquo;t covered in the video is reading from stdin.</p></section>
 
   </section>
     
@@ -444,7 +449,7 @@
     <!-- I might want to wrap footer and script in blocks -->
     <footer class="main-footer">
     
-      <div class="container">(c) 2015-2019 Douglas Cuthbertson. This work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a>. Made with HTML, CSS, JavaScript, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.</div>
+      <div class="container">(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a>. Made with HTML, CSS, JavaScript, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.</div>
     </footer>
 
     
