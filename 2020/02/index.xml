@@ -1,17 +1,72 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2020.02 on Doug&#39;s Blog</title>
-    <link>http://douglascuthbertson.com/2020/02/</link>
-    <description>Recent content in 2020.02 on Doug&#39;s Blog</description>
+    <title>02 on Doug&#39;s Blog</title>
+    <link>https://douglascuthbertson.com/2020/02/</link>
+    <description>Recent content in 02 on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
-    <lastBuildDate>Sat, 28 Sep 2019 10:04:07 -0400</lastBuildDate>
+    <copyright>(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)</copyright>
+    <lastBuildDate>Tue, 11 Feb 2020 05:48:36 -0500</lastBuildDate>
     
-        <atom:link href="http://douglascuthbertson.com/2020/02/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://douglascuthbertson.com/2020/02/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Restart</title>
+      <link>https://douglascuthbertson.com/2020/02/restart/</link>
+      <pubDate>Tue, 11 Feb 2020 05:48:36 -0500</pubDate>
+      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      <guid>https://douglascuthbertson.com/2020/02/restart/</guid>
+      <description>&lt;div class=&#34;document&#34;&gt;
+
+
+&lt;p&gt;Creating a blog is hard. I admire those who are able to design their own and write regular posts, so much so that I&#39;m trying again to create my own blog. I started this blog late in 2015. After writing a few posts, I became discouraged. I didn&#39;t like the way it looked, the tools often broke, and I didn&#39;t have a clear idea of what I wanted to write, or why I was blogging.&lt;/p&gt;
+&lt;p&gt;Recently I was inspired by a post by Mattias Ott from May 12, 2019, &lt;a class=&#34;reference external&#34; href=&#34;https://matthiasott.com/articles/into-the-personal-website-verse&#34;&gt;Into the Personal-Website-Verse&lt;/a&gt;. He encouraged people to create their own personal website to write, create, share what you like, and to tinker with new technologies.&lt;/p&gt;
+&lt;p&gt;Your own blog is supposed to be a place where you can make mistakes and learn without pressure. With that in mind, I&#39;m declaring this blog as my soapbox. My space to say what ever I want. My laboratory for experiments in web technologies. My window into my own experience from which I can reflect upon my past, figure out what&#39;s of interest now and navigate to a better future. If I&#39;m lucky, I might engage someone who wishes to share their own thoughts and experiences, and I&#39;ll learn something new.&lt;/p&gt;
+&lt;div class=&#34;section&#34; id=&#34;rebuilding-from-jekyll-to-hugo&#34;&gt;
+&lt;h2&gt;Rebuilding from Jekyll to Hugo&lt;/h2&gt;
+&lt;p&gt;My first priority was to find good tools for creating a static site. The original experiment was, in part, to use &lt;a class=&#34;reference external&#34; href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; to build the site from Markdown files and publish it from &lt;a class=&#34;reference external&#34; href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;. I was familiar with git, had been using &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; for years, and &lt;a class=&#34;reference external&#34; href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; and &lt;a class=&#34;reference external&#34; href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; were advertised as a hand-in-glove fit for each other, and they are.&lt;/p&gt;
+&lt;p&gt;I installed and configured Ruby (Jekyll is written in Ruby, but is not a standalone executable), Bundler to keep Ruby gems up-to-date, Compass to generate CSS from SASS/SCSS, and Jekyll of course, and settled in to learn how to create a blog. After reading a lot of docs, and experimenting a lot with HTML and SCSS, I had a working blog. It was kind of ugly, but it was functional. It had two columns, the left for posts and the right for links to posts by year. As I recall, it took quite a bit of effort to put together the markup, styling, and learn how to use the Liquid Template engine to pull together things like lists of posts by year, month, and day.&lt;/p&gt;
+&lt;p&gt;At first, the writing and learning experience was delightful. I have a note from March 7, 2016 that says, &amp;quot;Jekyll is really easy to install and use. What takes time is learning enough about its bells and whistles, markdown, HTML, CSS, and Sass to make a blog or website you&#39;re own.&amp;quot;&lt;/p&gt;
+&lt;p&gt;I had a couple of &lt;tt class=&#34;docutils literal&#34;&gt;.bat&lt;/tt&gt; files to update and launch Jekyll and Compass. The first was &lt;tt class=&#34;docutils literal&#34;&gt;_build\start.bat&lt;/tt&gt;:&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+&amp;#64;echo off
+REM Update all the gems and &lt;span class=&#34;keyword&#34;&gt;then&lt;/span&gt; start Compass and Jekyll
+call bundle update
+SET &lt;span class=&#34;name variable&#34;&gt;PROJECT_PATH&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;%~dp0
+call %PROJECT_PATH%quick-start.bat
+&lt;/pre&gt;
+&lt;p&gt;The second was &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;quick-start.bat&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+&amp;#64;echo off
+REM Start Compass and Jekyll without updating gems
+start bundle &lt;span class=&#34;name builtin&#34;&gt;exec &lt;/span&gt;compass watch
+
+REM Give compass a few seconds to start before launching jekyll.
+&amp;#64;ping 192.0.2.2 -n &lt;span class=&#34;literal number&#34;&gt;1&lt;/span&gt; -w &lt;span class=&#34;literal number&#34;&gt;4000&lt;/span&gt; &amp;gt; nul
+
+start bundle &lt;span class=&#34;name builtin&#34;&gt;exec &lt;/span&gt;jekyll s --port 4000
+&lt;/pre&gt;
+&lt;p&gt;All I had to do was run &lt;tt class=&#34;docutils literal&#34;&gt;_build\start.bat&lt;/tt&gt; and open a browser to &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;http://localhost:4000&lt;/span&gt;&lt;/tt&gt;. Each time I edited and saved a file, the view in the browser would update after a second or so. Blogging life was good.&lt;/p&gt;
+&lt;p&gt;Later came a series of annoyances. It started with Compass crashing a lot when editing scss files. Compass was valuable for its math library. I found the exponentiation and logarithm functions most valuable. I used them for calculating the luminance of a color and the contrast ratio between two colors.&lt;/p&gt;
+&lt;p&gt;The crashes got so annoying that I stopped using Compass in September of 2016. Compass wasn&#39;t being maintained anymore, and I wasn&#39;t about to start learning Ruby just to be able to write a blog. Fortunately, I learned that Jekyll had a built-in sass compiler. I also figured out how to write the color luminance and contrast ratio functions in pure sass, so I didn&#39;t need Compass&#39; math library either. I don&#39;t use scss currently. I guess (hope) luminance and contrast ratios are built-in functions by now, but in case they aren&#39;t, &lt;a class=&#34;reference external&#34; href=&#34;https://gist.github.com/dbc60/451f16c588b806967b706b45829e49dc&#34;&gt;here&#39;s a gist&lt;/a&gt; with those functions and a few others. Feel free to use it as you will.&lt;/p&gt;
+&lt;p&gt;In October of 2016, the &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;--watch&lt;/span&gt;&lt;/tt&gt; option being disabled for Windows in version 3.3.0 of Jekyll. That option was originally intended for BASH on Windows, but was extended to the default &lt;tt class=&#34;docutils literal&#34;&gt;cmd.exe&lt;/tt&gt; and PowerShell. I found a fix among the &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/jekyll/jekyll/issues/5462#issuecomment-253982908&#34;&gt;comments&lt;/a&gt; in &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/jekyll/jekyll/issues/5462&#34;&gt;Jekyll issue 5462&lt;/a&gt;. The comments said the underlying problem in BASH on Windows has been fixed, so &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;--watch&lt;/span&gt;&lt;/tt&gt; will be enabled in a later release. A temporary fix was to open &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;vendor\bundle\gems\jekyll-3.3.0\lib\jekyll\commands\build.rb&lt;/span&gt;&lt;/tt&gt; and replace the line &lt;tt class=&#34;docutils literal&#34;&gt;if &lt;span class=&#34;pre&#34;&gt;Utils::Platforms.windows?&lt;/span&gt;&lt;/tt&gt; with &lt;tt class=&#34;docutils literal&#34;&gt;unless &lt;span class=&#34;pre&#34;&gt;Utils::Platforms.windows?&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;I wasn&#39;t comfortable at all with manually modifying gem files. I didn&#39;t know Ruby, and those files were managed by Bundler. It just seemed like a bad idea. Still, I was still able to use live-reload and see the effects of edits on HTML and SCSS a few seconds after they happened. Fast feedback loops are truly invaluable when learning anything new.&lt;/p&gt;
+&lt;p&gt;My last post was in November of 2016 after the US presidential election. I don&#39;t remember exactly why I stopped, but part of the reason was that Jekyll was slow, and it felt like the Windows implementation was treated as a second-class citizen.&lt;/p&gt;
+&lt;p&gt;Besides blogging, I was also using it as a notetaking system. I loved that I could write a markdown file, and Jekyll could turn my notes into a nice looking web page. However, when I had a few dozen notes it would take several seconds to see edits appear in a browser. I wasn&#39;t very good with using HTML and CSS, so I became frustrated as I tried to use my notes repository to experiment with layout and design. The feedback loop was irritatingly slow.&lt;/p&gt;
+&lt;p&gt;I spent months looking into other solutions. I read about &lt;a class=&#34;reference external&#34; href=&#34;http://takingnotenow.blogspot.com/2007/12/luhmanns-zettelkasten.html&#34;&gt;Luhmann&#39;s Zettelkasten&lt;/a&gt; for organizing my files, and &lt;a class=&#34;reference external&#34; href=&#34;http://www.sphinx-doc.org/en/stable/&#34;&gt;Sphinx&lt;/a&gt;, the tool used by the Python programming language for generating all of their documentation.&lt;/p&gt;
+&lt;p&gt;Sphinx turned out to be a bit of a rabbit hole, a good one. The source documents for Sphinx are written in reStructuredText (rST). I was curious why that file format was chosen over Markdown or plain text. While rST has its issues and limitations, it is a much more rich markup language than Markdown. Also, Sphinx is a programmable environment. If it doesn&#39;t have a directive you need, there&#39;s a way to define new ones.&lt;/p&gt;
+&lt;p&gt;The possibilities just wowed me. I ported all my old notes from Markdown to rST and dove into Sphinx, directives, and roles. I spent a lot of time learning, writing, and even played around with CSS a little bit. Even so, Sphinx presented a kind of impedance mismatch between what I was trying to do - just have a tool that builds nice web pages from my notes - and keeping a Python environment up-to-date as I wanted to try new features added to later releases of Sphinx.&lt;/p&gt;
+&lt;p&gt;My success with Sphinx for notes left me with a desire to blog again. I was probably suffering from myopia, but at the time I didn&#39;t realize that Jekyll is not necessary to build GitHub pages, and I didn&#39;t know how or if Sphinx could be configured to work with GitHub pages.&lt;/p&gt;
+&lt;p&gt;Well, I spent a lot of time in 2018 learning &lt;a class=&#34;reference external&#34; href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; for a new project at work. It&#39;s a very nice programming language. Late in 2018, I came across &lt;a class=&#34;reference external&#34; href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. It looked interesting, and what do you know, it&#39;s written in Go! I had to give it a try. I figured even if it&#39;s not to my liking, I can look at the source code, and learn something more about Go.&lt;/p&gt;
+&lt;p&gt;It turns out that not only is Hugo useful, it is fast, not too hard to integrate MathJax for nice looking equations, has a powerful template language, and it is even possible to write pages in rST - though it requires integration with the Python script &lt;a class=&#34;reference external&#34; href=&#34;https://pypi.org/project/rst2html5/&#34;&gt;rst2html5&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That&#39;s enough for now. I&#39;ll cover my adventures using &lt;a class=&#34;reference external&#34; href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; in a future post.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
     
   </channel>
 </rss>

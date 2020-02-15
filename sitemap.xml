@@ -3,13 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://douglascuthbertson.com/2020/02/</loc>
+    <lastmod>2020-02-15T09:02:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://douglascuthbertson.com/2020/</loc>
+    <lastmod>2020-02-15T09:02:08-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://douglascuthbertson.com/categories/</loc>
-    <lastmod>2019-12-29T10:48:06-05:00</lastmod>
+    <lastmod>2020-02-15T09:02:08-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://douglascuthbertson.com/</loc>
-    <lastmod>2019-12-29T10:48:06-05:00</lastmod>
+    <lastmod>2020-02-15T09:02:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://douglascuthbertson.com/categories/post/</loc>
+    <lastmod>2020-02-15T09:02:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://douglascuthbertson.com/post/</loc>
+    <lastmod>2020-02-15T09:02:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://douglascuthbertson.com/2020/02/restart/</loc>
+    <lastmod>2020-02-15T09:02:08-05:00</lastmod>
   </url>
   
   <url>
@@ -34,16 +59,6 @@
   
   <url>
     <loc>https://douglascuthbertson.com/2016/11/a-dangerous-spectacle/</loc>
-    <lastmod>2019-12-29T10:48:06-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/categories/blog/</loc>
-    <lastmod>2019-12-29T10:48:06-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/post/</loc>
     <lastmod>2019-12-29T10:48:06-05:00</lastmod>
   </url>
   
@@ -105,10 +120,6 @@
   <url>
     <loc>https://douglascuthbertson.com/2015/12/a-blog-on-github/</loc>
     <lastmod>2019-12-08T09:04:52-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/2020/</loc>
   </url>
   
   <url>
