@@ -9,10 +9,395 @@
     <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)</copyright>
-    <lastBuildDate>Tue, 11 Feb 2020 05:48:36 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2020 17:38:32 -0500</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/categories/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A New Hugo-Based Blog</title>
+      <link>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/</link>
+      <pubDate>Sat, 22 Feb 2020 17:38:32 -0500</pubDate>
+      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      <guid>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/</guid>
+      <description>&lt;div class=&#34;document&#34;&gt;
+
+
+&lt;p&gt;In my &lt;a class=&#34;reference external&#34; href=&#34;https://douglascuthbertson.com/2020/02/restart/&#34;&gt;previous post&lt;/a&gt; I talked a little about why and how I started this blog. Here I want to present my experience with &lt;a class=&#34;reference external&#34; href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and what I like about it.&lt;/p&gt;
+&lt;p&gt;Late in 2018  I came across &lt;a class=&#34;reference external&#34; href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, a static site generator written in &lt;a class=&#34;reference external&#34; href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt;. Dissatisfied with Jekyll, I needed a different static site generator, and I had been learning Go at Work. This looked like a good opportunity to try blogging again.&lt;/p&gt;
+&lt;p&gt;I stumbled quite badly a few times along the way. I thought a theme would help me get my site up and running quickly, but they don&#39;t balance well with my need to twiddle with the site&#39;s layout and look and feel. The long and short of it is, I took what I learned from trying out a couple of themes, and hunkered down to learn a few things about &amp;quot;The Hugo Way&amp;quot;, and the basics of HTML &amp;amp; CSS.&lt;/p&gt;
+&lt;div class=&#34;section&#34; id=&#34;the-short-lived-academic-theme&#34;&gt;
+&lt;h2&gt;The Short-lived Academic Theme&lt;/h2&gt;
+&lt;p&gt;As I have a tendency to do with new tools, I dove in too deep, too fast. Hugo has themes, and they look like a good way to get something up and running quickly. I looked over &lt;a class=&#34;reference external&#34; href=&#34;https://themes.gohugo.io/&#34;&gt;the theme gallery&lt;/a&gt; checking all the features and how they looked. &lt;a class=&#34;reference external&#34; href=&#34;https://themes.gohugo.io/academic/&#34;&gt;Academic&lt;/a&gt; is very flexible and chock full of features. I decided to give it a whirl in February 2019. It looked like this out of the box.&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png&#34;&gt;&lt;img alt=&#34;Academic Theme&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;p&gt;I tried a few small configuration changes to see how I liked it. My hope was only minor changes would be necessary so I could have a site that looked good to me and had a responsive layout. That way I could just write posts.&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/002-2019.02.03.02-title.and.footer.png&#34;&gt;&lt;img alt=&#34;My First Time using the Academic Theme&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/002-2019.02.03.02-title.and.footer.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;quick-switch-to-vanilla-bootstrap&#34;&gt;
+&lt;h2&gt;Quick Switch to Vanilla Bootstrap&lt;/h2&gt;
+&lt;p&gt;Sadly, Academic was short lived. By the 9th of the month I gave up on it. For all the features it has, I found it too hard to configure and customize. Don&#39;t get me wrong. Academic is amazing and has &lt;a class=&#34;reference external&#34; href=&#34;https://sourcethemes.com/academic/docs/get-started/&#34;&gt;good documentation&lt;/a&gt;, but this theme &lt;a class=&#34;reference external&#34; href=&#34;https://sourcethemes.com/academic/themes/&#34;&gt;has its own themes&lt;/a&gt;. It&#39;s a little more complex than what I needed. Also, I didn&#39;t realize at the time, but Academic isn&#39;t just a Hugo theme. It is a website builder. It uses Hugo as an engine to bring life to a website rather than being a set of content-decorators run by Hugo.&lt;/p&gt;
+&lt;p&gt;Too new to how Hugo workds and the complexities of a website builder, I looked for a simpler solution and settled on &lt;a class=&#34;reference external&#34; href=&#34;https://themes.gohugo.io/vanilla-bootstrap-hugo-theme/&#34;&gt;Vanilla Bootstrap&lt;/a&gt;.&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png&#34;&gt;&lt;img alt=&#34;First Rendition using the Vanilla Bootstrap Theme&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;p&gt;The change was dramatic and configuration was simplified. While Academic has two levels of configuration, the core through &lt;tt class=&#34;docutils literal&#34;&gt;config/_default/config.toml&lt;/tt&gt; and another level controlled through the content in the &lt;tt class=&#34;docutils literal&#34;&gt;content/home&lt;/tt&gt; directory, Vanilla Bootstrap requires only core configuration of Hugo and a handful of theme-specific parameters all managed through the default configuration files.&lt;/p&gt;
+&lt;div class=&#34;section&#34; id=&#34;a-new-navigation-menu&#34;&gt;
+&lt;h3&gt;A New Navigation Menu&lt;/h3&gt;
+&lt;p&gt;It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in &lt;tt class=&#34;docutils literal&#34;&gt;config/_default/config.toml&lt;/tt&gt;:&lt;/p&gt;
+&lt;pre class=&#34;literal-block&#34;&gt;
+# See https://feathericons.com/
+# The value of pre is the icon name
+[menu]
+  [[menu.nav]]
+    name = &amp;quot;Home&amp;quot;
+    pre = &amp;quot;home&amp;quot;
+    url = &amp;quot;/&amp;quot;
+    weight = 1
+  [[menu.nav]]
+    name = &amp;quot;Notes&amp;quot;
+    pre = &amp;quot;edit&amp;quot;
+    url = &amp;quot;/notes/&amp;quot;
+    weight = 2
+  [[menu.nav]]
+    name = &amp;quot;About&amp;quot;
+    pre = &amp;quot;smile&amp;quot;
+    url = &amp;quot;/about/&amp;quot;
+    weight = 3
+  [[menu.nav]]
+    name = &amp;quot;Now&amp;quot;
+    pre = &amp;quot;play&amp;quot;
+    url = &amp;quot;/now/&amp;quot;
+    weight = 4
+  [[menu.nav]]
+    name = &amp;quot;RSS&amp;quot;
+    pre = &amp;quot;rss&amp;quot;
+    url = &amp;quot;/index.xml&amp;quot;
+    weight = 5
+&lt;/pre&gt;
+&lt;p&gt;The theme provides the other major component in &lt;tt class=&#34;docutils literal&#34;&gt;theme/vanilla/layouts/partials/nav.html&lt;/tt&gt;:&lt;/p&gt;
+&lt;pre class=&#34;literal-block&#34;&gt;
+&amp;lt;div id=&amp;quot;nav-border&amp;quot; class=&amp;quot;container&amp;quot;&amp;gt;
+  &amp;lt;nav id=&amp;quot;nav&amp;quot; class=&amp;quot;nav justify-content-center&amp;quot;&amp;gt;
+  {{ $showActiveNav := .Site.Params.showActiveNav }}
+  {{ $currentPage := . }}
+  {{ range .Site.Menus.nav }}
+    {{ $active := &amp;quot;&amp;quot; }}
+    {{ if eq $showActiveNav true }}
+      {{ $isMenu := or ($currentPage.IsMenuCurrent &amp;quot;nav&amp;quot; .) ($currentPage.HasMenuCurrent &amp;quot;nav&amp;quot; .) }}
+      {{ if or $isMenu (eq $currentPage.Title .Name) }}
+        {{ $active = &amp;quot;nav-link-active&amp;quot; }}
+      {{ end }}
+    {{ end }}
+    {{ $icon := printf &amp;quot;&amp;lt;i data-feather=\&amp;quot;%s\&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;quot; .Pre }}
+    {{ $text := print $icon &amp;quot; &amp;quot; .Name | safeHTML }}
+    &amp;lt;a class=&amp;quot;nav-link {{ $active }}&amp;quot; href=&amp;quot;{{ .URL }}&amp;quot;&amp;gt;{{ $text }}&amp;lt;/a&amp;gt;
+  {{ end }}
+  &amp;lt;/nav&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;It cycles through the &lt;tt class=&#34;docutils literal&#34;&gt;menu.nav&lt;/tt&gt; items in &lt;tt class=&#34;docutils literal&#34;&gt;config.toml&lt;/tt&gt; and translates those values to a feather icon, text, and a link to the given URL. The site was beginning to fill out, although today the icons look silly to me.&lt;/p&gt;
+&lt;p&gt;There&#39;s a &amp;quot;Notes&amp;quot; menu item, because I thought I would use the site to keep notes as well as regular blog posts. I&#39;ve since separated my personal notes and works-in-progress from blog posts. I&#39;m willing to go only so far in what I make public. It&#39;s best to keep some thoughts as background material, and let others stew for a while before publicizing them.&lt;/p&gt;
+&lt;p&gt;I created a simple 404 page, and a big &amp;quot;jumbotron&amp;quot; area for all the index pages. The site was beginning to fill out. Although, today the icons look silly to me.&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/004-2019.02.10-jumbotron.png&#34;&gt;&lt;img alt=&#34;Jumbotron&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/004-2019.02.10-jumbotron.png&#34; style=&#34;width: 650px;&#34; /&gt;&lt;/a&gt;
+&lt;p&gt;The note is dated April 8, 2019 because that was my goal for publishing the site. It took a little longer than I expected. Mostly, I was unsure about putting up my notes in public, the design was poor, and I thought I should do better.&lt;/p&gt;
+&lt;p&gt;In hindsight, content is more important than style. It would have been better to write posts and develop the site simultaneously.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;more-puttering-around-with-layout&#34;&gt;
+&lt;h3&gt;More Puttering Around with Layout&lt;/h3&gt;
+&lt;p&gt;It was still early February, and I was learning how Hugo worked, it&#39;s configuration system, and how and where to integrate CSS, SCSS, and JavaScript (particularly MathJax). I spent time breaking up the layout into partials for more consistency across the site.&lt;/p&gt;
+&lt;p&gt;I added a picture of Motif No. 1 I took in Rockport, Massachusetts to fill the jumbotron. It got cropped rather poorly, though.&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/005-2019.02.11-wide.png&#34;&gt;&lt;img alt=&#34;Wide Menu Day&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/005-2019.02.11-wide.png&#34; style=&#34;width: 650px;&#34; /&gt;&lt;/a&gt;
+&lt;div class=&#34;section&#34; id=&#34;mathjax&#34;&gt;
+&lt;h4&gt;MathJax&lt;/h4&gt;
+&lt;p&gt;I was happy to learn a little about configuring MathJax. It makes it possible to display equations on web pages. To configure MathJax to automatically number equations - just include the following in &lt;tt class=&#34;docutils literal&#34;&gt;layouts/partials/script.html&lt;/tt&gt; (which is included in &lt;tt class=&#34;docutils literal&#34;&gt;layouts/_default/baseof.html&lt;/tt&gt;):&lt;/p&gt;
+&lt;pre class=&#34;code html literal-block&#34;&gt;
+&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- Configure MathJax for automatic equation numbering. See
+  http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
+  for details
+--&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&#34;name attribute&#34;&gt;type=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;text/x-mathjax-config&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;name other&#34;&gt;MathJax&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;Hub&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;Config&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;({&lt;/span&gt;
+    &lt;span class=&#34;name other&#34;&gt;TeX&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;name other&#34;&gt;equationNumbers&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;name other&#34;&gt;autoNumber&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal string double&#34;&gt;&amp;quot;AMS&amp;quot;&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
+  &lt;span class=&#34;punctuation&#34;&gt;});&lt;/span&gt;
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;I realize that MathJax is a large JavaScript library. It&#39;s probably stupid to try optimizations without testing, nevertheless I didn&#39;t want to load MathJax with every page. Most pages don&#39;t require it, so I wrap the MathJax configuration in an if-block that detects if the page (or the whole site) defines the parameter &lt;tt class=&#34;docutils literal&#34;&gt;math&lt;/tt&gt;.  The configuration has been updated, as well.&lt;/p&gt;
+&lt;p&gt;Now all I have to do is add &lt;tt class=&#34;docutils literal&#34;&gt;math: true&lt;/tt&gt; to the front matter of any file that includes \(\LaTeX\).&lt;/p&gt;
+&lt;pre class=&#34;code html literal-block&#34;&gt;
+&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- Include MathJaX if either the page or the site params define math=true --&amp;gt;&lt;/span&gt;
+{{- if or .Params.math .Site.Params.math -}}
+&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- Configure MathJax for automatic equation numbering. See
+  https://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
+  for details.
+  Also, for tex2jax configuration see https://docs.mathjax.org/en/latest/
+  options/preprocessors/tex2jax.html
+
+  Note that the double-backslashes are very important. Without them ordinary
+  markdown will interpret (parenthetical statements) as inline math, and cause
+  similar problems if text is put between &#39;[&#39; and &#39;]&#39;.
+--&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&#34;name attribute&#34;&gt;type=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;text/x-mathjax-config&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;name other&#34;&gt;MathJax&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;Hub&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;Config&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;({&lt;/span&gt;
+    &lt;span class=&#34;name other&#34;&gt;TeX&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;name other&#34;&gt;equationNumbers&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;name other&#34;&gt;autoNumber&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal string double&#34;&gt;&amp;quot;AMS&amp;quot;&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;},&lt;/span&gt;
+            &lt;span class=&#34;name other&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;literal string double&#34;&gt;&amp;quot;AMSmath.js&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;literal string double&#34;&gt;&amp;quot;AMSsymbols.js&amp;quot;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;},&lt;/span&gt;
+    &lt;span class=&#34;name other&#34;&gt;tex2jax&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt;
+      &lt;span class=&#34;name other&#34;&gt;inlineMath&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;literal string single&#34;&gt;&#39;$&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;literal string single&#34;&gt;&#39;$&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;literal string single&#34;&gt;&#39;\\(&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;literal string single&#34;&gt;&#39;\\)&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;]],&lt;/span&gt;
+      &lt;span class=&#34;name other&#34;&gt;displayMath&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;literal string single&#34;&gt;&#39;$$&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;literal string single&#34;&gt;&#39;$$&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;literal string single&#34;&gt;&#39;\\[&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;literal string single&#34;&gt;&#39;\\]&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;]],&lt;/span&gt;
+      &lt;span class=&#34;name other&#34;&gt;processEscapes&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;keyword constant&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;name other&#34;&gt;processEnvironments&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;keyword constant&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;name other&#34;&gt;skipTags&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;literal string single&#34;&gt;&#39;script&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;literal string single&#34;&gt;&#39;noscript&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;literal string single&#34;&gt;&#39;style&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;literal string single&#34;&gt;&#39;textarea&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;literal string single&#34;&gt;&#39;pre&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;literal string single&#34;&gt;&#39;code&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
+  &lt;span class=&#34;punctuation&#34;&gt;});&lt;/span&gt;
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;In addition to being updated, it tries to load from a Cloudflare, but if it can&#39;t connect it loads a local copy.&lt;/p&gt;
+&lt;pre class=&#34;code html literal-block&#34;&gt;
+&lt;span class=&#34;comment&#34;&gt;&amp;lt;!--
+  Load MathJax. Note that this is one of the most general configurations.
+  See the configuration docs for others. There might be a lighter version
+  that will work for my purposes.
+  https://docs.mathjax.org/en/latest/config-files.html#common-configurations
+--&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- MathJax: Fall back to local if your computer is offline and can&#39;t connect
+  to the CDN. For convenience, the configuration for the fallback deactivates
+  image fonts support (imageFont:null). This allows you to host a slim local
+  copy by deleting the PNG fonts.--&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&#34;name attribute&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;type=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;src=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&#39;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML&#39;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;span class=&#34;name builtin&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;MathJax&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;name builtin&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;literal string single&#34;&gt;&#39;&amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;MathJax.Hub.Config({&amp;quot;HTML-CSS&amp;quot;:{imageFont:null}});&amp;lt;\/script&amp;gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;{{ &amp;quot;scripts/MathJax-2.7.5/MathJax.js&amp;quot; | relURL }}?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;&amp;lt;\/script&amp;gt;&#39;&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+{{- end -}}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;pagination&#34;&gt;
+&lt;h4&gt;Pagination&lt;/h4&gt;
+&lt;p&gt;I had added lots of notes and the layout was still sprinkled with distracting icons, this time with a redish theme and green accents. I had at least learned how to paginate my page lists. For example, the default list (&lt;tt class=&#34;docutils literal&#34;&gt;layouts/_default/list.html&lt;/tt&gt;) used Hugo&#39;s built-in pagination:&lt;/p&gt;
+&lt;pre class=&#34;code html literal-block&#34;&gt;
+{{ define &amp;quot;main&amp;quot; }}
+
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;main&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- default list template --&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;name tag&#34;&gt;&amp;lt;article&amp;gt;&lt;/span&gt;
+      &lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- &amp;quot;{{.Content}}&amp;quot; pulls from the markdown content of the corresponding _index.md --&amp;gt;&lt;/span&gt;
+      {{ .Content }}
+    &lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- Paginates through content/note/*.md --&amp;gt;&lt;/span&gt;
+    {{ $paginator := .Paginate (where .Pages &amp;quot;Type&amp;quot; &amp;quot;note&amp;quot;) }}
+    {{ range $paginator.Pages }}
+      &lt;span class=&#34;name tag&#34;&gt;&amp;lt;h2&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;font-125&amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;href=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;{{ .Permalink }}&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;{{ .Title }}&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+      &lt;span class=&#34;name tag&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;article-meta-data&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+        {{ partial &amp;quot;date-and-tags.html&amp;quot; . }}
+        &lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- this renders based on layouts/_default/summary.html (either the
+        local one, or the one in a theme --&amp;gt;&lt;/span&gt;
+        {{ .Render &amp;quot;summary&amp;quot; }}
+      &lt;span class=&#34;name tag&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    {{ end }}
+    {{ template &amp;quot;_internal/pagination.html&amp;quot; . }}
+    &lt;span class=&#34;name tag&#34;&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
+
+{{ end }}
+&lt;/pre&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/006-2019.04.08-red-green.png&#34;&gt;&lt;img alt=&#34;Pagination, redish theme, and green accents&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/006-2019.04.08-red-green.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;scrollbar-jumping&#34;&gt;
+&lt;h4&gt;Scrollbar Jumping&lt;/h4&gt;
+&lt;p&gt;At some point I noticed that when navigating from a page that had no scrollbar (like a short post or note) to one that did (such as the paginated lists of notes displayed above) the whole layout shifted slightly. I found a &lt;a class=&#34;reference external&#34; href=&#34;MoreElegantFixforJumpingScrollbarIssue&#34;&gt;fix for it at CSS-Tricks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;At the time, I had a &lt;tt class=&#34;docutils literal&#34;&gt;layouts/partials/style.html&lt;/tt&gt; partial file. All I had to do was add a few lines of CSS to it:&lt;/p&gt;
+&lt;pre class=&#34;code css literal-block&#34;&gt;
+&lt;span class=&#34;name tag&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;margin-left&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;name&#34;&gt;calc&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;literal number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;vw&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;100%&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;margin-right&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;scss-pipeline-processing&#34;&gt;
+&lt;h4&gt;SCSS Pipeline Processing&lt;/h4&gt;
+&lt;p&gt;By April I had setup a pipeline for processing SCSS into CSS. The pipeline consisted of this small amount of template code:&lt;/p&gt;
+&lt;pre class=&#34;code html literal-block&#34;&gt;
+&lt;span class=&#34;comment&#34;&gt;&amp;lt;!-- For more info about using SCSS and this pipeline see:
+  https://github.com/gohugoio/hugo/commit/dea71670c059ab4d5a42bd22503f18c087dd22d4,
+  https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
+  and https://gohugo.io/hugo-pipes/
+--&amp;gt;&lt;/span&gt;
+{{ $style := resources.Get &amp;quot;sass/main.scss&amp;quot; | toCSS | minify | fingerprint }}
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;rel=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;href=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;{{ $style.RelPermalink }}&amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;integrity=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;{{ $style.Data.Digest }}&amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;media=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;screen&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;The &lt;tt class=&#34;docutils literal&#34;&gt;main.scss&lt;/tt&gt; file lived in &lt;tt class=&#34;docutils literal&#34;&gt;assets/scss/&lt;/tt&gt; at the root of the repository.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;sorry-vanilla-you-have-to-go&#34;&gt;
+&lt;h2&gt;Sorry Vanilla. You have to Go&lt;/h2&gt;
+&lt;p&gt;One aspect of design I didn&#39;t enjoy trying to figure out the correct CSS classes to apply to a given situation. For example, the body element is &lt;tt class=&#34;docutils literal&#34;&gt;&amp;lt;body &lt;span class=&#34;pre&#34;&gt;class=&amp;quot;d-flex&lt;/span&gt; &lt;span class=&#34;pre&#34;&gt;flex-column&lt;/span&gt; &lt;span class=&#34;pre&#34;&gt;h-100&amp;quot;&amp;gt;&lt;/span&gt;&lt;/tt&gt;. I have no idea what those classes mean and why I need them, so I started learning more about HTML and CSS.&lt;/p&gt;
+&lt;p&gt;My new goal was to really understand the structure of my site, so I know where things are, what needs to be modified as I build it to look the way I want it to, and know the elements and classes defined in the layout so they can be styled correctly. Vanilla Bootstrap was a nice place to start, but I don&#39;t understand the choices made for structure and styling. Its use of Bootstrap added another layer of complexity to learning how changes to CSS will affect the site.&lt;/p&gt;
+&lt;p&gt;In the middle of April, I ripped out Vanilla Bootstrap and started over.&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/007-2019.04.13-back-to-basics.png&#34;&gt;&lt;img alt=&#34;Back to Basics&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/007-2019.04.13-back-to-basics.png&#34; style=&#34;width: 300.0px;&#34; /&gt;&lt;/a&gt;
+&lt;p&gt;Weird. I started off the year with a sophisticated theme, because I thought it would help me get to a nice looking website fast. I found the large array of options in Academic to be overwhelming.&lt;/p&gt;
+&lt;p&gt;Switching to the theme to Vanilla enabled me to learn more about layout and styling, but what I wound up with was cutesy and still too difficult to reason about when it came to knowing which levers to pull and dials to turn to affect the layout and styling in a predictable way.&lt;/p&gt;
+&lt;p&gt;Ripping out Vanilla left me with a barebones layout. Here are some of the things I learned along the way to creating a site more to my liking.&lt;/p&gt;
+&lt;div class=&#34;section&#34; id=&#34;navigation-menu&#34;&gt;
+&lt;h3&gt;Navigation Menu&lt;/h3&gt;
+&lt;p&gt;By late April, I learned that navigation links didn&#39;t have to be wrapped in an unordered list. Looking through git log, I found the navigation menu had always been wrapped in an unordered list.&lt;/p&gt;
+&lt;pre class=&#34;code html literal-block&#34;&gt;
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;navbar-nav mr-auto&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;name tag&#34;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;nav-item&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;name tag&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;nav-link&amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;href=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;/#about&amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;data-target=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;#about&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&#34;name tag&#34;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;Home&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;name tag&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;name tag&#34;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;name tag&#34;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;nav-item&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;name tag&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;nav-link&amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;href=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;/#publications_featured&amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;data-target=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;#publications_featured&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&#34;name tag&#34;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;Publications&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;name tag&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;name tag&#34;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now I have just a &lt;tt class=&#34;docutils literal&#34;&gt;&amp;lt;nav&amp;gt;&lt;/tt&gt; element that wraps a &lt;tt class=&#34;docutils literal&#34;&gt;&amp;lt;div&amp;gt;&lt;/tt&gt;:&lt;/p&gt;
+&lt;pre class=&#34;code html literal-block&#34;&gt;
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;main-nav&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;name tag&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;main-nav__items&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;name tag&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;main-nav__link navLink-active&amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;href=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;http://localhost:1414/&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;Home&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;name tag&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;main-nav__link &amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;href=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;http://localhost:1414/about/&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;About&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;name tag&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;main-nav__link &amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;href=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;http://localhost:1414/now/&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;Now&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;name tag&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;main-nav__link &amp;quot;&lt;/span&gt; &lt;span class=&#34;name attribute&#34;&gt;href=&lt;/span&gt;&lt;span class=&#34;literal string&#34;&gt;&amp;quot;http://localhost:1414/index.xml&amp;quot;&lt;/span&gt;&lt;span class=&#34;name tag&#34;&gt;&amp;gt;&lt;/span&gt;RSS&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;name tag&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;name tag&#34;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;The CSS for this section consists of class definitions for &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;main-nav&lt;/span&gt;&lt;/tt&gt; and &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;main-nav__items&lt;/span&gt;&lt;/tt&gt;. It is very simple, and doesn&#39;t even try to style the &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;main-nav__link&lt;/span&gt;&lt;/tt&gt; class.&lt;/p&gt;
+&lt;pre class=&#34;code css literal-block&#34;&gt;
+&lt;span class=&#34;name class&#34;&gt;.main-nav&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;name&#34;&gt;flex&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;justify&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;keyword&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;name&#34;&gt;flex&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;name class&#34;&gt;.main-nav__items&lt;/span&gt; &lt;span class=&#34;name tag&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;font-size&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;1.1em&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;margin-right&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;ch&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Unwrapping them changed navigation from:&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/008-2019.04.18-unstyled-navigation-list.png&#34;&gt;&lt;img alt=&#34;Unstyled navigation list&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/008-2019.04.18-unstyled-navigation-list.png&#34; style=&#34;width: 300.0px;&#34; /&gt;&lt;/a&gt;
+&lt;p&gt;to this:&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/008-2019.04.19-plain-navigation.png&#34;&gt;&lt;img alt=&#34;Plain navigation&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/009-2019.04.19-plain-navigation.png&#34; style=&#34;width: 480.0px;&#34; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;general-layout&#34;&gt;
+&lt;h3&gt;General Layout&lt;/h3&gt;
+&lt;p&gt;Per the &lt;a class=&#34;reference external&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing&#34;&gt;MDN docs on box-sizing&lt;/a&gt; &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;border-box&lt;/span&gt;&lt;/tt&gt; makes dealing with the sizes of elements much easier, and generally eliminates a number of pitfalls you can stumble on while laying out your content, so I set &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;border-box&lt;/span&gt;&lt;/tt&gt; globally.&lt;/p&gt;
+&lt;pre class=&#34;code css literal-block&#34;&gt;
+&lt;span class=&#34;operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;name&#34;&gt;box&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;sizing&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;border&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;box&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;I learned I can set site-wide parameters in Hugo&#39;s configuration files. I set the site width and several other parameters in &lt;tt class=&#34;docutils literal&#34;&gt;config/_default/params.toml&lt;/tt&gt;:&lt;/p&gt;
+&lt;pre class=&#34;code text literal-block&#34;&gt;
+showActiveNav = true
+author = &amp;quot;Douglas Cuthbertson&amp;quot;
+description = &amp;quot;This is my soapbox for thoughts on programming, project planning, sketching, drawing, kempo, and any other topic that may suit my fancy.&amp;quot;
+dateFormat = &amp;quot;Monday Jan 2, 2006&amp;quot;
+dateFormatExtended = &amp;quot;Monday Jan 2, 2006 15:04&amp;quot;
+homeText = &amp;quot;&amp;quot;
+copyright = &amp;quot;(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)&amp;quot;
+footerText = &amp;quot;Made with HTML, CSS, JavaScript, and perseverance. Generated by [Hugo](https://gohugo.io/)&amp;quot;
+hideFooter = false
+#featured_image = &amp;quot;/images/hero-header-default.jpg&amp;quot;
+#featured_image = &amp;quot;/images/hero-header-april.jpg&amp;quot;
+site_width = &amp;quot;104ch&amp;quot;
+
+componentDropCaps = &amp;quot;drop-caps_goudy&amp;quot;
+mainSections = [&amp;quot;note&amp;quot;, &amp;quot;post&amp;quot;, &amp;quot;project&amp;quot;]
+planck = &amp;quot;\u210E&amp;quot;
+reduced_planck = &amp;quot;\u210F&amp;quot;
+&lt;/pre&gt;
+&lt;p&gt;and use &lt;tt class=&#34;docutils literal&#34;&gt;site_width&lt;/tt&gt; in &lt;tt class=&#34;docutils literal&#34;&gt;assets/style/base.css&lt;/tt&gt; as follows:&lt;/p&gt;
+&lt;pre class=&#34;code text literal-block&#34;&gt;
+{{ $siteWidth := .Site.Params.site_width }}
+{{ if not .Site.Params.site_width }}
+{{ $siteWidth = &amp;quot;936px&amp;quot; }}
+{{ end }}
+&lt;/pre&gt;
+&lt;p&gt;I&#39;ve only recently decided that this is a bad idea. Every time I try to experiment with the site width, I have to touch the configuration. Hugo must go through a complete rebuild of the site, which takes much more time than necessary.&lt;/p&gt;
+&lt;p&gt;The only reason to put a parameter in a configuration file is if the value must be accessed from more than one place. In this case, it was needed only in a single CSS file. Once I defined the width directly in &lt;tt class=&#34;docutils literal&#34;&gt;base.css&lt;/tt&gt;, site rebuilds were faster, and my CSS is no longer cluttered with Go template code. Also, &lt;tt class=&#34;docutils literal&#34;&gt;layouts/partials/head.html&lt;/tt&gt; was slightly simplified. Instead of accessing &lt;tt class=&#34;docutils literal&#34;&gt;base.css&lt;/tt&gt; as&lt;/p&gt;
+&lt;pre class=&#34;code go literal-block&#34;&gt;
+&lt;span class=&#34;punctuation&#34;&gt;{{&lt;/span&gt; &lt;span class=&#34;error&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;cssBase&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;name other&#34;&gt;resources&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;Get&lt;/span&gt; &lt;span class=&#34;literal string&#34;&gt;&amp;quot;style/base.css&amp;quot;&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;name other&#34;&gt;resources&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;ExecuteAsTemplate&lt;/span&gt; &lt;span class=&#34;literal string&#34;&gt;&amp;quot;style.base.css&amp;quot;&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;}}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;the code is now&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class=&#34;code go literal-block&#34;&gt;
+&lt;span class=&#34;punctuation&#34;&gt;{{&lt;/span&gt; &lt;span class=&#34;error&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;cssBase&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;name other&#34;&gt;resources&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;name other&#34;&gt;Get&lt;/span&gt; &lt;span class=&#34;literal string&#34;&gt;&amp;quot;style/base.css&amp;quot;&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;}}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;color-consistency-and-contrast&#34;&gt;
+&lt;h3&gt;Color Consistency and Contrast&lt;/h3&gt;
+&lt;p&gt;In May I was trying to ensure colors were being used consistently. I learned that the site should have primary and accent colors, and define the color of the body text. Some designers say that black text on a white background is too harsh and set dark gray text on a light gray background. When I look at those sites, I find the contrast is often too low and causes eye strain. I originally just went with black text on white. I figured it&#39;s a work in progress, and that can be adjusted when the rest of the site is more to my liking.&lt;/p&gt;
+&lt;p&gt;In deference to experienced designers I now set the text to a very dark gray on a very light gray background. I created a palette using &lt;a class=&#34;reference external&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties&#34;&gt;CSS custom properties&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class=&#34;code css literal-block&#34;&gt;
+&lt;span class=&#34;name decorator&#34;&gt;:root&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color100&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#f5fffa&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color200&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#7cffbb&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color300&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#00eb75&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color400&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#00c663&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color500&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#00a151&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color600&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#007c3e&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color700&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#00572c&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color800&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#003219&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color900&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#000b05&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray100&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#fcfcfc&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray200&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#dedede&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray300&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#bfbfbf&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray400&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#a1a1a1&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray500&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#828282&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray600&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#636363&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray700&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#454545&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray800&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#262626&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray900&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#080808&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;/* text */&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color500&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;complement&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#a30052&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;/* anchor hover */&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color500&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;adjacent&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#0062a3&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;/* drop-caps */&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color500&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;adjacent&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;complement&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#a34100&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;/* reserved */&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color700&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;complement&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#00572b&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color700&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;adjacent&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#003457&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;color700&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;adjacent&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;complement&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#572300&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;I like this aspect of CSS. It means I can define all the colors I care about in one place, and I don&#39;t have to learn SCSS at the moment to do it.&lt;/p&gt;
+&lt;p&gt;Some sites eschew black text on a white background. For example, &lt;a class=&#34;reference external&#34; href=&#34;https://jgthms.com/web-design-in-4-minutes/&#34;&gt;Web Design in 4 Minutes&lt;/a&gt; recommends using a medium gray (#555) for body text, a dark gray (#333) for headings and strong text all against a white background. However that creates a rather low contrast. To make matters worse, the background for code blocks is set to #eee.&lt;/p&gt;
+&lt;p&gt;The &lt;a class=&#34;reference external&#34; href=&#34;https://www.w3.org/TR/WCAG20/&#34;&gt;Web Content Accessibility Guidelines&lt;/a&gt; recommends a contrast ratio of at least 7:1 for normal text and 4.5:1 for large text. Large text is defined as 14 point (typically 18.66px) and bold or larger, or 18 point (typically 24px) or larger. The contrast ratio for headings set to #333 against white is strong at 12.62:1. Body text set to #555 against white is barely acceptable at 7.46:1. Finally, the constrast ratio of code blocks (#555 against a background of #eee) is unacceptable at 6.42:1.&lt;/p&gt;
+&lt;p&gt;Originally, I had black text on a white background. In deference to designers who have a lot more experience creating web sites than I do, I set the background and text colors to the lightest and darkest grays in the palette, respectively.&lt;/p&gt;
+&lt;pre class=&#34;code css literal-block&#34;&gt;
+&lt;span class=&#34;name tag&#34;&gt;body&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;background-color&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;name&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray100&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;name&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;gray900&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;The contrast ratio is 19.52:1. Is that too high? One day I&#39;ll look into separate degrees of contrast for body text and headings.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;styling-fun&#34;&gt;
+&lt;h2&gt;Styling Fun&lt;/h2&gt;
+&lt;p&gt;One thing I particularly liked was how nice drop caps looked on &lt;a class=&#34;reference external&#34; href=&#34;https://www.gwern.net/index&#34;&gt;Gwern&lt;/a&gt;. I looked at his CSS and created a new file, &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;static\style\drop-caps\drop-caps.css&lt;/span&gt;&lt;/tt&gt; with a simplified version of his CSS. I dropped it in the &lt;tt class=&#34;docutils literal&#34;&gt;static/&lt;/tt&gt; directory instead of the &lt;tt class=&#34;docutils literal&#34;&gt;assets/&lt;/tt&gt; folder out of expediency, and I modified &lt;tt class=&#34;docutils literal&#34;&gt;layouts/_default/baseof.html&lt;/tt&gt; to pull in the drop caps definitions.&lt;/p&gt;
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;first admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;Browser-specific Styling&lt;/p&gt;
+&lt;p class=&#34;last&#34;&gt;For the longest time I couldn&#39;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at &lt;a class=&#34;reference external&#34; href=&#34;https://www.gwern.net/index&#34;&gt;gwern.net&lt;/a&gt; I realized &lt;tt class=&#34;docutils literal&#34;&gt;&amp;#64;supports &lt;span class=&#34;pre&#34;&gt;(-moz-user-focus:&lt;/span&gt; normal) { ... }&lt;/tt&gt; is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use &lt;tt class=&#34;docutils literal&#34;&gt;&amp;#64;supports not &lt;span class=&#34;pre&#34;&gt;(-moz-user-focus:&lt;/span&gt; normal)&lt;/tt&gt; to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;By the end of June I removed most of the feather icons and simplified the layout. It looked better.&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/010-2019.06.27-simple.png&#34;&gt;&lt;img alt=&#34;June 2019. A more simple presentation.&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/010-2019.06.27-simple.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;debugging-layouts&#34;&gt;
+&lt;h2&gt;Debugging Layouts&lt;/h2&gt;
+&lt;p&gt;A simple trick to help debug layouts is to put a high-contrast border and background color around the sections you&#39;re working on.&lt;/p&gt;
+&lt;pre class=&#34;code css literal-block&#34;&gt;
+&lt;span class=&#34;name class&#34;&gt;.wrapper&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;punctuation&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;border&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;2px&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;solid&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#f08c00&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;background-color&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;#ffec99&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;border&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;name&#34;&gt;radius&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;5px&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;keyword&#34;&gt;padding&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal number&#34;&gt;10px&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;A little thing like that helped me make a two column layout.&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/011-2019.08.04-two-column.png&#34;&gt;&lt;img alt=&#34;Two Column Layout&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/011-2019.08.04-two-column.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;p&gt;By the end of September last year, I had restructured a lot of the blog. It has a stronger two-column layout and a splash of color.&lt;/p&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/012-2019.09.30-no-notes-breadcrumbs.png&#34;&gt;&lt;img alt=&#34;A Splash of Color&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/012-2019.09.30-no-notes-breadcrumbs.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;p&gt;Since then, I&#39;ve been periodically iterating on the design. It is pretty much complete and I&#39;m generally happy with the way it has turned out. I&#39;ll continue to fiddle with it here and there, but I plan to write about things with which I&#39;m more familiar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>Restart</title>
