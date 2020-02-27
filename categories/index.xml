@@ -14,32 +14,5 @@
         <atom:link href="https://douglascuthbertson.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>post</title>
-      <link>https://douglascuthbertson.com/categories/post/</link>
-      <pubDate>Sat, 22 Feb 2020 17:38:32 -0500</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>https://douglascuthbertson.com/categories/post/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>now</title>
-      <link>https://douglascuthbertson.com/categories/now/</link>
-      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>https://douglascuthbertson.com/categories/now/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>about</title>
-      <link>https://douglascuthbertson.com/categories/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>https://douglascuthbertson.com/categories/about/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
