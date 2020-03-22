@@ -194,7 +194,7 @@
 
 {{ end }}
 &lt;/pre&gt;
-&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/006-2019.04.08-red-green.png&#34;&gt;&lt;img alt=&#34;Pagination, redish theme, and green accents&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/006-2019.04.08-red-green.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png&#34;&gt;&lt;img alt=&#34;Pagination, redish theme, and green accents&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class=&#34;section&#34; id=&#34;scrollbar-jumping&#34;&gt;
 &lt;h4&gt;Scrollbar Jumping&lt;/h4&gt;
@@ -228,7 +228,7 @@
 &lt;p&gt;One aspect of design I didn&#39;t enjoy trying to figure out the correct CSS classes to apply to a given situation. For example, the body element is &lt;tt class=&#34;docutils literal&#34;&gt;&amp;lt;body &lt;span class=&#34;pre&#34;&gt;class=&amp;quot;d-flex&lt;/span&gt; &lt;span class=&#34;pre&#34;&gt;flex-column&lt;/span&gt; &lt;span class=&#34;pre&#34;&gt;h-100&amp;quot;&amp;gt;&lt;/span&gt;&lt;/tt&gt;. I have no idea what those classes mean and why I need them, so I started learning more about HTML and CSS.&lt;/p&gt;
 &lt;p&gt;My new goal was to really understand the structure of my site, so I know where things are, what needs to be modified as I build it to look the way I want it to, and know the elements and classes defined in the layout so they can be styled correctly. Vanilla Bootstrap was a nice place to start, but I don&#39;t understand the choices made for structure and styling. Its use of Bootstrap added another layer of complexity to learning how changes to CSS will affect the site.&lt;/p&gt;
 &lt;p&gt;In the middle of April, I ripped out Vanilla Bootstrap and started over.&lt;/p&gt;
-&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/007-2019.04.13-back-to-basics.png&#34;&gt;&lt;img alt=&#34;Back to Basics&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/007-2019.04.13-back-to-basics.png&#34; style=&#34;width: 300.0px;&#34; /&gt;&lt;/a&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34;&gt;&lt;img alt=&#34;Back to Basics&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34; style=&#34;width: 300.0px;&#34; /&gt;&lt;/a&gt;
 &lt;p&gt;Weird. I started off the year with a sophisticated theme, because I thought it would help me get to a nice looking website fast. I found the large array of options in Academic to be overwhelming.&lt;/p&gt;
 &lt;p&gt;Switching to the theme to Vanilla enabled me to learn more about layout and styling, but what I wound up with was cutesy and still too difficult to reason about when it came to knowing which levers to pull and dials to turn to affect the layout and styling in a predictable way.&lt;/p&gt;
 &lt;p&gt;Ripping out Vanilla left me with a barebones layout. Here are some of the things I learned along the way to creating a site more to my liking.&lt;/p&gt;
@@ -272,9 +272,9 @@
 &lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Unwrapping them changed navigation from:&lt;/p&gt;
-&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/008-2019.04.18-unstyled-navigation-list.png&#34;&gt;&lt;img alt=&#34;Unstyled navigation list&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/008-2019.04.18-unstyled-navigation-list.png&#34; style=&#34;width: 300.0px;&#34; /&gt;&lt;/a&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png&#34;&gt;&lt;img alt=&#34;Unstyled navigation list&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png&#34; style=&#34;width: 300.0px;&#34; /&gt;&lt;/a&gt;
 &lt;p&gt;to this:&lt;/p&gt;
-&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/008-2019.04.19-plain-navigation.png&#34;&gt;&lt;img alt=&#34;Plain navigation&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/009-2019.04.19-plain-navigation.png&#34; style=&#34;width: 480.0px;&#34; /&gt;&lt;/a&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/008-2019.04.19-plain-navigation.png&#34;&gt;&lt;img alt=&#34;Plain navigation&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/009-2019.04.19-plain-navigation.png&#34; style=&#34;width: 480.0px;&#34; /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class=&#34;section&#34; id=&#34;general-layout&#34;&gt;
 &lt;h3&gt;General Layout&lt;/h3&gt;
@@ -377,7 +377,7 @@ reduced_planck = &amp;quot;\u210F&amp;quot;
 &lt;p class=&#34;last&#34;&gt;For the longest time I couldn&#39;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at &lt;a class=&#34;reference external&#34; href=&#34;https://www.gwern.net/index&#34;&gt;gwern.net&lt;/a&gt; I realized &lt;tt class=&#34;docutils literal&#34;&gt;&amp;#64;supports &lt;span class=&#34;pre&#34;&gt;(-moz-user-focus:&lt;/span&gt; normal) { ... }&lt;/tt&gt; is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use &lt;tt class=&#34;docutils literal&#34;&gt;&amp;#64;supports not &lt;span class=&#34;pre&#34;&gt;(-moz-user-focus:&lt;/span&gt; normal)&lt;/tt&gt; to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;By the end of June I removed most of the feather icons and simplified the layout. It looked better.&lt;/p&gt;
-&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/010-2019.06.27-simple.png&#34;&gt;&lt;img alt=&#34;June 2019. A more simple presentation.&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/010-2019.06.27-simple.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png&#34;&gt;&lt;img alt=&#34;June 2019. A more simple presentation.&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class=&#34;section&#34; id=&#34;debugging-layouts&#34;&gt;
 &lt;h2&gt;Debugging Layouts&lt;/h2&gt;
@@ -391,9 +391,9 @@ reduced_planck = &amp;quot;\u210F&amp;quot;
 &lt;span class=&#34;punctuation&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;A little thing like that helped me make a two column layout.&lt;/p&gt;
-&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/011-2019.08.04-two-column.png&#34;&gt;&lt;img alt=&#34;Two Column Layout&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/011-2019.08.04-two-column.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png&#34;&gt;&lt;img alt=&#34;Two Column Layout&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
 &lt;p&gt;By the end of September last year, I had restructured a lot of the blog. It has a stronger two-column layout and a splash of color.&lt;/p&gt;
-&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/project/blog/history/012-2019.09.30-no-notes-breadcrumbs.png&#34;&gt;&lt;img alt=&#34;A Splash of Color&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/project/blog/history/012-2019.09.30-no-notes-breadcrumbs.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
+&lt;a class=&#34;reference external image-reference&#34; href=&#34;https://douglascuthbertson.com/images/history/012-2019.09.30-no-notes-breadcrumbs.png&#34;&gt;&lt;img alt=&#34;A Splash of Color&#34; class=&#34;post-image align-left&#34; src=&#34;https://douglascuthbertson.com/images/history/012-2019.09.30-no-notes-breadcrumbs.png&#34; style=&#34;width: 600px;&#34; /&gt;&lt;/a&gt;
 &lt;p&gt;Since then, I&#39;ve been periodically iterating on the design. It is pretty much complete and I&#39;m generally happy with the way it has turned out. I&#39;ll continue to fiddle with it here and there, but I plan to write about things with which I&#39;m more familiar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
