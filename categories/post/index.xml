@@ -9,10 +9,34 @@
     <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)</copyright>
-    <lastBuildDate>Sat, 22 Feb 2020 17:38:32 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2020 08:12:51 -0400</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/categories/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vote 2020</title>
+      <link>https://douglascuthbertson.com/2020/10/vote-2020/</link>
+      <pubDate>Wed, 28 Oct 2020 08:12:51 -0400</pubDate>
+      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      <guid>https://douglascuthbertson.com/2020/10/vote-2020/</guid>
+      <description>&lt;p&gt;If you live in the United States of America, please vote! Election Day is Tuesday, November 3rd.&lt;/p&gt;
+&lt;p&gt;Vote for whomever you like, but understand that Trump is tearing apart our country.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;He lied to us Americans about the deadliness of COVID-19 and how easliy it spreads. Now well over 200,000 Americans are dead. Many of those deaths could have been prevented if we had been forewarned and taken precautions.&lt;/li&gt;
+&lt;li&gt;He has failed the economy. Many small businesses are failing and may not recover.&lt;/li&gt;
+&lt;li&gt;He ripped apart immigrant families and there are now over 500 immigrant children who can&amp;rsquo;t be reunited with their parents.&lt;/li&gt;
+&lt;li&gt;He bullies, denigrates, and belittles people who disagree with him or are less powerful than he is so he can feel superior.&lt;/li&gt;
+&lt;li&gt;He refuses to denounce white supremicists and actually commanded one group to &amp;ldquo;stand back and stand by&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Do you really want him to be our president? I don&amp;rsquo;t understand how that&amp;rsquo;s possible.&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://joebiden.com/&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/vote2020/biden-harris-2020.jpg&#34;
+         alt=&#34;Biden Harris 2020&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+            Biden Harris 2020
+        &lt;/figcaption&gt;
+&lt;/figure&gt;</description>
+    </item>
     
     <item>
       <title>A New Hugo-Based Blog</title>
@@ -25,17 +49,17 @@
 &lt;p&gt;I stumbled quite badly a few times along the way. I thought a theme would help me get my site up and running quickly, but they don&amp;rsquo;t balance well with my need to twiddle with the site&amp;rsquo;s layout and look and feel. The long and short of it is, I took what I learned from trying out a couple of themes, and hunkered down to learn a few things about &amp;ldquo;The Hugo Way&amp;rdquo;, and the basics of HTML &amp;amp; CSS.&lt;/p&gt;
 &lt;h2 id=&#34;the-short-lived-academic-theme&#34;&gt;The Short-lived Academic Theme&lt;/h2&gt;
 &lt;p&gt;As I have a tendency to do with new tools, I dove in too deep, too fast. Hugo has themes, and they look like a good way to get something up and running quickly. I looked over [`]the theme gallery](&lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt;) checking all the features and how they looked. &lt;a href=&#34;https://themes.gohugo.io/academic/&#34;&gt;Academic&lt;/a&gt; is very flexible and chock full of features. I decided to give it a whirl in February 2019. It looked like this out of the box.&lt;/p&gt;
-&lt;figure&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png&#34;
-         alt=&#34;First Rendition using Vanilla Bootstrap Theme&#34; width=&#34;600px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;First Rendition using Vanilla Bootstrap Theme&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             First Try with Vanilla Bootstrap
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;I tried a few small configuration changes to see how I liked it. My hope was only minor changes would be necessary so I could have a site that looked good to me and had a responsive layout. That way I could just write posts.&lt;/p&gt;
-&lt;figure&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/002-2019.02.03.02-title.and.footer.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/002-2019.02.03.02-title.and.footer.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/002-2019.02.03.02-title.and.footer.png&#34;
-         alt=&#34;My First Time Using the Academic Theme&#34; width=&#34;600px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;My First Time Using the Academic Theme&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             My First Time Using the Academic Theme
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -43,9 +67,9 @@
 &lt;h2 id=&#34;quick-switch-to-vanilla-bootstrap&#34;&gt;Quick Switch to Vanilla Bootstrap&lt;/h2&gt;
 &lt;p&gt;Sadly, Academic was short lived. By the 9th of the month I gave up on it. For all the features it has, I found it too hard to configure and customize. Don&amp;rsquo;t get me wrong. Academic is amazing and has &lt;a href=&#34;https://sourcethemes.com/academic/docs/get-started/&#34;&gt;good documentation&lt;/a&gt;, but this theme &lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34;&gt;has its own themes&lt;/a&gt;. It&amp;rsquo;s a little more complex than what I needed. Also, I didn&amp;rsquo;t realize at the time, but Academic isn&amp;rsquo;t just a Hugo theme. It is a website builder. It uses Hugo as an engine to bring life to a website rather than being a set of content-decorators run by Hugo.&lt;/p&gt;
 &lt;p&gt;Too new to how Hugo workds and the complexities of a website builder, I looked for a simpler solution and settled on &lt;a href=&#34;https://themes.gohugo.io/vanilla-bootstrap-hugo-theme/&#34;&gt;Vanilla Bootstrap&lt;/a&gt;.&lt;/p&gt;
-&lt;figure&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png&#34;
-         alt=&#34;First Rendition using Vanilla Bootstrap Theme&#34; width=&#34;600px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;First Rendition using Vanilla Bootstrap Theme&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             First Try with Vanilla Bootstrap
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -103,9 +127,9 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It cycles through the &lt;code&gt;menu.nav&lt;/code&gt; items in &lt;code&gt;config.toml&lt;/code&gt; and translates those values to a feather icon, text, and a link to the given URL. The site was beginning to fill out, although today the icons look silly to me.&lt;/p&gt;
 &lt;p&gt;There&amp;rsquo;s a &amp;ldquo;Notes&amp;rdquo; menu item, because I thought I would use the site to keep notes as well as regular blog posts. I&amp;rsquo;ve since separated my personal notes and works-in-progress from blog posts. I&amp;rsquo;m willing to go only so far in what I make public. It&amp;rsquo;s best to keep some thoughts as background material, and let others stew for a while before publicizing them.&lt;/p&gt;
 &lt;p&gt;I created a simple 404 page, and a big &amp;ldquo;jumbotron&amp;rdquo; area for all the index pages. The site was beginning to fill out. Although, today the icons look silly to me.&lt;/p&gt;
-&lt;figure class=&#34;post-image&#34;&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/004-2019.02.10-jumbotron.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/004-2019.02.10-jumbotron.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/004-2019.02.10-jumbotron.png&#34;
-         alt=&#34;Jumbotron&#34; width=&#34;650px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;Jumbotron&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             Jumbotron
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -115,9 +139,9 @@
 &lt;h3 id=&#34;more-puttering-around-with-layout&#34;&gt;More Puttering Around with Layout&lt;/h3&gt;
 &lt;p&gt;It was still early February, and I was learning how Hugo worked, it&amp;rsquo;s configuration system, and how and where to integrate CSS, SCSS, and JavaScript (particularly MathJax). I spent time breaking up the layout into partials for more consistency across the site.&lt;/p&gt;
 &lt;p&gt;I added a picture of Motif No. 1 I took in Rockport, Massachusetts to fill the jumbotron. It got cropped rather poorly, though.&lt;/p&gt;
-&lt;figure class=&#34;post-image&#34;&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/005-2019.02.11-wide.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/005-2019.02.11-wide.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/005-2019.02.11-wide.png&#34;
-         alt=&#34;Wide Menu Day&#34; width=&#34;650px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;Wide Menu Day&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             Wide Menu Day
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -200,9 +224,9 @@
   &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 
   {{ end }}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;figure class=&#34;post-image&#34;&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png&#34;
-         alt=&#34;Pagination, Redish Theme, and Green Accents&#34; width=&#34;600px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;Pagination, Redish Theme, and Green Accents&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             Pagination, Redish Theme, and Green Accents
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -228,9 +252,9 @@
 &lt;p&gt;One aspect of design I didn&amp;rsquo;t enjoy was trying to figure out the correct CSS classes to apply to a given situation. For example, the body element is &lt;code&gt;&amp;lt;body class=&amp;quot;d-flex flex-column h-100&amp;quot;&amp;gt;&lt;/code&gt;. I have no idea what those classes mean and why I need them, so I started learning more about HTML and CSS.&lt;/p&gt;
 &lt;p&gt;My new goal was to really understand the structure of my site, so I know where things are, what needs to be modified as I build it to look the way I want it to, and know the elements and classes defined in the layout so they can be styled correctly. Vanilla Bootstrap was a nice place to start, but I don&amp;rsquo;t understand the choices made for structure and styling. Its use of Bootstrap added another layer of complexity to learning how changes to CSS will affect the site.&lt;/p&gt;
 &lt;p&gt;In the middle of April, I ripped out Vanilla Bootstrap and started over.&lt;/p&gt;
-&lt;figure class=&#34;post-image&#34;&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34;
-         alt=&#34;Bacl to Basics&#34; width=&#34;451px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;Bacl to Basics&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             Back to Basics
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -271,17 +295,17 @@
     &lt;span class=&#34;k&#34;&gt;margin-right&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;ch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
   &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Unwrapping them changed navigation from:&lt;/p&gt;
-&lt;figure class=&#34;post-image&#34;&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png&#34;
-         alt=&#34;Unstyled Navigation List&#34; width=&#34;311px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;Unstyled Navigation List&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             Unstyled Navigation List
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;to this:&lt;/p&gt;
-&lt;figure class=&#34;post-image&#34;&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/009-2019.04.19-plain-navigation.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/009-2019.04.19-plain-navigation.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/009-2019.04.19-plain-navigation.png&#34;
-         alt=&#34;Plain Navigation&#34; width=&#34;600px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;Plain Navigation&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             Plain Navigation
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -362,14 +386,14 @@
 &lt;div class=&#34;admonition&#34;&gt;
   &lt;div class=&#34;note&#34;&gt;
     &lt;div class=&#34;admonition-title&#34;&gt;Browser-Specific Styling&lt;/div&gt;
-    &lt;div class=&#34;content&#34;&gt;For the longest time I couldn&amp;rsquo;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at [gwern.net] I realized &lt;code&gt;@supports (-moz-user-focus: normal) { ... }&lt;/code&gt; is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use &lt;code&gt;@supports not (-moz-user-focus: normal)&lt;/code&gt; to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.&lt;/div&gt;
+    &lt;div class=&#34;content&#34;&gt;&lt;p&gt;For the longest time I couldn&amp;rsquo;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at [gwern.net] I realized &lt;code&gt;@supports (-moz-user-focus: normal) { ... }&lt;/code&gt; is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use &lt;code&gt;@supports not (-moz-user-focus: normal)&lt;/code&gt; to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.&lt;/p&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;p&gt;By the end of June I removed most of the feather icons and simplified the layout. It looked better.&lt;/p&gt;
-&lt;figure class=&#34;post-image&#34;&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png&#34;
-         alt=&#34;June 2019. A more simple presentation&#34; width=&#34;600px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;June 2019. A more simple presentation&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             June 2019. A More Simple Presentation
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -383,17 +407,17 @@
     &lt;span class=&#34;k&#34;&gt;padding&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;px&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
   &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A little thing like that helped me make a two column layout.&lt;/p&gt;
-&lt;figure class=&#34;post-image&#34;&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png&#34;
-         alt=&#34;Two Column Layout&#34; width=&#34;600px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;Two Column Layout&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             Two Column Layout
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;By the end of September last year, I had restructured a lot of the blog. It has a stronger two-column layout and a splash of color.&lt;/p&gt;
-&lt;figure class=&#34;post-image&#34;&gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/012-2019.09.30-no-notes-breadcrumbs.png&#34;&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/012-2019.09.30-no-notes-breadcrumbs.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/012-2019.09.30-no-notes-breadcrumbs.png&#34;
-         alt=&#34;A Splash of Color&#34; width=&#34;600px&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;A Splash of Color&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             A Splash of Color
         &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -408,7 +432,7 @@
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
       <guid>https://douglascuthbertson.com/2020/02/restart/</guid>
       <description>&lt;p&gt;Creating a blog is hard. I admire those who are able to design their own and write regular posts, so much so that I&amp;rsquo;m trying again to create my own blog. I started this blog late in 2015. After writing a few posts, I became discouraged. I didn&amp;rsquo;t like the way it looked, the tools often broke, and I didn&amp;rsquo;t have a clear idea of what I wanted to write, or why I was blogging.&lt;/p&gt;
-&lt;p&gt;Recently I was inspired by a post by Mattias Ott from May 12, 2019, [Into the Personal-Website-Verse](personal website verse_]. He encouraged people to create their own personal website to write, create, share what you like, and to tinker with new technologies.&lt;/p&gt;
+&lt;p&gt;Recently I was inspired by a post by Mattias Ott from May 12, 2019, &lt;a href=&#34;https://matthiasott.com/articles/into-the-personal-website-verse&#34;&gt;Into the Personal-Website-Verse&lt;/a&gt;. He encouraged people to create their own personal website to write, create, share what you like, and to tinker with new technologies.&lt;/p&gt;
 &lt;p&gt;Your own blog is supposed to be a place where you can make mistakes and learn without pressure. With that in mind, I&amp;rsquo;m declaring this blog as my soapbox. My space to say what ever I want. My laboratory for experiments in web technologies. My window into my own experience from which I can reflect upon my past, figure out what&amp;rsquo;s of interest now and navigate to a better future. If I&amp;rsquo;m lucky, I might engage someone who wishes to share their own thoughts and experiences, and I&amp;rsquo;ll learn something new.&lt;/p&gt;
 &lt;h2 id=&#34;rebuilding-from-jekyll-to-hugo&#34;&gt;Rebuilding from Jekyll to Hugo&lt;/h2&gt;
 &lt;p&gt;My first priority was to find good tools for creating a static site. The original experiment was, in part, to use &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; to build the site from Markdown files and publish it from &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;. I was familiar with git, had been using &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; for years, and &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; were advertised as a hand-in-glove fit for each other, and they are.&lt;/p&gt;
@@ -440,7 +464,7 @@
 &lt;p&gt;Sphinx turned out to be a bit of a rabbit hole, a good one. The source documents for Sphinx are written in reStructuredText (rST). I was curious why that file format was chosen over Markdown or plain text. While rST has its issues and limitations, it is a much more rich markup language than Markdown. Also, Sphinx is a programmable environment. If it doesn&amp;rsquo;t have a directive you need, there&amp;rsquo;s a way to define new ones.&lt;/p&gt;
 &lt;p&gt;The possibilities just wowed me. I ported all my old notes from Markdown to rST and dove into Sphinx, directives, and roles. I spent a lot of time learning, writing, and even played around with CSS a little bit. Even so, Sphinx presented a kind of impedance mismatch between what I was trying to do - just have a tool that builds nice web pages from my notes - and keeping a Python environment up-to-date as I wanted to try new features added to later releases of Sphinx.&lt;/p&gt;
 &lt;p&gt;My success with Sphinx for notes left me with a desire to blog again. I was probably suffering from myopia, but at the time I didn&amp;rsquo;t realize that Jekyll is not necessary to build GitHub pages, and I didn&amp;rsquo;t know how or if Sphinx could be configured to work with GitHub pages.&lt;/p&gt;
-&lt;p&gt;Well, I spent a lot of time in 2018 learning [Go](golang_] for a new project at work. It&amp;rsquo;s a very nice programming language. Late in 2018, I came across &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. It looked interesting, and what do you know, it&amp;rsquo;s written in Go! I had to give it a try. I figured even if it&amp;rsquo;s not to my liking, I can look at the source code, and learn something more about Go.&lt;/p&gt;
+&lt;p&gt;Well, I spent a lot of time in 2018 learning &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; for a new project at work. It&amp;rsquo;s a very nice programming language. Late in 2018, I came across &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. It looked interesting, and what do you know, it&amp;rsquo;s written in Go! I had to give it a try. I figured even if it&amp;rsquo;s not to my liking, I can look at the source code, and learn something more about Go.&lt;/p&gt;
 &lt;p&gt;It turns out that not only is Hugo useful, it is fast, not too hard to integrate MathJax for nice looking equations, has a powerful template language, and it is even possible to write pages in rST - though it requires integration with the Python script &lt;a href=&#34;https://pypi.org/project/rst2html5/&#34;&gt;rst2html5&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s enough for now. I&amp;rsquo;ll cover my adventures using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; in a future post.&lt;/p&gt;</description>
     </item>

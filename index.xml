@@ -9,7 +9,7 @@
     <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)</copyright>
-    <lastBuildDate>Sat, 22 Feb 2020 17:38:32 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2020 08:12:51 -0400</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,7 @@
     <item>
       <title>Posts</title>
       <link>https://douglascuthbertson.com/post/</link>
-      <pubDate>Sat, 22 Feb 2020 17:38:32 -0500</pubDate>
+      <pubDate>Wed, 28 Oct 2020 08:12:51 -0400</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
       <guid>https://douglascuthbertson.com/post/</guid>
       <description></description>
@@ -39,7 +39,7 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
       <guid>https://douglascuthbertson.com/about/</guid>
-      <description>&lt;p&gt;I am Doug Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I&amp;rsquo;ve been writing software in &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; for both Linux and Windows (it&amp;rsquo;s my new favorite programming language).&lt;/p&gt;
+      <description>&lt;p&gt;Good day! I&amp;rsquo;m Doug Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I&amp;rsquo;ve been writing software in &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; for both Linux and Windows (it&amp;rsquo;s my new favorite programming language).&lt;/p&gt;
 &lt;p&gt;I tend to read too much about software development and not write enough code, so my intent is to use this blog to explore some of the aspects of coding and engineering I&amp;rsquo;ve enjoyed reading about and put them into practice. Some of the subjects I intend to explore are basic things like organizing development environments for new projects, as well as using design patterns, algorithms and data structures I find interesting.&lt;/p&gt;
 &lt;p&gt;See my &lt;a href=&#34;https://douglascuthbertson.com/now/&#34;&gt;Now&lt;/a&gt; page for what I&amp;rsquo;ve been up to lately.&lt;/p&gt;
 &lt;p&gt;Besides my professional work, I&amp;rsquo;m a husband and father to two fine young adults.&lt;/p&gt;
