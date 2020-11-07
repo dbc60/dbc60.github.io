@@ -52,7 +52,7 @@
 
 &lt;p&gt;The change was dramatic and configuration was simplified. While Academic has two levels of configuration, the core through &lt;code&gt;config/_default/config.toml&lt;/code&gt; and another level controlled through the content in the &lt;code&gt;content/home&lt;/code&gt; directory, Vanilla Bootstrap requires only core configuration of Hugo and a handful of theme-specific parameters all managed through the default configuration files.&lt;/p&gt;
 &lt;h3 id=&#34;a-new-navigation-menu&#34;&gt;A New Navigation Menu&lt;/h3&gt;
-&lt;p&gt;It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in &lt;code&gt;config/_default/config.toml&lt;/code&gt;::&lt;/p&gt;
+&lt;p&gt;It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in &lt;code&gt;config/_default/config.toml&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;  &lt;span class=&#34;c&#34;&gt;# See https://feathericons.com/&lt;/span&gt;
   &lt;span class=&#34;c&#34;&gt;# The value of pre is the icon name&lt;/span&gt;
   &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
@@ -81,7 +81,7 @@
       &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;rss&amp;#34;&lt;/span&gt;
       &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/index.xml&amp;#34;&lt;/span&gt;
       &lt;span class=&#34;nx&#34;&gt;weight&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The theme provides the other major component in &lt;code&gt;theme/vanilla/layouts/partials/nav.html&lt;/code&gt;::&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The theme provides the other major component in &lt;code&gt;theme/vanilla/layouts/partials/nav.html&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav-border&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;container&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;nav&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav justify-content-center&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
     {{ $showActiveNav := .Site.Params.showActiveNav }}
@@ -230,7 +230,7 @@
 &lt;p&gt;In the middle of April, I ripped out Vanilla Bootstrap and started over.&lt;/p&gt;
 &lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34;
-         alt=&#34;Bacl to Basics&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;Back to Basics&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             Back to Basics
         &lt;/figcaption&gt;
 &lt;/figure&gt;

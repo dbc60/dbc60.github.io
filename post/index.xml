@@ -9,10 +9,34 @@
     <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2020 Douglas Cuthbertson. The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/) except where indicated otherwise</copyright>
-    <lastBuildDate>Wed, 28 Oct 2020 08:12:51 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2020 08:23:14 -0500</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Waiting for Election Results</title>
+      <link>https://douglascuthbertson.com/2020/11/waiting-for-election-results/</link>
+      <pubDate>Sat, 07 Nov 2020 08:23:14 -0500</pubDate>
+      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      <guid>https://douglascuthbertson.com/2020/11/waiting-for-election-results/</guid>
+      <description>&lt;p&gt;The election is over. All we can do is wait for the counting complete. I hope enough people who see just how terrible this failure of a human being is went to the polls and voted. The future of our country depends on it.&lt;/p&gt;
+&lt;p&gt;Nevertheless, I have to get a few things off my chest. This morning, I considered writing a post about how horrible and dangerous the actions and words of Donald Trump are and how they undermine trust in one of the most sacred aspects of American democracy, the electoral process. It is through our right to vote for our representatives in government that our democracy functions. Without trust in that process, our democracy and our country fail.&lt;/p&gt;
+&lt;p&gt;I was going to declare Trump a fascist and state that public officials who stay quiet are tacitly in agreement with his baseless claims of corruption in the election. Of course, those who publically state support for him and his lies, I was also going to slap on the fascist label. Instead of labeling Trump a fascist outright, I took a step back. I wanted to learn a little more about what a fascist really is.&lt;/p&gt;
+&lt;p&gt;I found an article by John McNeil, a professor of history at Georgetown University, &lt;a href=&#34;https://www.washingtonpost.com/posteverything/wp/2016/10/21/how-fascist-is-donald-trump-theres-actually-a-formula-for-that/&#34;&gt;How Fascist is Donald Trump? There&amp;rsquo;s Actually a Formula for That&lt;/a&gt;. McNeil measures Trump&amp;rsquo;s statements and behaviors against 11 traits of fascism through the lens of the two horrible dictators who created it: Benito Mussolini and Adolf Hitler. Through this comparison, I realized just how much more brutal are &lt;em&gt;real&lt;/em&gt; fascists. Thankfully, Trump can count fascism as another of his many failures.&lt;/p&gt;
+&lt;p&gt;The truth is state officials all across the country have worked very hard to ensure &lt;em&gt;all&lt;/em&gt; legal votes are counted. Most ballots are counted by machine. Both major parties have representative observing the counting process, so if for some reason the machine can&amp;rsquo;t read a ballot, both parties view the ballot and try to understand the intent of the voter. Given the level of oversight and the difficulty of synchronizing fraud across multiple states, it is inconcievable that either party could throw the election.&lt;/p&gt;
+&lt;p&gt;Trump has been, and still is, a danger to our country. He is relentlessly undermining trust in our electoral process. He makes baseless claims of illegal ballots being counted. He falsely claimed that no ballots could be legally counted after election day - at least in Pennsylvania where he was ahead. However, he wanted counting to continue in Arizona, where we was behind. He has threatened to not leave the Office of the President if he loses. He and others who should know better (like Richard Grenell, former Acting Director of National Intelligence) have claimed that illegal votes are being counted in Nevada.&lt;/p&gt;
+&lt;p&gt;He is truly a horrible person. During his time as president, some of Trumps terrible acts are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;he refused to denounce white supremicists, and so he tacitly supports them.&lt;/li&gt;
+&lt;li&gt;he instituted a policy that separated immigrant parents from their children, caged the children, and deported the parents. There are now over 500 immigrant children who cannot be reunited with their parents. This is monstrous. Does this reach the level of a crime against humanity?&lt;/li&gt;
+&lt;li&gt;he lied about people fleeing brutality in South and Central America, characterizing them as criminals and drug addicts.&lt;/li&gt;
+&lt;li&gt;he distanced the US from her allies in Europe.&lt;/li&gt;
+&lt;li&gt;he has been duped by brutal dictators Vladimir Putin and Kim Jong-un into trusting them.&lt;/li&gt;
+&lt;li&gt;he lied to, and continues to lie to the American people about the dangers of COVID-19. Here in early November, cases are spreading at a frightening rate (over 140,000 new cases and 1200 deaths yesterday).&lt;/li&gt;
+&lt;li&gt;he continues to lie about how quickly we will recover from the pandemic. Given how fast the disease is spreading and its mortality rate (&lt;a href=&#34;https://coronavirus.jhu.edu/data/mortality&#34;&gt;2.4% in the US&lt;/a&gt; according to &lt;a href=&#34;https://coronavirus.jhu.edu/&#34;&gt;Johns Hopkins University of Medicine&lt;/a&gt;) there could be thousands more deaths &lt;em&gt;per day&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     
     <item>
       <title>Vote 2020</title>
@@ -77,7 +101,7 @@
 
 &lt;p&gt;The change was dramatic and configuration was simplified. While Academic has two levels of configuration, the core through &lt;code&gt;config/_default/config.toml&lt;/code&gt; and another level controlled through the content in the &lt;code&gt;content/home&lt;/code&gt; directory, Vanilla Bootstrap requires only core configuration of Hugo and a handful of theme-specific parameters all managed through the default configuration files.&lt;/p&gt;
 &lt;h3 id=&#34;a-new-navigation-menu&#34;&gt;A New Navigation Menu&lt;/h3&gt;
-&lt;p&gt;It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in &lt;code&gt;config/_default/config.toml&lt;/code&gt;::&lt;/p&gt;
+&lt;p&gt;It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in &lt;code&gt;config/_default/config.toml&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;  &lt;span class=&#34;c&#34;&gt;# See https://feathericons.com/&lt;/span&gt;
   &lt;span class=&#34;c&#34;&gt;# The value of pre is the icon name&lt;/span&gt;
   &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
@@ -106,7 +130,7 @@
       &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;rss&amp;#34;&lt;/span&gt;
       &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/index.xml&amp;#34;&lt;/span&gt;
       &lt;span class=&#34;nx&#34;&gt;weight&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The theme provides the other major component in &lt;code&gt;theme/vanilla/layouts/partials/nav.html&lt;/code&gt;::&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The theme provides the other major component in &lt;code&gt;theme/vanilla/layouts/partials/nav.html&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav-border&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;container&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;nav&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav justify-content-center&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
     {{ $showActiveNav := .Site.Params.showActiveNav }}
@@ -255,7 +279,7 @@
 &lt;p&gt;In the middle of April, I ripped out Vanilla Bootstrap and started over.&lt;/p&gt;
 &lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34;
-         alt=&#34;Bacl to Basics&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
+         alt=&#34;Back to Basics&#34;/&gt; &lt;/a&gt;&lt;figcaption&gt;
             Back to Basics
         &lt;/figcaption&gt;
 &lt;/figure&gt;

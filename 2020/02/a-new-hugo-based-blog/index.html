@@ -65,8 +65,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.17c490dd9106b0b59ef7669bcfa60758dcefc3953b6e93c7ca93f4ca7e1e685a.css"
-      integrity="sha256-F8SQ3ZEGsLWe92abz6YHWNzvw5U7bpPHypP0yn4eaFo="
+      href="https://douglascuthbertson.com/style/style.min.83f6082a1498fbc11bbcc6a89e2850fdd581aed2ca28172e240ad43924a1892a.css"
+      integrity="sha256-g/YIKhSY&#43;8EbvMaonihQ/dWBrtLKKBcuJArUOSShiSo="
       media="screen">
 
 
@@ -349,7 +349,7 @@
           <header class="article-meta-data"><div class="post-metadata">
             <time class="post-metadata__timestamp" datetime="2020-02-22">Saturday Feb 22, 2020</time>
               - 15 min read - 3137 words.
-            <time class="post-metadata__timestamp" datetime="2020-10-28T09:02"></time><div>Last updated: <span>Wednesday Oct 28, 2020 09:02</span></div>
+            <time class="post-metadata__timestamp" datetime="2020-11-05T07:03"></time><div>Last updated: <span>Thursday Nov 5, 2020 07:03</span></div>
             <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/categories/post">post</a></div>
             </div>
           </header>
@@ -394,7 +394,7 @@
 
 <p>The change was dramatic and configuration was simplified. While Academic has two levels of configuration, the core through <code>config/_default/config.toml</code> and another level controlled through the content in the <code>content/home</code> directory, Vanilla Bootstrap requires only core configuration of Hugo and a handful of theme-specific parameters all managed through the default configuration files.</p>
 <h3 id="a-new-navigation-menu">A New Navigation Menu</h3>
-<p>It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in <code>config/_default/config.toml</code>::</p>
+<p>It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in <code>config/_default/config.toml</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml">  <span class="c"># See https://feathericons.com/</span>
   <span class="c"># The value of pre is the icon name</span>
   <span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
@@ -423,7 +423,7 @@
       <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;rss&#34;</span>
       <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/index.xml&#34;</span>
       <span class="nx">weight</span> <span class="p">=</span> <span class="mi">5</span>
-</code></pre></div><p>The theme provides the other major component in <code>theme/vanilla/layouts/partials/nav.html</code>::</p>
+</code></pre></div><p>The theme provides the other major component in <code>theme/vanilla/layouts/partials/nav.html</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nav-border&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nav&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav justify-content-center&#34;</span><span class="p">&gt;</span>
     {{ $showActiveNav := .Site.Params.showActiveNav }}
@@ -572,7 +572,7 @@
 <p>In the middle of April, I ripped out Vanilla Bootstrap and started over.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png">
     <img src="https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png"
-         alt="Bacl to Basics"/> </a><figcaption>
+         alt="Back to Basics"/> </a><figcaption>
             Back to Basics
         </figcaption>
 </figure>
