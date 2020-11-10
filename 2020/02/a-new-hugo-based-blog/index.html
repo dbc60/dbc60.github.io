@@ -65,8 +65,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.83f6082a1498fbc11bbcc6a89e2850fdd581aed2ca28172e240ad43924a1892a.css"
-      integrity="sha256-g/YIKhSY&#43;8EbvMaonihQ/dWBrtLKKBcuJArUOSShiSo="
+      href="https://douglascuthbertson.com/style/style.min.8e96f1843cecd5c59e215f9a5e55ba046e77662f13a5a7d0b91f5d16d27a9ff1.css"
+      integrity="sha256-jpbxhDzs1cWeIV&#43;aXlW6BG53Zi8TpafQuR9dFtJ6n/E="
       media="screen">
 
 
@@ -342,13 +342,12 @@
           </li>
         </ul>
       </div>
-      <main class="main-content"><!-- BEGIN main layouts/_default/single.html -->
-  <div class="content"><!-- BEGIN content div layouts/_default/single.html -->
+      <main class="main-content"><!-- BEGIN main layouts/_default/single.html --><!-- BEGIN content div layouts/_default/single.html -->
     <h2 class="title-article">A New Hugo-Based Blog</h2>
           <!--BEGIN layouts/partials/date-and-tags.html -->
           <header class="article-meta-data"><div class="post-metadata">
             <time class="post-metadata__timestamp" datetime="2020-02-22">Saturday Feb 22, 2020</time>
-              - 15 min read - 3137 words.
+              - 15 min read - 3174 words.
             <time class="post-metadata__timestamp" datetime="2020-11-07T09:09"></time><div>Last updated: <span>Saturday Nov 7, 2020 09:09</span></div>
             <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/categories/post">post</a></div>
             </div>
@@ -362,7 +361,31 @@
 
 
 <!--BEGIN layouts/partials/drop-caps.html -->
-<section class="c-drop-caps drop-caps_goudy"><p>In my <a href="https://douglascuthbertson.com/2020/02/restart/">previous post</a> I talked a little about why and how I started this blog. Here I want to present my experience with <a href="https://gohugo.io/">Hugo</a> and what I like about it.</p>
+<section class="content c-drop-caps drop-caps_goudy"><p>In my <a href="https://douglascuthbertson.com/2020/02/restart/">previous post</a> I talked a little about why and how I started this blog. Here I want to present my experience with <a href="https://gohugo.io/">Hugo</a> and what I like about it.</p>
+<aside class="toc">
+  <p class="toc-title">Contents</p>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-short-lived-academic-theme">The Short-lived Academic Theme</a></li>
+    <li><a href="#quick-switch-to-vanilla-bootstrap">Quick Switch to Vanilla Bootstrap</a>
+      <ul>
+        <li><a href="#a-new-navigation-menu">A New Navigation Menu</a></li>
+        <li><a href="#more-puttering-around-with-layout">More Puttering Around with Layout</a></li>
+      </ul>
+    </li>
+    <li><a href="#sorry-vanilla-you-have-to-go">Sorry Vanilla. You have to Go</a>
+      <ul>
+        <li><a href="#navigation-menu">Navigation Menu</a></li>
+        <li><a href="#general-layout">General Layout</a></li>
+        <li><a href="#color-consistency-and-contrast">Color Consistency and Contrast</a></li>
+      </ul>
+    </li>
+    <li><a href="#styling-fun">Styling Fun</a></li>
+    <li><a href="#debugging-layouts">Debugging Layouts</a></li>
+  </ul>
+</nav>
+</aside>
+
 <p>Late in 2018  I came across <a href="https://gohugo.io/">Hugo</a>, a static site generator written in <a href="https://golang.org">Go</a>. Dissatisfied with Jekyll, I needed a different static site generator, and I had been learning Go at Work. This looked like a good opportunity to try blogging again.</p>
 <p>I stumbled quite badly a few times along the way. I thought a theme would help me get my site up and running quickly, but they don&rsquo;t balance well with my need to twiddle with the site&rsquo;s layout and look and feel. The long and short of it is, I took what I learned from trying out a couple of themes, and hunkered down to learn a few things about &ldquo;The Hugo Way&rdquo;, and the basics of HTML &amp; CSS.</p>
 <h2 id="the-short-lived-academic-theme">The Short-lived Academic Theme</h2>
@@ -701,12 +724,10 @@
 </code></pre></div><p>The contrast ratio is 19.52:1. Is that too high? One day I&rsquo;ll look into separate degrees of contrast for body text and headings.</p>
 <h2 id="styling-fun">Styling Fun</h2>
 <p>One thing I particularly liked was how nice drop caps looked on <a href="https://www.gwern.net/index">Gwern</a>. I looked at his CSS and created a new file, <code>static\style\drop-caps\drop-caps.css</code> with a simplified version of his CSS. I dropped it in the <code>static/</code> directory instead of the <code>assets/</code> folder out of expediency, and I modified <code>layouts/_default/baseof.html</code> to pull in the drop caps definitions.</p>
-<div class="admonition">
-  <div class="note">
-    <div class="admonition-title">Browser-Specific Styling</div>
-    <div class="content"><p>For the longest time I couldn&rsquo;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at [gwern.net] I realized <code>@supports (-moz-user-focus: normal) { ... }</code> is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use <code>@supports not (-moz-user-focus: normal)</code> to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.</p></div>
-  </div>
-</div>
+<aside class="admonition note">
+  <div class="admonition-title">Browser-Specific Styling</div>
+  <div class="content"><p>For the longest time I couldn&rsquo;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at [gwern.net] I realized <code>@supports (-moz-user-focus: normal) { ... }</code> is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use <code>@supports not (-moz-user-focus: normal)</code> to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.</p></div>
+</aside>
 
 <p>By the end of June I removed most of the feather icons and simplified the layout. It looked better.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png">
@@ -744,11 +765,7 @@
 <!--END layouts/partials/drop-caps.html -->
 
     
-    <section class="comments"><!-- BEGIN comments section layouts/_default/single.html -->
-      
-    </section><!-- END comments section layouts/_default/single.html -->
-    
-  </div><!-- END content div layouts/_default/single.html -->
+  <!-- END content div layouts/_default/single.html -->
 <!-- END main layouts/_default/single.html -->
       </main>
     </div> <!-- class wrapper-content -->
