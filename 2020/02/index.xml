@@ -44,7 +44,6 @@
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;/aside&gt;
-
 &lt;p&gt;Late in 2018  I came across &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, a static site generator written in &lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt;. Dissatisfied with Jekyll, I needed a different static site generator, and I had been learning Go at Work. This looked like a good opportunity to try blogging again.&lt;/p&gt;
 &lt;p&gt;I stumbled quite badly a few times along the way. I thought a theme would help me get my site up and running quickly, but they don&amp;rsquo;t balance well with my need to twiddle with the site&amp;rsquo;s layout and look and feel. The long and short of it is, I took what I learned from trying out a couple of themes, and hunkered down to learn a few things about &amp;ldquo;The Hugo Way&amp;rdquo;, and the basics of HTML &amp;amp; CSS.&lt;/p&gt;
 &lt;h2 id=&#34;the-short-lived-academic-theme&#34;&gt;The Short-lived Academic Theme&lt;/h2&gt;
@@ -383,11 +382,11 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The contrast ratio is 19.52:1. Is that too high? One day I&amp;rsquo;ll look into separate degrees of contrast for body text and headings.&lt;/p&gt;
 &lt;h2 id=&#34;styling-fun&#34;&gt;Styling Fun&lt;/h2&gt;
 &lt;p&gt;One thing I particularly liked was how nice drop caps looked on &lt;a href=&#34;https://www.gwern.net/index&#34;&gt;Gwern&lt;/a&gt;. I looked at his CSS and created a new file, &lt;code&gt;static\style\drop-caps\drop-caps.css&lt;/code&gt; with a simplified version of his CSS. I dropped it in the &lt;code&gt;static/&lt;/code&gt; directory instead of the &lt;code&gt;assets/&lt;/code&gt; folder out of expediency, and I modified &lt;code&gt;layouts/_default/baseof.html&lt;/code&gt; to pull in the drop caps definitions.&lt;/p&gt;
+
 &lt;aside class=&#34;admonition note&#34;&gt;
   &lt;div class=&#34;admonition-title&#34;&gt;Browser-Specific Styling&lt;/div&gt;
   &lt;div class=&#34;content&#34;&gt;&lt;p&gt;For the longest time I couldn&amp;rsquo;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at [gwern.net] I realized &lt;code&gt;@supports (-moz-user-focus: normal) { ... }&lt;/code&gt; is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use &lt;code&gt;@supports not (-moz-user-focus: normal)&lt;/code&gt; to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.&lt;/p&gt;&lt;/div&gt;
 &lt;/aside&gt;
-
 &lt;p&gt;By the end of June I removed most of the feather icons and simplified the layout. It looked better.&lt;/p&gt;
 &lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png&#34;&gt;
     &lt;img src=&#34;https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png&#34;
