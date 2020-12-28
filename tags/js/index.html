@@ -45,17 +45,9 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.b564e56c2d6c71d7cd8fdee4869927d21284f50e8fdb421f71c27b3343164463.css"
-      integrity="sha256-tWTlbC1scdfNj97khpkn0hKE9Q6P20IfccJ7M0MWRGM="
+      href="https://douglascuthbertson.com/style/style.min.9f0b78200742b69e64f75501a6679b6d9af8745ad6cae8ec5ecbb75871e00fb0.css"
+      integrity="sha256-nwt4IAdCtp5k91UBpmebbZr4dFrWyujsXsu3WHHgD7A="
       media="screen">
-
-
-    
-    <link
-     rel="stylesheet"
-     href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-     crossorigin="anonymous">
 
   <title>
     js | Doug&#39;s Blog
@@ -127,7 +119,17 @@
             <span class="wrapper-social-border icon icon-books"> </span>
             <span class="wrapper-social-border title">Contents</span>
             
-            <!--BEGIN layouts/partials/items-contents.html --><ul class="social-items"></ul><!--END layouts/partials/items-contents.html -->
+            <!-- BEGIN layouts/partials/items-contents.html -->
+<ul class="social-items">
+
+  <!-- .context.Sections is nil. Get parent. -->
+    <!-- .context.Parent.Sections is nil. Get grandparent. -->
+    <!-- range by title -->
+    <li class="contents">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/post/">Posts</a>
+    </li>
+  
+</ul><!--END layouts/partials/items-contents.html -->
             
             <span class="wrapper-social-border icon icon-books"> </span>
           </li>
@@ -137,7 +139,7 @@
             <span class="wrapper-social-border title">Latest</span>
             
             <ul class="social-items">
-<!--BEGIN layouts/partials/items-latest.html --><li class="contents">
+<!-- BEGIN layouts/partials/items-latest.html --><li class="contents">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/11/waiting-for-election-results/">
         Waiting for Election Results
       </a>
@@ -189,7 +191,7 @@
             <span class="wrapper-social-border title">Collections</span>
             
             <ul class="social-items">
-  <!--BEGIN layouts/partials/items-taxonomies.html -->
+  <!-- BEGIN layouts/partials/items-taxonomies.html -->
   
   <li class="contents">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/2015/">
@@ -348,7 +350,7 @@
       <main class="main-content"><!-- BEGIN main layouts/taxonomy/tag.html -->
 <div class="content"><section class="page-summary">
     <h2 class="title-article-item"><a href="https://douglascuthbertson.com/2016/03/fixing-the-width/">Fixing the Width</a></h2>
-          <!--BEGIN layouts/partials/date-and-tags.html -->
+          <!-- BEGIN layouts/partials/date-and-tags.html -->
           <header class="article-meta-data"><div class="post-metadata">
             <time class="post-metadata__timestamp" datetime="2016-03-10">Thursday Mar 10, 2016</time>
               - 2 min read - 336 words.
@@ -357,8 +359,7 @@
             </div>
           </header>
           <!--END layouts/partials/date-and-tags.html -->
-
-        <!-- BEGIN layouts/_default/summary.html-->
+    <!-- BEGIN layouts/_default/summary.html-->
     <p>What an ugly, fragile blog.</p>
     <footer class="read-more">
       <a href='https://douglascuthbertson.com/2016/03/fixing-the-width/'><span class="read-more">Read more →</span></a>
