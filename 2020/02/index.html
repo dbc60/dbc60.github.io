@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-
-<html lang="en">  <head>
+<!DOCTYPE html><html lang="en">  <head>
     
     
     
     
-    
-    <!-- BEGIN meta.html -->
-    <meta charset="utf-8">
+    <!-- BEGIN layouts/partials/head__meta.html --><meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="">
     <meta property="og:description" name="description" content="">
-    <!-- END meta.html -->
-
     <!-- The four required og properties are og:title, og:type, -->
     <!-- og:url, and og:image. See Open Graph Protocol (ogp.me) -->
     <!-- I used https://realfavicongenerator.net/ to generate the -->
@@ -25,17 +19,12 @@
     <meta property="og:image:width" content="279">
     <meta property="og:image:height" content="279">
     <meta property="og:image" content="https://douglascuthbertson.com/images/og-image.jpg">
-
     <meta name="twitter:title" content="Doug&#39;s Blog">
-
-    <!-- BEGIN hugo.Generator -->
     <meta name="generator" content="Hugo 0.76.4" />
-    <!-- END hugo.Generator -->
-
-    <meta name="robots" content="index, follow">
-    <link rel="alternate" type="application/rss&#43;xml" href="https://douglascuthbertson.com/2020/02/index.xml"><meta name="msapplication-TileColor" content="#da532c">
+    <meta name="robots" content="index, follow"><link rel="alternate" type="application/rss&#43;xml" href="https://douglascuthbertson.com/2020/02/index.xml"><meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/images/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <!-- END layouts/partials/head__meta.html -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://douglascuthbertson.com/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://douglascuthbertson.com/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://douglascuthbertson.com/images/favicon-16x16.png">
@@ -45,8 +34,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.9f0b78200742b69e64f75501a6679b6d9af8745ad6cae8ec5ecbb75871e00fb0.css"
-      integrity="sha256-nwt4IAdCtp5k91UBpmebbZr4dFrWyujsXsu3WHHgD7A="
+      href="https://douglascuthbertson.com/style/style.min.874c2a08bf1bb1cd2eb4586ec934d368689a1940459afebe3cc8c1d2fd174fec.css"
+      integrity="sha256-h0wqCL8bsc0utFhuyTTTaGiaGUBFmv6&#43;PMjB0v0XT&#43;w="
       media="screen">
 
   <title>
@@ -58,8 +47,8 @@
 <body><header class="main-head">
 <div class="title-content">
   <!-- BEGIN layouts/partials/siteHeader.html -->
-    <h1 class="siteTitle">Doug&#39;s Blog</h1>
-    <h1 class="siteSubTitle">Black Lives Matter</h1>
+    <h1 class="siteTitle"><a href="https://douglascuthbertson.com">Doug&#39;s Blog</a></h1>
+    <h1 class="siteSubTitle"><a href="https://blacklivesmatter.com/" target="_blank">Black Lives Matter</a></h1>
   <!-- END layouts/partials/siteHeader.html -->
 </div>
 </header>
@@ -70,75 +59,31 @@
       <a class="main-nav__link " href="https://douglascuthbertson.com/index.xml">RSS</a>
     </div>
   </nav>
-
-
-    <!-- BEGIN layouts/partials/nav__breadcrumbs.html -->
-
+<!-- BEGIN layouts/partials/nav__breadcrumbs.html -->
 <nav aria-label="Breadcrumb">
 <ul class="breadcrumb">
 <li class="breadcrumb__item"><a href="https://douglascuthbertson.com/">Home</a></li>
-
-  
-      
-      
-      
-  
-      
-      
-      
-  
-
-    
-    
     <li class="breadcrumb__item"><a class="breadcrumbs_link" href="https://douglascuthbertson.com/2020/">2020</a></li>
-  
-
-    
-    
-    <li class="breadcrumb__item"><a class="breadcrumbs_link" href="https://douglascuthbertson.com/2020/02/">02</a></li>
-  
-
-
-
-
-</ul>
+    <li class="breadcrumb__item"><a class="breadcrumbs_link" href="https://douglascuthbertson.com/2020/02/">02</a></li></ul>
 </nav>
 <!-- END layouts/partials/nav__breadcrumbs.html -->
 
-
-    <div class="wrapper-content">
-      
-      
-      
-        <!--GETTING ROOT SECTIONS-->
-        
-      
-      <div class="sidebar-content">
-        <ul class="wrapper-social-sections">
-          <li class="wrapper-social-items">
-            <span class="wrapper-social-border icon icon-books"> </span>
-            <span class="wrapper-social-border title">Contents</span>
-            
-            <!-- BEGIN layouts/partials/items-contents.html -->
-<ul class="social-items">
-
-  <!-- .context.Sections is nil. Get parent. -->
-    <!-- .context.Parent.Sections is nil. Get grandparent. -->
-    <!-- range by title -->
-    <li class="contents">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/post/">Posts</a>
-    </li>
-  
-</ul><!--END layouts/partials/items-contents.html -->
-            
-            <span class="wrapper-social-border icon icon-books"> </span>
+    <div class="wrapper-content"><!--GETTING ROOT SECTIONS--><div class="sidebar-content">
+        <ul class="wrapper-collections">
+          <li class="wrapper-collection-items">
+            <span class="wrapper-collection-border icon icon-books"> </span>
+            <span class="wrapper-collection-border title">Contents</span>
+<!-- BEGIN layouts/partials/items-contents.html -->
+            <ul class="collection-items">
+            <!-- range by title -->
+              <li class="contents"><a class="secondary-nav__link" href="https://douglascuthbertson.com/post/">Posts</a></li>
+            </ul>
+<!--END layouts/partials/items-contents.html -->
+            <span class="wrapper-collection-border icon icon-books"> </span>
           </li>
-
-          <li class="wrapper-social-items">
-            <span class="wrapper-social-border icon icon-quill"> </span>
-            <span class="wrapper-social-border title">Latest</span>
-            
-            <ul class="social-items">
+          <li class="wrapper-collection-items">
+            <span class="wrapper-collection-border icon icon-quill"> </span>
+            <span class="wrapper-collection-border title">Latest</span><ul class="collection-items">
 <!-- BEGIN layouts/partials/items-latest.html --><li class="contents">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/11/waiting-for-election-results/">
         Waiting for Election Results
@@ -181,16 +126,11 @@
       </a>
     </li><!--END layouts/partials/items-latest.html -->
 </ul>
-
-            
-            <span class="wrapper-social-border icon icon-quill"> </span>
+<span class="wrapper-collection-border icon icon-quill"> </span>
           </li>
-
-          <li class="wrapper-social-items">
-            <span class="wrapper-social-border icon icon-folder-open"> </span>
-            <span class="wrapper-social-border title">Collections</span>
-            
-            <ul class="social-items">
+          <li class="wrapper-collection-items">
+            <span class="wrapper-collection-border icon icon-folder-open"> </span>
+            <span class="wrapper-collection-border title">Collections</span><ul class="collection-items">
   <!-- BEGIN layouts/partials/items-taxonomies.html -->
   
   <li class="contents">
@@ -212,6 +152,12 @@
   </li>
   
   <li class="contents">
+    <a class="secondary-nav__link" href="https://douglascuthbertson.com/2021/">
+      2021
+    </a>
+  </li>
+  
+  <li class="contents">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/categories/">
       Categories
     </a>
@@ -225,17 +171,66 @@
   
   <!--END layouts/partials/items-taxonomies.html -->
 </ul>
-
-            
-            <span class="wrapper-social-border icon icon-folder-open"> </span>
+<span class="wrapper-collection-border icon icon-folder-open"> </span>
           </li>
+        </ul>
+      </div>
+      <main class="main-content">
+      
+<!-- BEGIN main layouts/taxonomy/2020.html -->
+<div class="content">
+  
+  <section class="page-summary">
+    <h2 class="title-article-item"><a href="https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/">A New Hugo-Based Blog</a></h2>
+        <!-- BEGIN layouts/partials/date-and-tags.html -->
+        <header class="article-meta-data"><div class="post-metadata">
+          <time class="post-metadata__timestamp" datetime="2020-02-22">Saturday Feb 22, 2020</time>
+            - 15 min read - 3173 words.
+          <time class="post-metadata__timestamp" datetime="2020-02-22T17:38"></time><div>Last updated: <span>Saturday Feb 22, 2020 17:38</span></div>
+          <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/categories/blog">blog</a></div>
+          </div>
+        </header>
+        <!--END layouts/partials/date-and-tags.html -->
 
-          <li class="wrapper-social-items">
-            <span class="wrapper-social-border icon icon-info-circle"> </span>
-            <span class="wrapper-social-border title">Follow</span>
-            <div class="social">
-              
-              
+        <!-- BEGIN layouts/_default/summary.html-->
+    <p>In my <a href="https://douglascuthbertson.com/2020/02/restart/">previous post</a> I talked a little about why and how I started this blog. Here I want to present my experience with <a href="https://gohugo.io/"target="_blank">Hugo</a> and what I like about it.</p>
+    <footer class="read-more">
+      <a href='https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/'><span class="read-more">Read more →</span></a>
+    </footer>
+    <!-- END layouts/_default/summary.html-->
+  </section>
+  
+  <section class="page-summary">
+    <h2 class="title-article-item"><a href="https://douglascuthbertson.com/2020/02/restart/">Restart</a></h2>
+        <!-- BEGIN layouts/partials/date-and-tags.html -->
+        <header class="article-meta-data"><div class="post-metadata">
+          <time class="post-metadata__timestamp" datetime="2020-02-15">Saturday Feb 15, 2020</time>
+            - 7 min read - 1383 words.
+          <time class="post-metadata__timestamp" datetime="2020-02-11T05:48"></time><div>Last updated: <span>Tuesday Feb 11, 2020 05:48</span></div>
+          <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/categories/blog">blog</a></div>
+          </div>
+        </header>
+        <!--END layouts/partials/date-and-tags.html -->
+
+        <!-- BEGIN layouts/_default/summary.html-->
+    <p>Creating a blog is hard. I admire those who are able to design their own and write regular posts, so much so that I&rsquo;m trying again to create my own blog. I started this blog late in 2015. After writing a few posts, I became discouraged. I didn&rsquo;t like the way it looked, the tools often broke, and I didn&rsquo;t have a clear idea of what I wanted to write, or why I was blogging.</p>
+    <footer class="read-more">
+      <a href='https://douglascuthbertson.com/2020/02/restart/'><span class="read-more">Read more →</span></a>
+    </footer>
+    <!-- END layouts/_default/summary.html-->
+  </section>
+  
+
+
+</div>
+<!-- END main layouts/taxomony/2020.html -->
+      </main>
+    </div> <!-- class wrapper-content -->
+    <!-- BEGIN layouts/partials/footer.html -->
+    <footer class="main-footer">
+      <div class="container">
+        (c) 2015-2021 Douglas Cuthbertson. The content of this work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a> except where indicated otherwise. Made with HTML, CSS, JavaScript, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.
+          <div class="social">
 
 
 
@@ -340,71 +335,11 @@
     </a>
   </li>
 </ul>
-
-              
-            </div>
-            <span class="wrapper-social-border icon icon-info-circle"> </span>
-          </li>
-        </ul>
-      </div>
-      <main class="main-content">
-<!-- BEGIN main layouts/taxonomy/2020.html -->
-<div class="content">
-  
-  <section class="page-summary">
-    <h2 class="title-article-item"><a href="https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/">A New Hugo-Based Blog</a></h2>
-          <!-- BEGIN layouts/partials/date-and-tags.html -->
-          <header class="article-meta-data"><div class="post-metadata">
-            <time class="post-metadata__timestamp" datetime="2020-02-22">Saturday Feb 22, 2020</time>
-              - 15 min read - 3174 words.
-            <time class="post-metadata__timestamp" datetime="2020-02-22T17:38"></time><div>Last updated: <span>Saturday Feb 22, 2020 17:38</span></div>
-            <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/categories/blog">blog</a></div>
-            </div>
-          </header>
-          <!--END layouts/partials/date-and-tags.html -->
-
-        <!-- BEGIN layouts/_default/summary.html-->
-    <p>In my <a href="https://douglascuthbertson.com/2020/02/restart/">previous post</a> I talked a little about why and how I started this blog. Here I want to present my experience with <a href="https://gohugo.io/">Hugo</a> and what I like about it.</p>
-    <footer class="read-more">
-      <a href='https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/'><span class="read-more">Read more →</span></a>
-    </footer>
-    <!-- END layouts/_default/summary.html-->
-  </section>
-  
-  <section class="page-summary">
-    <h2 class="title-article-item"><a href="https://douglascuthbertson.com/2020/02/restart/">Restart</a></h2>
-          <!-- BEGIN layouts/partials/date-and-tags.html -->
-          <header class="article-meta-data"><div class="post-metadata">
-            <time class="post-metadata__timestamp" datetime="2020-02-15">Saturday Feb 15, 2020</time>
-              - 7 min read - 1383 words.
-            <time class="post-metadata__timestamp" datetime="2020-02-11T05:48"></time><div>Last updated: <span>Tuesday Feb 11, 2020 05:48</span></div>
-            <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/categories/blog">blog</a></div>
-            </div>
-          </header>
-          <!--END layouts/partials/date-and-tags.html -->
-
-        <!-- BEGIN layouts/_default/summary.html-->
-    <p>Creating a blog is hard. I admire those who are able to design their own and write regular posts, so much so that I&rsquo;m trying again to create my own blog. I started this blog late in 2015. After writing a few posts, I became discouraged. I didn&rsquo;t like the way it looked, the tools often broke, and I didn&rsquo;t have a clear idea of what I wanted to write, or why I was blogging.</p>
-    <footer class="read-more">
-      <a href='https://douglascuthbertson.com/2020/02/restart/'><span class="read-more">Read more →</span></a>
-    </footer>
-    <!-- END layouts/_default/summary.html-->
-  </section>
-  
-
-
 </div>
-<!-- END main layouts/taxomony/2020.html -->
-      </main>
-    </div> <!-- class wrapper-content -->
-
-    
-      <footer class="main-footer">
-  <div class="container">(c) 2015-2020 Douglas Cuthbertson. The content of this work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a> except where indicated otherwise. Made with HTML, CSS, JavaScript, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.</div>
-</footer>
-
-    
-      
-
+    </div>
+    </footer>
+    <!-- END layouts/partials/footer.html -->
+    <!-- BEGIN layouts/partials/postScript.html -->
+    <!-- END layouts/partials/postScript.html -->
   </body>
 </html>
