@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
-    <copyright>(c) 2015-2020 Douglas Cuthbertson. The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/) except where indicated otherwise</copyright>
+    <copyright>(c) 2015-2021 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/) except where indicated otherwise</copyright>
     <lastBuildDate>Mon, 04 Jan 2016 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
@@ -21,11 +21,58 @@
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
       <guid>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</guid>
       <description>&lt;p&gt;I saw an amusing Python tutorial.&lt;/p&gt;
-&lt;p&gt;I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, &lt;a href=&#34;https://www.youtube.com/watch?v=N4mEzFDjqtA&amp;amp;list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&amp;amp;index=2&#34;&gt;Python Programming: Learn Python in One Video&lt;/a&gt;, by &lt;a href=&#34;https://www.youtube.com/user/derekbanas&#34;&gt;Derek Banas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, &lt;a href=&#34;https://www.youtube.com/watch?v=N4mEzFDjqtA&amp;amp;list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&amp;amp;index=2&#34;target=&#34;_blank&#34;&gt;Python Programming: Learn Python in One Video&lt;/a&gt;, by &lt;a href=&#34;https://www.youtube.com/user/derekbanas&#34;target=&#34;_blank&#34;&gt;Derek Banas&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I had no illusions it was going to cover the language in any depth. Still, it is only about 45 minutes long, so I decided to take a look. It actually hit a lot of highlights and was a nice overview of the language.&lt;/p&gt;
 &lt;p&gt;For example, it introduces the built-in operators and data types. It goes over the &lt;code&gt;for&lt;/code&gt; and &lt;code&gt;while&lt;/code&gt; loops. It also covers several other programming concepts. If you&amp;rsquo;ve never seen Python before, this video is worth a look.&lt;/p&gt;
-&lt;p&gt;I recently picked up a copy of Steven Skiena&amp;rsquo;s &amp;ldquo;Programming Challenges&amp;rdquo; and started going through the problems. To see if I learned anything from the video, I tried coding the first puzzle, the &lt;a href=&#34;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;category=3&amp;amp;page=show_problem&amp;amp;problem=36&#34;&gt;&lt;code&gt;3n+1&lt;/code&gt; problem&lt;/a&gt;. The link is to the puzzle on the &lt;a href=&#34;https://uva.onlinejudge.org/&#34;&gt;UVa Online Judge&lt;/a&gt;, where one can submit code in C, C++, Java or Pascal. Sadly, they don&amp;rsquo;t support Python. Nevertheless, here&amp;rsquo;s my version in Python:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;sys&lt;/span&gt;
+&lt;p&gt;I recently picked up a copy of Steven Skiena&amp;rsquo;s &amp;ldquo;Programming Challenges&amp;rdquo; and started going through the problems. To see if I learned anything from the video, I tried coding the first puzzle, the &lt;a href=&#34;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;category=3&amp;amp;page=show_problem&amp;amp;problem=36&#34;target=&#34;_blank&#34;&gt;&lt;code&gt;3n+1&lt;/code&gt; problem&lt;/a&gt;. The link is to the puzzle on the &lt;a href=&#34;https://uva.onlinejudge.org/&#34;target=&#34;_blank&#34;&gt;UVa Online Judge&lt;/a&gt;, where one can submit code in C, C++, Java or Pascal. Sadly, they don&amp;rsquo;t support Python. Nevertheless, here&amp;rsquo;s my version in Python:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;sys&lt;/span&gt;
 
 &lt;span class=&#34;c1&#34;&gt;# Execute: &amp;#34;python p100.py &amp;lt; data&amp;#34; where &amp;#39;data&amp;#39; is the input file, two integers per line.&lt;/span&gt;
 &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;cycle_length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
@@ -68,7 +115,9 @@
 
 &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;vm&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;__main__&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
     &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I think the only thing here that wasn&amp;rsquo;t covered in the video is reading from stdin.&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;I think the only thing here that wasn&amp;rsquo;t covered in the video is reading from stdin.&lt;/p&gt;</description>
     </item>
     
   </channel>

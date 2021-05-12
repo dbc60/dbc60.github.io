@@ -20,7 +20,7 @@
     <meta property="og:image:height" content="279">
     <meta property="og:image" content="https://douglascuthbertson.com/images/og-image.jpg">
     <meta name="twitter:title" content="Doug&#39;s Blog">
-    <meta name="generator" content="Hugo 0.76.4" />
+    <meta name="generator" content="Hugo 0.83.1" />
     <meta name="robots" content="index, follow"><meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/images/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
@@ -34,8 +34,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.874c2a08bf1bb1cd2eb4586ec934d368689a1940459afebe3cc8c1d2fd174fec.css"
-      integrity="sha256-h0wqCL8bsc0utFhuyTTTaGiaGUBFmv6&#43;PMjB0v0XT&#43;w="
+      href="https://douglascuthbertson.com/style/style.min.e716a0cb599e56d8de154fbc1494cba7f3624576ace807afabb785585ec74b80.css"
+      integrity="sha256-5xagy1meVtjeFU&#43;8FJTLp/NiRXas6Aevq7eFWF7HS4A="
       media="screen">
 
   <title>
@@ -44,12 +44,13 @@
     <!-- BEGIN head__scripts.html -->
     <!-- END head__scripts.html -->
 </head>
-<body><header class="main-head">
+<body><div class="masthead"><header class="main-head">
 <div class="title-content">
   <!-- BEGIN layouts/partials/siteHeader.html -->
     <h1 class="siteTitle"><a href="https://douglascuthbertson.com">Doug&#39;s Blog</a></h1>
     <h1 class="siteSubTitle"><a href="https://blacklivesmatter.com/" target="_blank">Black Lives Matter</a></h1>
   <!-- END layouts/partials/siteHeader.html -->
+  
 </div>
 </header>
   <nav class="main-nav"><div class="main-nav__items">
@@ -60,14 +61,20 @@
     </div>
   </nav>
 <!-- BEGIN layouts/partials/nav__breadcrumbs.html -->
-<nav aria-label="Breadcrumb">
-<ul class="breadcrumb">
-<li class="breadcrumb__item"><a href="https://douglascuthbertson.com/">Home</a></li>
-    <li class="breadcrumb__item"><a class="breadcrumbs_link" href="https://douglascuthbertson.com/post/">Posts</a></li>
-    <li class="breadcrumb__item"><a class="breadcrumbs_link" href="https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/">A New Hugo-Based Blog</a></li></ul>
+<nav class="nav-breadcrumbs" aria-label="Breadcrumb">
+<ul class="crumb-trail">
+  <li class="crumb">
+    <a class="crumb-link" href="https://douglascuthbertson.com/">Home</a>
+  </li>
+  <li class="crumb">
+    <a class="crumb-link" href="https://douglascuthbertson.com/post/">Posts</a>
+  </li>
+  <li class="crumb">
+    <a class="crumb-link" href="https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/">A New Hugo-Based Blog</a>
+  </li></ul>
 </nav>
 <!-- END layouts/partials/nav__breadcrumbs.html -->
-
+</div>
     <div class="wrapper-content"><!--GETTING ROOT SECTIONS--><div class="sidebar-content">
         <ul class="wrapper-collections">
           <li class="wrapper-collection-items">
@@ -75,8 +82,11 @@
             <span class="wrapper-collection-border title">Contents</span>
 <!-- BEGIN layouts/partials/items-contents.html -->
             <ul class="collection-items">
+              
+            
+
             <!-- range by title -->
-              <li class="contents"><a class="secondary-nav__link" href="https://douglascuthbertson.com/post/">Posts</a></li>
+                <li class="collection-item"><a class="secondary-nav__link" href="https://douglascuthbertson.com/post/">Posts</a></li>  
             </ul>
 <!--END layouts/partials/items-contents.html -->
             <span class="wrapper-collection-border icon icon-books"> </span>
@@ -84,43 +94,43 @@
           <li class="wrapper-collection-items">
             <span class="wrapper-collection-border icon icon-quill"> </span>
             <span class="wrapper-collection-border title">Latest</span><ul class="collection-items">
-<!-- BEGIN layouts/partials/items-latest.html --><li class="contents">
+<!-- BEGIN layouts/partials/items-latest.html --><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/11/waiting-for-election-results/">
         Waiting for Election Results
       </a>
-    </li><li class="contents">
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/10/vote-2020/">
         Vote 2020
       </a>
-    </li><li class="contents">
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/">
         A New Hugo-Based Blog
       </a>
-    </li><li class="contents">
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/02/restart/">
         Restart
       </a>
-    </li><li class="contents">
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/now/">
         What I&#39;m Doing Now
       </a>
-    </li><li class="contents">
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/11/a-dangerous-spectacle/">
         A Dangerous Spectacle
       </a>
-    </li><li class="contents">
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/09/serving-a-blog/">
         Serving a Blog
       </a>
-    </li><li class="contents">
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/about/">
         About
       </a>
-    </li><li class="contents">
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/03/fixing-the-width/">
         Fixing the Width
       </a>
-    </li><li class="contents">
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/">
         The Pursuit of Happiness Gels in the Imagination
       </a>
@@ -133,37 +143,31 @@
             <span class="wrapper-collection-border title">Collections</span><ul class="collection-items">
   <!-- BEGIN layouts/partials/items-taxonomies.html -->
   
-  <li class="contents">
+  <li class="collection-item">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/2015/">
       2015
     </a>
   </li>
   
-  <li class="contents">
+  <li class="collection-item">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/">
       2016
     </a>
   </li>
   
-  <li class="contents">
+  <li class="collection-item">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/">
       2020
     </a>
   </li>
   
-  <li class="contents">
+  <li class="collection-item">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/2021/">
       2021
     </a>
   </li>
   
-  <li class="contents">
-    <a class="secondary-nav__link" href="https://douglascuthbertson.com/categories/">
-      Categories
-    </a>
-  </li>
-  
-  <li class="contents">
+  <li class="collection-item">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/tags/">
       Tags
     </a>
@@ -176,14 +180,15 @@
         </ul>
       </div>
       <main class="main-content">
+        <img class="featured-image" src="https://douglascuthbertson.com/images/banners/hugo-banner.jpg" alt=Hugo&#32;logo>
       <!-- BEGIN main layouts/_default/single.html -->
         <h2 class="title-article">A New Hugo-Based Blog</h2>
         <!-- BEGIN layouts/partials/date-and-tags.html -->
         <header class="article-meta-data"><div class="post-metadata">
           <time class="post-metadata__timestamp" datetime="2020-02-22">Saturday Feb 22, 2020</time>
-            - 15 min read - 3173 words.
+            - 16 min read - 3392 words.
           <time class="post-metadata__timestamp" datetime="2020-02-22T17:38"></time><div>Last updated: <span>Saturday Feb 22, 2020 17:38</span></div>
-          <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/categories/blog">blog</a></div>
+          <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a><a class="tag" href="https://douglascuthbertson.com/tags/hugo">hugo</a><span class="featured-copyright"><em>The Hugo logo is copyright © Steve Francia 2013–2021.</em></span></div>
           </div>
         </header>
         <!--END layouts/partials/date-and-tags.html -->
@@ -191,6 +196,7 @@
         <section class="content c-drop-caps drop-caps_goudy">
           <p>In my <a href="https://douglascuthbertson.com/2020/02/restart/">previous post</a> I talked a little about why and how I started this blog. Here I want to present my experience with <a href="https://gohugo.io/"target="_blank">Hugo</a> and what I like about it.</p>
 <aside class="toc">
+  <h2 class="toc-title">Contents</h2>
   <nav id="TableOfContents">
   <ul>
     <li><a href="#the-short-lived-academic-theme">The Short-lived Academic Theme</a></li>
@@ -219,7 +225,7 @@
 <p>As I have a tendency to do with new tools, I dove in too deep, too fast. Hugo has themes, and they look like a good way to get something up and running quickly. I looked over [`]the theme gallery](<a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>) checking all the features and how they looked. <a href="https://themes.gohugo.io/academic/"target="_blank">Academic</a> is very flexible and chock full of features. I decided to give it a whirl in February 2019. It looked like this out of the box.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png">
     <img src="https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png"
-         alt="First Rendition using Vanilla Bootstrap Theme"/> </a><figcaption>
+         alt="First Rendition using Vanilla Bootstrap Theme"></a><figcaption>
             First Try with Vanilla Bootstrap
         </figcaption>
 </figure>
@@ -227,7 +233,7 @@
 <p>I tried a few small configuration changes to see how I liked it. My hope was only minor changes would be necessary so I could have a site that looked good to me and had a responsive layout. That way I could just write posts.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/002-2019.02.03.02-title.and.footer.png">
     <img src="https://douglascuthbertson.com/images/history/002-2019.02.03.02-title.and.footer.png"
-         alt="My First Time Using the Academic Theme"/> </a><figcaption>
+         alt="My First Time Using the Academic Theme"></a><figcaption>
             My First Time Using the Academic Theme
         </figcaption>
 </figure>
@@ -237,7 +243,7 @@
 <p>Too new to how Hugo workds and the complexities of a website builder, I looked for a simpler solution and settled on <a href="https://themes.gohugo.io/vanilla-bootstrap-hugo-theme/"target="_blank">Vanilla Bootstrap</a>.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png">
     <img src="https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png"
-         alt="First Rendition using Vanilla Bootstrap Theme"/> </a><figcaption>
+         alt="First Rendition using Vanilla Bootstrap Theme"></a><figcaption>
             First Try with Vanilla Bootstrap
         </figcaption>
 </figure>
@@ -245,7 +251,39 @@
 <p>The change was dramatic and configuration was simplified. While Academic has two levels of configuration, the core through <code>config/_default/config.toml</code> and another level controlled through the content in the <code>content/home</code> directory, Vanilla Bootstrap requires only core configuration of Hugo and a handful of theme-specific parameters all managed through the default configuration files.</p>
 <h3 id="a-new-navigation-menu">A New Navigation Menu</h3>
 <p>It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in <code>config/_default/config.toml</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml">  <span class="c"># See https://feathericons.com/</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml">  <span class="c"># See https://feathericons.com/</span>
   <span class="c"># The value of pre is the icon name</span>
   <span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
     <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
@@ -273,8 +311,32 @@
       <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;rss&#34;</span>
       <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/index.xml&#34;</span>
       <span class="nx">weight</span> <span class="p">=</span> <span class="mi">5</span>
-</code></pre></div><p>The theme provides the other major component in <code>theme/vanilla/layouts/partials/nav.html</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nav-border&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The theme provides the other major component in <code>theme/vanilla/layouts/partials/nav.html</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nav-border&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nav&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav justify-content-center&#34;</span><span class="p">&gt;</span>
     {{ $showActiveNav := .Site.Params.showActiveNav }}
     {{ $currentPage := . }}
@@ -292,12 +354,14 @@
     {{ end }}
     <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div><p>It cycles through the <code>menu.nav</code> items in <code>config.toml</code> and translates those values to a feather icon, text, and a link to the given URL. The site was beginning to fill out, although today the icons look silly to me.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>It cycles through the <code>menu.nav</code> items in <code>config.toml</code> and translates those values to a feather icon, text, and a link to the given URL. The site was beginning to fill out, although today the icons look silly to me.</p>
 <p>There&rsquo;s a &ldquo;Notes&rdquo; menu item, because I thought I would use the site to keep notes as well as regular blog posts. I&rsquo;ve since separated my personal notes and works-in-progress from blog posts. I&rsquo;m willing to go only so far in what I make public. It&rsquo;s best to keep some thoughts as background material, and let others stew for a while before publicizing them.</p>
 <p>I created a simple 404 page, and a big &ldquo;jumbotron&rdquo; area for all the index pages. The site was beginning to fill out. Although, today the icons look silly to me.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/004-2019.02.10-jumbotron.png">
     <img src="https://douglascuthbertson.com/images/history/004-2019.02.10-jumbotron.png"
-         alt="Jumbotron"/> </a><figcaption>
+         alt="Jumbotron"></a><figcaption>
             Jumbotron
         </figcaption>
 </figure>
@@ -309,14 +373,27 @@
 <p>I added a picture of Motif No. 1 I took in Rockport, Massachusetts to fill the jumbotron. It got cropped rather poorly, though.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/005-2019.02.11-wide.png">
     <img src="https://douglascuthbertson.com/images/history/005-2019.02.11-wide.png"
-         alt="Wide Menu Day"/> </a><figcaption>
+         alt="Wide Menu Day"></a><figcaption>
             Wide Menu Day
         </figcaption>
 </figure>
 
 <h4 id="mathjax">MathJax</h4>
 <p>I was happy to learn a little about configuring MathJax. It makes it possible to display equations on web pages. To configure MathJax to automatically number equations - just include the following in <code>layouts/partials/script.html</code> (which is included in <code>layouts/_default/baseof.html</code>):</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!-- Configure MathJax for automatic equation numbering. See
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!-- Configure MathJax for automatic equation numbering. See
 </span><span class="c">    http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
 </span><span class="c">    for details
 </span><span class="c">  --&gt;</span>
@@ -325,9 +402,40 @@
       <span class="nx">TeX</span><span class="o">:</span> <span class="p">{</span> <span class="nx">equationNumbers</span><span class="o">:</span> <span class="p">{</span> <span class="nx">autoNumber</span><span class="o">:</span> <span class="s2">&#34;AMS&#34;</span> <span class="p">}</span> <span class="p">}</span>
     <span class="p">});</span>
   <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div><p>I realize that MathJax is a large JavaScript library. It&rsquo;s probably stupid to try optimizations without testing, nevertheless I didn&rsquo;t want to load MathJax with every page. Most pages don&rsquo;t require it, so I wrap the MathJax configuration in an if-block that detects if the page (or the whole site) defines the parameter <code>math</code>.  The configuration has been updated, as well.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>I realize that MathJax is a large JavaScript library. It&rsquo;s probably stupid to try optimizations without testing, nevertheless I didn&rsquo;t want to load MathJax with every page. Most pages don&rsquo;t require it, so I wrap the MathJax configuration in an if-block that detects if the page (or the whole site) defines the parameter <code>math</code>.  The configuration has been updated, as well.</p>
 <p>Now all I have to do is add <code>math: true</code> to the front matter of any file that includes \(\LaTeX\).</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!-- Include MathJaX if either the page or the site params define math=true --&gt;</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!-- Include MathJaX if either the page or the site params define math=true --&gt;</span>
   {{- if or .Params.math .Site.Params.math -}}
   <span class="c">&lt;!-- Configure MathJax for automatic equation numbering. See
 </span><span class="c">    https://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
@@ -352,8 +460,28 @@
       <span class="p">}</span>
     <span class="p">});</span>
   <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div><p>In addition to being updated, it tries to load from a Cloudflare, but if it can&rsquo;t connect it loads a local copy.</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!--
+</code></pre></td></tr></table>
+</div>
+</div><p>In addition to being updated, it tries to load from a Cloudflare, but if it can&rsquo;t connect it loads a local copy.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!--
 </span><span class="c">    Load MathJax. Note that this is one of the most general configurations.
 </span><span class="c">    See the configuration docs for others. There might be a lighter version
 </span><span class="c">    that will work for my purposes.
@@ -367,9 +495,38 @@
 
   <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script type=&#34;text/x-mathjax-config&#34;&gt;MathJax.Hub.Config({&#34;HTML-CSS&#34;:{imageFont:null}});&lt;\/script&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;{{ &#34;scripts/MathJax-2.7.5/MathJax.js&#34; | relURL }}?config=TeX-AMS-MML_HTMLorMML&#34;&gt;&lt;\/script&gt;&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   {{- end -}}
-</code></pre></div><h4 id="pagination">Pagination</h4>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="pagination">Pagination</h4>
 <p>I had added lots of notes and the layout was still sprinkled with distracting icons, this time with a redish theme and green accents. I had at least learned how to paginate my page lists. For example, the default list (<code>layouts/_default/list.html</code>) used Hugo&rsquo;s built-in pagination:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  {{ define &#34;main&#34; }}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  {{ define &#34;main&#34; }}
 
   <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
       <span class="c">&lt;!-- default list template --&gt;</span>
@@ -392,9 +549,11 @@
   <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
 
   {{ end }}
-</code></pre></div><figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png">
+</code></pre></td></tr></table>
+</div>
+</div><figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png">
     <img src="https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png"
-         alt="Pagination, Redish Theme, and Green Accents"/> </a><figcaption>
+         alt="Pagination, Redish Theme, and Green Accents"></a><figcaption>
             Pagination, Redish Theme, and Green Accents
         </figcaption>
 </figure>
@@ -402,27 +561,50 @@
 <h4 id="scrollbar-jumping">Scrollbar Jumping</h4>
 <p>At some point I noticed that when navigating from a page that had no scrollbar (like a short post or note) to one that did (such as the paginated lists of notes displayed above) the whole layout shifted slightly. I found a <a href="https://css-tricks.com/elegant-fix-jumping-scrollbar-issue/"target="_blank">fix for it at CSS-Tricks</a>.</p>
 <p>At the time, I had a <code>layouts/partials/style.html</code> partial file. All I had to do was add a few lines of CSS to it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css">  <span class="nt">html</span> <span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css">  <span class="nt">html</span> <span class="p">{</span>
     <span class="k">margin-left</span><span class="p">:</span> <span class="nb">calc</span><span class="p">(</span><span class="mi">100</span><span class="kt">vw</span> <span class="o">-</span> <span class="mi">100</span><span class="kt">%</span><span class="p">);</span>
     <span class="k">margin-right</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
   <span class="p">}</span>
-</code></pre></div><h4 id="scss-pipeline-processing">SCSS Pipeline Processing</h4>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="scss-pipeline-processing">SCSS Pipeline Processing</h4>
 <p>By April I had setup a pipeline for processing SCSS into CSS. The pipeline consisted of this small amount of template code:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!-- For more info about using SCSS and this pipeline see:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!-- For more info about using SCSS and this pipeline see:
 </span><span class="c">    https://github.com/gohugoio/hugo/commit/dea71670c059ab4d5a42bd22503f18c087dd22d4,
 </span><span class="c">    https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
 </span><span class="c">    and https://gohugo.io/hugo-pipes/
 </span><span class="c">  --&gt;</span>
   {{ $style := resources.Get &#34;sass/main.scss&#34; | toCSS | minify | fingerprint }}
   <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $style.RelPermalink }}&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;{{ $style.Data.Digest }}&#34;</span> <span class="na">media</span><span class="o">=</span><span class="s">&#34;screen&#34;</span><span class="p">&gt;</span>
-</code></pre></div><p>The <code>main.scss</code> file lived in <code>assets/scss/</code> at the root of the repository.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>The <code>main.scss</code> file lived in <code>assets/scss/</code> at the root of the repository.</p>
 <h2 id="sorry-vanilla-you-have-to-go">Sorry Vanilla. You have to Go</h2>
 <p>One aspect of design I didn&rsquo;t enjoy was trying to figure out the correct CSS classes to apply to a given situation. For example, the body element is <code>&lt;body class=&quot;d-flex flex-column h-100&quot;&gt;</code>. I have no idea what those classes mean and why I need them, so I started learning more about HTML and CSS.</p>
 <p>My new goal was to really understand the structure of my site, so I know where things are, what needs to be modified as I build it to look the way I want it to, and know the elements and classes defined in the layout so they can be styled correctly. Vanilla Bootstrap was a nice place to start, but I don&rsquo;t understand the choices made for structure and styling. Its use of Bootstrap added another layer of complexity to learning how changes to CSS will affect the site.</p>
 <p>In the middle of April, I ripped out Vanilla Bootstrap and started over.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png">
     <img src="https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png"
-         alt="Back to Basics"/> </a><figcaption>
+         alt="Back to Basics"></a><figcaption>
             Back to Basics
         </figcaption>
 </figure>
@@ -432,7 +614,22 @@
 <p>Ripping out Vanilla left me with a barebones layout. Here are some of the things I learned along the way to creating a site more to my liking.</p>
 <h3 id="navigation-menu">Navigation Menu</h3>
 <p>By late April, I learned that navigation links didn&rsquo;t have to be wrapped in an unordered list. Looking through git log, I found the navigation menu had always been wrapped in an unordered list.</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-nav mr-auto&#34;</span><span class="p">&gt;</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-nav mr-auto&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-item&#34;</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/#about&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#about&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
@@ -443,8 +640,22 @@
         <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Publications<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</code></pre></div><p>Now I have just a <code>&lt;nav&gt;</code> element that wraps a <code>&lt;div&gt;</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav&#34;</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now I have just a <code>&lt;nav&gt;</code> element that wraps a <code>&lt;div&gt;</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__items&#34;</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link navLink-active&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/&#34;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link &#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/about/&#34;</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
@@ -452,8 +663,23 @@
       <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link &#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/index.xml&#34;</span><span class="p">&gt;</span>RSS<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
-</code></pre></div><p>The CSS for this section consists of class definitions for <code>main-nav</code> and <code>main-nav__items</code>. It is very simple, and doesn&rsquo;t even try to style the <code>main-nav__link</code> class.</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css">  <span class="p">.</span><span class="nc">main-nav</span> <span class="p">{</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The CSS for this section consists of class definitions for <code>main-nav</code> and <code>main-nav__items</code>. It is very simple, and doesn&rsquo;t even try to style the <code>main-nav__link</code> class.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css">  <span class="p">.</span><span class="nc">main-nav</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
     <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex</span><span class="o">-</span><span class="kc">start</span><span class="p">;</span>
   <span class="p">}</span>
@@ -462,10 +688,12 @@
     <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.1</span><span class="kt">em</span><span class="p">;</span>
     <span class="k">margin-right</span><span class="p">:</span> <span class="mi">1</span><span class="kt">ch</span><span class="p">;</span>
   <span class="p">}</span>
-</code></pre></div><p>Unwrapping them changed navigation from:</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>Unwrapping them changed navigation from:</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png">
     <img src="https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png"
-         alt="Unstyled Navigation List"/> </a><figcaption>
+         alt="Unstyled Navigation List"></a><figcaption>
             Unstyled Navigation List
         </figcaption>
 </figure>
@@ -473,18 +701,48 @@
 <p>to this:</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/009-2019.04.19-plain-navigation.png">
     <img src="https://douglascuthbertson.com/images/history/009-2019.04.19-plain-navigation.png"
-         alt="Plain Navigation"/> </a><figcaption>
+         alt="Plain Navigation"></a><figcaption>
             Plain Navigation
         </figcaption>
 </figure>
 
 <h3 id="general-layout">General Layout</h3>
 <p>Per the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"target="_blank">MDN docs on box-sizing</a> <code>border-box</code> makes dealing with the sizes of elements much easier, and generally eliminates a number of pitfalls you can stumble on while laying out your content, so I set <code>border-box</code> globally.</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css">  <span class="o">*</span> <span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css">  <span class="o">*</span> <span class="p">{</span>
     <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
   <span class="p">}</span>
-</code></pre></div><p>I learned I can set site-wide parameters in Hugo&rsquo;s configuration files. I set the site width and several other parameters in <code>config/_default/params.toml</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-txt" data-lang="txt">  showActiveNav = true
+</code></pre></td></tr></table>
+</div>
+</div><p>I learned I can set site-wide parameters in Hugo&rsquo;s configuration files. I set the site width and several other parameters in <code>config/_default/params.toml</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">  showActiveNav = true
   author = &#34;Douglas Cuthbertson&#34;
   description = &#34;This is my soapbox for thoughts on programming, project planning, sketching, drawing, kempo, and any other topic that may suit my fancy.&#34;
   dateFormat = &#34;Monday Jan 2, 2006&#34;
@@ -493,28 +751,84 @@
   copyright = &#34;(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)&#34;
   footerText = &#34;Made with HTML, CSS, JavaScript, and perseverance. Generated by [Hugo](https://gohugo.io/)&#34;
   hideFooter = false
-  #featured_image = &#34;/images/hero-header-default.jpg&#34;
-  #featured_image = &#34;/images/hero-header-april.jpg&#34;
+  #featured_image = &#34;/images/gargoyle-overlooking-paris.jpg&#34;
+  #featured_image = &#34;/images/motif-number-1.jpg&#34;
   site_width = &#34;104ch&#34;
 
   componentDropCaps = &#34;drop-caps_goudy&#34;
   mainSections = [&#34;note&#34;, &#34;post&#34;, &#34;project&#34;]
   planck = &#34;\u210E&#34;
   reduced_planck = &#34;\u210F&#34;
-</code></pre></div><p>and use <code>site_width</code> in <code>assets/style/base.css</code> as follows:</p>
-<div class="highlight"><pre class="chroma"><code class="language-txt" data-lang="txt">  {{ $siteWidth := .Site.Params.site_width }}
+</code></pre></td></tr></table>
+</div>
+</div><p>and use <code>site_width</code> in <code>assets/style/base.css</code> as follows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">  {{ $siteWidth := .Site.Params.site_width }}
   {{ if not .Site.Params.site_width }}
   {{ $siteWidth = &#34;936px&#34; }}
   {{ end }}
-</code></pre></div><p>I&rsquo;ve only recently decided that this is a bad idea. Every time I try to experiment with the site width, I have to touch the configuration. Hugo must go through a complete rebuild of the site, which takes much more time than necessary.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>I&rsquo;ve only recently decided that this is a bad idea. Every time I try to experiment with the site width, I have to touch the configuration. Hugo must go through a complete rebuild of the site, which takes much more time than necessary.</p>
 <p>The only reason to put a parameter in a configuration file is if the value must be accessed from more than one place. In this case, it was needed only in a single CSS file. Once I defined the width directly in <code>base.css</code>, site rebuilds were faster, and my CSS is no longer cluttered with Go template code. Also, <code>layouts/partials/head.html</code> was slightly simplified. Instead of accessing <code>base.css</code> as</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go">  <span class="p">{{</span> <span class="err">$</span><span class="nx">cssBase</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;style/base.css&#34;</span> <span class="p">|</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">ExecuteAsTemplate</span> <span class="s">&#34;style.base.css&#34;</span> <span class="p">.</span> <span class="p">}}</span>
-</code></pre></div><p>the code is now</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go">  <span class="p">{{</span> <span class="err">$</span><span class="nx">cssBase</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;style/base.css&#34;</span> <span class="p">}}</span>
-</code></pre></div><h3 id="color-consistency-and-contrast">Color Consistency and Contrast</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">  <span class="p">{{</span> <span class="err">$</span><span class="nx">cssBase</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;style/base.css&#34;</span> <span class="p">|</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">ExecuteAsTemplate</span> <span class="s">&#34;style.base.css&#34;</span> <span class="p">.</span> <span class="p">}}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>the code is now</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">  <span class="p">{{</span> <span class="err">$</span><span class="nx">cssBase</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;style/base.css&#34;</span> <span class="p">}}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="color-consistency-and-contrast">Color Consistency and Contrast</h3>
 <p>In May I was trying to ensure colors were being used consistently. I learned that the site should have primary and accent colors, and define the color of the body text. Some designers say that black text on a white background is too harsh and set dark gray text on a light gray background. When I look at those sites, I find the contrast is often too low and causes eye strain. I originally just went with black text on white. I figured it&rsquo;s a work in progress, and that can be adjusted when the rest of the site is more to my liking.</p>
 <p>In deference to experienced designers I now set the text to a very dark gray on a very light gray background. I created a palette using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties"target="_blank">CSS custom properties</a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css">  <span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css">  <span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
     <span class="nv">--color100</span><span class="p">:</span> <span class="mh">#f5fffa</span><span class="p">;</span>
     <span class="nv">--color200</span><span class="p">:</span> <span class="mh">#7cffbb</span><span class="p">;</span>
     <span class="nv">--color300</span><span class="p">:</span> <span class="mh">#00eb75</span><span class="p">;</span>
@@ -540,42 +854,66 @@
     <span class="nv">--color700-adjacent</span><span class="p">:</span> <span class="mh">#003457</span><span class="p">;</span>
     <span class="nv">--color700-adjacent-complement</span><span class="p">:</span> <span class="mh">#572300</span><span class="p">;</span>
   <span class="p">}</span>
-</code></pre></div><p>I like this aspect of CSS. It means I can define all the colors I care about in one place, and I don&rsquo;t have to learn SCSS at the moment to do it.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>I like this aspect of CSS. It means I can define all the colors I care about in one place, and I don&rsquo;t have to learn SCSS at the moment to do it.</p>
 <p>Some sites eschew black text on a white background. For example, <a href="https://jgthms.com/web-design-in-4-minutes/"target="_blank">Web Design in 4 Minutes</a> recommends using a medium gray (<code>#555</code>) for body text, a dark gray (<code>#333</code>) for headings and strong text all against a white background. However that creates a rather low contrast. To make matters worse, the background for code blocks is set to <code>#eee</code>.</p>
 <p>The <a href="https://www.w3.org/TR/WCAG20/"target="_blank">Web Content Accessibility Guidelines</a> recommends a contrast ratio of at least 7:1 for normal text and 4.5:1 for large text. Large text is defined as 14 point (typically 18.66px) and bold or larger, or 18 point (typically 24px) or larger. The contrast ratio for headings set to #333 against white is strong at 12.62:1. Body text set to #555 against white is barely acceptable at 7.46:1. Finally, the constrast ratio of code blocks (#555 against a background of #eee) is unacceptable at 6.42:1.</p>
 <p>Originally, I had black text on a white background. In deference to designers who have a lot more experience creating web sites than I do, I set the background and text colors to the lightest and darkest grays in the palette, respectively.</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css">  <span class="nt">body</span> <span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css">  <span class="nt">body</span> <span class="p">{</span>
     <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">gray100</span><span class="p">);</span>
     <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">gray900</span><span class="p">);</span>
   <span class="p">}</span>
-</code></pre></div><p>The contrast ratio is 19.52:1. Is that too high? One day I&rsquo;ll look into separate degrees of contrast for body text and headings.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>The contrast ratio is 19.52:1. Is that too high? One day I&rsquo;ll look into separate degrees of contrast for body text and headings.</p>
 <h2 id="styling-fun">Styling Fun</h2>
 <p>One thing I particularly liked was how nice drop caps looked on <a href="https://www.gwern.net/index"target="_blank">Gwern</a>. I looked at his CSS and created a new file, <code>static\style\drop-caps\drop-caps.css</code> with a simplified version of his CSS. I dropped it in the <code>static/</code> directory instead of the <code>assets/</code> folder out of expediency, and I modified <code>layouts/_default/baseof.html</code> to pull in the drop caps definitions.</p>
 
 <aside class="admonition note">
   <div class="admonition-title">Browser-Specific Styling</div>
-  <div class="content"><p>For the longest time I couldn&rsquo;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at [gwern.net] I realized <code>@supports (-moz-user-focus: normal) { ... }</code> is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use <code>@supports not (-moz-user-focus: normal)</code> to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.</p></div>
+  <div class="content-admonition"><p>For the longest time I couldn&rsquo;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at [gwern.net] I realized <code>@supports (-moz-user-focus: normal) { ... }</code> is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use <code>@supports not (-moz-user-focus: normal)</code> to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.</p></div>
 </aside>
 <p>By the end of June I removed most of the feather icons and simplified the layout. It looked better.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png">
     <img src="https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png"
-         alt="June 2019. A more simple presentation"/> </a><figcaption>
+         alt="June 2019. A more simple presentation"></a><figcaption>
             June 2019. A More Simple Presentation
         </figcaption>
 </figure>
 
 <h2 id="debugging-layouts">Debugging Layouts</h2>
 <p>A simple trick to help debug layouts is to put a high-contrast border and background color around the sections you&rsquo;re working on.</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css">  <span class="p">.</span><span class="nc">wrapper</span> <span class="o">&gt;</span> <span class="o">*</span> <span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css">  <span class="p">.</span><span class="nc">wrapper</span> <span class="o">&gt;</span> <span class="o">*</span> <span class="p">{</span>
     <span class="k">border</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#f08c00</span><span class="p">;</span>
     <span class="k">background-color</span><span class="p">:</span> <span class="mh">#ffec99</span><span class="p">;</span>
     <span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
     <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
   <span class="p">}</span>
-</code></pre></div><p>A little thing like that helped me make a two column layout.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>A little thing like that helped me make a two column layout.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png">
     <img src="https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png"
-         alt="Two Column Layout"/> </a><figcaption>
+         alt="Two Column Layout"></a><figcaption>
             Two Column Layout
         </figcaption>
 </figure>
@@ -583,7 +921,7 @@
 <p>By the end of September last year, I had restructured a lot of the blog. It has a stronger two-column layout and a splash of color.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/012-2019.09.30-no-notes-breadcrumbs.png">
     <img src="https://douglascuthbertson.com/images/history/012-2019.09.30-no-notes-breadcrumbs.png"
-         alt="A Splash of Color"/> </a><figcaption>
+         alt="A Splash of Color"></a><figcaption>
             A Splash of Color
         </figcaption>
 </figure>
@@ -594,10 +932,11 @@
         <!-- END main layouts/_default/single.html -->
       </main>
     </div> <!-- class wrapper-content -->
+    <div class="wrapper-footer">
     <!-- BEGIN layouts/partials/footer.html -->
     <footer class="main-footer">
       <div class="container">
-        (c) 2015-2021 Douglas Cuthbertson. The content of this work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a> except where indicated otherwise. Made with HTML, CSS, JavaScript, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.
+        (c) 2015-2021 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a> except where indicated otherwise. Made with Markdown, HTML, CSS, JavaScript, joy, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.
           <div class="social">
 
 
@@ -704,7 +1043,7 @@
   </li>
 </ul>
 </div>
-    </div>
+      </div>
     </footer>
     <!-- END layouts/partials/footer.html -->
     <!-- BEGIN layouts/partials/postScript.html -->
@@ -726,5 +1065,6 @@
     <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="\/scripts\/MathJax-2.7.5\/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')</script>
     <!-- END layouts/partials/mathjax.html -->
     <!-- END layouts/partials/postScript.html -->
+    </div>
   </body>
 </html>

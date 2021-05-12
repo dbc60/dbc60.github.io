@@ -1,224 +1,127 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://douglascuthbertson.com/2020/11/</loc>
     <lastmod>2020-11-07T08:23:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2020/</loc>
     <lastmod>2020-11-07T08:23:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/categories/</loc>
-    <lastmod>2020-11-07T08:23:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/</loc>
     <lastmod>2020-11-07T08:23:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/categories/politics/</loc>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/politics/</loc>
     <lastmod>2020-11-07T08:23:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/post/</loc>
     <lastmod>2020-11-07T08:23:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/</loc>
+    <lastmod>2020-11-07T08:23:14-05:00</lastmod>
+  </url><url>
     <loc>https://douglascuthbertson.com/2020/11/waiting-for-election-results/</loc>
     <lastmod>2020-11-07T08:23:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2020/10/</loc>
     <lastmod>2020-10-28T08:12:51-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2020/10/vote-2020/</loc>
     <lastmod>2020-10-28T08:12:51-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2020/02/</loc>
     <lastmod>2020-02-22T17:38:32-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/</loc>
     <lastmod>2020-02-22T17:38:32-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/categories/blog/</loc>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/blog/</loc>
     <lastmod>2020-02-22T17:38:32-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/tags/hugo/</loc>
     <lastmod>2020-02-22T17:38:32-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/tags/</loc>
-    <lastmod>2020-02-22T17:38:32-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/tags/themes/</loc>
-    <lastmod>2020-02-22T17:38:32-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/tags/compass/</loc>
     <lastmod>2020-02-11T05:48:36-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/tags/jekyll/</loc>
     <lastmod>2020-02-11T05:48:36-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2020/02/restart/</loc>
     <lastmod>2020-02-11T05:48:36-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/tags/sphinx/</loc>
     <lastmod>2020-02-11T05:48:36-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/tags/static-site-generator/</loc>
     <lastmod>2020-02-11T05:48:36-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/tags/zettelkasten/</loc>
     <lastmod>2020-02-11T05:48:36-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/now/</loc>
     <lastmod>2019-02-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2016/11/</loc>
     <lastmod>2016-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2016/</loc>
     <lastmod>2016-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2016/11/a-dangerous-spectacle/</loc>
     <lastmod>2016-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2016/09/</loc>
     <lastmod>2016-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2016/09/serving-a-blog/</loc>
     <lastmod>2016-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/about/</loc>
     <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2016/03/</loc>
     <lastmod>2016-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/tags/css/</loc>
     <lastmod>2016-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2016/03/fixing-the-width/</loc>
     <lastmod>2016-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/tags/js/</loc>
-    <lastmod>2016-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/tags/mathjax/</loc>
     <lastmod>2016-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/categories/life/</loc>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/life/</loc>
     <lastmod>2016-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</loc>
     <lastmod>2016-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2016/01/</loc>
     <lastmod>2016-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</loc>
     <lastmod>2016-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/categories/programming/</loc>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/programming/</loc>
     <lastmod>2016-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/tags/python/</loc>
     <lastmod>2016-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2015/12/</loc>
     <lastmod>2015-12-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2015/</loc>
     <lastmod>2015-12-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2015/12/a-blog-on-github/</loc>
     <lastmod>2015-12-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://douglascuthbertson.com/tags/github-user-pages/</loc>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/github/</loc>
     <lastmod>2015-12-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://douglascuthbertson.com/2021/</loc>
   </url>
-  
 </urlset>
