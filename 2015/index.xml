@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2015 on Doug&#39;s Blog</title>
+    <link>https://douglascuthbertson.com/2015/</link>
+    <description>Recent content in 2015 on Doug&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
+    <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
+    <copyright>(c) 2015-2021 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/) except where indicated otherwise</copyright>
+    <lastBuildDate>Wed, 30 Dec 2015 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://douglascuthbertson.com/2015/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
