@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="en">  <head>
+    
+    
+    
+    
+    <!-- BEGIN layouts/partials/head__meta.html -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+    <meta property="og:description" name="description" content="">
+    <!-- The four required og properties are og:title, og:type, -->
+    <!-- og:url, and og:image. See Open Graph Protocol (ogp.me) -->
+    <!-- I used https://realfavicongenerator.net/ to generate the -->
+    <!-- icons and https://realfavicongenerator.net/social/ to -->
+    <!-- generate the og metadata -->
+    <meta property="og:title" content="Doug&#39;s Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://douglascuthbertson.com">
+    <meta property="og:image:width" content="279">
+    <meta property="og:image:height" content="279">
+    <meta property="og:image" content="https://douglascuthbertson.com/images/og-image.jpg">
+    <meta name="twitter:title" content="Doug&#39;s Blog">
+    <meta name="generator" content="Hugo 0.89.0-DEV" />
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e3e3e3">
+    <link rel="author" href="https://douglascuthbertson.com/humans.txt" />
+    <!-- END layouts/partials/head__meta.html -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://douglascuthbertson.com/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://douglascuthbertson.com/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://douglascuthbertson.com/images/favicon-16x16.png">
+    <link rel="manifest" href="https://douglascuthbertson.com/site.webmanifest">
+    <link rel="mask-icon" href="https://douglascuthbertson.com/images/safari-pinned-tab.svg" color="#4aa7c1">
+    <link rel="shortcut icon" href="https://douglascuthbertson.com/images/favicon.ico">
+
+    <link
+      rel="stylesheet"
+      href="https://douglascuthbertson.com/style/style.min.e91d43d07e659ed4015b2396d73865e3db27546e259ee42977155a48ba33d798.css"
+      integrity="sha256-6R1D0H5lntQBWyOW1zhl49snVG4lnuQpdxVaSLoz15g="
+      media="screen">
+
+  <title>
+    Asymptotic Notation | Doug&#39;s Blog
+  </title>
+    <!-- BEGIN head__scripts.html -->
+
+    
+
+    
+    <!-- END head__scripts.html -->
+</head>
+<body><div class="masthead"><header class="main-head">
+<div class="title-content">
+  <!-- BEGIN layouts/partials/siteHeader.html -->
+    <h1 class="siteTitle"><a href="https://douglascuthbertson.com">Doug&#39;s Blog</a></h1>
+    <h1 class="siteSubTitle"><a href="https://blacklivesmatter.com/" target="_blank">Black Lives Matter</a></h1>
+  <!-- END layouts/partials/siteHeader.html -->
+  
+</div>
+</header>
+  <nav class="main-nav"><div class="main-nav__items">
+      <a class="main-nav__link " href="https://douglascuthbertson.com/">Home</a>
+      <a class="main-nav__link " href="https://douglascuthbertson.com/post/">Posts</a>
+      <a class="main-nav__link " href="https://douglascuthbertson.com/about/">About</a>
+      <a class="main-nav__link " href="https://douglascuthbertson.com/now/">Now</a>
+      <a class="main-nav__link " href="https://douglascuthbertson.com/index.xml">RSS</a>
+    </div>
+  </nav>
+<!-- BEGIN layouts/partials/nav__breadcrumbs.html -->
+<nav class="nav-breadcrumbs" aria-label="Breadcrumb">
+<ul class="crumb-trail">
+  <li class="crumb">
+    <a class="crumb-link" href="https://douglascuthbertson.com/">Home</a>
+  </li>
+  <li class="crumb">
+    <a class="crumb-link" href="https://douglascuthbertson.com/evergreen-notes/">Evergreen Notes</a>
+  </li>
+  <li class="crumb">
+    <a class="crumb-link" href="https://douglascuthbertson.com/evergreen-notes/asymptotic-notation/">Asymptotic Notation</a>
+  </li></ul>
+</nav>
+<!-- END layouts/partials/nav__breadcrumbs.html -->
+</div>
+    <div class="wrapper-content"><div class="sidebar-content">
+        <ul class="wrapper-collections">
+          <li class="wrapper-collection-items">
+            <span class="wrapper-collection-border icon icon-books"> </span>
+            <span class="wrapper-collection-border title">Contents</span>
+<!-- BEGIN layouts/partials/items-contents.html -->
+            <ul class="collection-items">
+              
+            
+
+            <!-- range by title -->
+                <li class="collection-item"><a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/">Create Table</a></li>  
+            </ul>
+<!--END layouts/partials/items-contents.html -->
+            <span class="wrapper-collection-border icon icon-books"> </span>
+          </li>
+          <li class="wrapper-collection-items">
+            <span class="wrapper-collection-border icon icon-quill"> </span>
+            <span class="wrapper-collection-border title">Latest</span><ul class="collection-items">
+<!-- BEGIN layouts/partials/items-latest.html --><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/create-table-heading/">
+        Create Table Heading
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/create-table-shortcode/">
+        Create Table Shortcode
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/template-process-map/">
+        Template Process Map
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/template-process-map-head/">
+        Template Process Map Head
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/template-create-rows/">
+        Template Create Rows
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/template-create-rows-head/">
+        Template Create Rows Head
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/template-create-colgroup/">
+        Template Create Colgroup
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/end/">
+        End
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/begin-buildtable-template/">
+        Begin Buildtable Template
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/template-build-table/">
+        Build Table Template
+      </a>
+    </li><!--END layouts/partials/items-latest.html -->
+</ul>
+<span class="wrapper-collection-border icon icon-quill"> </span>
+          </li>
+          <li class="wrapper-collection-items">
+            <span class="wrapper-collection-border icon icon-folder-open"> </span>
+            <span class="wrapper-collection-border title">Collections</span><ul class="collection-items">
+  <!-- BEGIN layouts/partials/items-taxonomies.html -->
+  
+  <li class="collection-item">
+    <a class="secondary-nav__link" href="https://douglascuthbertson.com/2015/">
+      2015
+    </a>
+  </li>
+  
+  <li class="collection-item">
+    <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/">
+      2016
+    </a>
+  </li>
+  
+  <li class="collection-item">
+    <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/">
+      2020
+    </a>
+  </li>
+  
+  <li class="collection-item">
+    <a class="secondary-nav__link" href="https://douglascuthbertson.com/2021/">
+      2021
+    </a>
+  </li>
+  
+  <li class="collection-item">
+    <a class="secondary-nav__link" href="https://douglascuthbertson.com/tags/">
+      Tags
+    </a>
+  </li>
+  
+  <!--END layouts/partials/items-taxonomies.html -->
+</ul>
+<span class="wrapper-collection-border icon icon-folder-open"> </span>
+          </li>
+        </ul>
+      </div>
+      <main class="main-content">
+        <img class="featured-image" src="https://douglascuthbertson.com/images/banners/motif-number-1.jpg" alt=>
+      <!-- BEGIN main layouts/_default/single.html -->
+        <h2 class="title-article">Asymptotic Notation</h2>
+        <!-- BEGIN layouts/partials/date-and-tags.html -->
+        <header class="article-meta-data"><div class="post-metadata">
+          <time class="post-metadata__timestamp" datetime="2021-09-23">Thursday Sep 23, 2021</time>
+            - 2 min read - 378 words.
+          <time class="post-metadata__timestamp" datetime="2021-09-23T07:45"></time><div>Last updated: <span>Thursday Sep 23, 2021 07:45</span></div>
+          </div>
+        </header>
+        <!--END layouts/partials/date-and-tags.html -->
+        <!-- BEGIN layouts/partials/drop-caps.html -->
+        <section class="content c-drop-caps drop-caps_goudy">
+          <p>Big-O, Big-Omega, and Big-Theta notations are used to describe some aspect of an algorithm (usually the running time or the memory resources it needs) relative to the size of the input data.</p>
+<dl>
+<dt>big-o notation</dt>
+<dd>describes the asymptotic upper bound. In other words, if \(f(n)\) describes the running time of an algorithm; \(f(n) \text{ is said to be } O(g(n))\) if there exists a positive constant \(C \text{ and } n_0\) such that \(0 \le f(n) \le c g(n) \text{ for all } n \ge n_0\).</dd>
+<dt>big-omega notation \(\Omega\)</dt>
+<dd>describes the asymptotic lower bound. In other words, if \(f(n)\) describes the running time of an algorithm; \(f(n) \text{ is said to be } \Omega(g(n))\) if there exists a positive constant \(C \text{ and } n_0\) such that \(0 \le cg(n) \le f(n) \text{ for all } n \ge n_0\).</dd>
+<dt>big-theta notation \(\Theta\)</dt>
+<dd>describes the running time or memory usage. It seems to exist only when \(O(g(n)) == \Omega(g(n))\). In other words, if \(f(n)\) is the running time of an algorithm, then \(f(n)\) is said to be \(\Theta(g(n))\) if \(f(n) == O(g(n)) \text{ and } f(n) == \Omega(g(n))\). Mathematically, \(0 \le f(n) \le C_{1}g(n) \text{ for } n \ge n_0 \text{ and } 0 \le C_{2}g(n) \le f(n) \text{ for } n \ge n_0\). These equations can be merged into \(0 \le C_{2}g(n) \le f(n) \le C_{1}g(n) \text{ for } n \ge n_0\). In other words, \(f(n)\) is sandwiched between \(C_{2}g(n) \text{ and } C_{1}g(n)\).</dd>
+</dl>
+<p>Here is a summary of these three asymptotic notations. They are used to express the computational complexity of an algorithm.</p>
+<table>
+<thead>
+<tr>
+<th>Big-O (<strong>O</strong>)</th>
+<th>Big-Omega (\(\Omega\))</th>
+<th>Big-Theta (\(\Theta\))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The maximum rate of growth of an algorithm can be characterized as less than or equal to a given function.</td>
+<td>The minimun rate of growth of an algorithm can be characterized as greater than or equal to a given function.</td>
+<td>The rate of growth of an algorithm is equal to a given function.</td>
+</tr>
+<tr>
+<td>The algorithm&rsquo;s asymptotic upper bound.</td>
+<td>The algorithm&rsquo;s aymptotic lower bound.</td>
+<td>The algorithm has an asymptotically tight bound.</td>
+</tr>
+<tr>
+<td>Worst case or ceiling of the growth rate.</td>
+<td>Best case or floor of the growth rate.</td>
+<td>The worst case and best case of the growth rate is characterized by the same function or that they converge on said function.</td>
+</tr>
+</tbody>
+</table>
+
+        </section>
+        <!--END layouts/partials/drop-caps.html -->
+        <!-- END main layouts/_default/single.html -->
+      </main>
+    </div> <!-- class wrapper-content -->
+    <div class="wrapper-footer">
+    <!-- BEGIN layouts/partials/footer.html -->
+    <footer class="main-footer">
+      <div class="container">
+        (c) 2015-2021 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a> except where indicated otherwise. Made with Markdown, HTML, CSS, JavaScript, joy, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.
+          <div class="social">
+
+
+
+<ul class="social-items">
+  <li class="social-item">
+    <a href="https://github.com/dbc60"
+       target="_blank" rel="noopener noreferrer"
+       title="My GitHub repositories"
+       class="github">
+      <span class="icon icon-github2"></span>
+      GitHub
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="https://news.ycombinator.com/user?id=dcuthbertson"
+       target="_blank" rel="noopener noreferrer"
+       title="Sometimes I write comments on Hacker News"
+       class="hackernews">
+      <span class="icon icon-info2"></span>
+      Hacker News
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="https://www.instagram.com/dbc60/"
+       target="_blank" rel="noopener noreferrer"
+       title="Instagram - It's been a while"
+       class="instagram">
+      <span class="icon icon-instagram"></span>
+      Instagram
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="https://www.linkedin.com/in/douglas-cuthbertson-0487001/"
+       target="_blank" rel="noopener noreferrer"
+       title="I'm on LinkedIn"
+       class="linkedin">
+      <span class="icon icon-linkedin-square1"></span>
+      LinkedIn</a>
+    </li>
+  <li class="social-item">
+    <a href="https://www.pinterest.com/dougcuthbertson/"
+       target="_blank" rel="noopener noreferrer"
+       title="I haven't posted on Pinterest, yet"
+       class="pinterest">
+      <span class="icon icon-pinterest"></span>
+      Pinterest
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="https://www.reddit.com/user/dbc60"
+       target="_blank" rel="noopener noreferrer"
+       title="I read Reddit"
+       class="reddit">
+      <span class="icon icon-reddit"></span>
+      Reddit
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="https://stackoverflow.com/users/165347/doug-cuthbertson"
+       target="_blank" rel="noopener noreferrer"
+       title="I once answered a question on Stackoverflow"
+       class="stackoverflow">
+      <span class="icon icon-stackoverflow"></span>
+      Stackoverflow
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="https://dbc60.tumblr.com"
+       target="_blank" rel="noopener noreferrer"
+       title="I post on Tumblr once in a blue moon"
+       class="pinterest">
+      <span class="icon icon-tumblr"></span>
+      Tumblr
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="https://twitter.com/DougCuthbertson?ref_src=twsrc%5Etfw"
+       target="_blank" rel="noopener noreferrer"
+       title="Follow me on Twitter"
+       class="twitter"
+       data-show-count="false">
+      <span class="icon icon-twitter2"></span>
+      Twitter
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="https://www.youtube.com/channel/UCjYq4zK5Pc2vxwpCWUotPxg?view_as=subscriber"
+       target="_blank" rel="noopener noreferrer"
+       title="Not much to see from me on YouTube"
+       class="youtube">
+      <span class="icon icon-youtube"></span>
+      YouTube
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="mailto:doug.cuthbertson@gmail.com"
+       target="_blank" rel="noopener noreferrer"
+       title="Contact me via email"
+       class="email">
+      <span class="icon icon-send-o"></span>
+      email
+    </a>
+  </li>
+</ul>
+</div>
+      </div>
+    </footer>
+    <!-- END layouts/partials/footer.html -->
+    <!-- BEGIN layouts/partials/postScript.html -->
+    <!-- BEGIN layouts/partials/mathjax.html -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] },
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          displayMath: [['$$','$$'], ['\\[','\\]']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+    <script async type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="\/scripts\/MathJax-2.7.5\/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')</script>
+    <!-- END layouts/partials/mathjax.html -->
+    <!-- END layouts/partials/postScript.html -->
+    </div>
+  </body>
+</html>

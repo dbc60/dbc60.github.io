@@ -9,10 +9,19 @@
     <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2021 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/) except where indicated otherwise</copyright>
-    <lastBuildDate>Thu, 23 Sep 2021 17:59:37 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 24 Sep 2021 09:05:15 -0400</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/2021/09/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Create Table</title>
+      <link>https://douglascuthbertson.com/evergreen-notes/create-table/</link>
+      <pubDate>Fri, 24 Sep 2021 09:05:15 -0400</pubDate>
+      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      <guid>https://douglascuthbertson.com/evergreen-notes/create-table/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Create Table Heading</title>
@@ -317,8 +326,7 @@
 &lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;buildTable&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$data&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;table&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-</description>
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -539,8 +547,7 @@
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-</description>
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -1157,6 +1164,51 @@
 &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;table&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Asymptotic Notation</title>
+      <link>https://douglascuthbertson.com/evergreen-notes/asymptotic-notation/</link>
+      <pubDate>Thu, 23 Sep 2021 07:45:20 -0400</pubDate>
+      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      <guid>https://douglascuthbertson.com/evergreen-notes/asymptotic-notation/</guid>
+      <description>&lt;p&gt;Big-O, Big-Omega, and Big-Theta notations are used to describe some aspect of an algorithm (usually the running time or the memory resources it needs) relative to the size of the input data.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;big-o notation&lt;/dt&gt;
+&lt;dd&gt;describes the asymptotic upper bound. In other words, if \(f(n)\) describes the running time of an algorithm; \(f(n) \text{ is said to be } O(g(n))\) if there exists a positive constant \(C \text{ and } n_0\) such that \(0 \le f(n) \le c g(n) \text{ for all } n \ge n_0\).&lt;/dd&gt;
+&lt;dt&gt;big-omega notation \(\Omega\)&lt;/dt&gt;
+&lt;dd&gt;describes the asymptotic lower bound. In other words, if \(f(n)\) describes the running time of an algorithm; \(f(n) \text{ is said to be } \Omega(g(n))\) if there exists a positive constant \(C \text{ and } n_0\) such that \(0 \le cg(n) \le f(n) \text{ for all } n \ge n_0\).&lt;/dd&gt;
+&lt;dt&gt;big-theta notation \(\Theta\)&lt;/dt&gt;
+&lt;dd&gt;describes the running time or memory usage. It seems to exist only when \(O(g(n)) == \Omega(g(n))\). In other words, if \(f(n)\) is the running time of an algorithm, then \(f(n)\) is said to be \(\Theta(g(n))\) if \(f(n) == O(g(n)) \text{ and } f(n) == \Omega(g(n))\). Mathematically, \(0 \le f(n) \le C_{1}g(n) \text{ for } n \ge n_0 \text{ and } 0 \le C_{2}g(n) \le f(n) \text{ for } n \ge n_0\). These equations can be merged into \(0 \le C_{2}g(n) \le f(n) \le C_{1}g(n) \text{ for } n \ge n_0\). In other words, \(f(n)\) is sandwiched between \(C_{2}g(n) \text{ and } C_{1}g(n)\).&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Here is a summary of these three asymptotic notations. They are used to express the computational complexity of an algorithm.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Big-O (&lt;strong&gt;O&lt;/strong&gt;)&lt;/th&gt;
+&lt;th&gt;Big-Omega (\(\Omega\))&lt;/th&gt;
+&lt;th&gt;Big-Theta (\(\Theta\))&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The maximum rate of growth of an algorithm can be characterized as less than or equal to a given function.&lt;/td&gt;
+&lt;td&gt;The minimun rate of growth of an algorithm can be characterized as greater than or equal to a given function.&lt;/td&gt;
+&lt;td&gt;The rate of growth of an algorithm is equal to a given function.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;The algorithm&amp;rsquo;s asymptotic upper bound.&lt;/td&gt;
+&lt;td&gt;The algorithm&amp;rsquo;s aymptotic lower bound.&lt;/td&gt;
+&lt;td&gt;The algorithm has an asymptotically tight bound.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Worst case or ceiling of the growth rate.&lt;/td&gt;
+&lt;td&gt;Best case or floor of the growth rate.&lt;/td&gt;
+&lt;td&gt;The worst case and best case of the growth rate is characterized by the same function or that they converge on said function.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
     </item>
     
   </channel>
