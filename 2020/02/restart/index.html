@@ -3,7 +3,8 @@
     
     
     
-    <!-- BEGIN layouts/partials/head__meta.html --><meta charset="utf-8">
+    <!-- BEGIN layouts/partials/head__meta.html -->
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="">
@@ -20,10 +21,10 @@
     <meta property="og:image:height" content="279">
     <meta property="og:image" content="https://douglascuthbertson.com/images/og-image.jpg">
     <meta name="twitter:title" content="Doug&#39;s Blog">
-    <meta name="generator" content="Hugo 0.83.1" />
-    <meta name="robots" content="index, follow"><meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="/images/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="generator" content="Hugo 0.89.0-DEV" />
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e3e3e3">
+    <link rel="author" href="https://douglascuthbertson.com/humans.txt" />
     <!-- END layouts/partials/head__meta.html -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://douglascuthbertson.com/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://douglascuthbertson.com/images/favicon-32x32.png">
@@ -34,14 +35,18 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.e716a0cb599e56d8de154fbc1494cba7f3624576ace807afabb785585ec74b80.css"
-      integrity="sha256-5xagy1meVtjeFU&#43;8FJTLp/NiRXas6Aevq7eFWF7HS4A="
+      href="https://douglascuthbertson.com/style/style.min.e91d43d07e659ed4015b2396d73865e3db27546e259ee42977155a48ba33d798.css"
+      integrity="sha256-6R1D0H5lntQBWyOW1zhl49snVG4lnuQpdxVaSLoz15g="
       media="screen">
 
   <title>
     Restart | Doug&#39;s Blog
   </title>
     <!-- BEGIN head__scripts.html -->
+
+    
+
+    
     <!-- END head__scripts.html -->
 </head>
 <body><div class="masthead"><header class="main-head">
@@ -55,6 +60,7 @@
 </header>
   <nav class="main-nav"><div class="main-nav__items">
       <a class="main-nav__link " href="https://douglascuthbertson.com/">Home</a>
+      <a class="main-nav__link " href="https://douglascuthbertson.com/post/">Posts</a>
       <a class="main-nav__link " href="https://douglascuthbertson.com/about/">About</a>
       <a class="main-nav__link " href="https://douglascuthbertson.com/now/">Now</a>
       <a class="main-nav__link " href="https://douglascuthbertson.com/index.xml">RSS</a>
@@ -86,6 +92,7 @@
             
 
             <!-- range by title -->
+                
                 <li class="collection-item"><a class="secondary-nav__link" href="https://douglascuthbertson.com/post/">Posts</a></li>  
             </ul>
 <!--END layouts/partials/items-contents.html -->
@@ -95,6 +102,10 @@
             <span class="wrapper-collection-border icon icon-quill"> </span>
             <span class="wrapper-collection-border title">Latest</span><ul class="collection-items">
 <!-- BEGIN layouts/partials/items-latest.html --><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/">
+        A Table Shortcode for Hugo
+      </a>
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/11/waiting-for-election-results/">
         Waiting for Election Results
       </a>
@@ -129,10 +140,6 @@
     </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/03/fixing-the-width/">
         Fixing the Width
-      </a>
-    </li><li class="collection-item">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/">
-        The Pursuit of Happiness Gels in the Imagination
       </a>
     </li><!--END layouts/partials/items-latest.html -->
 </ul>
@@ -186,7 +193,7 @@
         <!-- BEGIN layouts/partials/date-and-tags.html -->
         <header class="article-meta-data"><div class="post-metadata">
           <time class="post-metadata__timestamp" datetime="2020-02-15">Saturday Feb 15, 2020</time>
-            - 7 min read - 1397 words.
+            - 7 min read - 1384 words.
           <time class="post-metadata__timestamp" datetime="2020-02-11T05:48"></time><div>Last updated: <span>Tuesday Feb 11, 2020 05:48</span></div>
           <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a><a class="tag" href="https://douglascuthbertson.com/tags/static-site-generator">static-site-generator</a><a class="tag" href="https://douglascuthbertson.com/tags/jekyll">jekyll</a><a class="tag" href="https://douglascuthbertson.com/tags/compass">compass</a><a class="tag" href="https://douglascuthbertson.com/tags/hugo">hugo</a><a class="tag" href="https://douglascuthbertson.com/tags/sphinx">sphinx</a><a class="tag" href="https://douglascuthbertson.com/tags/zettelkasten">zettelkasten</a></div>
           </div>
@@ -202,36 +209,13 @@
 <p>I installed and configured Ruby (Jekyll is written in Ruby, but is not a standalone executable), Bundler to keep Ruby gems up-to-date, Compass to generate CSS from SASS/SCSS, and Jekyll of course, and settled in to learn how to create a blog. After reading a lot of docs, and experimenting a lot with HTML and SCSS, I had a working blog. It was kind of ugly, but it was functional. It had two columns, the left for posts and the right for links to posts by year. As I recall, it took quite a bit of effort to put together the markup, styling, and learn how to use the Liquid Template engine to pull together things like lists of posts by year, month, and day.</p>
 <p>At first, the writing and learning experience was delightful. I have a note from March 7, 2016 that says, &ldquo;Jekyll is really easy to install and use. What takes time is learning enough about its bells and whistles, markdown, HTML, CSS, and Sass to make a blog or website you&rsquo;re own.&rdquo;</p>
 <p>I had a couple of <code>.bat</code> files to update and launch Jekyll and Compass. The first was <code>_build\start.bat</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html">  @echo off
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">  @echo off
   REM Update all the gems and then start Compass and Jekyll
   call bundle update
   SET PROJECT_PATH=%~dp0
   call %PROJECT_PATH%quick-start.bat
-</code></pre></td></tr></table>
-</div>
-</div><p>The second was <code>quick-start.bat</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  @echo off
+</code></pre></div><p>The second was <code>quick-start.bat</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  @echo off
   REM Start Compass and Jekyll without updating gems
   start bundle <span class="nb">exec</span> compass watch
 
@@ -239,9 +223,7 @@
   @ping 192.0.2.2 -n <span class="m">1</span> -w <span class="m">4000</span> &gt; nul
 
   start bundle <span class="nb">exec</span> jekyll s --port <span class="m">4000</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>All I had to do was run <code>build\start.bat</code> and open a browser to <code>http://localhost:4000</code>. Each time I edited and saved a file, the view in the browser would update after a second or so. Blogging life was good.</p>
+</code></pre></div><p>All I had to do was run <code>build\start.bat</code> and open a browser to <code>http://localhost:4000</code>. Each time I edited and saved a file, the view in the browser would update after a second or so. Blogging life was good.</p>
 <p>Later came a series of annoyances. It started with Compass crashing a lot when editing scss files. Compass was valuable for its math library. I found the exponentiation and logarithm functions most valuable. I used them for calculating the luminance of a color and the contrast ratio between two colors.</p>
 <p>The crashes got so annoying that I stopped using Compass in September of 2016. Compass wasn&rsquo;t being maintained anymore, and I wasn&rsquo;t about to start learning Ruby just to be able to write a blog. Fortunately, I learned that Jekyll had a built-in sass compiler. I also figured out how to write the color luminance and contrast ratio functions in pure sass, so I didn&rsquo;t need Compass' math library either. I don&rsquo;t use scss currently. I guess (hope) luminance and contrast ratios are built-in functions by now, but in case they aren&rsquo;t, <a href="https://gist.github.com/dbc60/451f16c588b806967b706b45829e49dc"target="_blank">here&rsquo;s a gist</a> with those functions and a few others. Feel free to use it as you will.</p>
 <p>In October of 2016, the <code>--watch</code> option being disabled for Windows in version 3.3.0 of Jekyll. That option was originally intended for BASH on Windows, but was extended to the default <code>cmd.exe</code> and PowerShell. I found a fix among the <a href="https://github.com/jekyll/jekyll/issues/5462#issuecomment-253982908"target="_blank">comments</a> in <a href="https://github.com/jekyll/jekyll/issues/5462"target="_blank">Jekyll issue 5462</a>. The comments said the underlying problem in BASH on Windows has been fixed, so <code>--watch</code> will be enabled in a later release. A temporary fix was to open <code>vendor\bundle\gems\jekyll-3.3.0\lib\jekyll\commands\build.rb</code> and replace the line <code>if Utils::Platforms.windows?</code> with <code>unless Utils::Platforms.windows?</code>.</p>

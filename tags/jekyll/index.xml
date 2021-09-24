@@ -28,36 +28,13 @@
 &lt;p&gt;I installed and configured Ruby (Jekyll is written in Ruby, but is not a standalone executable), Bundler to keep Ruby gems up-to-date, Compass to generate CSS from SASS/SCSS, and Jekyll of course, and settled in to learn how to create a blog. After reading a lot of docs, and experimenting a lot with HTML and SCSS, I had a working blog. It was kind of ugly, but it was functional. It had two columns, the left for posts and the right for links to posts by year. As I recall, it took quite a bit of effort to put together the markup, styling, and learn how to use the Liquid Template engine to pull together things like lists of posts by year, month, and day.&lt;/p&gt;
 &lt;p&gt;At first, the writing and learning experience was delightful. I have a note from March 7, 2016 that says, &amp;ldquo;Jekyll is really easy to install and use. What takes time is learning enough about its bells and whistles, markdown, HTML, CSS, and Sass to make a blog or website you&amp;rsquo;re own.&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;I had a couple of &lt;code&gt;.bat&lt;/code&gt; files to update and launch Jekyll and Compass. The first was &lt;code&gt;_build\start.bat&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;  @echo off
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;  @echo off
   REM Update all the gems and then start Compass and Jekyll
   call bundle update
   SET PROJECT_PATH=%~dp0
   call %PROJECT_PATH%quick-start.bat
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;The second was &lt;code&gt;quick-start.bat&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;  @echo off
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The second was &lt;code&gt;quick-start.bat&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;  @echo off
   REM Start Compass and Jekyll without updating gems
   start bundle &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; compass watch
 
@@ -65,9 +42,7 @@
   @ping 192.0.2.2 -n &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -w &lt;span class=&#34;m&#34;&gt;4000&lt;/span&gt; &amp;gt; nul
 
   start bundle &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; jekyll s --port &lt;span class=&#34;m&#34;&gt;4000&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;All I had to do was run &lt;code&gt;build\start.bat&lt;/code&gt; and open a browser to &lt;code&gt;http://localhost:4000&lt;/code&gt;. Each time I edited and saved a file, the view in the browser would update after a second or so. Blogging life was good.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;All I had to do was run &lt;code&gt;build\start.bat&lt;/code&gt; and open a browser to &lt;code&gt;http://localhost:4000&lt;/code&gt;. Each time I edited and saved a file, the view in the browser would update after a second or so. Blogging life was good.&lt;/p&gt;
 &lt;p&gt;Later came a series of annoyances. It started with Compass crashing a lot when editing scss files. Compass was valuable for its math library. I found the exponentiation and logarithm functions most valuable. I used them for calculating the luminance of a color and the contrast ratio between two colors.&lt;/p&gt;
 &lt;p&gt;The crashes got so annoying that I stopped using Compass in September of 2016. Compass wasn&amp;rsquo;t being maintained anymore, and I wasn&amp;rsquo;t about to start learning Ruby just to be able to write a blog. Fortunately, I learned that Jekyll had a built-in sass compiler. I also figured out how to write the color luminance and contrast ratio functions in pure sass, so I didn&amp;rsquo;t need Compass&#39; math library either. I don&amp;rsquo;t use scss currently. I guess (hope) luminance and contrast ratios are built-in functions by now, but in case they aren&amp;rsquo;t, &lt;a href=&#34;https://gist.github.com/dbc60/451f16c588b806967b706b45829e49dc&#34;target=&#34;_blank&#34;&gt;here&amp;rsquo;s a gist&lt;/a&gt; with those functions and a few others. Feel free to use it as you will.&lt;/p&gt;
 &lt;p&gt;In October of 2016, the &lt;code&gt;--watch&lt;/code&gt; option being disabled for Windows in version 3.3.0 of Jekyll. That option was originally intended for BASH on Windows, but was extended to the default &lt;code&gt;cmd.exe&lt;/code&gt; and PowerShell. I found a fix among the &lt;a href=&#34;https://github.com/jekyll/jekyll/issues/5462#issuecomment-253982908&#34;target=&#34;_blank&#34;&gt;comments&lt;/a&gt; in &lt;a href=&#34;https://github.com/jekyll/jekyll/issues/5462&#34;target=&#34;_blank&#34;&gt;Jekyll issue 5462&lt;/a&gt;. The comments said the underlying problem in BASH on Windows has been fixed, so &lt;code&gt;--watch&lt;/code&gt; will be enabled in a later release. A temporary fix was to open &lt;code&gt;vendor\bundle\gems\jekyll-3.3.0\lib\jekyll\commands\build.rb&lt;/code&gt; and replace the line &lt;code&gt;if Utils::Platforms.windows?&lt;/code&gt; with &lt;code&gt;unless Utils::Platforms.windows?&lt;/code&gt;.&lt;/p&gt;

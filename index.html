@@ -3,7 +3,8 @@
     
     
     
-    <!-- BEGIN layouts/partials/head__meta.html --><meta charset="utf-8">
+    <!-- BEGIN layouts/partials/head__meta.html -->
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="">
@@ -20,10 +21,10 @@
     <meta property="og:image:height" content="279">
     <meta property="og:image" content="https://douglascuthbertson.com/images/og-image.jpg">
     <meta name="twitter:title" content="Doug&#39;s Blog">
-    <meta name="generator" content="Hugo 0.83.1" />
-    <meta name="robots" content="index, follow"><link rel="alternate" type="application/rss&#43;xml" href="https://douglascuthbertson.com/index.xml"><meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="/images/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="generator" content="Hugo 0.89.0-DEV" />
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e3e3e3">
+    <link rel="author" href="https://douglascuthbertson.com/humans.txt" />
     <!-- END layouts/partials/head__meta.html -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://douglascuthbertson.com/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://douglascuthbertson.com/images/favicon-32x32.png">
@@ -34,14 +35,18 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.e716a0cb599e56d8de154fbc1494cba7f3624576ace807afabb785585ec74b80.css"
-      integrity="sha256-5xagy1meVtjeFU&#43;8FJTLp/NiRXas6Aevq7eFWF7HS4A="
+      href="https://douglascuthbertson.com/style/style.min.e91d43d07e659ed4015b2396d73865e3db27546e259ee42977155a48ba33d798.css"
+      integrity="sha256-6R1D0H5lntQBWyOW1zhl49snVG4lnuQpdxVaSLoz15g="
       media="screen">
 
   <title>
     Doug&#39;s Blog
   </title>
     <!-- BEGIN head__scripts.html -->
+
+    
+
+    
     <!-- END head__scripts.html -->
 </head>
 <body><div class="masthead"><header class="main-head">
@@ -54,7 +59,8 @@
 </div>
 </header>
   <nav class="main-nav"><div class="main-nav__items">
-      <a class="main-nav__link navLink-active" href="https://douglascuthbertson.com/">Home</a>
+      <a class="main-nav__link " href="https://douglascuthbertson.com/">Home</a>
+      <a class="main-nav__link " href="https://douglascuthbertson.com/post/">Posts</a>
       <a class="main-nav__link " href="https://douglascuthbertson.com/about/">About</a>
       <a class="main-nav__link " href="https://douglascuthbertson.com/now/">Now</a>
       <a class="main-nav__link " href="https://douglascuthbertson.com/index.xml">RSS</a>
@@ -80,6 +86,7 @@
             
 
             <!-- range by title -->
+                
                 <li class="collection-item"><a class="secondary-nav__link" href="https://douglascuthbertson.com/post/">Posts</a></li>  
             </ul>
 <!--END layouts/partials/items-contents.html -->
@@ -89,6 +96,10 @@
             <span class="wrapper-collection-border icon icon-quill"> </span>
             <span class="wrapper-collection-border title">Latest</span><ul class="collection-items">
 <!-- BEGIN layouts/partials/items-latest.html --><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/">
+        A Table Shortcode for Hugo
+      </a>
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/11/waiting-for-election-results/">
         Waiting for Election Results
       </a>
@@ -123,10 +134,6 @@
     </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/03/fixing-the-width/">
         Fixing the Width
-      </a>
-    </li><li class="collection-item">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/">
-        The Pursuit of Happiness Gels in the Imagination
       </a>
     </li><!--END layouts/partials/items-latest.html -->
 </ul>
@@ -179,6 +186,32 @@
     <!-- BEGIN main in layouts/index.html -->
       <div class="content">
         <!-- Paginates through content/post/*.md -->
+        <section class="page-summary">
+          <div class="flex-row">
+            <div class="pl3-ns">
+              <a href="https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/" class="db grow">
+                <img src="https://douglascuthbertson.comimages/banners/chinese-alligator_00001.jpg" alt=Chinese&#32;Alligator>
+              </a>
+            </div>
+            <div class="pr3-ns">
+              <h2 class="title-article-item"><a href="https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/">A Table Shortcode for Hugo</a></h2>
+        <!-- BEGIN layouts/partials/date-and-tags.html -->
+        <header class="article-meta-data"><div class="post-metadata">
+          <time class="post-metadata__timestamp" datetime="2021-09-23">Thursday Sep 23, 2021</time>
+            - 7 min read - 1457 words.
+          <time class="post-metadata__timestamp" datetime="2021-09-23T10:59"></time><div>Last updated: <span>Thursday Sep 23, 2021 10:59</span></div>
+          </div>
+        </header>
+        <!--END layouts/partials/date-and-tags.html -->
+<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->    <!-- BEGIN layouts/_default/summary.html-->
+    <p>I write a lot of notes in Markdown files and use Hugo to display them in a browser. It makes for easy reading and jumping among them. Several months ago, I needed to create some tables where some cells spanned mulitple rows or columns. That&rsquo;s not possible with Markdown tables. Creating tables in HTML with appropriate classes seemed tedious. I thought it might be less so by defining tables in <a href="https://toml.io/en/"target="_blank">TOML</a> and use a shortcode to translate them into HTML.</p>
+    <footer class="read-more">
+      <a href='https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/'><span class="read-more">Read more →</span></a>
+    </footer>
+    <!-- END layouts/_default/summary.html-->
+            </div>
+          </div>
+        </section>
         <section class="page-summary">
           <div class="flex-row">
             <div class="pl3-ns">
@@ -246,7 +279,7 @@
         <!-- BEGIN layouts/partials/date-and-tags.html -->
         <header class="article-meta-data"><div class="post-metadata">
           <time class="post-metadata__timestamp" datetime="2020-02-22">Saturday Feb 22, 2020</time>
-            - 16 min read - 3392 words.
+            - 15 min read - 3181 words.
           <time class="post-metadata__timestamp" datetime="2020-02-22T17:38"></time><div>Last updated: <span>Saturday Feb 22, 2020 17:38</span></div>
           <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a><a class="tag" href="https://douglascuthbertson.com/tags/hugo">hugo</a><span class="featured-copyright"><em>The Hugo logo is copyright © Steve Francia 2013–2021.</em></span></div>
           </div>
@@ -273,7 +306,7 @@
         <!-- BEGIN layouts/partials/date-and-tags.html -->
         <header class="article-meta-data"><div class="post-metadata">
           <time class="post-metadata__timestamp" datetime="2020-02-15">Saturday Feb 15, 2020</time>
-            - 7 min read - 1397 words.
+            - 7 min read - 1384 words.
           <time class="post-metadata__timestamp" datetime="2020-02-11T05:48"></time><div>Last updated: <span>Tuesday Feb 11, 2020 05:48</span></div>
           <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a><a class="tag" href="https://douglascuthbertson.com/tags/static-site-generator">static-site-generator</a><a class="tag" href="https://douglascuthbertson.com/tags/jekyll">jekyll</a><a class="tag" href="https://douglascuthbertson.com/tags/compass">compass</a><a class="tag" href="https://douglascuthbertson.com/tags/hugo">hugo</a><a class="tag" href="https://douglascuthbertson.com/tags/sphinx">sphinx</a><a class="tag" href="https://douglascuthbertson.com/tags/zettelkasten">zettelkasten</a></div>
           </div>
@@ -408,7 +441,7 @@
         <!-- BEGIN layouts/partials/date-and-tags.html -->
         <header class="article-meta-data"><div class="post-metadata">
           <time class="post-metadata__timestamp" datetime="2016-01-04">Monday Jan 4, 2016</time>
-            - 2 min read - 402 words.
+            - 2 min read - 359 words.
           <time class="post-metadata__timestamp" datetime="2016-01-04T00:00"></time><div>Last updated: <span>Monday Jan 4, 2016 00:00</span></div>
           <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/programming">programming</a><a class="tag" href="https://douglascuthbertson.com/tags/python">python</a></div>
           </div>
@@ -423,36 +456,27 @@
             </div>
           </div>
         </section>
-        <section class="page-summary">
-          <div class="flex-row">
-            <div class="pl3-ns">
-              <a href="https://douglascuthbertson.com/2015/12/a-blog-on-github/" class="db grow">
-                <img src="https://douglascuthbertson.comimages/banners/motif-number-1.jpg" alt=>
-              </a>
-            </div>
-            <div class="pr3-ns">
-              <h2 class="title-article-item"><a href="https://douglascuthbertson.com/2015/12/a-blog-on-github/">A Blog on GitHub</a></h2>
-        <!-- BEGIN layouts/partials/date-and-tags.html -->
-        <header class="article-meta-data"><div class="post-metadata">
-          <time class="post-metadata__timestamp" datetime="2015-12-30">Wednesday Dec 30, 2015</time>
-            - 3 min read - 567 words.
-          <time class="post-metadata__timestamp" datetime="2015-12-30T00:00"></time><div>Last updated: <span>Wednesday Dec 30, 2015 00:00</span></div>
-          <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a><a class="tag" href="https://douglascuthbertson.com/tags/github">github</a></div>
-          </div>
-        </header>
-        <!--END layouts/partials/date-and-tags.html -->
-<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->    <!-- BEGIN layouts/_default/summary.html-->
-    <p>What do you really need to know to setup a blog on GitHub?</p>
-    <footer class="read-more">
-      <a href='https://douglascuthbertson.com/2015/12/a-blog-on-github/'><span class="read-more">Read more →</span></a>
-    </footer>
-    <!-- END layouts/_default/summary.html-->
-            </div>
-          </div>
-        </section>
         
-
-
+    <ul class="pagination pagination-default">
+      <li class="page-item disabled">
+        <a href="#" aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a href="#" aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item active">
+        <a href="#" aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="https://douglascuthbertson.com/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="https://douglascuthbertson.com/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="https://douglascuthbertson.com/page/2/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
       </div>
     <!-- END main in layouts/index.html -->
       </main>

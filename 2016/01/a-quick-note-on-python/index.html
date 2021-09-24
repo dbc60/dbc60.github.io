@@ -3,7 +3,8 @@
     
     
     
-    <!-- BEGIN layouts/partials/head__meta.html --><meta charset="utf-8">
+    <!-- BEGIN layouts/partials/head__meta.html -->
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="">
@@ -20,10 +21,10 @@
     <meta property="og:image:height" content="279">
     <meta property="og:image" content="https://douglascuthbertson.com/images/og-image.jpg">
     <meta name="twitter:title" content="Doug&#39;s Blog">
-    <meta name="generator" content="Hugo 0.83.1" />
-    <meta name="robots" content="index, follow"><meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="/images/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="generator" content="Hugo 0.89.0-DEV" />
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e3e3e3">
+    <link rel="author" href="https://douglascuthbertson.com/humans.txt" />
     <!-- END layouts/partials/head__meta.html -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://douglascuthbertson.com/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://douglascuthbertson.com/images/favicon-32x32.png">
@@ -34,14 +35,18 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.e716a0cb599e56d8de154fbc1494cba7f3624576ace807afabb785585ec74b80.css"
-      integrity="sha256-5xagy1meVtjeFU&#43;8FJTLp/NiRXas6Aevq7eFWF7HS4A="
+      href="https://douglascuthbertson.com/style/style.min.e91d43d07e659ed4015b2396d73865e3db27546e259ee42977155a48ba33d798.css"
+      integrity="sha256-6R1D0H5lntQBWyOW1zhl49snVG4lnuQpdxVaSLoz15g="
       media="screen">
 
   <title>
     A Quick Note on Python | Doug&#39;s Blog
   </title>
     <!-- BEGIN head__scripts.html -->
+
+    
+
+    
     <!-- END head__scripts.html -->
 </head>
 <body><div class="masthead"><header class="main-head">
@@ -55,6 +60,7 @@
 </header>
   <nav class="main-nav"><div class="main-nav__items">
       <a class="main-nav__link " href="https://douglascuthbertson.com/">Home</a>
+      <a class="main-nav__link " href="https://douglascuthbertson.com/post/">Posts</a>
       <a class="main-nav__link " href="https://douglascuthbertson.com/about/">About</a>
       <a class="main-nav__link " href="https://douglascuthbertson.com/now/">Now</a>
       <a class="main-nav__link " href="https://douglascuthbertson.com/index.xml">RSS</a>
@@ -86,6 +92,7 @@
             
 
             <!-- range by title -->
+                
                 <li class="collection-item"><a class="secondary-nav__link" href="https://douglascuthbertson.com/post/">Posts</a></li>  
             </ul>
 <!--END layouts/partials/items-contents.html -->
@@ -95,6 +102,10 @@
             <span class="wrapper-collection-border icon icon-quill"> </span>
             <span class="wrapper-collection-border title">Latest</span><ul class="collection-items">
 <!-- BEGIN layouts/partials/items-latest.html --><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/">
+        A Table Shortcode for Hugo
+      </a>
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2020/11/waiting-for-election-results/">
         Waiting for Election Results
       </a>
@@ -129,10 +140,6 @@
     </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/03/fixing-the-width/">
         Fixing the Width
-      </a>
-    </li><li class="collection-item">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/">
-        The Pursuit of Happiness Gels in the Imagination
       </a>
     </li><!--END layouts/partials/items-latest.html -->
 </ul>
@@ -186,7 +193,7 @@
         <!-- BEGIN layouts/partials/date-and-tags.html -->
         <header class="article-meta-data"><div class="post-metadata">
           <time class="post-metadata__timestamp" datetime="2016-01-04">Monday Jan 4, 2016</time>
-            - 2 min read - 402 words.
+            - 2 min read - 359 words.
           <time class="post-metadata__timestamp" datetime="2016-01-04T00:00"></time><div>Last updated: <span>Monday Jan 4, 2016 00:00</span></div>
           <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/programming">programming</a><a class="tag" href="https://douglascuthbertson.com/tags/python">python</a></div>
           </div>
@@ -199,54 +206,7 @@
 <p>I had no illusions it was going to cover the language in any depth. Still, it is only about 45 minutes long, so I decided to take a look. It actually hit a lot of highlights and was a nice overview of the language.</p>
 <p>For example, it introduces the built-in operators and data types. It goes over the <code>for</code> and <code>while</code> loops. It also covers several other programming concepts. If you&rsquo;ve never seen Python before, this video is worth a look.</p>
 <p>I recently picked up a copy of Steven Skiena&rsquo;s &ldquo;Programming Challenges&rdquo; and started going through the problems. To see if I learned anything from the video, I tried coding the first puzzle, the <a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=3&amp;page=show_problem&amp;problem=36"target="_blank"><code>3n+1</code> problem</a>. The link is to the puzzle on the <a href="https://uva.onlinejudge.org/"target="_blank">UVa Online Judge</a>, where one can submit code in C, C++, Java or Pascal. Sadly, they don&rsquo;t support Python. Nevertheless, here&rsquo;s my version in Python:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="c1"># Execute: &#34;python p100.py &lt; data&#34; where &#39;data&#39; is the input file, two integers per line.</span>
 <span class="k">def</span> <span class="nf">cycle_length</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -285,13 +245,11 @@
             <span class="k">if</span> <span class="n">length</span> <span class="o">&gt;</span> <span class="n">max_cycle_length</span><span class="p">:</span>
                 <span class="n">max_cycle_length</span> <span class="o">=</span> <span class="n">length</span>
 
-        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">original_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">max_cycle_length</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">original_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">original_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">max_cycle_length</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>I think the only thing here that wasn&rsquo;t covered in the video is reading from stdin.</p>
+</code></pre></div><p>I think the only thing here that wasn&rsquo;t covered in the video is reading from stdin.</p>
         </section>
         <!--END layouts/partials/drop-caps.html -->
         <!-- END main layouts/_default/single.html -->
