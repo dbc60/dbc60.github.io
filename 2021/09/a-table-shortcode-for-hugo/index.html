@@ -35,8 +35,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.3e4e48b6f8a46917e82755b716a3768b8e4dea5900a81f9848e01cc8a8a96282.css"
-      integrity="sha256-Pk5ItvikaRfoJ1W3FqN2i45N6lkAqB&#43;YSOAcyKipYoI="
+      href="https://douglascuthbertson.com/style/style.min.9e58aee58bdd58c55f2bb9e49581aca87b84b29b1e1e28e3b23cbfd132f1eee1.css"
+      integrity="sha256-nliu5YvdWMVfK7nklYGsqHuEspseHijjsjy/0TLx7uE="
       media="screen">
 
   <title>
@@ -193,7 +193,7 @@
         <!-- BEGIN layouts/partials/date-and-tags.html -->
         <header class="article-meta-data"><div class="post-metadata">
           <time class="post-metadata__timestamp" datetime="2021-09-23">Thursday Sep 23, 2021</time>
-            - 7 min read - 1457 words.
+            - 7 min read - 1458 words.
           <time class="post-metadata__timestamp" datetime="2021-09-23T10:59"></time><div>Last updated: <span>Thursday Sep 23, 2021 10:59</span></div>
           </div>
         </header>
@@ -585,74 +585,76 @@
   <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
 <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
 </code></pre></div></a>
-<p><a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/build-table-initialization/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="c">&lt;!&ndash; Table data is always a map &ndash;&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$table</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveHead</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$colGroupValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$headValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="cp">-}}</span>
+<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/begin-buildtable-template/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{-</span><span class="w"> </span><span class="nx">define</span><span class="w"> </span><span class="s">&#34;buildTable&#34;</span><span class="w"> </span><span class="cp">-}}</span>
 </code></pre></div></a>
-<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/table-collect-keys/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template">  <span class="c">&lt;!&ndash; collect all the keys in the map &ndash;&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$key</span><span class="o">,</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">$table</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&quot;body&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="cp">}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&quot;caption&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&quot;colgroup&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$colGroupValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&quot;head&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveHead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$headValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&quot;foot&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="cp">}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span><span class="c">&lt;!&ndash; key is foot &ndash;&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/build-table-initialization/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="c">&lt;!-- Table data is always a map --&gt;</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$table</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveHead</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$colGroupValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$headValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
 </code></pre></div></a>
-<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/table-capture-values/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template">  <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="cp">-}}</span><span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$colGroupValue</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="p">&lt;</span><span class="nt">colgroup</span><span class="p">&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&quot;createColgroup&quot;</span><span class="w"> </span><span class="nx">$colGroupValue</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="p">&lt;/</span><span class="nt">colgroup</span><span class="p">&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$headValue</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&quot;createRowsHead&quot;</span><span class="w"> </span><span class="nx">$headValue</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&quot;createRows&quot;</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="p">&lt;</span><span class="nt">tfoot</span><span class="p">&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&quot;createRows&quot;</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="cp">-}}</span>
-<span class="p">&lt;/</span><span class="nt">tfoot</span><span class="p">&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/table-collect-keys/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template">  <span class="c">&lt;!-- collect all the keys in the map --&gt;</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$key</span><span class="o">,</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">$table</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&#34;body&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="cp">-}}</span>
+        <span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
+        <span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="cp">-}}</span>
+        <span class="cp">{{-</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="cp">}}</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&#34;caption&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&#34;colgroup&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$colGroupValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&#34;head&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveHead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="cp">-}}</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$headValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&#34;foot&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="cp">-}}</span>
+        <span class="cp">{{-</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
+        <span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="cp">-}}</span>
+        <span class="cp">{{-</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="cp">}}</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span><span class="c">&lt;!-- key is foot --&gt;</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</code></pre></div></a>
+<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/table-capture-values/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template">  <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="cp">-}}</span><span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$colGroupValue</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="p">&lt;</span><span class="nt">colgroup</span><span class="p">&gt;</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&#34;createColgroup&#34;</span><span class="w"> </span><span class="nx">$colGroupValue</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="p">&lt;/</span><span class="nt">colgroup</span><span class="p">&gt;</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$headValue</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&#34;createRowsHead&#34;</span><span class="w"> </span><span class="nx">$headValue</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&#34;createRows&#34;</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="p">&lt;</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+      <span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&#34;createRows&#34;</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="cp">-}}</span>
+    <span class="p">&lt;/</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
 </code></pre></div></a>
 <a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/end/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
 </code></pre></div></a>
-<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/table-top-level-definition/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">&gt;</span>
-<span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&quot;buildTable&quot;</span><span class="w"> </span><span class="nx">$data</span><span class="w"> </span><span class="cp">-}}</span>
+<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/table-top-level-definition/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;table&#34;</span><span class="p">&gt;</span>
+<span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&#34;buildTable&#34;</span><span class="w"> </span><span class="nx">$data</span><span class="w"> </span><span class="cp">-}}</span>
 <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-</code></pre></div></a></p>
+</code></pre></div></a>
 </div></a>
         </section>
         <!--END layouts/partials/drop-caps.html -->
