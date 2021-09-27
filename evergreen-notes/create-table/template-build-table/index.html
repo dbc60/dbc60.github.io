@@ -35,8 +35,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.9e58aee58bdd58c55f2bb9e49581aca87b84b29b1e1e28e3b23cbfd132f1eee1.css"
-      integrity="sha256-nliu5YvdWMVfK7nklYGsqHuEspseHijjsjy/0TLx7uE="
+      href="https://douglascuthbertson.com/style/style.min.a383d3b383bbe13ba1b8d1bf6caa649eeae03842ddd6fbdb8986aca779ebaf0e.css"
+      integrity="sha256-o4PTs4O74TuhuNG/bKpknurgOELd1vvbiYasp3nrrw4="
       media="screen">
 
   <title>
@@ -204,7 +204,8 @@
         <section class="content c-drop-caps drop-caps_goudy">
           <div class="content-collection">
 
-<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/build-table-initialization/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="c">&lt;!-- Table data is always a map --&gt;</span>
+<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/build-table-initialization/">
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="c">&lt;!-- Table data is always a map --&gt;</span>
   <span class="cp">{{-</span><span class="w"> </span><span class="nx">$table</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">-}}</span>
   <span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveHead</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="cp">-}}</span>
   <span class="cp">{{-</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="cp">-}}</span>
@@ -213,8 +214,10 @@
   <span class="cp">{{-</span><span class="w"> </span><span class="nx">$bodyValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
   <span class="cp">{{-</span><span class="w"> </span><span class="nx">$headValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
   <span class="cp">{{-</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
-</code></pre></div></a>
-<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/table-collect-keys/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template">  <span class="c">&lt;!-- collect all the keys in the map --&gt;</span>
+</code></pre></div>
+</a>
+<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/table-collect-keys/">
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template">  <span class="c">&lt;!-- collect all the keys in the map --&gt;</span>
   <span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$key</span><span class="o">,</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">$table</span><span class="w"> </span><span class="cp">-}}</span>
     <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="nx">$key</span><span class="w"> </span><span class="s">&#34;body&#34;</span><span class="w"> </span><span class="cp">-}}</span>
       <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">$haveBody</span><span class="w"> </span><span class="cp">-}}</span>
@@ -241,8 +244,10 @@
       <span class="cp">{{-</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$val</span><span class="w"> </span><span class="cp">-}}</span>
     <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
   <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-</code></pre></div></a>
-<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/table-capture-values/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template">  <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</code></pre></div>
+</a>
+<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/table-capture-values/">
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template">  <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
     <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$captionValue</span><span class="w"> </span><span class="cp">-}}</span><span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
   <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
   <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$colGroupValue</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
@@ -265,9 +270,12 @@
       <span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&#34;createRows&#34;</span><span class="w"> </span><span class="nx">$footValue</span><span class="w"> </span><span class="cp">-}}</span>
     <span class="p">&lt;/</span><span class="nt">tfoot</span><span class="p">&gt;</span>
   <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-</code></pre></div></a>
-<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/end/"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-</code></pre></div></a>
+</code></pre></div>
+</a>
+<a class="evergreen-link" href="https://douglascuthbertson.com/evergreen-notes/create-table/end/">
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</code></pre></div>
+</a>
 </div>
         </section>
         <!--END layouts/partials/drop-caps.html -->
