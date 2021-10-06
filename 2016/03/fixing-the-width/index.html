@@ -35,8 +35,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.a383d3b383bbe13ba1b8d1bf6caa649eeae03842ddd6fbdb8986aca779ebaf0e.css"
-      integrity="sha256-o4PTs4O74TuhuNG/bKpknurgOELd1vvbiYasp3nrrw4="
+      href="https://douglascuthbertson.com/style/style.min.4a0c3b3bf0f77122c46cf4366e34c113accd00fc400df5fce451b2fa508dfa58.css"
+      integrity="sha256-Sgw7O/D3cSLEbPQ2bjTBE6zNAPxADfX85FGy&#43;lCN&#43;lg="
       media="screen">
 
   <title>
@@ -191,17 +191,13 @@
       <!-- BEGIN main layouts/_default/single.html -->
         <h2 class="title-article">Fixing the Width</h2>
         <!-- BEGIN layouts/partials/date-and-tags.html -->
-        <header class="article-meta-data"><div class="post-metadata">
-          <time class="post-metadata__timestamp" datetime="2016-03-10">Thursday Mar 10, 2016</time>
-            - 2 min read - 336 words.
-          <time class="post-metadata__timestamp" datetime="2016-03-10T00:00"></time><div>Last updated: <span>Thursday Mar 10, 2016 00:00</span></div>
-          <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a><a class="tag" href="https://douglascuthbertson.com/tags/css">css</a><a class="tag" href="https://douglascuthbertson.com/tags/mathjax">mathjax</a></div>
+        <header class="article-meta-data"><div class="post-metadata"><time class="post-metadata__timestamp" datetime="2016-03-10">Thursday Mar 10, 2016</time>
+          - 2 min read - 336 words.
+          <time class="post-metadata__timestamp" datetime="2016-03-10T00:00"></time><div>Last updated: <span>Thursday Mar 10, 2016 00:00</span></div><div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a><a class="tag" href="https://douglascuthbertson.com/tags/css">css</a><a class="tag" href="https://douglascuthbertson.com/tags/mathjax">mathjax</a></div>
           </div>
         </header>
         <!--END layouts/partials/date-and-tags.html -->
-        <!-- BEGIN layouts/partials/drop-caps.html -->
-        <section class="content c-drop-caps drop-caps_goudy">
-          <p>What an ugly, fragile blog.</p>
+        <!-- BEGIN layouts/partials/drop-caps.html --><section class="content c-drop-caps drop-caps_goudy"><p>What an ugly, fragile blog.</p>
 <p>All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.</p>
 <p>I spent a lot of time trying to figure out what was going wrong. One of the problems was using <code>flex-grow: 1;</code> for the left column and <code>width: auto;</code> on the right. These settings left too many decisions up to the browser. I now calculate the column widths and margins based on the width of the whole body. The code also floats the two columns to the left and right, respectively. It may not be the best solution, but it will do until I learn how to responsive grid systems work.</p>
 <p>I also got rid of jQuery and some other JavaScript. It was a holdover from another website I created a while ago. The only JavaScript remaining is for MathJax, which I plan to use for - what else? - math!</p>
@@ -229,9 +225,7 @@ mx + ny + oz + pw
 \]</p>
 <p>This blog is still quite ugly, but I&rsquo;m feeling better about it after putting in a couple of days work to make the width behave the way I want it to. Now to learn more about layout design, typography, Sass, CSS and how best to put to use semantic HTML5 tags, like  <code>&lt;main&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;header&gt;</code> and others.</p>
 <p><em>2019.07.29 Edit: typos</em>
-<em>2019.08.07 Edit: tags</em></p>
-        </section>
-        <!--END layouts/partials/drop-caps.html -->
+<em>2019.08.07 Edit: tags</em></p></section><!--END layouts/partials/drop-caps.html -->
         <!-- END main layouts/_default/single.html -->
       </main>
     </div> <!-- class wrapper-content -->

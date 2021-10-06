@@ -35,8 +35,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.a383d3b383bbe13ba1b8d1bf6caa649eeae03842ddd6fbdb8986aca779ebaf0e.css"
-      integrity="sha256-o4PTs4O74TuhuNG/bKpknurgOELd1vvbiYasp3nrrw4="
+      href="https://douglascuthbertson.com/style/style.min.4a0c3b3bf0f77122c46cf4366e34c113accd00fc400df5fce451b2fa508dfa58.css"
+      integrity="sha256-Sgw7O/D3cSLEbPQ2bjTBE6zNAPxADfX85FGy&#43;lCN&#43;lg="
       media="screen">
 
   <title>
@@ -191,17 +191,13 @@
       <!-- BEGIN main layouts/_default/single.html -->
         <h2 class="title-article">A New Hugo-Based Blog</h2>
         <!-- BEGIN layouts/partials/date-and-tags.html -->
-        <header class="article-meta-data"><div class="post-metadata">
-          <time class="post-metadata__timestamp" datetime="2020-02-22">Saturday Feb 22, 2020</time>
-            - 15 min read - 3181 words.
-          <time class="post-metadata__timestamp" datetime="2020-02-22T17:38"></time><div>Last updated: <span>Saturday Feb 22, 2020 17:38</span></div>
-          <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a><a class="tag" href="https://douglascuthbertson.com/tags/hugo">hugo</a><span class="featured-copyright"><em>The Hugo logo is copyright © Steve Francia 2013–2021.</em></span></div>
+        <header class="article-meta-data"><div class="post-metadata"><time class="post-metadata__timestamp" datetime="2020-02-22">Saturday Feb 22, 2020</time>
+          - 15 min read - 3181 words.
+          <time class="post-metadata__timestamp" datetime="2020-02-22T17:38"></time><div>Last updated: <span>Saturday Feb 22, 2020 17:38</span></div><div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a><a class="tag" href="https://douglascuthbertson.com/tags/hugo">hugo</a><span class="featured-copyright"><em>The Hugo logo is copyright © Steve Francia 2013–2021.</em></span></div>
           </div>
         </header>
         <!--END layouts/partials/date-and-tags.html -->
-        <!-- BEGIN layouts/partials/drop-caps.html -->
-        <section class="content c-drop-caps drop-caps_goudy">
-          <p>In my <a href="https://douglascuthbertson.com/2020/02/restart/">previous post</a> I talked a little about why and how I started this blog. Here I want to present my experience with <a href="https://gohugo.io/"target="_blank">Hugo</a> and what I like about it.</p>
+        <!-- BEGIN layouts/partials/drop-caps.html --><section class="content c-drop-caps drop-caps_goudy"><p>In my <a href="https://douglascuthbertson.com/2020/02/restart/">previous post</a> I talked a little about why and how I started this blog. Here I want to present my experience with <a href="https://gohugo.io/" class="external-link" target="_blank" rel="noopener">Hugo</a> and what I like about it.</p>
 <aside class="toc">
   <h2 class="toc-title">Contents</h2>
   <nav id="TableOfContents">
@@ -233,10 +229,10 @@
 </nav>
 </aside>
 
-<p>Late in 2018  I came across <a href="https://gohugo.io/"target="_blank">Hugo</a>, a static site generator written in <a href="https://golang.org"target="_blank">Go</a>. Dissatisfied with Jekyll, I needed a different static site generator, and I had been learning Go at Work. This looked like a good opportunity to try blogging again.</p>
+<p>Late in 2018  I came across <a href="https://gohugo.io/" class="external-link" target="_blank" rel="noopener">Hugo</a>, a static site generator written in <a href="https://golang.org" class="external-link" target="_blank" rel="noopener">Go</a>. Dissatisfied with Jekyll, I needed a different static site generator, and I had been learning Go at Work. This looked like a good opportunity to try blogging again.</p>
 <p>I stumbled quite badly a few times along the way. I thought a theme would help me get my site up and running quickly, but they don&rsquo;t balance well with my need to twiddle with the site&rsquo;s layout and look and feel. The long and short of it is, I took what I learned from trying out a couple of themes, and hunkered down to learn a few things about &ldquo;The Hugo Way&rdquo;, and the basics of HTML &amp; CSS.</p>
 <h2 id="the-short-lived-academic-theme">The Short-lived Academic Theme</h2>
-<p>As I have a tendency to do with new tools, I dove in too deep, too fast. Hugo has themes, and they look like a good way to get something up and running quickly. I looked over [`]the theme gallery](<a href="https://themes.gohugo.io/"target="_blank">https://themes.gohugo.io/</a>) checking all the features and how they looked. <a href="https://themes.gohugo.io/academic/"target="_blank">Academic</a> is very flexible and chock full of features. I decided to give it a whirl in February 2019. It looked like this out of the box.</p>
+<p>As I have a tendency to do with new tools, I dove in too deep, too fast. Hugo has themes, and they look like a good way to get something up and running quickly. I looked over [`]the theme gallery](<a href="https://themes.gohugo.io/" class="external-link" target="_blank" rel="noopener">https://themes.gohugo.io/</a>) checking all the features and how they looked. <a href="https://themes.gohugo.io/academic/" class="external-link" target="_blank" rel="noopener">Academic</a> is very flexible and chock full of features. I decided to give it a whirl in February 2019. It looked like this out of the box.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png">
     <img src="https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png"
          alt="First Rendition using Vanilla Bootstrap Theme"></a><figcaption>
@@ -253,8 +249,8 @@
 </figure>
 
 <h2 id="quick-switch-to-vanilla-bootstrap">Quick Switch to Vanilla Bootstrap</h2>
-<p>Sadly, Academic was short lived. By the 9th of the month I gave up on it. For all the features it has, I found it too hard to configure and customize. Don&rsquo;t get me wrong. Academic is amazing and has <a href="https://sourcethemes.com/academic/docs/get-started/"target="_blank">good documentation</a>, but this theme <a href="https://sourcethemes.com/academic/themes/"target="_blank">has its own themes</a>. It&rsquo;s a little more complex than what I needed. Also, I didn&rsquo;t realize at the time, but Academic isn&rsquo;t just a Hugo theme. It is a website builder. It uses Hugo as an engine to bring life to a website rather than being a set of content-decorators run by Hugo.</p>
-<p>Too new to how Hugo workds and the complexities of a website builder, I looked for a simpler solution and settled on <a href="https://themes.gohugo.io/vanilla-bootstrap-hugo-theme/"target="_blank">Vanilla Bootstrap</a>.</p>
+<p>Sadly, Academic was short lived. By the 9th of the month I gave up on it. For all the features it has, I found it too hard to configure and customize. Don&rsquo;t get me wrong. Academic is amazing and has <a href="https://sourcethemes.com/academic/docs/get-started/" class="external-link" target="_blank" rel="noopener">good documentation</a>, but this theme <a href="https://sourcethemes.com/academic/themes/" class="external-link" target="_blank" rel="noopener">has its own themes</a>. It&rsquo;s a little more complex than what I needed. Also, I didn&rsquo;t realize at the time, but Academic isn&rsquo;t just a Hugo theme. It is a website builder. It uses Hugo as an engine to bring life to a website rather than being a set of content-decorators run by Hugo.</p>
+<p>Too new to how Hugo workds and the complexities of a website builder, I looked for a simpler solution and settled on <a href="https://themes.gohugo.io/vanilla-bootstrap-hugo-theme/" class="external-link" target="_blank" rel="noopener">Vanilla Bootstrap</a>.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png">
     <img src="https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png"
          alt="First Rendition using Vanilla Bootstrap Theme"></a><figcaption>
@@ -420,7 +416,7 @@
 </figure>
 
 <h4 id="scrollbar-jumping">Scrollbar Jumping</h4>
-<p>At some point I noticed that when navigating from a page that had no scrollbar (like a short post or note) to one that did (such as the paginated lists of notes displayed above) the whole layout shifted slightly. I found a <a href="https://css-tricks.com/elegant-fix-jumping-scrollbar-issue/"target="_blank">fix for it at CSS-Tricks</a>.</p>
+<p>At some point I noticed that when navigating from a page that had no scrollbar (like a short post or note) to one that did (such as the paginated lists of notes displayed above) the whole layout shifted slightly. I found a <a href="https://css-tricks.com/elegant-fix-jumping-scrollbar-issue/" class="external-link" target="_blank" rel="noopener">fix for it at CSS-Tricks</a>.</p>
 <p>At the time, I had a <code>layouts/partials/style.html</code> partial file. All I had to do was add a few lines of CSS to it:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css">  <span class="nt">html</span> <span class="p">{</span>
     <span class="k">margin-left</span><span class="p">:</span> <span class="nb">calc</span><span class="p">(</span><span class="mi">100</span><span class="kt">vw</span> <span class="o">-</span> <span class="mi">100</span><span class="kt">%</span><span class="p">);</span>
@@ -499,7 +495,7 @@
 </figure>
 
 <h3 id="general-layout">General Layout</h3>
-<p>Per the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"target="_blank">MDN docs on box-sizing</a> <code>border-box</code> makes dealing with the sizes of elements much easier, and generally eliminates a number of pitfalls you can stumble on while laying out your content, so I set <code>border-box</code> globally.</p>
+<p>Per the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" class="external-link" target="_blank" rel="noopener">MDN docs on box-sizing</a> <code>border-box</code> makes dealing with the sizes of elements much easier, and generally eliminates a number of pitfalls you can stumble on while laying out your content, so I set <code>border-box</code> globally.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css">  <span class="o">*</span> <span class="p">{</span>
     <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
   <span class="p">}</span>
@@ -533,7 +529,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go">  <span class="p">{{</span> <span class="err">$</span><span class="nx">cssBase</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;style/base.css&#34;</span> <span class="p">}}</span>
 </code></pre></div><h3 id="color-consistency-and-contrast">Color Consistency and Contrast</h3>
 <p>In May I was trying to ensure colors were being used consistently. I learned that the site should have primary and accent colors, and define the color of the body text. Some designers say that black text on a white background is too harsh and set dark gray text on a light gray background. When I look at those sites, I find the contrast is often too low and causes eye strain. I originally just went with black text on white. I figured it&rsquo;s a work in progress, and that can be adjusted when the rest of the site is more to my liking.</p>
-<p>In deference to experienced designers I now set the text to a very dark gray on a very light gray background. I created a palette using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties"target="_blank">CSS custom properties</a>:</p>
+<p>In deference to experienced designers I now set the text to a very dark gray on a very light gray background. I created a palette using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" class="external-link" target="_blank" rel="noopener">CSS custom properties</a>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css">  <span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
     <span class="nv">--color100</span><span class="p">:</span> <span class="mh">#f5fffa</span><span class="p">;</span>
     <span class="nv">--color200</span><span class="p">:</span> <span class="mh">#7cffbb</span><span class="p">;</span>
@@ -561,8 +557,8 @@
     <span class="nv">--color700-adjacent-complement</span><span class="p">:</span> <span class="mh">#572300</span><span class="p">;</span>
   <span class="p">}</span>
 </code></pre></div><p>I like this aspect of CSS. It means I can define all the colors I care about in one place, and I don&rsquo;t have to learn SCSS at the moment to do it.</p>
-<p>Some sites eschew black text on a white background. For example, <a href="https://jgthms.com/web-design-in-4-minutes/"target="_blank">Web Design in 4 Minutes</a> recommends using a medium gray (<code>#555</code>) for body text, a dark gray (<code>#333</code>) for headings and strong text all against a white background. However that creates a rather low contrast. To make matters worse, the background for code blocks is set to <code>#eee</code>.</p>
-<p>The <a href="https://www.w3.org/TR/WCAG20/"target="_blank">Web Content Accessibility Guidelines</a> recommends a contrast ratio of at least 7:1 for normal text and 4.5:1 for large text. Large text is defined as 14 point (typically 18.66px) and bold or larger, or 18 point (typically 24px) or larger. The contrast ratio for headings set to #333 against white is strong at 12.62:1. Body text set to #555 against white is barely acceptable at 7.46:1. Finally, the constrast ratio of code blocks (#555 against a background of #eee) is unacceptable at 6.42:1.</p>
+<p>Some sites eschew black text on a white background. For example, <a href="https://jgthms.com/web-design-in-4-minutes/" class="external-link" target="_blank" rel="noopener">Web Design in 4 Minutes</a> recommends using a medium gray (<code>#555</code>) for body text, a dark gray (<code>#333</code>) for headings and strong text all against a white background. However that creates a rather low contrast. To make matters worse, the background for code blocks is set to <code>#eee</code>.</p>
+<p>The <a href="https://www.w3.org/TR/WCAG20/" class="external-link" target="_blank" rel="noopener">Web Content Accessibility Guidelines</a> recommends a contrast ratio of at least 7:1 for normal text and 4.5:1 for large text. Large text is defined as 14 point (typically 18.66px) and bold or larger, or 18 point (typically 24px) or larger. The contrast ratio for headings set to #333 against white is strong at 12.62:1. Body text set to #555 against white is barely acceptable at 7.46:1. Finally, the constrast ratio of code blocks (#555 against a background of #eee) is unacceptable at 6.42:1.</p>
 <p>Originally, I had black text on a white background. In deference to designers who have a lot more experience creating web sites than I do, I set the background and text colors to the lightest and darkest grays in the palette, respectively.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css">  <span class="nt">body</span> <span class="p">{</span>
     <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">gray100</span><span class="p">);</span>
@@ -570,7 +566,7 @@
   <span class="p">}</span>
 </code></pre></div><p>The contrast ratio is 19.52:1. Is that too high? One day I&rsquo;ll look into separate degrees of contrast for body text and headings.</p>
 <h2 id="styling-fun">Styling Fun</h2>
-<p>One thing I particularly liked was how nice drop caps looked on <a href="https://www.gwern.net/index"target="_blank">Gwern</a>. I looked at his CSS and created a new file, <code>static\style\drop-caps\drop-caps.css</code> with a simplified version of his CSS. I dropped it in the <code>static/</code> directory instead of the <code>assets/</code> folder out of expediency, and I modified <code>layouts/_default/baseof.html</code> to pull in the drop caps definitions.</p>
+<p>One thing I particularly liked was how nice drop caps looked on <a href="https://www.gwern.net/index" class="external-link" target="_blank" rel="noopener">Gwern</a>. I looked at his CSS and created a new file, <code>static\style\drop-caps\drop-caps.css</code> with a simplified version of his CSS. I dropped it in the <code>static/</code> directory instead of the <code>assets/</code> folder out of expediency, and I modified <code>layouts/_default/baseof.html</code> to pull in the drop caps definitions.</p>
 
 <aside class="admonition note">
   <div class="admonition-title">Browser-Specific Styling</div>
@@ -608,9 +604,7 @@
         </figcaption>
 </figure>
 
-<p>Since then, I&rsquo;ve been periodically iterating on the design. It is pretty much complete and I&rsquo;m generally happy with the way it has turned out. I&rsquo;ll continue to fiddle with it here and there, but I plan to write about things with which I&rsquo;m more familiar.</p>
-        </section>
-        <!--END layouts/partials/drop-caps.html -->
+<p>Since then, I&rsquo;ve been periodically iterating on the design. It is pretty much complete and I&rsquo;m generally happy with the way it has turned out. I&rsquo;ll continue to fiddle with it here and there, but I plan to write about things with which I&rsquo;m more familiar.</p></section><!--END layouts/partials/drop-caps.html -->
         <!-- END main layouts/_default/single.html -->
       </main>
     </div> <!-- class wrapper-content -->

@@ -35,8 +35,8 @@
 
     <link
       rel="stylesheet"
-      href="https://douglascuthbertson.com/style/style.min.a383d3b383bbe13ba1b8d1bf6caa649eeae03842ddd6fbdb8986aca779ebaf0e.css"
-      integrity="sha256-o4PTs4O74TuhuNG/bKpknurgOELd1vvbiYasp3nrrw4="
+      href="https://douglascuthbertson.com/style/style.min.4a0c3b3bf0f77122c46cf4366e34c113accd00fc400df5fce451b2fa508dfa58.css"
+      integrity="sha256-Sgw7O/D3cSLEbPQ2bjTBE6zNAPxADfX85FGy&#43;lCN&#43;lg="
       media="screen">
 
   <title>
@@ -191,49 +191,43 @@
       <!-- BEGIN main layouts/_default/single.html -->
         <h2 class="title-article">Serving a Blog</h2>
         <!-- BEGIN layouts/partials/date-and-tags.html -->
-        <header class="article-meta-data"><div class="post-metadata">
-          <time class="post-metadata__timestamp" datetime="2016-09-04">Sunday Sep 4, 2016</time>
-            - 4 min read - 800 words.
-          <time class="post-metadata__timestamp" datetime="2016-09-04T00:00"></time><div>Last updated: <span>Sunday Sep 4, 2016 00:00</span></div>
-          <div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a></div>
+        <header class="article-meta-data"><div class="post-metadata"><time class="post-metadata__timestamp" datetime="2016-09-04">Sunday Sep 4, 2016</time>
+          - 4 min read - 800 words.
+          <time class="post-metadata__timestamp" datetime="2016-09-04T00:00"></time><div>Last updated: <span>Sunday Sep 4, 2016 00:00</span></div><div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a></div>
           </div>
         </header>
         <!--END layouts/partials/date-and-tags.html -->
-        <!-- BEGIN layouts/partials/drop-caps.html -->
-        <section class="content c-drop-caps drop-caps_goudy">
-          <p>I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.</p>
-<p>I&rsquo;ve tried CMS solutions running on Linux-based servers. One of the first ones I tried many years ago was <a href="http://cocoon.apache.org/"target="_blank">Apache Cocoon</a>. I was enticed by how flexible and programmable it was with its pipeline architecture. It seemed anything was possible. Ultimately, trying to program using XML and XSLT, and configure Java servlets proved to be too complicated. The languages and processes needed to keep the site up and running were too far removed from those for adding content.</p>
-<p>The mechanics of site maintenance took too much time away from just plain writing. I didn&rsquo;t realize that was the problem at the time, so I allowed myself to be lured into other complex solutions. I tried <a href="https://plone.org/"target="_blank">Plone</a> for a short while, but got tired of configuration bugs (the bugs were probably mine, and I was too impatient to figure out how to make Plone work correctly). I had a short run with <a href="http://www.web2py.com/"target="_blank">web2py</a> and a long one with <a href="https://www.drupal.org/"target="_blank">Drupal</a> 5 and 6. Drupal was fun and I did get it to work fairly well. The only real problem was keeping up with patches for the core system as well as all of the plug-ins. They made it relatively easy to do, but it was another time consuming annoyance.</p>
+        <!-- BEGIN layouts/partials/drop-caps.html --><section class="content c-drop-caps drop-caps_goudy"><p>I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.</p>
+<p>I&rsquo;ve tried CMS solutions running on Linux-based servers. One of the first ones I tried many years ago was <a href="http://cocoon.apache.org/" class="external-link" target="_blank" rel="noopener">Apache Cocoon</a>. I was enticed by how flexible and programmable it was with its pipeline architecture. It seemed anything was possible. Ultimately, trying to program using XML and XSLT, and configure Java servlets proved to be too complicated. The languages and processes needed to keep the site up and running were too far removed from those for adding content.</p>
+<p>The mechanics of site maintenance took too much time away from just plain writing. I didn&rsquo;t realize that was the problem at the time, so I allowed myself to be lured into other complex solutions. I tried <a href="https://plone.org/" class="external-link" target="_blank" rel="noopener">Plone</a> for a short while, but got tired of configuration bugs (the bugs were probably mine, and I was too impatient to figure out how to make Plone work correctly). I had a short run with <a href="http://www.web2py.com/" class="external-link" target="_blank" rel="noopener">web2py</a> and a long one with <a href="https://www.drupal.org/" class="external-link" target="_blank" rel="noopener">Drupal</a> 5 and 6. Drupal was fun and I did get it to work fairly well. The only real problem was keeping up with patches for the core system as well as all of the plug-ins. They made it relatively easy to do, but it was another time consuming annoyance.</p>
 <p>I ran each of these CMS solutions from a Windows box at home and a dynamic DNS provider. Besides being cheap and rickety, there were always quirks running on Windows as most of these systems were designed and tested on Linux. Windows support varied from very well to an after thought.</p>
 <h2 id="simplicity">Simplicity</h2>
 <p>I&rsquo;ve come around to thinking that if I&rsquo;m going to have a corner of the web to express my thoughts, the tooling and maintenance of it should be as simple and low-overhead as possible. Static sites are very appealing in this respect. Post a little content wrapped in some HTML, give it some style with CSS and it&rsquo;s done.</p>
 <p>Still, nothing is ever quite simple when it comes to digital information. I&rsquo;m always concerned about having copies of data to prevent loss. I&rsquo;d like be able to look back and see how I got to where I am today - especially when it comes to reverting changes that, upon reflection, weren&rsquo;t so good. I also don&rsquo;t have a lot of spare cash to spend, so most cloud servers are out of the questions.</p>
-<p>I did use a small <a href="https://www.digitalocean.com/"target="_blank">Digital Ocean</a> droplet for a while - only $5.00 USD/month. It addressed the cash issue very well, and I used <a href="http://fossil-scm.org/index.html/doc/trunk/www/index.wiki"target="_blank">Fossil SCM</a> for version control. I also have a server running <a href="http://www.freenas.org/"target="_blank">FreeNAS</a> where I backup all my data.</p>
-<p>To build anything on a computer, you need good tools. For static site generation, I settled on <a href="http://jekyllrb.com/"target="_blank">Jekyll</a>, a static site generator that turns <a href="https://daringfireball.net/projects/markdown/"target="_blank">Markdown</a>, HTML and CSS (and even <a href="http://sass-lang.com/"target="_blank">Sass</a> into a website. I made changes locally, and ran Jekyll to see the results. When I was satisfied, I&rsquo;d check-in  the changes to Fossil and copy, via SSH, the <code>_site</code> folder to my droplet where <a href="https://www.nginx.com/"target="_blank">nginx</a> would serve the content. I thought it was as simple as it could get.</p>
-<p>It does get more simple. <a href="https://github.com/"target="_blank">GitHub</a> is an amazing site that lets anyone make a <a href="https://git-scm.com/"target="_blank">git</a> repository. If you don&rsquo;t mind it being publicly available, then their service is <em>free</em>! They also make it easy, with Jekyll, to create a personal website. I no longer have to be (directly) concerned with web server configuration and security. That&rsquo;s offloaded to the experts at GitHub. Also, uploading changes to my site is easier. All I have to do to update my blog is to commit the changes to my local repository and execute <code>git push origin</code>.</p>
+<p>I did use a small <a href="https://www.digitalocean.com/" class="external-link" target="_blank" rel="noopener">Digital Ocean</a> droplet for a while - only $5.00 USD/month. It addressed the cash issue very well, and I used <a href="http://fossil-scm.org/index.html/doc/trunk/www/index.wiki" class="external-link" target="_blank" rel="noopener">Fossil SCM</a> for version control. I also have a server running <a href="http://www.freenas.org/" class="external-link" target="_blank" rel="noopener">FreeNAS</a> where I backup all my data.</p>
+<p>To build anything on a computer, you need good tools. For static site generation, I settled on <a href="http://jekyllrb.com/" class="external-link" target="_blank" rel="noopener">Jekyll</a>, a static site generator that turns <a href="https://daringfireball.net/projects/markdown/" class="external-link" target="_blank" rel="noopener">Markdown</a>, HTML and CSS (and even <a href="http://sass-lang.com/" class="external-link" target="_blank" rel="noopener">Sass</a> into a website. I made changes locally, and ran Jekyll to see the results. When I was satisfied, I&rsquo;d check-in  the changes to Fossil and copy, via SSH, the <code>_site</code> folder to my droplet where <a href="https://www.nginx.com/" class="external-link" target="_blank" rel="noopener">nginx</a> would serve the content. I thought it was as simple as it could get.</p>
+<p>It does get more simple. <a href="https://github.com/" class="external-link" target="_blank" rel="noopener">GitHub</a> is an amazing site that lets anyone make a <a href="https://git-scm.com/" class="external-link" target="_blank" rel="noopener">git</a> repository. If you don&rsquo;t mind it being publicly available, then their service is <em>free</em>! They also make it easy, with Jekyll, to create a personal website. I no longer have to be (directly) concerned with web server configuration and security. That&rsquo;s offloaded to the experts at GitHub. Also, uploading changes to my site is easier. All I have to do to update my blog is to commit the changes to my local repository and execute <code>git push origin</code>.</p>
 <h2 id="the-remaining-complexity">The Remaining Complexity</h2>
-<p>At this stage, I can&rsquo;t imagine how it could be easier (and certainly it can&rsquo;t be cheaper). The only complexity left is figuring out how to make my blog appear pleasing to the eye. That&rsquo;s a matter of laying out some HTML, writing content marked up with <a href="https://guides.github.com/features/mastering-markdown/"target="_blank">Github Flavored Markdown</a> and using CSS and <a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better"target="_blank">SCSS</a> to give it some style.</p>
+<p>At this stage, I can&rsquo;t imagine how it could be easier (and certainly it can&rsquo;t be cheaper). The only complexity left is figuring out how to make my blog appear pleasing to the eye. That&rsquo;s a matter of laying out some HTML, writing content marked up with <a href="https://guides.github.com/features/mastering-markdown/" class="external-link" target="_blank" rel="noopener">Github Flavored Markdown</a> and using CSS and <a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better" class="external-link" target="_blank" rel="noopener">SCSS</a> to give it some style.</p>
 <p>I originally had a complex mess inherited from previous attempts at making a personal site with varying goals. I&rsquo;ve now pared it down to something much easier to manage. I&rsquo;ll post again about my current, more modest goals, what inspired the current design and how I&rsquo;m going about the process of reaching them.</p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="http://cocoon.apache.org/"target="_blank">Apache Cocoon</a></li>
-<li><a href="https://plone.org/"target="_blank">Plone</a></li>
-<li><a href="http://www.web2py.com/"target="_blank">web2py</a></li>
-<li><a href="https://www.drupal.org/"target="_blank">Drupal</a></li>
-<li><a href="https://www.digitalocean.com/"target="_blank">Digital Ocean</a></li>
-<li><a href="http://fossil-scm.org/index.html/doc/trunk/www/index.wiki"target="_blank">Fossil Source Control Management</a></li>
-<li><a href="http://www.freenas.org/"target="_blank">FreeNAS</a></li>
-<li><a href="http://jekyllrb.com/"target="_blank">Jekyll Static Site Generator</a></li>
-<li><a href="https://daringfireball.net/projects/markdown/"target="_blank">Markdown Markup Language</a></li>
-<li><a href="http://sass-lang.com/"target="_blank">Sass Stylesheet Language</a></li>
-<li><a href="https://www.nginx.com/"target="_blank">nginx web server</a></li>
-<li><a href="https://github.com/"target="_blank">GitHub</a></li>
-<li><a href="https://git-scm.com/"target="_blank">git</a></li>
-<li><a href="https://guides.github.com/features/mastering-markdown/"target="_blank">GitHub Flavored Markdown</a></li>
-<li><a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better"target="_blank">SCSS</a></li>
-</ul>
-        </section>
-        <!--END layouts/partials/drop-caps.html -->
+<li><a href="http://cocoon.apache.org/" class="external-link" target="_blank" rel="noopener">Apache Cocoon</a></li>
+<li><a href="https://plone.org/" class="external-link" target="_blank" rel="noopener">Plone</a></li>
+<li><a href="http://www.web2py.com/" class="external-link" target="_blank" rel="noopener">web2py</a></li>
+<li><a href="https://www.drupal.org/" class="external-link" target="_blank" rel="noopener">Drupal</a></li>
+<li><a href="https://www.digitalocean.com/" class="external-link" target="_blank" rel="noopener">Digital Ocean</a></li>
+<li><a href="http://fossil-scm.org/index.html/doc/trunk/www/index.wiki" class="external-link" target="_blank" rel="noopener">Fossil Source Control Management</a></li>
+<li><a href="http://www.freenas.org/" class="external-link" target="_blank" rel="noopener">FreeNAS</a></li>
+<li><a href="http://jekyllrb.com/" class="external-link" target="_blank" rel="noopener">Jekyll Static Site Generator</a></li>
+<li><a href="https://daringfireball.net/projects/markdown/" class="external-link" target="_blank" rel="noopener">Markdown Markup Language</a></li>
+<li><a href="http://sass-lang.com/" class="external-link" target="_blank" rel="noopener">Sass Stylesheet Language</a></li>
+<li><a href="https://www.nginx.com/" class="external-link" target="_blank" rel="noopener">nginx web server</a></li>
+<li><a href="https://github.com/" class="external-link" target="_blank" rel="noopener">GitHub</a></li>
+<li><a href="https://git-scm.com/" class="external-link" target="_blank" rel="noopener">git</a></li>
+<li><a href="https://guides.github.com/features/mastering-markdown/" class="external-link" target="_blank" rel="noopener">GitHub Flavored Markdown</a></li>
+<li><a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better" class="external-link" target="_blank" rel="noopener">SCSS</a></li>
+</ul></section><!--END layouts/partials/drop-caps.html -->
         <!-- END main layouts/_default/single.html -->
       </main>
     </div> <!-- class wrapper-content -->
