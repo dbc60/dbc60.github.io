@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
-    <copyright>(c) 2015-2021 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/) except where indicated otherwise</copyright>
+    <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Thu, 10 Mar 2016 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/tags/mathjax/index.xml" rel="self" type="application/rss+xml" />
@@ -26,23 +26,23 @@
 &lt;p&gt;I also got rid of jQuery and some other JavaScript. It was a holdover from another website I created a while ago. The only JavaScript remaining is for MathJax, which I plan to use for - what else? - math!&lt;/p&gt;
 &lt;p&gt;\[
 \begin{bmatrix}
-a &amp;amp; b &amp;amp; c &amp;amp; d \\&lt;br&gt;
-e &amp;amp; f &amp;amp; g &amp;amp; h \\&lt;br&gt;
-i &amp;amp; j &amp;amp; k &amp;amp; l \\&lt;br&gt;
+a &amp;amp; b &amp;amp; c &amp;amp; d \\
+e &amp;amp; f &amp;amp; g &amp;amp; h \\
+i &amp;amp; j &amp;amp; k &amp;amp; l \\
 m &amp;amp; n &amp;amp; o &amp;amp; p
 \end{bmatrix}
 \times
 \begin{bmatrix}
-x \\&lt;br&gt;
-y \\&lt;br&gt;
-z \\&lt;br&gt;
+x \\
+y \\
+z \\
 w
 \end{bmatrix}
 =
 \begin{bmatrix}
-ax + by + cz +dw  \\&lt;br&gt;
-ex + fy + gz + hw \\&lt;br&gt;
-ix + jy + kz +lw  \\&lt;br&gt;
+ax + by + cz +dw  \\
+ex + fy + gz + hw \\
+ix + jy + kz +lw  \\
 mx + ny + oz + pw
 \end{bmatrix}
 \]&lt;/p&gt;

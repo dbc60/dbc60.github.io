@@ -28,7 +28,7 @@
     <meta property="og:image:height" content="279">
     <meta property="og:image" content="https://douglascuthbertson.com/images/og-image.jpg">
     <meta name="twitter:title" content="Doug&#39;s Blog">
-    <meta name="generator" content="Hugo 0.89.0-DEV" />
+    <meta name="generator" content="Hugo 0.105.0-DEV" />
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#e3e3e3">
     <link rel="author" href="https://douglascuthbertson.com/humans.txt" />
@@ -40,7 +40,7 @@
     <link rel="mask-icon" href="https://douglascuthbertson.com/images/safari-pinned-tab.svg" color="#4aa7c1">
     <link rel="shortcut icon" href="https://douglascuthbertson.com/images/favicon.ico">
 
-    <link rel="stylesheet" href="https://douglascuthbertson.com/style/style.min.79b578f56eb17fb8a79e407c6074946a9758c32707203937329f2c5f361ed7ff.css" integrity="sha256-ebV49W6xf7innkB8YHSUapdYwycHIDk3Mp8sXzYe1/8=">
+    <link rel="stylesheet" href="https://douglascuthbertson.com/style/style.min.1102cce5f31dcc324fa649a0a5d7c3f43a4dd843e793448028eb45dee5608f30.css" integrity="sha256-EQLM5fMdzDJPpkmgpdfD9DpN2EPnk0SAKOtF3uVgjzA=">
 
   <title>
     Restart | Doug&#39;s Blog
@@ -105,6 +105,18 @@
             <span class="wrapper-collection-border icon icon-quill"> </span>
             <span class="wrapper-collection-border title">Latest</span><ul class="collection-items">
 <!-- BEGIN layouts/partials/items-latest.html --><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/2022/11/the-orchard/">
+        The Orchard
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/about/">
+        About
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/now/">
+        What I&#39;m Doing Now
+      </a>
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/create-table-heading/">
         Create Table Heading
       </a>
@@ -131,18 +143,6 @@
     </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/template-create-colgroup/">
         Template Create Colgroup
-      </a>
-    </li><li class="collection-item">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/end/">
-        End
-      </a>
-    </li><li class="collection-item">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/begin-buildtable-template/">
-        Begin Buildtable Template
-      </a>
-    </li><li class="collection-item">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/template-build-table/">
-        Build Table Template
       </a>
     </li><!--END layouts/partials/items-latest.html -->
 </ul>
@@ -178,6 +178,12 @@
   </li>
   
   <li class="collection-item">
+    <a class="secondary-nav__link" href="https://douglascuthbertson.com/2022/">
+      2022
+    </a>
+  </li>
+  
+  <li class="collection-item">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/tags/">
       Tags
     </a>
@@ -208,23 +214,23 @@
 <p>I installed and configured Ruby (Jekyll is written in Ruby, but is not a standalone executable), Bundler to keep Ruby gems up-to-date, Compass to generate CSS from SASS/SCSS, and Jekyll of course, and settled in to learn how to create a blog. After reading a lot of docs, and experimenting a lot with HTML and SCSS, I had a working blog. It was kind of ugly, but it was functional. It had two columns, the left for posts and the right for links to posts by year. As I recall, it took quite a bit of effort to put together the markup, styling, and learn how to use the Liquid Template engine to pull together things like lists of posts by year, month, and day.</p>
 <p>At first, the writing and learning experience was delightful. I have a note from March 7, 2016 that says, &ldquo;Jekyll is really easy to install and use. What takes time is learning enough about its bells and whistles, markdown, HTML, CSS, and Sass to make a blog or website you&rsquo;re own.&rdquo;</p>
 <p>I had a couple of <code>.bat</code> files to update and launch Jekyll and Compass. The first was <code>_build\start.bat</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">  @echo off
-  REM Update all the gems and then start Compass and Jekyll
-  call bundle update
-  SET PROJECT_PATH=%~dp0
-  call %PROJECT_PATH%quick-start.bat
-</code></pre></div><p>The second was <code>quick-start.bat</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  @echo off
-  REM Start Compass and Jekyll without updating gems
-  start bundle <span class="nb">exec</span> compass watch
-
-  REM Give compass a few seconds to start before launching jekyll.
-  @ping 192.0.2.2 -n <span class="m">1</span> -w <span class="m">4000</span> &gt; nul
-
-  start bundle <span class="nb">exec</span> jekyll s --port <span class="m">4000</span>
-</code></pre></div><p>All I had to do was run <code>build\start.bat</code> and open a browser to <code>http://localhost:4000</code>. Each time I edited and saved a file, the view in the browser would update after a second or so. Blogging life was good.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  @echo off
+</span></span><span class="line"><span class="cl">  REM Update all the gems and then start Compass and Jekyll
+</span></span><span class="line"><span class="cl">  call bundle update
+</span></span><span class="line"><span class="cl">  SET PROJECT_PATH=%~dp0
+</span></span><span class="line"><span class="cl">  call %PROJECT_PATH%quick-start.bat
+</span></span></code></pre></div><p>The second was <code>quick-start.bat</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">  @echo off
+</span></span><span class="line"><span class="cl">  REM Start Compass and Jekyll without updating gems
+</span></span><span class="line"><span class="cl">  start bundle <span class="nb">exec</span> compass watch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  REM Give compass a few seconds to start before launching jekyll.
+</span></span><span class="line"><span class="cl">  @ping 192.0.2.2 -n <span class="m">1</span> -w <span class="m">4000</span> &gt; nul
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  start bundle <span class="nb">exec</span> jekyll s --port <span class="m">4000</span>
+</span></span></code></pre></div><p>All I had to do was run <code>build\start.bat</code> and open a browser to <code>http://localhost:4000</code>. Each time I edited and saved a file, the view in the browser would update after a second or so. Blogging life was good.</p>
 <p>Later came a series of annoyances. It started with Compass crashing a lot when editing scss files. Compass was valuable for its math library. I found the exponentiation and logarithm functions most valuable. I used them for calculating the luminance of a color and the contrast ratio between two colors.</p>
-<p>The crashes got so annoying that I stopped using Compass in September of 2016. Compass wasn&rsquo;t being maintained anymore, and I wasn&rsquo;t about to start learning Ruby just to be able to write a blog. Fortunately, I learned that Jekyll had a built-in sass compiler. I also figured out how to write the color luminance and contrast ratio functions in pure sass, so I didn&rsquo;t need Compass' math library either. I don&rsquo;t use scss currently. I guess (hope) luminance and contrast ratios are built-in functions by now, but in case they aren&rsquo;t, <a href="https://gist.github.com/dbc60/451f16c588b806967b706b45829e49dc" class="external-link" target="_blank" rel="noopener">here&rsquo;s a gist</a> with those functions and a few others. Feel free to use it as you will.</p>
+<p>The crashes got so annoying that I stopped using Compass in September of 2016. Compass wasn&rsquo;t being maintained anymore, and I wasn&rsquo;t about to start learning Ruby just to be able to write a blog. Fortunately, I learned that Jekyll had a built-in sass compiler. I also figured out how to write the color luminance and contrast ratio functions in pure sass, so I didn&rsquo;t need Compass&rsquo; math library either. I don&rsquo;t use scss currently. I guess (hope) luminance and contrast ratios are built-in functions by now, but in case they aren&rsquo;t, <a href="https://gist.github.com/dbc60/451f16c588b806967b706b45829e49dc" class="external-link" target="_blank" rel="noopener">here&rsquo;s a gist</a> with those functions and a few others. Feel free to use it as you will.</p>
 <p>In October of 2016, the <code>--watch</code> option being disabled for Windows in version 3.3.0 of Jekyll. That option was originally intended for BASH on Windows, but was extended to the default <code>cmd.exe</code> and PowerShell. I found a fix among the <a href="https://github.com/jekyll/jekyll/issues/5462#issuecomment-253982908" class="external-link" target="_blank" rel="noopener">comments</a> in <a href="https://github.com/jekyll/jekyll/issues/5462" class="external-link" target="_blank" rel="noopener">Jekyll issue 5462</a>. The comments said the underlying problem in BASH on Windows has been fixed, so <code>--watch</code> will be enabled in a later release. A temporary fix was to open <code>vendor\bundle\gems\jekyll-3.3.0\lib\jekyll\commands\build.rb</code> and replace the line <code>if Utils::Platforms.windows?</code> with <code>unless Utils::Platforms.windows?</code>.</p>
 <p>I wasn&rsquo;t comfortable at all with manually modifying gem files. I didn&rsquo;t know Ruby, and those files were managed by Bundler. It just seemed like a bad idea. Still, I was still able to use live-reload and see the effects of edits on HTML and SCSS a few seconds after they happened. Fast feedback loops are truly invaluable when learning anything new.</p>
 <p>My last post was in November of 2016 after the US presidential election. I don&rsquo;t remember exactly why I stopped, but part of the reason was that Jekyll was slow, and it felt like the Windows implementation was treated as a second-class citizen.</p>
@@ -243,7 +249,7 @@
     <!-- BEGIN layouts/partials/footer.html -->
     <footer class="main-footer">
       <div class="container">
-        (c) 2015-2021 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a> except where indicated otherwise. Made with Markdown, HTML, CSS, JavaScript, joy, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.
+        (c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" class="external-link" target="_blank" rel="noopener">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a>, again except where indicated otherwise. Made with Markdown, HTML, CSS, JavaScript, joy, and perseverance. Generated by <a href="https://gohugo.io/" class="external-link" target="_blank" rel="noopener">Hugo</a>.
           <div class="social">
 
 
@@ -259,21 +265,13 @@
     </a>
   </li>
   <li class="social-item">
-    <a href="https://news.ycombinator.com/user?id=dcuthbertson"
+    <a href="https://twitter.com/DougCuthbertson?ref_src=twsrc%5Etfw"
        target="_blank" rel="noopener noreferrer"
-       title="Sometimes I write comments on Hacker News"
-       class="hackernews">
-      <span class="icon icon-info2"></span>
-      Hacker News
-    </a>
-  </li>
-  <li class="social-item">
-    <a href="https://www.instagram.com/dbc60/"
-       target="_blank" rel="noopener noreferrer"
-       title="Instagram - It's been a while"
-       class="instagram">
-      <span class="icon icon-instagram"></span>
-      Instagram
+       title="Follow me on Twitter"
+       class="twitter"
+       data-show-count="false">
+      <span class="icon icon-twitter2"></span>
+      Twitter
     </a>
   </li>
   <li class="social-item">
@@ -285,58 +283,12 @@
       LinkedIn</a>
     </li>
   <li class="social-item">
-    <a href="https://www.pinterest.com/dougcuthbertson/"
-       target="_blank" rel="noopener noreferrer"
-       title="I haven't posted on Pinterest, yet"
-       class="pinterest">
-      <span class="icon icon-pinterest"></span>
-      Pinterest
-    </a>
-  </li>
-  <li class="social-item">
-    <a href="https://www.reddit.com/user/dbc60"
-       target="_blank" rel="noopener noreferrer"
-       title="I read Reddit"
-       class="reddit">
-      <span class="icon icon-reddit"></span>
-      Reddit
-    </a>
-  </li>
-  <li class="social-item">
     <a href="https://stackoverflow.com/users/165347/doug-cuthbertson"
        target="_blank" rel="noopener noreferrer"
        title="I once answered a question on Stackoverflow"
        class="stackoverflow">
       <span class="icon icon-stackoverflow"></span>
       Stackoverflow
-    </a>
-  </li>
-  <li class="social-item">
-    <a href="https://dbc60.tumblr.com"
-       target="_blank" rel="noopener noreferrer"
-       title="I post on Tumblr once in a blue moon"
-       class="pinterest">
-      <span class="icon icon-tumblr"></span>
-      Tumblr
-    </a>
-  </li>
-  <li class="social-item">
-    <a href="https://twitter.com/DougCuthbertson?ref_src=twsrc%5Etfw"
-       target="_blank" rel="noopener noreferrer"
-       title="Follow me on Twitter"
-       class="twitter"
-       data-show-count="false">
-      <span class="icon icon-twitter2"></span>
-      Twitter
-    </a>
-  </li>
-  <li class="social-item">
-    <a href="https://www.youtube.com/channel/UCjYq4zK5Pc2vxwpCWUotPxg?view_as=subscriber"
-       target="_blank" rel="noopener noreferrer"
-       title="Not much to see from me on YouTube"
-       class="youtube">
-      <span class="icon icon-youtube"></span>
-      YouTube
     </a>
   </li>
   <li class="social-item">
@@ -348,6 +300,7 @@
       email
     </a>
   </li>
+  
 </ul>
 </div>
       </div>

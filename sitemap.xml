@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://douglascuthbertson.com/2022/11/</loc>
+    <lastmod>2022-11-05T08:07:31-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/2022/</loc>
+    <lastmod>2022-11-05T08:07:31-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/</loc>
+    <lastmod>2022-11-05T08:07:31-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/life/</loc>
+    <lastmod>2022-11-05T08:07:31-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/post/</loc>
+    <lastmod>2022-11-05T08:07:31-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/</loc>
+    <lastmod>2022-11-05T08:07:31-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/2022/11/the-orchard/</loc>
+    <lastmod>2022-11-05T08:07:31-04:00</lastmod>
+  </url><url>
     <loc>https://douglascuthbertson.com/2021/09/</loc>
     <lastmod>2021-09-24T09:05:15-04:00</lastmod>
   </url><url>
@@ -9,9 +30,6 @@
     <lastmod>2021-09-24T09:05:15-04:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/evergreen-notes/create-table/</loc>
-    <lastmod>2021-09-24T09:05:15-04:00</lastmod>
-  </url><url>
-    <loc>https://douglascuthbertson.com/</loc>
     <lastmod>2021-09-24T09:05:15-04:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/evergreen-notes/create-table/create-table-heading/</loc>
@@ -68,9 +86,6 @@
     <loc>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/</loc>
     <lastmod>2021-09-23T10:59:36-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/post/</loc>
-    <lastmod>2021-09-23T10:59:36-04:00</lastmod>
-  </url><url>
     <loc>https://douglascuthbertson.com/evergreen-notes/asymptotic-notation/</loc>
     <lastmod>2021-09-23T07:45:20-04:00</lastmod>
   </url><url>
@@ -81,9 +96,6 @@
     <lastmod>2020-11-07T08:23:14-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/tags/politics/</loc>
-    <lastmod>2020-11-07T08:23:14-05:00</lastmod>
-  </url><url>
-    <loc>https://douglascuthbertson.com/tags/</loc>
     <lastmod>2020-11-07T08:23:14-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/11/waiting-for-election-results/</loc>
@@ -132,7 +144,7 @@
     <lastmod>2020-02-11T05:48:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/now/</loc>
-    <lastmod>2019-02-10T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-30T08:07:31-04:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/11/</loc>
     <lastmod>2016-11-09T00:00:00+00:00</lastmod>
@@ -150,7 +162,7 @@
     <lastmod>2016-09-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/about/</loc>
-    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-05T08:06:31-04:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/03/</loc>
     <lastmod>2016-03-10T00:00:00+00:00</lastmod>
@@ -163,9 +175,6 @@
   </url><url>
     <loc>https://douglascuthbertson.com/tags/mathjax/</loc>
     <lastmod>2016-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://douglascuthbertson.com/tags/life/</loc>
-    <lastmod>2016-03-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</loc>
     <lastmod>2016-03-09T00:00:00+00:00</lastmod>

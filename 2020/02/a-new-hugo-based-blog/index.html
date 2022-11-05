@@ -28,7 +28,7 @@
     <meta property="og:image:height" content="279">
     <meta property="og:image" content="https://douglascuthbertson.com/images/og-image.jpg">
     <meta name="twitter:title" content="Doug&#39;s Blog">
-    <meta name="generator" content="Hugo 0.89.0-DEV" />
+    <meta name="generator" content="Hugo 0.105.0-DEV" />
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#e3e3e3">
     <link rel="author" href="https://douglascuthbertson.com/humans.txt" />
@@ -40,7 +40,7 @@
     <link rel="mask-icon" href="https://douglascuthbertson.com/images/safari-pinned-tab.svg" color="#4aa7c1">
     <link rel="shortcut icon" href="https://douglascuthbertson.com/images/favicon.ico">
 
-    <link rel="stylesheet" href="https://douglascuthbertson.com/style/style.min.79b578f56eb17fb8a79e407c6074946a9758c32707203937329f2c5f361ed7ff.css" integrity="sha256-ebV49W6xf7innkB8YHSUapdYwycHIDk3Mp8sXzYe1/8=">
+    <link rel="stylesheet" href="https://douglascuthbertson.com/style/style.min.1102cce5f31dcc324fa649a0a5d7c3f43a4dd843e793448028eb45dee5608f30.css" integrity="sha256-EQLM5fMdzDJPpkmgpdfD9DpN2EPnk0SAKOtF3uVgjzA=">
 
   <title>
     A New Hugo-Based Blog | Doug&#39;s Blog
@@ -105,6 +105,18 @@
             <span class="wrapper-collection-border icon icon-quill"> </span>
             <span class="wrapper-collection-border title">Latest</span><ul class="collection-items">
 <!-- BEGIN layouts/partials/items-latest.html --><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/2022/11/the-orchard/">
+        The Orchard
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/about/">
+        About
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/now/">
+        What I&#39;m Doing Now
+      </a>
+    </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/create-table-heading/">
         Create Table Heading
       </a>
@@ -131,18 +143,6 @@
     </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/template-create-colgroup/">
         Template Create Colgroup
-      </a>
-    </li><li class="collection-item">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/end/">
-        End
-      </a>
-    </li><li class="collection-item">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/begin-buildtable-template/">
-        Begin Buildtable Template
-      </a>
-    </li><li class="collection-item">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/evergreen-notes/create-table/template-build-table/">
-        Build Table Template
       </a>
     </li><!--END layouts/partials/items-latest.html -->
 </ul>
@@ -174,6 +174,12 @@
   <li class="collection-item">
     <a class="secondary-nav__link" href="https://douglascuthbertson.com/2021/">
       2021
+    </a>
+  </li>
+  
+  <li class="collection-item">
+    <a class="secondary-nav__link" href="https://douglascuthbertson.com/2022/">
+      2022
     </a>
   </li>
   
@@ -264,54 +270,54 @@
 <p>The change was dramatic and configuration was simplified. While Academic has two levels of configuration, the core through <code>config/_default/config.toml</code> and another level controlled through the content in the <code>content/home</code> directory, Vanilla Bootstrap requires only core configuration of Hugo and a handful of theme-specific parameters all managed through the default configuration files.</p>
 <h3 id="a-new-navigation-menu">A New Navigation Menu</h3>
 <p>It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in <code>config/_default/config.toml</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml">  <span class="c"># See https://feathericons.com/</span>
-  <span class="c"># The value of pre is the icon name</span>
-  <span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
-    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
-      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Home&#34;</span>
-      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;home&#34;</span>
-      <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/&#34;</span>
-      <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
-    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
-      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Notes&#34;</span>
-      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;edit&#34;</span>
-      <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/notes/&#34;</span>
-      <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
-    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
-      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;About&#34;</span>
-      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;smile&#34;</span>
-      <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/about/&#34;</span>
-      <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
-    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
-      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Now&#34;</span>
-      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;play&#34;</span>
-      <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/now/&#34;</span>
-      <span class="nx">weight</span> <span class="p">=</span> <span class="mi">4</span>
-    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
-      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;RSS&#34;</span>
-      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;rss&#34;</span>
-      <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/index.xml&#34;</span>
-      <span class="nx">weight</span> <span class="p">=</span> <span class="mi">5</span>
-</code></pre></div><p>The theme provides the other major component in <code>theme/vanilla/layouts/partials/nav.html</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nav-border&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nav&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav justify-content-center&#34;</span><span class="p">&gt;</span>
-    {{ $showActiveNav := .Site.Params.showActiveNav }}
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.nav }}
-      {{ $active := &#34;&#34; }}
-      {{ if eq $showActiveNav true }}
-        {{ $isMenu := or ($currentPage.IsMenuCurrent &#34;nav&#34; .) ($currentPage.HasMenuCurrent &#34;nav&#34; .) }}
-        {{ if or $isMenu (eq $currentPage.Title .Name) }}
-          {{ $active = &#34;nav-link-active&#34; }}
-        {{ end }}
-      {{ end }}
-      {{ $icon := printf &#34;<span class="p">&lt;</span><span class="nt">i</span> <span class="na">data-feather</span><span class="o">=</span><span class="s">\&#34;%s\&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>&#34; .Pre }}
-      {{ $text := print $icon &#34; &#34; .Name | safeHTML }}
-      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link {{ $active }}&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .URL }}&#34;</span><span class="p">&gt;</span>{{ $text }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    {{ end }}
-    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div><p>It cycles through the <code>menu.nav</code> items in <code>config.toml</code> and translates those values to a feather icon, text, and a link to the given URL. The site was beginning to fill out, although today the icons look silly to me.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl">  <span class="c"># See https://feathericons.com/</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># The value of pre is the icon name</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Home&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;home&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Notes&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;edit&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/notes/&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;About&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;smile&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/about/&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Now&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;play&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/now/&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">weight</span> <span class="p">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">nav</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;RSS&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;rss&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/index.xml&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">weight</span> <span class="p">=</span> <span class="mi">5</span>
+</span></span></code></pre></div><p>The theme provides the other major component in <code>theme/vanilla/layouts/partials/nav.html</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nav-border&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nav&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav justify-content-center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ $showActiveNav := .Site.Params.showActiveNav }}
+</span></span><span class="line"><span class="cl">    {{ $currentPage := . }}
+</span></span><span class="line"><span class="cl">    {{ range .Site.Menus.nav }}
+</span></span><span class="line"><span class="cl">      {{ $active := &#34;&#34; }}
+</span></span><span class="line"><span class="cl">      {{ if eq $showActiveNav true }}
+</span></span><span class="line"><span class="cl">        {{ $isMenu := or ($currentPage.IsMenuCurrent &#34;nav&#34; .) ($currentPage.HasMenuCurrent &#34;nav&#34; .) }}
+</span></span><span class="line"><span class="cl">        {{ if or $isMenu (eq $currentPage.Title .Name) }}
+</span></span><span class="line"><span class="cl">          {{ $active = &#34;nav-link-active&#34; }}
+</span></span><span class="line"><span class="cl">        {{ end }}
+</span></span><span class="line"><span class="cl">      {{ end }}
+</span></span><span class="line"><span class="cl">      {{ $icon := printf &#34;<span class="p">&lt;</span><span class="nt">i</span> <span class="na">data-feather</span><span class="o">=</span><span class="s">\&#34;%s\&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>&#34; .Pre }}
+</span></span><span class="line"><span class="cl">      {{ $text := print $icon &#34; &#34; .Name | safeHTML }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link {{ $active }}&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .URL }}&#34;</span><span class="p">&gt;</span>{{ $text }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>It cycles through the <code>menu.nav</code> items in <code>config.toml</code> and translates those values to a feather icon, text, and a link to the given URL. The site was beginning to fill out, although today the icons look silly to me.</p>
 <p>There&rsquo;s a &ldquo;Notes&rdquo; menu item, because I thought I would use the site to keep notes as well as regular blog posts. I&rsquo;ve since separated my personal notes and works-in-progress from blog posts. I&rsquo;m willing to go only so far in what I make public. It&rsquo;s best to keep some thoughts as background material, and let others stew for a while before publicizing them.</p>
 <p>I created a simple 404 page, and a big &ldquo;jumbotron&rdquo; area for all the index pages. The site was beginning to fill out. Although, today the icons look silly to me.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/004-2019.02.10-jumbotron.png">
@@ -335,83 +341,83 @@
 
 <h4 id="mathjax">MathJax</h4>
 <p>I was happy to learn a little about configuring MathJax. It makes it possible to display equations on web pages. To configure MathJax to automatically number equations - just include the following in <code>layouts/partials/script.html</code> (which is included in <code>layouts/_default/baseof.html</code>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!-- Configure MathJax for automatic equation numbering. See
-</span><span class="c">    http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
-</span><span class="c">    for details
-</span><span class="c">  --&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/x-mathjax-config&#34;</span><span class="p">&gt;</span>
-    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-      <span class="nx">TeX</span><span class="o">:</span> <span class="p">{</span> <span class="nx">equationNumbers</span><span class="o">:</span> <span class="p">{</span> <span class="nx">autoNumber</span><span class="o">:</span> <span class="s2">&#34;AMS&#34;</span> <span class="p">}</span> <span class="p">}</span>
-    <span class="p">});</span>
-  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div><p>I realize that MathJax is a large JavaScript library. It&rsquo;s probably stupid to try optimizations without testing, nevertheless I didn&rsquo;t want to load MathJax with every page. Most pages don&rsquo;t require it, so I wrap the MathJax configuration in an if-block that detects if the page (or the whole site) defines the parameter <code>math</code>.  The configuration has been updated, as well.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  <span class="c">&lt;!-- Configure MathJax for automatic equation numbering. See
+</span></span></span><span class="line"><span class="cl"><span class="c">    http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
+</span></span></span><span class="line"><span class="cl"><span class="c">    for details
+</span></span></span><span class="line"><span class="cl"><span class="c">  --&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/x-mathjax-config&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">TeX</span><span class="o">:</span> <span class="p">{</span> <span class="nx">equationNumbers</span><span class="o">:</span> <span class="p">{</span> <span class="nx">autoNumber</span><span class="o">:</span> <span class="s2">&#34;AMS&#34;</span> <span class="p">}</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>I realize that MathJax is a large JavaScript library. It&rsquo;s probably stupid to try optimizations without testing, nevertheless I didn&rsquo;t want to load MathJax with every page. Most pages don&rsquo;t require it, so I wrap the MathJax configuration in an if-block that detects if the page (or the whole site) defines the parameter <code>math</code>.  The configuration has been updated, as well.</p>
 <p>Now all I have to do is add <code>math: true</code> to the front matter of any file that includes \(\LaTeX\).</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!-- Include MathJaX if either the page or the site params define math=true --&gt;</span>
-  {{- if or .Params.math .Site.Params.math -}}
-  <span class="c">&lt;!-- Configure MathJax for automatic equation numbering. See
-</span><span class="c">    https://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
-</span><span class="c">    for details.
-</span><span class="c">    Also, for tex2jax configuration see https://docs.mathjax.org/en/latest/
-</span><span class="c">    options/preprocessors/tex2jax.html
-</span><span class="c">
-</span><span class="c">    Note that the double-backslashes are very important. Without them ordinary
-</span><span class="c">    markdown will interpret (parenthetical statements) as inline math, and cause
-</span><span class="c">    similar problems if text is put between &#39;[&#39; and &#39;]&#39;.
-</span><span class="c">  --&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/x-mathjax-config&#34;</span><span class="p">&gt;</span>
-    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-      <span class="nx">TeX</span><span class="o">:</span> <span class="p">{</span> <span class="nx">equationNumbers</span><span class="o">:</span> <span class="p">{</span> <span class="nx">autoNumber</span><span class="o">:</span> <span class="s2">&#34;AMS&#34;</span> <span class="p">},</span>
-              <span class="nx">extensions</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;AMSmath.js&#34;</span><span class="p">,</span> <span class="s2">&#34;AMSsymbols.js&#34;</span><span class="p">]</span> <span class="p">},</span>
-      <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="s1">&#39;\\)&#39;</span><span class="p">]],</span>
-        <span class="nx">displayMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$$&#39;</span><span class="p">,</span><span class="s1">&#39;$$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\[&#39;</span><span class="p">,</span><span class="s1">&#39;\\]&#39;</span><span class="p">]],</span>
-        <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">processEnvironments</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">skipTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
-  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div><p>In addition to being updated, it tries to load from a Cloudflare, but if it can&rsquo;t connect it loads a local copy.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!--
-</span><span class="c">    Load MathJax. Note that this is one of the most general configurations.
-</span><span class="c">    See the configuration docs for others. There might be a lighter version
-</span><span class="c">    that will work for my purposes.
-</span><span class="c">    https://docs.mathjax.org/en/latest/config-files.html#common-configurations
-</span><span class="c">  --&gt;</span>
-  <span class="c">&lt;!-- MathJax: Fall back to local if your computer is offline and can&#39;t connect
-</span><span class="c">    to the CDN. For convenience, the configuration for the fallback deactivates
-</span><span class="c">    image fonts support (imageFont:null). This allows you to host a slim local
-</span><span class="c">    copy by deleting the PNG fonts.--&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-
-  <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script type=&#34;text/x-mathjax-config&#34;&gt;MathJax.Hub.Config({&#34;HTML-CSS&#34;:{imageFont:null}});&lt;\/script&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;{{ &#34;scripts/MathJax-2.7.5/MathJax.js&#34; | relURL }}?config=TeX-AMS-MML_HTMLorMML&#34;&gt;&lt;\/script&gt;&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-  {{- end -}}
-</code></pre></div><h4 id="pagination">Pagination</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  <span class="c">&lt;!-- Include MathJaX if either the page or the site params define math=true --&gt;</span>
+</span></span><span class="line"><span class="cl">  {{- if or .Params.math .Site.Params.math -}}
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- Configure MathJax for automatic equation numbering. See
+</span></span></span><span class="line"><span class="cl"><span class="c">    https://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
+</span></span></span><span class="line"><span class="cl"><span class="c">    for details.
+</span></span></span><span class="line"><span class="cl"><span class="c">    Also, for tex2jax configuration see https://docs.mathjax.org/en/latest/
+</span></span></span><span class="line"><span class="cl"><span class="c">    options/preprocessors/tex2jax.html
+</span></span></span><span class="line"><span class="cl"><span class="c">
+</span></span></span><span class="line"><span class="cl"><span class="c">    Note that the double-backslashes are very important. Without them ordinary
+</span></span></span><span class="line"><span class="cl"><span class="c">    markdown will interpret (parenthetical statements) as inline math, and cause
+</span></span></span><span class="line"><span class="cl"><span class="c">    similar problems if text is put between &#39;[&#39; and &#39;]&#39;.
+</span></span></span><span class="line"><span class="cl"><span class="c">  --&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/x-mathjax-config&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">TeX</span><span class="o">:</span> <span class="p">{</span> <span class="nx">equationNumbers</span><span class="o">:</span> <span class="p">{</span> <span class="nx">autoNumber</span><span class="o">:</span> <span class="s2">&#34;AMS&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">extensions</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;AMSmath.js&#34;</span><span class="p">,</span> <span class="s2">&#34;AMSsymbols.js&#34;</span><span class="p">]</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="s1">&#39;\\)&#39;</span><span class="p">]],</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">displayMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$$&#39;</span><span class="p">,</span><span class="s1">&#39;$$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\[&#39;</span><span class="p">,</span><span class="s1">&#39;\\]&#39;</span><span class="p">]],</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">processEnvironments</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">skipTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>In addition to being updated, it tries to load from a Cloudflare, but if it can&rsquo;t connect it loads a local copy.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  <span class="c">&lt;!--
+</span></span></span><span class="line"><span class="cl"><span class="c">    Load MathJax. Note that this is one of the most general configurations.
+</span></span></span><span class="line"><span class="cl"><span class="c">    See the configuration docs for others. There might be a lighter version
+</span></span></span><span class="line"><span class="cl"><span class="c">    that will work for my purposes.
+</span></span></span><span class="line"><span class="cl"><span class="c">    https://docs.mathjax.org/en/latest/config-files.html#common-configurations
+</span></span></span><span class="line"><span class="cl"><span class="c">  --&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- MathJax: Fall back to local if your computer is offline and can&#39;t connect
+</span></span></span><span class="line"><span class="cl"><span class="c">    to the CDN. For convenience, the configuration for the fallback deactivates
+</span></span></span><span class="line"><span class="cl"><span class="c">    image fonts support (imageFont:null). This allows you to host a slim local
+</span></span></span><span class="line"><span class="cl"><span class="c">    copy by deleting the PNG fonts.--&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;script type=&#34;text/x-mathjax-config&#34;&gt;MathJax.Hub.Config({&#34;HTML-CSS&#34;:{imageFont:null}});&lt;\/script&gt;&lt;script type=&#34;text/javascript&#34; src=&#34;{{ &#34;scripts/MathJax-2.7.5/MathJax.js&#34; | relURL }}?config=TeX-AMS-MML_HTMLorMML&#34;&gt;&lt;\/script&gt;&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  {{- end -}}
+</span></span></code></pre></div><h4 id="pagination">Pagination</h4>
 <p>I had added lots of notes and the layout was still sprinkled with distracting icons, this time with a redish theme and green accents. I had at least learned how to paginate my page lists. For example, the default list (<code>layouts/_default/list.html</code>) used Hugo&rsquo;s built-in pagination:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">  {{ define &#34;main&#34; }}
-
-  <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-      <span class="c">&lt;!-- default list template --&gt;</span>
-      <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-        <span class="c">&lt;!-- &#34;{{.Content}}&#34; pulls from the markdown content of the corresponding _index.md --&gt;</span>
-        {{ .Content }}
-      <span class="c">&lt;!-- Paginates through content/note/*.md --&gt;</span>
-      {{ $paginator := .Paginate (where .Pages &#34;Type&#34; &#34;note&#34;) }}
-      {{ range $paginator.Pages }}
-        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-125&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>{{ .Title }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;article-meta-data&#34;</span><span class="p">&gt;</span>
-          {{ partial &#34;date-and-tags.html&#34; . }}
-          <span class="c">&lt;!-- this renders based on layouts/_default/summary.html (either the
-</span><span class="c">          local one, or the one in a theme --&gt;</span>
-          {{ .Render &#34;summary&#34; }}
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-      {{ end }}
-      {{ template &#34;_internal/pagination.html&#34; . }}
-      <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
-
-  {{ end }}
-</code></pre></div><figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  {{ define &#34;main&#34; }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="c">&lt;!-- default list template --&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- &#34;{{.Content}}&#34; pulls from the markdown content of the corresponding _index.md --&gt;</span>
+</span></span><span class="line"><span class="cl">        {{ .Content }}
+</span></span><span class="line"><span class="cl">      <span class="c">&lt;!-- Paginates through content/note/*.md --&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ $paginator := .Paginate (where .Pages &#34;Type&#34; &#34;note&#34;) }}
+</span></span><span class="line"><span class="cl">      {{ range $paginator.Pages }}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;font-125&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>{{ .Title }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;article-meta-data&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          {{ partial &#34;date-and-tags.html&#34; . }}
+</span></span><span class="line"><span class="cl">          <span class="c">&lt;!-- this renders based on layouts/_default/summary.html (either the
+</span></span></span><span class="line"><span class="cl"><span class="c">          local one, or the one in a theme --&gt;</span>
+</span></span><span class="line"><span class="cl">          {{ .Render &#34;summary&#34; }}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{ end }}
+</span></span><span class="line"><span class="cl">      {{ template &#34;_internal/pagination.html&#34; . }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  {{ end }}
+</span></span></code></pre></div><figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png">
     <img src="https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png"
          alt="Pagination, Redish Theme, and Green Accents"></a><figcaption>
             Pagination, Redish Theme, and Green Accents
@@ -421,20 +427,20 @@
 <h4 id="scrollbar-jumping">Scrollbar Jumping</h4>
 <p>At some point I noticed that when navigating from a page that had no scrollbar (like a short post or note) to one that did (such as the paginated lists of notes displayed above) the whole layout shifted slightly. I found a <a href="https://css-tricks.com/elegant-fix-jumping-scrollbar-issue/" class="external-link" target="_blank" rel="noopener">fix for it at CSS-Tricks</a>.</p>
 <p>At the time, I had a <code>layouts/partials/style.html</code> partial file. All I had to do was add a few lines of CSS to it:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css">  <span class="nt">html</span> <span class="p">{</span>
-    <span class="k">margin-left</span><span class="p">:</span> <span class="nb">calc</span><span class="p">(</span><span class="mi">100</span><span class="kt">vw</span> <span class="o">-</span> <span class="mi">100</span><span class="kt">%</span><span class="p">);</span>
-    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="p">}</span>
-</code></pre></div><h4 id="scss-pipeline-processing">SCSS Pipeline Processing</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl">  <span class="nt">html</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-left</span><span class="p">:</span> <span class="nb">calc</span><span class="p">(</span><span class="mi">100</span><span class="kt">vw</span> <span class="o">-</span> <span class="mi">100</span><span class="kt">%</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><h4 id="scss-pipeline-processing">SCSS Pipeline Processing</h4>
 <p>By April I had setup a pipeline for processing SCSS into CSS. The pipeline consisted of this small amount of template code:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">  <span class="c">&lt;!-- For more info about using SCSS and this pipeline see:
-</span><span class="c">    https://github.com/gohugoio/hugo/commit/dea71670c059ab4d5a42bd22503f18c087dd22d4,
-</span><span class="c">    https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
-</span><span class="c">    and https://gohugo.io/hugo-pipes/
-</span><span class="c">  --&gt;</span>
-  {{ $style := resources.Get &#34;sass/main.scss&#34; | toCSS | minify | fingerprint }}
-  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $style.RelPermalink }}&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;{{ $style.Data.Digest }}&#34;</span> <span class="na">media</span><span class="o">=</span><span class="s">&#34;screen&#34;</span><span class="p">&gt;</span>
-</code></pre></div><p>The <code>main.scss</code> file lived in <code>assets/scss/</code> at the root of the repository.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  <span class="c">&lt;!-- For more info about using SCSS and this pipeline see:
+</span></span></span><span class="line"><span class="cl"><span class="c">    https://github.com/gohugoio/hugo/commit/dea71670c059ab4d5a42bd22503f18c087dd22d4,
+</span></span></span><span class="line"><span class="cl"><span class="c">    https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
+</span></span></span><span class="line"><span class="cl"><span class="c">    and https://gohugo.io/hugo-pipes/
+</span></span></span><span class="line"><span class="cl"><span class="c">  --&gt;</span>
+</span></span><span class="line"><span class="cl">  {{ $style := resources.Get &#34;sass/main.scss&#34; | toCSS | minify | fingerprint }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $style.RelPermalink }}&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;{{ $style.Data.Digest }}&#34;</span> <span class="na">media</span><span class="o">=</span><span class="s">&#34;screen&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>The <code>main.scss</code> file lived in <code>assets/scss/</code> at the root of the repository.</p>
 <h2 id="sorry-vanilla-you-have-to-go">Sorry Vanilla. You have to Go</h2>
 <p>One aspect of design I didn&rsquo;t enjoy was trying to figure out the correct CSS classes to apply to a given situation. For example, the body element is <code>&lt;body class=&quot;d-flex flex-column h-100&quot;&gt;</code>. I have no idea what those classes mean and why I need them, so I started learning more about HTML and CSS.</p>
 <p>My new goal was to really understand the structure of my site, so I know where things are, what needs to be modified as I build it to look the way I want it to, and know the elements and classes defined in the layout so they can be styled correctly. Vanilla Bootstrap was a nice place to start, but I don&rsquo;t understand the choices made for structure and styling. Its use of Bootstrap added another layer of complexity to learning how changes to CSS will affect the site.</p>
@@ -451,37 +457,37 @@
 <p>Ripping out Vanilla left me with a barebones layout. Here are some of the things I learned along the way to creating a site more to my liking.</p>
 <h3 id="navigation-menu">Navigation Menu</h3>
 <p>By late April, I learned that navigation links didn&rsquo;t have to be wrapped in an unordered list. Looking through git log, I found the navigation menu had always been wrapped in an unordered list.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-nav mr-auto&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-item&#34;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/#about&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#about&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-item&#34;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/#publications_featured&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#publications_featured&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Publications<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</code></pre></div><p>Now I have just a <code>&lt;nav&gt;</code> element that wraps a <code>&lt;div&gt;</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__items&#34;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link navLink-active&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/&#34;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link &#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/about/&#34;</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link &#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/now/&#34;</span><span class="p">&gt;</span>Now<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link &#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/index.xml&#34;</span><span class="p">&gt;</span>RSS<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
-</code></pre></div><p>The CSS for this section consists of class definitions for <code>main-nav</code> and <code>main-nav__items</code>. It is very simple, and doesn&rsquo;t even try to style the <code>main-nav__link</code> class.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css">  <span class="p">.</span><span class="nc">main-nav</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
-    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-start</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">.</span><span class="nc">main-nav__items</span> <span class="nt">a</span> <span class="p">{</span>
-    <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.1</span><span class="kt">em</span><span class="p">;</span>
-    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">1</span><span class="kt">ch</span><span class="p">;</span>
-  <span class="p">}</span>
-</code></pre></div><p>Unwrapping them changed navigation from:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-nav mr-auto&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-item&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/#about&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#about&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-item&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/#publications_featured&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#publications_featured&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Publications<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Now I have just a <code>&lt;nav&gt;</code> element that wraps a <code>&lt;div&gt;</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__items&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link navLink-active&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/&#34;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link &#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/about/&#34;</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link &#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/now/&#34;</span><span class="p">&gt;</span>Now<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main-nav__link &#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://localhost:1414/index.xml&#34;</span><span class="p">&gt;</span>RSS<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>The CSS for this section consists of class definitions for <code>main-nav</code> and <code>main-nav__items</code>. It is very simple, and doesn&rsquo;t even try to style the <code>main-nav__link</code> class.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">main-nav</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-start</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">main-nav__items</span> <span class="nt">a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.1</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">1</span><span class="kt">ch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p>Unwrapping them changed navigation from:</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png">
     <img src="https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png"
          alt="Unstyled Navigation List"></a><figcaption>
@@ -499,81 +505,81 @@
 
 <h3 id="general-layout">General Layout</h3>
 <p>Per the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" class="external-link" target="_blank" rel="noopener">MDN docs on box-sizing</a> <code>border-box</code> makes dealing with the sizes of elements much easier, and generally eliminates a number of pitfalls you can stumble on while laying out your content, so I set <code>border-box</code> globally.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css">  <span class="o">*</span> <span class="p">{</span>
-    <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
-  <span class="p">}</span>
-</code></pre></div><p>I learned I can set site-wide parameters in Hugo&rsquo;s configuration files. I set the site width and several other parameters in <code>config/_default/params.toml</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">  showActiveNav = true
-  author = &#34;Douglas Cuthbertson&#34;
-  description = &#34;This is my soapbox for thoughts on programming, project planning, sketching, drawing, kempo, and any other topic that may suit my fancy.&#34;
-  dateFormat = &#34;Monday Jan 2, 2006&#34;
-  dateFormatExtended = &#34;Monday Jan 2, 2006 15:04&#34;
-  homeText = &#34;&#34;
-  copyright = &#34;(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)&#34;
-  footerText = &#34;Made with HTML, CSS, JavaScript, and perseverance. Generated by [Hugo](https://gohugo.io/)&#34;
-  hideFooter = false
-  #featured_image = &#34;/images/gargoyle-overlooking-paris.jpg&#34;
-  #featured_image = &#34;/images/motif-number-1.jpg&#34;
-  site_width = &#34;104ch&#34;
-
-  componentDropCaps = &#34;drop-caps_goudy&#34;
-  mainSections = [&#34;note&#34;, &#34;post&#34;, &#34;project&#34;]
-  planck = &#34;\u210E&#34;
-  reduced_planck = &#34;\u210F&#34;
-</code></pre></div><p>and use <code>site_width</code> in <code>assets/style/base.css</code> as follows:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">  {{ $siteWidth := .Site.Params.site_width }}
-  {{ if not .Site.Params.site_width }}
-  {{ $siteWidth = &#34;936px&#34; }}
-  {{ end }}
-</code></pre></div><p>I&rsquo;ve only recently decided that this is a bad idea. Every time I try to experiment with the site width, I have to touch the configuration. Hugo must go through a complete rebuild of the site, which takes much more time than necessary.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl">  <span class="o">*</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p>I learned I can set site-wide parameters in Hugo&rsquo;s configuration files. I set the site width and several other parameters in <code>config/_default/params.toml</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">  showActiveNav = true
+</span></span><span class="line"><span class="cl">  author = &#34;Douglas Cuthbertson&#34;
+</span></span><span class="line"><span class="cl">  description = &#34;This is my soapbox for thoughts on programming, project planning, sketching, drawing, kempo, and any other topic that may suit my fancy.&#34;
+</span></span><span class="line"><span class="cl">  dateFormat = &#34;Monday Jan 2, 2006&#34;
+</span></span><span class="line"><span class="cl">  dateFormatExtended = &#34;Monday Jan 2, 2006 15:04&#34;
+</span></span><span class="line"><span class="cl">  homeText = &#34;&#34;
+</span></span><span class="line"><span class="cl">  copyright = &#34;(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)&#34;
+</span></span><span class="line"><span class="cl">  footerText = &#34;Made with HTML, CSS, JavaScript, and perseverance. Generated by [Hugo](https://gohugo.io/)&#34;
+</span></span><span class="line"><span class="cl">  hideFooter = false
+</span></span><span class="line"><span class="cl">  #featured_image = &#34;/images/gargoyle-overlooking-paris.jpg&#34;
+</span></span><span class="line"><span class="cl">  #featured_image = &#34;/images/motif-number-1.jpg&#34;
+</span></span><span class="line"><span class="cl">  site_width = &#34;104ch&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  componentDropCaps = &#34;drop-caps_goudy&#34;
+</span></span><span class="line"><span class="cl">  mainSections = [&#34;note&#34;, &#34;post&#34;, &#34;project&#34;]
+</span></span><span class="line"><span class="cl">  planck = &#34;\u210E&#34;
+</span></span><span class="line"><span class="cl">  reduced_planck = &#34;\u210F&#34;
+</span></span></code></pre></div><p>and use <code>site_width</code> in <code>assets/style/base.css</code> as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">  {{ $siteWidth := .Site.Params.site_width }}
+</span></span><span class="line"><span class="cl">  {{ if not .Site.Params.site_width }}
+</span></span><span class="line"><span class="cl">  {{ $siteWidth = &#34;936px&#34; }}
+</span></span><span class="line"><span class="cl">  {{ end }}
+</span></span></code></pre></div><p>I&rsquo;ve only recently decided that this is a bad idea. Every time I try to experiment with the site width, I have to touch the configuration. Hugo must go through a complete rebuild of the site, which takes much more time than necessary.</p>
 <p>The only reason to put a parameter in a configuration file is if the value must be accessed from more than one place. In this case, it was needed only in a single CSS file. Once I defined the width directly in <code>base.css</code>, site rebuilds were faster, and my CSS is no longer cluttered with Go template code. Also, <code>layouts/partials/head.html</code> was slightly simplified. Instead of accessing <code>base.css</code> as</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go">  <span class="p">{{</span> <span class="err">$</span><span class="nx">cssBase</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;style/base.css&#34;</span> <span class="p">|</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">ExecuteAsTemplate</span> <span class="s">&#34;style.base.css&#34;</span> <span class="p">.</span> <span class="p">}}</span>
-</code></pre></div><p>the code is now</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go">  <span class="p">{{</span> <span class="err">$</span><span class="nx">cssBase</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;style/base.css&#34;</span> <span class="p">}}</span>
-</code></pre></div><h3 id="color-consistency-and-contrast">Color Consistency and Contrast</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl">  <span class="p">{{</span> <span class="err">$</span><span class="nx">cssBase</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;style/base.css&#34;</span> <span class="p">|</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">ExecuteAsTemplate</span> <span class="s">&#34;style.base.css&#34;</span> <span class="p">.</span> <span class="p">}}</span>
+</span></span></code></pre></div><p>the code is now</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl">  <span class="p">{{</span> <span class="err">$</span><span class="nx">cssBase</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;style/base.css&#34;</span> <span class="p">}}</span>
+</span></span></code></pre></div><h3 id="color-consistency-and-contrast">Color Consistency and Contrast</h3>
 <p>In May I was trying to ensure colors were being used consistently. I learned that the site should have primary and accent colors, and define the color of the body text. Some designers say that black text on a white background is too harsh and set dark gray text on a light gray background. When I look at those sites, I find the contrast is often too low and causes eye strain. I originally just went with black text on white. I figured it&rsquo;s a work in progress, and that can be adjusted when the rest of the site is more to my liking.</p>
 <p>In deference to experienced designers I now set the text to a very dark gray on a very light gray background. I created a palette using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" class="external-link" target="_blank" rel="noopener">CSS custom properties</a>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css">  <span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
-    <span class="nv">--color100</span><span class="p">:</span> <span class="mh">#f5fffa</span><span class="p">;</span>
-    <span class="nv">--color200</span><span class="p">:</span> <span class="mh">#7cffbb</span><span class="p">;</span>
-    <span class="nv">--color300</span><span class="p">:</span> <span class="mh">#00eb75</span><span class="p">;</span>
-    <span class="nv">--color400</span><span class="p">:</span> <span class="mh">#00c663</span><span class="p">;</span>
-    <span class="nv">--color500</span><span class="p">:</span> <span class="mh">#00a151</span><span class="p">;</span>
-    <span class="nv">--color600</span><span class="p">:</span> <span class="mh">#007c3e</span><span class="p">;</span>
-    <span class="nv">--color700</span><span class="p">:</span> <span class="mh">#00572c</span><span class="p">;</span>
-    <span class="nv">--color800</span><span class="p">:</span> <span class="mh">#003219</span><span class="p">;</span>
-    <span class="nv">--color900</span><span class="p">:</span> <span class="mh">#000b05</span><span class="p">;</span>
-    <span class="nv">--gray100</span><span class="p">:</span> <span class="mh">#fcfcfc</span><span class="p">;</span>
-    <span class="nv">--gray200</span><span class="p">:</span> <span class="mh">#dedede</span><span class="p">;</span>
-    <span class="nv">--gray300</span><span class="p">:</span> <span class="mh">#bfbfbf</span><span class="p">;</span>
-    <span class="nv">--gray400</span><span class="p">:</span> <span class="mh">#a1a1a1</span><span class="p">;</span>
-    <span class="nv">--gray500</span><span class="p">:</span> <span class="mh">#828282</span><span class="p">;</span>
-    <span class="nv">--gray600</span><span class="p">:</span> <span class="mh">#636363</span><span class="p">;</span>
-    <span class="nv">--gray700</span><span class="p">:</span> <span class="mh">#454545</span><span class="p">;</span>
-    <span class="nv">--gray800</span><span class="p">:</span> <span class="mh">#262626</span><span class="p">;</span>
-    <span class="nv">--gray900</span><span class="p">:</span> <span class="mh">#080808</span><span class="p">;</span> <span class="c">/* text */</span>
-    <span class="nv">--color500-complement</span><span class="p">:</span> <span class="mh">#a30052</span><span class="p">;</span> <span class="c">/* anchor hover */</span>
-    <span class="nv">--color500-adjacent</span><span class="p">:</span> <span class="mh">#0062a3</span><span class="p">;</span> <span class="c">/* drop-caps */</span>
-    <span class="nv">--color500-adjacent-complement</span><span class="p">:</span> <span class="mh">#a34100</span><span class="p">;</span> <span class="c">/* reserved */</span>
-    <span class="nv">--color700-complement</span><span class="p">:</span> <span class="mh">#00572b</span><span class="p">;</span>
-    <span class="nv">--color700-adjacent</span><span class="p">:</span> <span class="mh">#003457</span><span class="p">;</span>
-    <span class="nv">--color700-adjacent-complement</span><span class="p">:</span> <span class="mh">#572300</span><span class="p">;</span>
-  <span class="p">}</span>
-</code></pre></div><p>I like this aspect of CSS. It means I can define all the colors I care about in one place, and I don&rsquo;t have to learn SCSS at the moment to do it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl">  <span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color100</span><span class="p">:</span> <span class="mh">#f5fffa</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color200</span><span class="p">:</span> <span class="mh">#7cffbb</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color300</span><span class="p">:</span> <span class="mh">#00eb75</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color400</span><span class="p">:</span> <span class="mh">#00c663</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color500</span><span class="p">:</span> <span class="mh">#00a151</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color600</span><span class="p">:</span> <span class="mh">#007c3e</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color700</span><span class="p">:</span> <span class="mh">#00572c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color800</span><span class="p">:</span> <span class="mh">#003219</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color900</span><span class="p">:</span> <span class="mh">#000b05</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--gray100</span><span class="p">:</span> <span class="mh">#fcfcfc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--gray200</span><span class="p">:</span> <span class="mh">#dedede</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--gray300</span><span class="p">:</span> <span class="mh">#bfbfbf</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--gray400</span><span class="p">:</span> <span class="mh">#a1a1a1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--gray500</span><span class="p">:</span> <span class="mh">#828282</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--gray600</span><span class="p">:</span> <span class="mh">#636363</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--gray700</span><span class="p">:</span> <span class="mh">#454545</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--gray800</span><span class="p">:</span> <span class="mh">#262626</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--gray900</span><span class="p">:</span> <span class="mh">#080808</span><span class="p">;</span> <span class="c">/* text */</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color500-complement</span><span class="p">:</span> <span class="mh">#a30052</span><span class="p">;</span> <span class="c">/* anchor hover */</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color500-adjacent</span><span class="p">:</span> <span class="mh">#0062a3</span><span class="p">;</span> <span class="c">/* drop-caps */</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color500-adjacent-complement</span><span class="p">:</span> <span class="mh">#a34100</span><span class="p">;</span> <span class="c">/* reserved */</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color700-complement</span><span class="p">:</span> <span class="mh">#00572b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color700-adjacent</span><span class="p">:</span> <span class="mh">#003457</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--color700-adjacent-complement</span><span class="p">:</span> <span class="mh">#572300</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p>I like this aspect of CSS. It means I can define all the colors I care about in one place, and I don&rsquo;t have to learn SCSS at the moment to do it.</p>
 <p>Some sites eschew black text on a white background. For example, <a href="https://jgthms.com/web-design-in-4-minutes/" class="external-link" target="_blank" rel="noopener">Web Design in 4 Minutes</a> recommends using a medium gray (<code>#555</code>) for body text, a dark gray (<code>#333</code>) for headings and strong text all against a white background. However that creates a rather low contrast. To make matters worse, the background for code blocks is set to <code>#eee</code>.</p>
 <p>The <a href="https://www.w3.org/TR/WCAG20/" class="external-link" target="_blank" rel="noopener">Web Content Accessibility Guidelines</a> recommends a contrast ratio of at least 7:1 for normal text and 4.5:1 for large text. Large text is defined as 14 point (typically 18.66px) and bold or larger, or 18 point (typically 24px) or larger. The contrast ratio for headings set to #333 against white is strong at 12.62:1. Body text set to #555 against white is barely acceptable at 7.46:1. Finally, the constrast ratio of code blocks (#555 against a background of #eee) is unacceptable at 6.42:1.</p>
 <p>Originally, I had black text on a white background. In deference to designers who have a lot more experience creating web sites than I do, I set the background and text colors to the lightest and darkest grays in the palette, respectively.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css">  <span class="nt">body</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">gray100</span><span class="p">);</span>
-    <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">gray900</span><span class="p">);</span>
-  <span class="p">}</span>
-</code></pre></div><p>The contrast ratio is 19.52:1. Is that too high? One day I&rsquo;ll look into separate degrees of contrast for body text and headings.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl">  <span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">gray100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">gray900</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p>The contrast ratio is 19.52:1. Is that too high? One day I&rsquo;ll look into separate degrees of contrast for body text and headings.</p>
 <h2 id="styling-fun">Styling Fun</h2>
 <p>One thing I particularly liked was how nice drop caps looked on <a href="https://www.gwern.net/index" class="external-link" target="_blank" rel="noopener">Gwern</a>. I looked at his CSS and created a new file, <code>static\style\drop-caps\drop-caps.css</code> with a simplified version of his CSS. I dropped it in the <code>static/</code> directory instead of the <code>assets/</code> folder out of expediency, and I modified <code>layouts/_default/baseof.html</code> to pull in the drop caps definitions.</p>
 
 <aside class="admonition note">
   <div class="admonition-title">Browser-Specific Styling</div>
-  <div class="content-admonition"><p>For the longest time I couldn&rsquo;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at <a href="https://www.gwern.net/index">gwern.net</a>, I realized <code>@supports (-moz-user-focus: normal) { ... }</code> is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use <code>@supports not (-moz-user-focus: normal)</code> to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.</p></div>
+  <div class="content-admonition"><p>For the longest time I couldn&rsquo;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at <a href="https://www.gwern.net/index" class="external-link" target="_blank" rel="noopener">gwern.net</a>, I realized <code>@supports (-moz-user-focus: normal) { ... }</code> is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use <code>@supports not (-moz-user-focus: normal)</code> to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.</p></div>
 </aside>
 <p>By the end of June I removed most of the feather icons and simplified the layout. It looked better.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png">
@@ -585,13 +591,13 @@
 
 <h2 id="debugging-layouts">Debugging Layouts</h2>
 <p>A simple trick to help debug layouts is to put a high-contrast border and background color around the sections you&rsquo;re working on.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css">  <span class="p">.</span><span class="nc">wrapper</span> <span class="o">&gt;</span> <span class="o">*</span> <span class="p">{</span>
-    <span class="k">border</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#f08c00</span><span class="p">;</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#ffec99</span><span class="p">;</span>
-    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-  <span class="p">}</span>
-</code></pre></div><p>A little thing like that helped me make a two column layout.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">wrapper</span> <span class="o">&gt;</span> <span class="o">*</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#f08c00</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#ffec99</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p>A little thing like that helped me make a two column layout.</p>
 <figure class="post-image" ><a href="https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png">
     <img src="https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png"
          alt="Two Column Layout"></a><figcaption>
@@ -615,7 +621,7 @@
     <!-- BEGIN layouts/partials/footer.html -->
     <footer class="main-footer">
       <div class="container">
-        (c) 2015-2021 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a> except where indicated otherwise. Made with Markdown, HTML, CSS, JavaScript, joy, and perseverance. Generated by <a href="https://gohugo.io/">Hugo</a>.
+        (c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" class="external-link" target="_blank" rel="noopener">Creative Commons Attribution 4.0 (CC BY 4.0), International License</a>, again except where indicated otherwise. Made with Markdown, HTML, CSS, JavaScript, joy, and perseverance. Generated by <a href="https://gohugo.io/" class="external-link" target="_blank" rel="noopener">Hugo</a>.
           <div class="social">
 
 
@@ -631,21 +637,13 @@
     </a>
   </li>
   <li class="social-item">
-    <a href="https://news.ycombinator.com/user?id=dcuthbertson"
+    <a href="https://twitter.com/DougCuthbertson?ref_src=twsrc%5Etfw"
        target="_blank" rel="noopener noreferrer"
-       title="Sometimes I write comments on Hacker News"
-       class="hackernews">
-      <span class="icon icon-info2"></span>
-      Hacker News
-    </a>
-  </li>
-  <li class="social-item">
-    <a href="https://www.instagram.com/dbc60/"
-       target="_blank" rel="noopener noreferrer"
-       title="Instagram - It's been a while"
-       class="instagram">
-      <span class="icon icon-instagram"></span>
-      Instagram
+       title="Follow me on Twitter"
+       class="twitter"
+       data-show-count="false">
+      <span class="icon icon-twitter2"></span>
+      Twitter
     </a>
   </li>
   <li class="social-item">
@@ -657,58 +655,12 @@
       LinkedIn</a>
     </li>
   <li class="social-item">
-    <a href="https://www.pinterest.com/dougcuthbertson/"
-       target="_blank" rel="noopener noreferrer"
-       title="I haven't posted on Pinterest, yet"
-       class="pinterest">
-      <span class="icon icon-pinterest"></span>
-      Pinterest
-    </a>
-  </li>
-  <li class="social-item">
-    <a href="https://www.reddit.com/user/dbc60"
-       target="_blank" rel="noopener noreferrer"
-       title="I read Reddit"
-       class="reddit">
-      <span class="icon icon-reddit"></span>
-      Reddit
-    </a>
-  </li>
-  <li class="social-item">
     <a href="https://stackoverflow.com/users/165347/doug-cuthbertson"
        target="_blank" rel="noopener noreferrer"
        title="I once answered a question on Stackoverflow"
        class="stackoverflow">
       <span class="icon icon-stackoverflow"></span>
       Stackoverflow
-    </a>
-  </li>
-  <li class="social-item">
-    <a href="https://dbc60.tumblr.com"
-       target="_blank" rel="noopener noreferrer"
-       title="I post on Tumblr once in a blue moon"
-       class="pinterest">
-      <span class="icon icon-tumblr"></span>
-      Tumblr
-    </a>
-  </li>
-  <li class="social-item">
-    <a href="https://twitter.com/DougCuthbertson?ref_src=twsrc%5Etfw"
-       target="_blank" rel="noopener noreferrer"
-       title="Follow me on Twitter"
-       class="twitter"
-       data-show-count="false">
-      <span class="icon icon-twitter2"></span>
-      Twitter
-    </a>
-  </li>
-  <li class="social-item">
-    <a href="https://www.youtube.com/channel/UCjYq4zK5Pc2vxwpCWUotPxg?view_as=subscriber"
-       target="_blank" rel="noopener noreferrer"
-       title="Not much to see from me on YouTube"
-       class="youtube">
-      <span class="icon icon-youtube"></span>
-      YouTube
     </a>
   </li>
   <li class="social-item">
@@ -720,6 +672,7 @@
       email
     </a>
   </li>
+  
 </ul>
 </div>
       </div>
