@@ -9,7 +9,7 @@
     <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
-    <lastBuildDate>Sat, 05 Nov 2022 08:07:31 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 08 May 2023 17:01:29 -0400</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,29 +17,20 @@
     <item>
       <title>Posts</title>
       <link>https://douglascuthbertson.com/post/</link>
-      <pubDate>Sat, 05 Nov 2022 08:07:31 -0400</pubDate>
+      <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
       <guid>https://douglascuthbertson.com/post/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Evergreen Notes</title>
-      <link>https://douglascuthbertson.com/evergreen-notes/</link>
-      <pubDate>Wed, 10 Jun 2020 07:12:11 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>https://douglascuthbertson.com/evergreen-notes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>What I&#39;m Doing Now</title>
+      <title>What I Do Now</title>
       <link>https://douglascuthbertson.com/now/</link>
       <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
       <guid>https://douglascuthbertson.com/now/</guid>
-      <description>&lt;p&gt;October 1st, 2021 &lt;a href=&#34;https://f5.com&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;F5 Networks&lt;/a&gt; acquired &lt;a href=&#34;https://www.threatstack.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Threat Stack&lt;/a&gt;! As far as I know, F5 did not layoff anyone from Threat Stack. They treated the acquistion like they were hiring individuals and made separate offers that each person could choose to accept or not. I think most were given offers for permanent positions, while some others were offered temporary positions to help with the transition. I chose to stay, and am still working on the (formerly Threat Stack) agents. I am the primary developer of the Windows Agent, and am a significant contributor to the Linux, containerized, and Fargate agents.&lt;/p&gt;
-&lt;p&gt;Threat Stack was a great place to work, and so far F5 is equally as good. Every F5&amp;rsquo;er I&amp;rsquo;ve met to date has been very welcoming and a pleasure to chat with. Like Threat Stack, F5 has a generous work-from-home policy of which I&amp;rsquo;m taking full advantage. I do NOT miss commuting an hour and a half each way between home and the Boston office.&lt;/p&gt;
+      <description>&lt;p&gt;The economy is getting tough. &lt;a href=&#34;https://f5.com&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;F5, Inc.&lt;/a&gt; laid off about 9% of their workforce, or 623 employees, worldwide. I was surprised to see so many good engineers, product managers, sales people, and others go. It&amp;rsquo;s time to figure out what comes next.&lt;/p&gt;
+&lt;p&gt;F5 acquired Threat Stack October 1st, 2021. At the time I worked in the Application Infrastructure Protection (AIP) division doing pretty much what I was before, adding features to the Windows, Linux, containerized, and Fargate agents.&lt;/p&gt;
 &lt;p&gt;This page is inspired by Derek Siver&amp;rsquo;s &lt;a href=&#34;https://sivers.org/nowff&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;/now page movement&lt;/a&gt;. You can see &lt;a href=&#34;http://nownownow.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;lots of sites&lt;/a&gt; which have &lt;code&gt;/now&lt;/code&gt; pages.&lt;/p&gt;</description>
     </item>
     
@@ -49,9 +40,9 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
       <guid>https://douglascuthbertson.com/about/</guid>
-      <description>&lt;p&gt;Good day! I&amp;rsquo;m Douglas Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I&amp;rsquo;ve been writing software in &lt;a href=&#34;https://golang.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; for both Linux and Windows (it&amp;rsquo;s my new favorite programming language).&lt;/p&gt;
+      <description>&lt;p&gt;I am Douglas Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I&amp;rsquo;ve been writing software in &lt;a href=&#34;https://golang.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; for both Linux and Windows (it&amp;rsquo;s my new favorite programming language).&lt;/p&gt;
 &lt;p&gt;I tend to read too much about software development and not write enough code, so my intent is to use this blog to explore some of the aspects of coding and engineering I&amp;rsquo;ve enjoyed reading about and put them into practice.&lt;/p&gt;
-&lt;p&gt;Besides my professional work, I&amp;rsquo;m a husband, a father to two really wonderful children who have grown up and are launching careers of their own.&lt;/p&gt;
+&lt;p&gt;Besides my professional work, I&amp;rsquo;m a husband, and a father to two really wonderful children who have grown up and are launching careers of their own.&lt;/p&gt;
 &lt;p&gt;Among other things, I&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;dream about model railroads (it was a favorite hobby of mine and I hope to get back to it one day soon)&lt;/li&gt;

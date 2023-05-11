@@ -9,10 +9,149 @@
     <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
     <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
-    <lastBuildDate>Sat, 22 Feb 2020 17:38:32 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 23 Sep 2021 10:59:36 -0400</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Table Shortcode for Hugo</title>
+      <link>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/</link>
+      <pubDate>Thu, 23 Sep 2021 10:59:36 -0400</pubDate>
+      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      <guid>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/</guid>
+      <description>&lt;p&gt;I write a lot of notes in Markdown files and use Hugo to display them in a browser. It makes for easy reading and jumping among them. Several months ago, I needed to create some tables where some cells spanned mulitple rows or columns. That&amp;rsquo;s not possible with Markdown tables. Creating tables in HTML with appropriate classes seemed tedious. I thought it might be less so by defining tables in &lt;a href=&#34;https://toml.io/en/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TOML&lt;/a&gt; and use a shortcode to translate them into HTML.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#the-create-table-shortcode&#34;&gt;The Create-Table Shortcode&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#buildtable-template&#34;&gt;buildTable Template&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#createcolgroup-template&#34;&gt;createColGroup Template&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#createrowshead-and--processmaphead-templates&#34;&gt;createRowsHead and  processMapHead Templates&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#createrows-and-processmap-templates&#34;&gt;createRows and processMap Templates&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#the-complete-create-table-shortcode&#34;&gt;The Complete create-table Shortcode&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;p&gt;I might be wrong. It turns out that it&amp;rsquo;s very hard to define a table in TOML. It&amp;rsquo;s even harder to define one where a cell can span two or more rows or columns. Once you have that, you still have to write a lot of CSS to get it to display properly.&lt;/p&gt;
+&lt;p&gt;What I have is a way to turn a TOML table stored in &lt;code&gt;/data/complete-example.toml&lt;/code&gt; into this:&lt;/p&gt;
+
+
+&lt;table class=&#34;table&#34;&gt;&lt;caption&gt;All the Features in the Create-Table Shortcode&lt;/caption&gt;&lt;colgroup&gt;
+    &lt;col span=&#34;1&#34; &gt;
+    &lt;col class=&#34;odd&#34;  span=&#34;2&#34; &gt;
+    &lt;col class=&#34;even&#34;  span=&#34;1&#34; &gt;&lt;/colgroup&gt;&lt;thead&gt;
+      &lt;tr class=&#34;head&#34;&gt;
+      &lt;th&gt;Header R2C1&lt;/th&gt;
+      &lt;th&gt;Header R2C2&lt;/th&gt;
+      &lt;th&gt;Header R2C3&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr class=&#34;head&#34;&gt;
+      &lt;th&gt;Header R3C1&lt;/th&gt;
+      &lt;th&gt;Header R3C2&lt;/th&gt;
+      &lt;th&gt;Header R3C3&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr class=&#34;head&#34;&gt;
+      &lt;th&gt;Header R4C1&lt;/th&gt;
+      &lt;th&gt;Header R4C2&lt;/th&gt;
+      &lt;th&gt;Header R4C3&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
+      &lt;tr class=&#34;body&#34;&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;c&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr class=&#34;body&#34;&gt;
+      &lt;td&gt;d&lt;/td&gt;
+      &lt;td&gt;e&lt;/td&gt;
+      &lt;td&gt;f&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr class=&#34;body&#34;&gt;
+      &lt;td&gt;Header R1C1&lt;/td&gt;
+      &lt;td&gt;Header R1C2&lt;/td&gt;
+      &lt;td&gt;Header R1C3&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;tfoot&gt;
+      &lt;tr class=&#34;body&#34;&gt;
+      &lt;td&gt;foot1&lt;/td&gt;
+      &lt;td&gt;foot2&lt;/td&gt;
+      &lt;td&gt;foot3&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;&lt;/table&gt;
+
+&lt;p&gt;It&amp;rsquo;s not a complete solution, but it&amp;rsquo;s enough given the effort to get this far.In the future, if I need fancy tables, I think I&amp;rsquo;ll just embed HTML into the markdown.&lt;/p&gt;
+&lt;p&gt;The contents of &lt;code&gt;/data/complete-example.toml&lt;/code&gt; is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# Table caption&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;caption&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;All the Features in the Create-Table Shortcode&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;hd1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R1C1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R1C2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R1C3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;hd1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R2C1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R2C2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R2C3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;hd1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R3C1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R3C2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R3C3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;hd2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R4C1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R4C2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R4C3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;e&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;f&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# Don&amp;#39;t embed colgroup in another array. It becomes an embedded map.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# [[head.colgroup]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#   span = 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# [[head.colgroup]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#   span = 2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;foot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foot1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;foot2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;foot3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# This map is at the top-level of the table and can be used to create an HTML&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# colgroup for the table. One entry for each &amp;lt;col&amp;gt; element.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;colgroup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;span&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;colgroup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;span&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;odd&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;colgroup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;span&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;even&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To use the shortcode on this file, include &lt;code&gt;{{&amp;lt; create-table src=&amp;quot;complete-example&amp;quot; &amp;gt;}}&lt;/code&gt; in a markdown file.&lt;/p&gt;
+&lt;h2 id=&#34;the-create-table-shortcode&#34;&gt;The Create-Table Shortcode&lt;/h2&gt;
+&lt;p&gt;This shortcode starts with realizing Hugo&amp;rsquo;s built-in &lt;code&gt;.Site.Data&lt;/code&gt; variable isn&amp;rsquo;t a path to a configured &lt;code&gt;data&lt;/code&gt; directory. It&amp;rsquo;s a map of all files in the data folder, its subfolders, the files contained in those subfolders, and the contents of all those files. On one hand, that&amp;rsquo;s rather insane. On the other, it gets all that data into memory so Hugo can operate on it more quickly than if files had to be individually loaded and parsed.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s capture that in a variable for use later:&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;p&gt;Next, get the data that&amp;rsquo;s in the given file. The file is given in the &lt;code&gt;src&lt;/code&gt; attribute:&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;p&gt;Here&amp;rsquo;s the code to pull out the data just for that file:&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;p&gt;From here, I&amp;rsquo;ll give a quick top-down view of the shortcode. It defines a table as an HTML &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; element with a class of the same name. The contents of the table is generated from a &lt;code&gt;buildTable&lt;/code&gt; template and our data:&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;h2 id=&#34;buildtable-template&#34;&gt;buildTable Template&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;buildTable&lt;/code&gt; template attempts to determine if the TOML data has a head and body. It also captures the data for a caption, any column groups, the head, body, and foot of the table. It starts with initializng some variables.&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;p&gt;The next step is to collect all the keys in the map. The keys are expected to be the components of an HTML table.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;body&lt;/li&gt;
+&lt;li&gt;caption&lt;/li&gt;
+&lt;li&gt;colgroup&lt;/li&gt;
+&lt;li&gt;head&lt;/li&gt;
+&lt;li&gt;foot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;p&gt;Now we can fill in all those variables.&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;p&gt;There are several templates used by that chunk of code. They are small, so we can go through them quickly.&lt;/p&gt;
+&lt;h2 id=&#34;createcolgroup-template&#34;&gt;createColGroup Template&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;createColGroup&lt;/code&gt; creates column groups with the &lt;code&gt;&amp;lt;col&amp;gt;&lt;/code&gt; element:&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;h2 id=&#34;createrowshead-and--processmaphead-templates&#34;&gt;createRowsHead and  processMapHead Templates&lt;/h2&gt;
+&lt;p&gt;These two templates are mutually recursive. &lt;code&gt;createRowsHead&lt;/code&gt; creates rows in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; section of the table. It processes each element of the row, creating a new &lt;code&gt;&amp;lt;th&amp;gt;&lt;/code&gt; element as it goes.&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;p&gt;If a new row needs to be generated, &lt;code&gt;createRowsHead&lt;/code&gt; calls &lt;code&gt;processMapHead&lt;/code&gt; which generates a new &lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt; element. Likewise, &lt;code&gt;processMapHead&lt;/code&gt; will call back to &lt;code&gt;createRowsHead&lt;/code&gt; in the case that a column has more than one value.&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;h2 id=&#34;createrows-and-processmap-templates&#34;&gt;createRows and processMap Templates&lt;/h2&gt;
+&lt;p&gt;These two templates are mutually recursive. &lt;code&gt;createRows&lt;/code&gt; creates the column (&lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;) elements for each row in &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;foot&amp;gt;&lt;/code&gt; element. Note that &lt;code&gt;createRows&lt;/code&gt; is a recursive template, so it can handle some weirdly designed tables.&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;p&gt;&lt;code&gt;processMap&lt;/code&gt; either creates columns in a row, or generates a new row and calls itself recursively. If a column has more than one value, it calls back to &lt;code&gt;createRows&lt;/code&gt; to process them.&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;
+&lt;h2 id=&#34;the-complete-create-table-shortcode&#34;&gt;The Complete create-table Shortcode&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s the whole thing w/o comments. It&amp;rsquo;s not that useful, but it was a journey and an education to get here.&lt;/p&gt;
+&lt;!-- BEGIN content shortcode --&gt;&lt;!-- END content shortcode --&gt;</description>
+    </item>
     
     <item>
       <title>A New Hugo-Based Blog</title>
