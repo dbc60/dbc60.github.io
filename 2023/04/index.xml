@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>04 on Doug&#39;s Blog</title>
+    <link>https://douglascuthbertson.com/2023/04/</link>
+    <description>Recent content in 04 on Doug&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
+    <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
+    <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
+    <lastBuildDate>Tue, 25 Apr 2023 07:43:42 -0400</lastBuildDate>
+    
+        <atom:link href="https://douglascuthbertson.com/2023/04/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Layoffs at F5</title>
+      <link>https://douglascuthbertson.com/2023/04/layoffs-at-f5/</link>
+      <pubDate>Tue, 25 Apr 2023 07:43:42 -0400</pubDate>
+      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      <guid>https://douglascuthbertson.com/2023/04/layoffs-at-f5/</guid>
+      <description>&lt;p&gt;In April 2023, I was laid of from &lt;a href=&#34;https://f5.com&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;F5, Inc.&lt;/a&gt;. It was a significant layoff of about 9% of the workforce, or 623 employees, worldwide. Given that the economy, at least here in the United States, doesn&amp;rsquo;t seem all that bad, I was surprised to see so many good engineers, product managers, sales people, and others let go.&lt;/p&gt;
+&lt;p&gt;I started working for F5 after it acquired Threat Stack on October 1st, 2021. At the time I worked in the Application Infrastructure Protection (AIP) division doing pretty much what I was working on before—adding features to the Windows, Linux, containerized, and Fargate agents.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not just the layoff that upset me. I really enjoyed working in the Agent Team and particularly on the Windows agent, but now I hear that the company intends to disband AIP, and everything that Threat Stack built over the past decade or so will be gone.&lt;/p&gt;
+&lt;p&gt;The agents were all well built tools providing telemetry to a backend platform that analyzed events to detect anomalous behavior. Several years ago, an intern and I developed the Windows agent from scratch. The team and I enhanced its capabilities through the years. I thought it had a few clever designs, especially when it came to monitoring activity in the file system.&lt;/p&gt;
+&lt;p&gt;File system monitoring was accomplished with a quite capable and efficient kernel minifilter. It had a glob pattern-matcher for comparing file activity against a set of rules that defined what behavior was &amp;ldquo;interesting&amp;rdquo;. Among other things, it could accurately detect file deletions, which is hard to do on NTFS. The minifilter had its own memory allocator and tagged allocations based on what the memory was used for. By running &lt;code&gt;poolmon&lt;/code&gt;, it was easy to determine which components were allocating memory, how much they were allocating, and also ensure that there were no memory leaks at all.&lt;/p&gt;
+&lt;p&gt;The agent also monitored running processes, associated those processes with the accounts they were running under, watched network connections being established and broken, and looked for significant security-related events. All of this information was relayed to the backend platform for analysis. It was a good system that provided our customers with the situational awareness they needed to mitigate attacks and even stop attacks before a serious incident occurred.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update November 2023&lt;/strong&gt;: Yeesh! F5 had another round of layoffs earlier this month. More of my friends and previous coworkers are now looking for work. It just feels wrong. Yes, there have been a lot of layoffs from much larger tech companies, but they are still raking in lots of money. I suspect F5 is still doing very well, too. They are probably eliminating projects (and thus the employees who were working on them) that don&amp;rsquo;t directly support their core hardware business and (I assume) their aspirations to develop virtual network devices and their own cloud.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
