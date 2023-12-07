@@ -35,16 +35,38 @@
 &lt;li&gt;&lt;a href=&#34;https://www.youtube.com/@IanHubert2/videos&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ian Hubert&amp;rsquo;s YouTube site&lt;/a&gt;. He does a lot of work in animation and teaches some aspects of using &lt;a href=&#34;https://www.blender.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Blender&lt;/a&gt; to create 3D digital assets.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;Web and Computer Technologies
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://tina.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TinaCMS&lt;/a&gt; is an open-source Content Management System (CMS) that could be part of your &lt;a href=&#34;https://jamstack.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JAMstack&lt;/a&gt; if you&amp;rsquo;re into such things.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt;, a fast static-site generator that is part of my &lt;a href=&#34;https://jamstack.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JAMStack&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dataswamp.org/~solene/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Solène Rapenne&amp;rsquo;s blog&lt;/a&gt;. She is very much about topics related to &lt;a href=&#34;https://www.openbsd.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenBSD&lt;/a&gt;, Lisp, computer hardware, and similar things.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://100r.co/site/home.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hundred Rabbits&lt;/a&gt; is the blog and notes of a couple, Devine Lu Linvega and Rekka Bellum, who live on a sailboat.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Miscellaneous
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://rmhh.co.uk/occup/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Old occupation names&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
       <title>Posts</title>
-      <link>https://douglascuthbertson.com/post/</link>
+      <link>https://douglascuthbertson.com/posts/</link>
       <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
       <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
-      <guid>https://douglascuthbertson.com/post/</guid>
+      <guid>https://douglascuthbertson.com/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evergreen Notes</title>
+      <link>https://douglascuthbertson.com/evergreen-notes/</link>
+      <pubDate>Wed, 10 Jun 2020 07:12:11 -0400</pubDate>
+      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      <guid>https://douglascuthbertson.com/evergreen-notes/</guid>
       <description></description>
     </item>
     
@@ -70,7 +92,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Updated &lt;a href=&#34;https://gohugo.io&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; to version 0.120.4.&lt;/li&gt;
-&lt;li&gt;Started a [Boo]&lt;/li&gt;
+&lt;li&gt;Started a page of links, &lt;a href=&#34;https://douglascuthbertson.com/bookmarks/&#34;&gt;Bookmarks&lt;/a&gt;, to websites I find interesting, but may be located in some small corner of the Internet.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

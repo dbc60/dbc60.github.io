@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://douglascuthbertson.com/bookmarks/</loc>
-    <lastmod>2023-11-18T07:51:31-05:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2023/05/</loc>
     <lastmod>2023-11-12T00:00:00+00:00</lastmod>
@@ -12,19 +12,19 @@
     <lastmod>2023-11-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/</loc>
-    <lastmod>2023-11-18T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2023/05/glob-patterns/</loc>
     <lastmod>2023-11-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/post/</loc>
-    <lastmod>2023-11-18T00:00:00+00:00</lastmod>
+    <loc>https://douglascuthbertson.com/posts/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/tags/swdev/</loc>
-    <lastmod>2023-11-12T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/tags/</loc>
-    <lastmod>2023-11-18T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2023/04/</loc>
     <lastmod>2023-11-18T00:00:00+00:00</lastmod>
@@ -33,102 +33,162 @@
     <lastmod>2023-11-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/tags/life/</loc>
-    <lastmod>2023-11-18T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2022/11/</loc>
-    <lastmod>2022-11-05T08:57:53-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2022/</loc>
-    <lastmod>2022-11-05T08:57:53-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2022/11/the-orchard/</loc>
-    <lastmod>2022-11-05T08:57:53-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2021/09/</loc>
-    <lastmod>2023-05-11T07:15:41-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2021/</loc>
-    <lastmod>2023-05-11T07:15:41-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/create-table-heading/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/create-table-shortcode/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/template-process-map/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/template-process-map-head/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/template-create-rows/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/template-create-rows-head/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/template-create-colgroup/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/end/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/begin-buildtable-template/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/template-build-table/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/table-capture-values/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/table-collect-keys/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/table-top-level-definition/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/src-file-data/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/src-file-path/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/store-site-data/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/create-table/build-table-initialization/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/tags/blog/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2021/09/asymptotic-notation/</loc>
-    <lastmod>2023-05-11T07:15:41-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/11/</loc>
-    <lastmod>2021-05-05T07:00:02-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/tags/politics/</loc>
-    <lastmod>2021-05-11T21:08:22-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/11/waiting-for-election-results/</loc>
-    <lastmod>2021-05-05T07:00:02-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/10/</loc>
-    <lastmod>2021-05-11T21:08:22-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/10/vote-2020/</loc>
-    <lastmod>2021-05-11T21:08:22-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/2020/06/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/evergreen-notes/</loc>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/02/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/02/restart/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/now/</loc>
     <lastmod>2023-11-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/11/</loc>
-    <lastmod>2021-05-05T07:00:02-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/</loc>
-    <lastmod>2023-05-11T07:15:41-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/11/a-dangerous-spectacle/</loc>
-    <lastmod>2021-05-05T07:00:02-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/09/</loc>
-    <lastmod>2021-05-05T07:00:02-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/09/serving-a-blog/</loc>
-    <lastmod>2021-05-05T07:00:02-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/about/</loc>
     <lastmod>2023-04-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/03/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/03/fixing-the-width/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</loc>
-    <lastmod>2021-05-05T07:00:02-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/01/</loc>
-    <lastmod>2023-05-11T07:15:41-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</loc>
-    <lastmod>2023-05-11T07:15:41-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2015/12/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2015/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2015/12/a-blog-on-github/</loc>
-    <lastmod>2023-04-28T08:40:27-04:00</lastmod>
+    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url>
 </urlset>
