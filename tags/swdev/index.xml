@@ -6,8 +6,6 @@
     <description>Recent content in swdev on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
-    <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Mon, 08 May 2023 17:01:29 -0400</lastBuildDate>
     
@@ -18,7 +16,7 @@
       <title>Glob Patterns</title>
       <link>https://douglascuthbertson.com/2023/05/glob-patterns/</link>
       <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2023/05/glob-patterns/</guid>
       <description>&lt;p&gt;Some time in 2016 or 2017, I needed a way to match file paths with &lt;a href=&#34;https://en.wikipedia.org/wiki/Glob_%28programming%29&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob patterns&lt;/a&gt;. The trick was that it had to work in a filter driver running in the Windows kernel. There weren&amp;rsquo;t a lot of ready-to-use libraries that were kernel-ready. In fact I couldn&amp;rsquo;t find any, so I wrote my own.&lt;/p&gt;
 &lt;p&gt;Back then, I wrote an implementation in C which was very Windows-centric, and didn&amp;rsquo;t hold to the syntactic rules from the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7) man page&lt;/a&gt;. It was sufficient for the job, but I wanted to revisit the problem and create something more generally useful. I uploaded &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an implementation in Go on GitHub&lt;/a&gt; that holds to the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7)&lt;/a&gt; rules, is very efficient, and runs in user space on both Windows and Linux.&lt;/p&gt;
@@ -33,7 +31,7 @@
       <title>A Quick Note on Python</title>
       <link>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</link>
       <pubDate>Mon, 04 Jan 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</guid>
       <description>&lt;p&gt;I saw an amusing Python tutorial.&lt;/p&gt;
 &lt;p&gt;I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, &lt;a href=&#34;https://www.youtube.com/watch?v=N4mEzFDjqtA&amp;amp;list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&amp;amp;index=2&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python Programming: Learn Python in One Video&lt;/a&gt;, by &lt;a href=&#34;https://www.youtube.com/user/derekbanas&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Derek Banas&lt;/a&gt;.&lt;/p&gt;

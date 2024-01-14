@@ -6,8 +6,6 @@
     <description>Recent content in Create Table on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
-    <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Fri, 24 Sep 2021 09:05:15 -0400</lastBuildDate>
     
@@ -18,7 +16,7 @@
       <title>Create Table Heading</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/create-table-heading/</link>
       <pubDate>Thu, 23 Sep 2021 17:59:37 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/create-table-heading/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;{{/*
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;  shortcodes/create=table.html
@@ -131,7 +129,7 @@
       <title>Create Table Shortcode</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/create-table-shortcode/</link>
       <pubDate>Thu, 23 Sep 2021 17:48:37 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/create-table-shortcode/</guid>
       <description>&lt;div class=&#34;content_collection&#34;&gt;
 &lt;!-- BEGIN evergreen shortcode --&gt;&lt;a class=&#34;evergreen-link&#34; href=&#34;https://douglascuthbertson.com/evergreen-notes/create-table/store-site-data/&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!--
@@ -311,7 +309,7 @@
       <title>Template Process Map</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/template-process-map/</link>
       <pubDate>Thu, 23 Sep 2021 17:39:44 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/template-process-map/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;processMap&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$row&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
@@ -334,7 +332,7 @@
       <title>Template Process Map Head</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/template-process-map-head/</link>
       <pubDate>Thu, 23 Sep 2021 17:33:06 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/template-process-map-head/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;processMapHead&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$row&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
@@ -357,7 +355,7 @@
       <title>Template Create Rows</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/template-create-rows/</link>
       <pubDate>Thu, 23 Sep 2021 17:23:13 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/template-create-rows/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- Use within &amp;lt;table&amp;gt;, &amp;lt;tbody&amp;gt;, or &amp;lt;tfoot&amp;gt; elements, but not within &amp;lt;thead&amp;gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;  this will generate &amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;...&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;...&amp;lt;/td&amp;gt;...&amp;lt;/tr&amp;gt; row sequences
@@ -387,7 +385,7 @@
       <title>Template Create Rows Head</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/template-create-rows-head/</link>
       <pubDate>Thu, 23 Sep 2021 17:20:53 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/template-create-rows-head/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- Use only within thead elements. This will generate
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;   &amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;...&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;...&amp;lt;/th&amp;gt;...&amp;lt;/tr&amp;gt; row sequences
@@ -417,7 +415,7 @@
       <title>Template Create Colgroup</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/template-create-colgroup/</link>
       <pubDate>Thu, 23 Sep 2021 17:15:15 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/template-create-colgroup/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;createColgroup&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$colgroup&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
@@ -432,7 +430,7 @@
       <title>End</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/end/</link>
       <pubDate>Thu, 23 Sep 2021 15:13:51 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/end/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
@@ -442,7 +440,7 @@
       <title>Begin Buildtable Template</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/begin-buildtable-template/</link>
       <pubDate>Thu, 23 Sep 2021 15:08:37 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/begin-buildtable-template/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;buildTable&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
@@ -452,7 +450,7 @@
       <title>Build Table Template</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/template-build-table/</link>
       <pubDate>Thu, 23 Sep 2021 14:42:34 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/template-build-table/</guid>
       <description>&lt;div class=&#34;content_collection&#34;&gt;
 &lt;!-- BEGIN evergreen shortcode --&gt;&lt;a class=&#34;evergreen-link&#34; href=&#34;https://douglascuthbertson.com/evergreen-notes/create-table/begin-buildtable-template/&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;buildTable&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
@@ -528,7 +526,7 @@
       <title>Table Capture Values</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/table-capture-values/</link>
       <pubDate>Thu, 23 Sep 2021 14:41:10 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/table-capture-values/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ne&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$captionValue&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;caption&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$captionValue&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;caption&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
@@ -560,7 +558,7 @@
       <title>Table Collect Keys</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/table-collect-keys/</link>
       <pubDate>Thu, 23 Sep 2021 14:36:45 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/table-collect-keys/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- collect all the keys in the map --&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$val&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$table&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
@@ -596,7 +594,7 @@
       <title>Table Top Level Definition</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/table-top-level-definition/</link>
       <pubDate>Thu, 23 Sep 2021 14:30:09 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/table-top-level-definition/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;table&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;table&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;buildTable&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$data&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
@@ -608,7 +606,7 @@
       <title>Src File Data</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/src-file-data/</link>
       <pubDate>Thu, 23 Sep 2021 14:28:43 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/src-file-data/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!--
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;  Use the components of the src path to rummage through the map-of-maps in
@@ -626,7 +624,7 @@
       <title>Src File Path</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/src-file-path/</link>
       <pubDate>Thu, 23 Sep 2021 14:26:52 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/src-file-path/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$src&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.Get&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;src&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$pathComponents&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$src&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;
@@ -637,7 +635,7 @@
       <title>Store Site Data</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/store-site-data/</link>
       <pubDate>Thu, 23 Sep 2021 14:24:22 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/store-site-data/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!--
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;  .Site.Data isn&amp;#39;t a path. It&amp;#39;s a map of all the files in the data folder,
@@ -651,7 +649,7 @@
       <title>Build Table Initialization</title>
       <link>https://douglascuthbertson.com/evergreen-notes/create-table/build-table-initialization/</link>
       <pubDate>Thu, 23 Sep 2021 14:21:15 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/evergreen-notes/create-table/build-table-initialization/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-html-template&#34; data-lang=&#34;go-html-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- Table data is always a map --&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;cp&#34;&gt;{{-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$table&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;-}}&lt;/span&gt;

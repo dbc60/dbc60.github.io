@@ -6,8 +6,6 @@
     <description>Recent content in Posts on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
-    <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Mon, 08 May 2023 17:01:29 -0400</lastBuildDate>
     
@@ -18,7 +16,7 @@
       <title>Glob Patterns</title>
       <link>https://douglascuthbertson.com/2023/05/glob-patterns/</link>
       <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2023/05/glob-patterns/</guid>
       <description>&lt;p&gt;Some time in 2016 or 2017, I needed a way to match file paths with &lt;a href=&#34;https://en.wikipedia.org/wiki/Glob_%28programming%29&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob patterns&lt;/a&gt;. The trick was that it had to work in a filter driver running in the Windows kernel. There weren&amp;rsquo;t a lot of ready-to-use libraries that were kernel-ready. In fact I couldn&amp;rsquo;t find any, so I wrote my own.&lt;/p&gt;
 &lt;p&gt;Back then, I wrote an implementation in C which was very Windows-centric, and didn&amp;rsquo;t hold to the syntactic rules from the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7) man page&lt;/a&gt;. It was sufficient for the job, but I wanted to revisit the problem and create something more generally useful. I uploaded &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an implementation in Go on GitHub&lt;/a&gt; that holds to the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7)&lt;/a&gt; rules, is very efficient, and runs in user space on both Windows and Linux.&lt;/p&gt;
@@ -33,7 +31,7 @@
       <title>Layoffs at F5</title>
       <link>https://douglascuthbertson.com/2023/04/layoffs-at-f5/</link>
       <pubDate>Tue, 25 Apr 2023 07:43:42 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2023/04/layoffs-at-f5/</guid>
       <description>&lt;p&gt;In April 2023, I was laid of from &lt;a href=&#34;https://f5.com&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;F5, Inc.&lt;/a&gt;. It was a significant layoff of about 9% of the workforce, or 623 employees, worldwide. Given that the economy, at least here in the United States, doesn&amp;rsquo;t seem all that bad, I was surprised to see so many good engineers, product managers, sales people, and others let go.&lt;/p&gt;
 &lt;p&gt;I started working for F5 after it acquired Threat Stack on October 1st, 2021. At the time I worked in the Application Infrastructure Protection (AIP) division doing pretty much what I was working on before—adding features to the Windows, Linux, containerized, and Fargate agents.&lt;/p&gt;
@@ -48,7 +46,7 @@
       <title>The Orchard</title>
       <link>https://douglascuthbertson.com/2022/11/the-orchard/</link>
       <pubDate>Sat, 05 Nov 2022 08:07:31 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2022/11/the-orchard/</guid>
       <description>&lt;p&gt;My wife and I went to the Paramount Theater in Boston last night to see The Orchard, a variation of Anton Chekhov&amp;rsquo;s play, The Cherry Orchard, starring Jessica Hecht and Mikhail Baryshnikov. It was a very avant-garde play. It used a robotic arm that was its own character, a Boston Dynamics robotic dog, and a projection &lt;del&gt;screen&lt;/del&gt; curtain draped in front of the whole stage.&lt;/p&gt;
 &lt;p&gt;The projection screen was artfully and cinematically used during various scenes to strengthen the presentation of their characters inner emotional state. It also provided atmosphere (through, for example, projecting cherry blossoms blowing in the wind), and acted as an announcer for each act of the play.&lt;/p&gt;
@@ -61,7 +59,7 @@
       <title>A Table Shortcode for Hugo</title>
       <link>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/</link>
       <pubDate>Thu, 23 Sep 2021 10:59:36 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/</guid>
       <description>&lt;p&gt;I write a lot of notes in Markdown files and use Hugo to display them in a browser. It makes for easy reading and jumping among them. Several months ago, I needed to create some tables where some cells spanned mulitple rows or columns. That&amp;rsquo;s not possible with Markdown tables. Creating tables in HTML with appropriate classes seemed tedious. I thought it might be less so by defining tables in &lt;a href=&#34;https://toml.io/en/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TOML&lt;/a&gt; and use a shortcode to translate them into HTML.&lt;/p&gt;
 &lt;aside class=&#34;toc&#34;&gt;
@@ -525,7 +523,7 @@
       <title>Asymptotic Notation</title>
       <link>https://douglascuthbertson.com/2021/09/asymptotic-notation/</link>
       <pubDate>Thu, 23 Sep 2021 07:45:20 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2021/09/asymptotic-notation/</guid>
       <description>&lt;p&gt;Big-O, Big-\(\Omega\) (Big-Omega), and Big-\(\Theta\) (Big-Theta) notation are used to describe some aspect of an algorithm (usually the running time or the memory resources it needs) relative to the size of the input data.&lt;/p&gt;
 &lt;dl&gt;
@@ -569,7 +567,7 @@
       <title>Waiting for Election Results</title>
       <link>https://douglascuthbertson.com/2020/11/waiting-for-election-results/</link>
       <pubDate>Sat, 07 Nov 2020 08:23:14 -0500</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2020/11/waiting-for-election-results/</guid>
       <description>&lt;p&gt;The election is over. All we can do is wait for the counting complete. I hope enough people who see just how terrible this failure of a human being, Donald Trump, is went to the polls and voted. The future of our country depends on it.&lt;/p&gt;
 &lt;p&gt;Nevertheless, I have to get a few things off my chest. This morning, I considered writing a post about how horrible and dangerous the actions and words of Donald Trump are and how they undermine trust in one of the most sacred aspects of American democracy, the electoral process. It is through our right to vote for our representatives in government that our democracy functions. Without trust in that process, our democracy and our country fail.&lt;/p&gt;
@@ -593,7 +591,7 @@
       <title>Vote 2020</title>
       <link>https://douglascuthbertson.com/2020/10/vote-2020/</link>
       <pubDate>Wed, 28 Oct 2020 08:12:51 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2020/10/vote-2020/</guid>
       <description>&lt;p&gt;If you live in the United States of America, please vote! Election Day is Tuesday, November 3rd.&lt;/p&gt;
 &lt;p&gt;Vote for whomever you like, but understand that Trump is tearing apart our country.&lt;/p&gt;
@@ -611,7 +609,7 @@
       <title>A New Hugo-Based Blog</title>
       <link>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/</link>
       <pubDate>Sat, 22 Feb 2020 17:38:32 -0500</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/</guid>
       <description>&lt;p&gt;In my &lt;a href=&#34;https://douglascuthbertson.com/2020/02/restart/&#34;&gt;previous post&lt;/a&gt; I talked a little about why and how I started this blog. Here I want to present my experience with &lt;a href=&#34;https://gohugo.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; and what I like about it.&lt;/p&gt;
 &lt;aside class=&#34;toc&#34;&gt;
@@ -1027,7 +1025,7 @@
       <title>Restart</title>
       <link>https://douglascuthbertson.com/2020/02/restart/</link>
       <pubDate>Tue, 11 Feb 2020 05:48:36 -0500</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2020/02/restart/</guid>
       <description>&lt;p&gt;Creating a blog is hard. I admire those who are able to design their own and write regular posts, so much so that I&amp;rsquo;m trying again to create my own blog. I started this blog late in 2015. After writing a few posts, I became discouraged. I didn&amp;rsquo;t like the way it looked, the tools often broke, and I didn&amp;rsquo;t have a clear idea of what I wanted to write, or why I was blogging.&lt;/p&gt;
 &lt;p&gt;Recently I was inspired by a post by Mattias Ott from May 12, 2019, &lt;a href=&#34;https://matthiasott.com/articles/into-the-personal-website-verse&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Into the Personal-Website-Verse&lt;/a&gt;. He encouraged people to create their own personal website to write, create, share what you like, and to tinker with new technologies.&lt;/p&gt;
@@ -1071,7 +1069,7 @@
       <title>A Dangerous Spectacle</title>
       <link>https://douglascuthbertson.com/2016/11/a-dangerous-spectacle/</link>
       <pubDate>Wed, 09 Nov 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2016/11/a-dangerous-spectacle/</guid>
       <description>&lt;p&gt;I am truly saddened by the outcome of the 2016 presidential election.&lt;/p&gt;
 &lt;p&gt;I woke up this morning to find that Donald Trump is our president elect. I feel really awful about it.&lt;/p&gt;
@@ -1084,7 +1082,7 @@
       <title>Serving a Blog</title>
       <link>https://douglascuthbertson.com/2016/09/serving-a-blog/</link>
       <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2016/09/serving-a-blog/</guid>
       <description>&lt;p&gt;I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve tried CMS solutions running on Linux-based servers. One of the first ones I tried many years ago was &lt;a href=&#34;http://cocoon.apache.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache Cocoon&lt;/a&gt;. I was enticed by how flexible and programmable it was with its pipeline architecture. It seemed anything was possible. Ultimately, trying to program using XML and XSLT, and configure Java servlets proved to be too complicated. The languages and processes needed to keep the site up and running were too far removed from those for adding content.&lt;/p&gt;
@@ -1123,7 +1121,7 @@
       <title>Fixing the Width</title>
       <link>https://douglascuthbertson.com/2016/03/fixing-the-width/</link>
       <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2016/03/fixing-the-width/</guid>
       <description>&lt;p&gt;What an ugly, fragile blog.&lt;/p&gt;
 &lt;p&gt;All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.&lt;/p&gt;
@@ -1160,7 +1158,7 @@ mx + ny + oz + pw
       <title>The Pursuit of Happiness Gels in the Imagination</title>
       <link>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</link>
       <pubDate>Wed, 09 Mar 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</guid>
       <description>&lt;p&gt;Imagination is good, but action needs to be taken in the real world.&lt;/p&gt;
 &lt;p&gt;I wonder if the reason I have so many non-fiction books waiting to be read is that I&amp;rsquo;m looking for the thrill of living in a world of fun and self-fulfillment, but I&amp;rsquo;m not willing to create it. I have books on game programming, drawing, sketching, animation, project managment, time management, organizing, clutter reduction, investing and other topics. Even among those I have read, they don&amp;rsquo;t do me much good unless I act upon them.&lt;/p&gt;
@@ -1175,7 +1173,7 @@ mx + ny + oz + pw
       <title>A Quick Note on Python</title>
       <link>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</link>
       <pubDate>Mon, 04 Jan 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</guid>
       <description>&lt;p&gt;I saw an amusing Python tutorial.&lt;/p&gt;
 &lt;p&gt;I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, &lt;a href=&#34;https://www.youtube.com/watch?v=N4mEzFDjqtA&amp;amp;list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&amp;amp;index=2&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python Programming: Learn Python in One Video&lt;/a&gt;, by &lt;a href=&#34;https://www.youtube.com/user/derekbanas&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Derek Banas&lt;/a&gt;.&lt;/p&gt;
@@ -1232,7 +1230,7 @@ mx + ny + oz + pw
       <title>A Blog on GitHub</title>
       <link>https://douglascuthbertson.com/2015/12/a-blog-on-github/</link>
       <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2015/12/a-blog-on-github/</guid>
       <description>&lt;p&gt;What do you really need to know to setup a blog on GitHub?&lt;/p&gt;
 &lt;p&gt;I want a platform to write about software development, design patterns, and anything else that came to mind. &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub user pages&lt;/a&gt; looked like a good place to start. I&amp;rsquo;ve toyed with &lt;a href=&#34;https://jekyllrb.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;http://compass-style.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Compass&lt;/a&gt; in the past, so I thought it would be easy to setup. For the most part, it is. Along the way, I discovered a few stumbling blocks that I will share.&lt;/p&gt;

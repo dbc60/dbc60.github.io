@@ -6,8 +6,6 @@
     <description>Recent content in 04 on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
-    <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Tue, 25 Apr 2023 07:43:42 -0400</lastBuildDate>
     
@@ -18,7 +16,7 @@
       <title>Layoffs at F5</title>
       <link>https://douglascuthbertson.com/2023/04/layoffs-at-f5/</link>
       <pubDate>Tue, 25 Apr 2023 07:43:42 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2023/04/layoffs-at-f5/</guid>
       <description>&lt;p&gt;In April 2023, I was laid of from &lt;a href=&#34;https://f5.com&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;F5, Inc.&lt;/a&gt;. It was a significant layoff of about 9% of the workforce, or 623 employees, worldwide. Given that the economy, at least here in the United States, doesn&amp;rsquo;t seem all that bad, I was surprised to see so many good engineers, product managers, sales people, and others let go.&lt;/p&gt;
 &lt;p&gt;I started working for F5 after it acquired Threat Stack on October 1st, 2021. At the time I worked in the Application Infrastructure Protection (AIP) division doing pretty much what I was working on before—adding features to the Windows, Linux, containerized, and Fargate agents.&lt;/p&gt;

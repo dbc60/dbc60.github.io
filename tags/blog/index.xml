@@ -6,8 +6,6 @@
     <description>Recent content in blog on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
-    <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Thu, 23 Sep 2021 10:59:36 -0400</lastBuildDate>
     
@@ -18,7 +16,7 @@
       <title>A Table Shortcode for Hugo</title>
       <link>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/</link>
       <pubDate>Thu, 23 Sep 2021 10:59:36 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/</guid>
       <description>&lt;p&gt;I write a lot of notes in Markdown files and use Hugo to display them in a browser. It makes for easy reading and jumping among them. Several months ago, I needed to create some tables where some cells spanned mulitple rows or columns. That&amp;rsquo;s not possible with Markdown tables. Creating tables in HTML with appropriate classes seemed tedious. I thought it might be less so by defining tables in &lt;a href=&#34;https://toml.io/en/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TOML&lt;/a&gt; and use a shortcode to translate them into HTML.&lt;/p&gt;
 &lt;aside class=&#34;toc&#34;&gt;
@@ -482,7 +480,7 @@
       <title>A New Hugo-Based Blog</title>
       <link>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/</link>
       <pubDate>Sat, 22 Feb 2020 17:38:32 -0500</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/</guid>
       <description>&lt;p&gt;In my &lt;a href=&#34;https://douglascuthbertson.com/2020/02/restart/&#34;&gt;previous post&lt;/a&gt; I talked a little about why and how I started this blog. Here I want to present my experience with &lt;a href=&#34;https://gohugo.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; and what I like about it.&lt;/p&gt;
 &lt;aside class=&#34;toc&#34;&gt;
@@ -898,7 +896,7 @@
       <title>Restart</title>
       <link>https://douglascuthbertson.com/2020/02/restart/</link>
       <pubDate>Tue, 11 Feb 2020 05:48:36 -0500</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2020/02/restart/</guid>
       <description>&lt;p&gt;Creating a blog is hard. I admire those who are able to design their own and write regular posts, so much so that I&amp;rsquo;m trying again to create my own blog. I started this blog late in 2015. After writing a few posts, I became discouraged. I didn&amp;rsquo;t like the way it looked, the tools often broke, and I didn&amp;rsquo;t have a clear idea of what I wanted to write, or why I was blogging.&lt;/p&gt;
 &lt;p&gt;Recently I was inspired by a post by Mattias Ott from May 12, 2019, &lt;a href=&#34;https://matthiasott.com/articles/into-the-personal-website-verse&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Into the Personal-Website-Verse&lt;/a&gt;. He encouraged people to create their own personal website to write, create, share what you like, and to tinker with new technologies.&lt;/p&gt;
@@ -942,7 +940,7 @@
       <title>Serving a Blog</title>
       <link>https://douglascuthbertson.com/2016/09/serving-a-blog/</link>
       <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2016/09/serving-a-blog/</guid>
       <description>&lt;p&gt;I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve tried CMS solutions running on Linux-based servers. One of the first ones I tried many years ago was &lt;a href=&#34;http://cocoon.apache.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache Cocoon&lt;/a&gt;. I was enticed by how flexible and programmable it was with its pipeline architecture. It seemed anything was possible. Ultimately, trying to program using XML and XSLT, and configure Java servlets proved to be too complicated. The languages and processes needed to keep the site up and running were too far removed from those for adding content.&lt;/p&gt;
@@ -981,7 +979,7 @@
       <title>Fixing the Width</title>
       <link>https://douglascuthbertson.com/2016/03/fixing-the-width/</link>
       <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2016/03/fixing-the-width/</guid>
       <description>&lt;p&gt;What an ugly, fragile blog.&lt;/p&gt;
 &lt;p&gt;All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.&lt;/p&gt;
@@ -1018,7 +1016,7 @@ mx + ny + oz + pw
       <title>A Blog on GitHub</title>
       <link>https://douglascuthbertson.com/2015/12/a-blog-on-github/</link>
       <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2015/12/a-blog-on-github/</guid>
       <description>&lt;p&gt;What do you really need to know to setup a blog on GitHub?&lt;/p&gt;
 &lt;p&gt;I want a platform to write about software development, design patterns, and anything else that came to mind. &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub user pages&lt;/a&gt; looked like a good place to start. I&amp;rsquo;ve toyed with &lt;a href=&#34;https://jekyllrb.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;http://compass-style.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Compass&lt;/a&gt; in the past, so I thought it would be easy to setup. For the most part, it is. Along the way, I discovered a few stumbling blocks that I will share.&lt;/p&gt;

@@ -6,8 +6,6 @@
     <description>Recent content in life on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
-    <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Tue, 25 Apr 2023 07:43:42 -0400</lastBuildDate>
     
@@ -18,7 +16,7 @@
       <title>Layoffs at F5</title>
       <link>https://douglascuthbertson.com/2023/04/layoffs-at-f5/</link>
       <pubDate>Tue, 25 Apr 2023 07:43:42 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2023/04/layoffs-at-f5/</guid>
       <description>&lt;p&gt;In April 2023, I was laid of from &lt;a href=&#34;https://f5.com&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;F5, Inc.&lt;/a&gt;. It was a significant layoff of about 9% of the workforce, or 623 employees, worldwide. Given that the economy, at least here in the United States, doesn&amp;rsquo;t seem all that bad, I was surprised to see so many good engineers, product managers, sales people, and others let go.&lt;/p&gt;
 &lt;p&gt;I started working for F5 after it acquired Threat Stack on October 1st, 2021. At the time I worked in the Application Infrastructure Protection (AIP) division doing pretty much what I was working on before—adding features to the Windows, Linux, containerized, and Fargate agents.&lt;/p&gt;
@@ -33,7 +31,7 @@
       <title>The Orchard</title>
       <link>https://douglascuthbertson.com/2022/11/the-orchard/</link>
       <pubDate>Sat, 05 Nov 2022 08:07:31 -0400</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2022/11/the-orchard/</guid>
       <description>&lt;p&gt;My wife and I went to the Paramount Theater in Boston last night to see The Orchard, a variation of Anton Chekhov&amp;rsquo;s play, The Cherry Orchard, starring Jessica Hecht and Mikhail Baryshnikov. It was a very avant-garde play. It used a robotic arm that was its own character, a Boston Dynamics robotic dog, and a projection &lt;del&gt;screen&lt;/del&gt; curtain draped in front of the whole stage.&lt;/p&gt;
 &lt;p&gt;The projection screen was artfully and cinematically used during various scenes to strengthen the presentation of their characters inner emotional state. It also provided atmosphere (through, for example, projecting cherry blossoms blowing in the wind), and acted as an announcer for each act of the play.&lt;/p&gt;
@@ -46,7 +44,7 @@
       <title>The Pursuit of Happiness Gels in the Imagination</title>
       <link>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</link>
       <pubDate>Wed, 09 Mar 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</guid>
       <description>&lt;p&gt;Imagination is good, but action needs to be taken in the real world.&lt;/p&gt;
 &lt;p&gt;I wonder if the reason I have so many non-fiction books waiting to be read is that I&amp;rsquo;m looking for the thrill of living in a world of fun and self-fulfillment, but I&amp;rsquo;m not willing to create it. I have books on game programming, drawing, sketching, animation, project managment, time management, organizing, clutter reduction, investing and other topics. Even among those I have read, they don&amp;rsquo;t do me much good unless I act upon them.&lt;/p&gt;

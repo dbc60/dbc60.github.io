@@ -6,8 +6,6 @@
     <description>Recent content in 01 on Doug&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</managingEditor>
-    <webMaster>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</webMaster>
     <copyright>(c) 2015-2022 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Mon, 04 Jan 2016 00:00:00 +0000</lastBuildDate>
     
@@ -18,7 +16,7 @@
       <title>A Quick Note on Python</title>
       <link>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</link>
       <pubDate>Mon, 04 Jan 2016 00:00:00 +0000</pubDate>
-      <author>doug.cuthbertson@gmail.com (Douglas Cuthbertson)</author>
+      
       <guid>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</guid>
       <description>&lt;p&gt;I saw an amusing Python tutorial.&lt;/p&gt;
 &lt;p&gt;I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, &lt;a href=&#34;https://www.youtube.com/watch?v=N4mEzFDjqtA&amp;amp;list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&amp;amp;index=2&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python Programming: Learn Python in One Video&lt;/a&gt;, by &lt;a href=&#34;https://www.youtube.com/user/derekbanas&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Derek Banas&lt;/a&gt;.&lt;/p&gt;
