@@ -7,10 +7,67 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
-    <lastBuildDate>Mon, 08 May 2023 17:01:29 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2024 20:45:58 -0500</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Posts</title>
+      <link>https://douglascuthbertson.com/posts/</link>
+      <pubDate>Sun, 14 Jan 2024 20:45:58 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://douglascuthbertson.com/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://douglascuthbertson.com/about/</guid>
+      <description>&lt;p&gt;I am Douglas Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I&amp;rsquo;ve been writing software in &lt;a href=&#34;https://golang.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; for both Linux and Windows (it&amp;rsquo;s my new favorite programming language).&lt;/p&gt;
+&lt;p&gt;I tend to read too much about software development and not write enough code, so my intent is to use this blog to explore some of the aspects of coding and engineering I&amp;rsquo;ve enjoyed reading about and put them into practice.&lt;/p&gt;
+&lt;p&gt;Besides my professional work, I&amp;rsquo;m a husband, and a father to two really wonderful children who have grown up and are launching careers of their own.&lt;/p&gt;
+&lt;p&gt;Among other things, I&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;dream about model railroads (it was a favorite hobby of mine and I hope to get back to it one day soon)&lt;/li&gt;
+&lt;li&gt;take photographs, and occasionally sketch and draw.&lt;/li&gt;
+&lt;li&gt;enjoy gardening and cooking with my wife, Adelle.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The banner is a picture I took on a trip to Rockport, MA. with my family several years ago. The building is commonly known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Motif_Number_1&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Motif No. 1&lt;/a&gt;. It&amp;rsquo;s a replica of an old fishing shack built in 1840. The original was destroyed during the blizzard of 1978.&lt;/p&gt;
+&lt;p&gt;See my &lt;a href=&#34;https://douglascuthbertson.com/now/&#34;&gt;Now&lt;/a&gt; page for what I&amp;rsquo;ve been up to lately.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What I Do Now</title>
+      <link>https://douglascuthbertson.com/now/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://douglascuthbertson.com/now/</guid>
+      <description>&lt;p&gt;As of June 2023, I work for &lt;a href=&#34;https://www.preveil.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PreVeil&lt;/a&gt;, provider of simple, encrypted email and file collaboration software. In my free time, I tend to a bunch of little projects.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I&amp;rsquo;m building a &lt;a href=&#34;https://www.truenas.com/truenas-core/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TrueNAS&lt;/a&gt; storage server to see if I can make it both a local backup server and a &lt;a href=&#34;https://www.plex.tv/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plex&lt;/a&gt; or &lt;a href=&#34;https://jellyfin.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jellyfin&lt;/a&gt; media server.&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;m looking into building a couple of &lt;a href=&#34;https://www.epa.gov/soakuptherain/soak-rain-rain-gardens&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rain gardens&lt;/a&gt; next spring, one in the front yard and one in the back. Rain gardens have a lot of environmental benefits, but that&amp;rsquo;s not the &lt;em&gt;real&lt;/em&gt; purpose. I want something pretty that will guide water away from the house and cut down on the amount of lawn I have to mow.&lt;/li&gt;
+&lt;li&gt;Attempting to play Baldur&amp;rsquo;s Gate 3 with my cousin who lives three timezones away. BG3 hasn&amp;rsquo;t been stable on his MacBook Air, but &lt;a href=&#34;https://larian.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Larian Studios&lt;/a&gt; is working on it. We&amp;rsquo;ll have our play dates soon.&lt;/li&gt;
+&lt;li&gt;Enjoying pictures of my grandson on a &lt;a href=&#34;https://auraframes.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;digital picture frame&lt;/a&gt; that my daughter and son-in-law quite regularly update.&lt;/li&gt;
+&lt;li&gt;Blog maintenance.
+&lt;ul&gt;
+&lt;li&gt;Fixed how &amp;ldquo;alt text&amp;rdquo; is applied to images that I accidentally screwed up.&lt;/li&gt;
+&lt;li&gt;Added some more metadata based on the &lt;a href=&#34;https://ogp.me/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Open Graph protocol&lt;/a&gt;:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;meta property=&amp;quot;og:locale&amp;quot; content=&amp;quot;en_US&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;Douglas Cuthbertson&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Updated &lt;a href=&#34;https://gohugo.io&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; to version 0.120.4.&lt;/li&gt;
+&lt;li&gt;Started a page of links, &lt;a href=&#34;https://douglascuthbertson.com/bookmarks/&#34;&gt;Bookmarks&lt;/a&gt;, to websites I find interesting, but may be located in some small corner of the Internet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This page is inspired by Derek Siver&amp;rsquo;s &lt;a href=&#34;https://sivers.org/nowff&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;/now page movement&lt;/a&gt;. You can see &lt;a href=&#34;http://nownownow.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;lots of sites&lt;/a&gt; which have &lt;code&gt;/now&lt;/code&gt; pages.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Bookmarks</title>
@@ -51,69 +108,12 @@
     </item>
     
     <item>
-      <title>Posts</title>
-      <link>https://douglascuthbertson.com/posts/</link>
-      <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
-      
-      <guid>https://douglascuthbertson.com/posts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Evergreen Notes</title>
       <link>https://douglascuthbertson.com/evergreen-notes/</link>
       <pubDate>Wed, 10 Jun 2020 07:12:11 -0400</pubDate>
       
       <guid>https://douglascuthbertson.com/evergreen-notes/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>What I Do Now</title>
-      <link>https://douglascuthbertson.com/now/</link>
-      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://douglascuthbertson.com/now/</guid>
-      <description>&lt;p&gt;As of June 2023, I work for &lt;a href=&#34;https://www.preveil.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PreVeil&lt;/a&gt;, provider of simple, encrypted email and file collaboration software. In my free time, I tend to a bunch of little projects.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I&amp;rsquo;m building a &lt;a href=&#34;https://www.truenas.com/truenas-core/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TrueNAS&lt;/a&gt; storage server to see if I can make it both a local backup server and a &lt;a href=&#34;https://www.plex.tv/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plex&lt;/a&gt; or &lt;a href=&#34;https://jellyfin.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jellyfin&lt;/a&gt; media server.&lt;/li&gt;
-&lt;li&gt;I&amp;rsquo;m looking into building a couple of &lt;a href=&#34;https://www.epa.gov/soakuptherain/soak-rain-rain-gardens&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rain gardens&lt;/a&gt; next spring, one in the front yard and one in the back. Rain gardens have a lot of environmental benefits, but that&amp;rsquo;s not the &lt;em&gt;real&lt;/em&gt; purpose. I want something pretty that will guide water away from the house and cut down on the amount of lawn I have to mow.&lt;/li&gt;
-&lt;li&gt;Attempting to play Baldur&amp;rsquo;s Gate 3 with my cousin who lives three timezones away. BG3 hasn&amp;rsquo;t been stable on his MacBook Air, but &lt;a href=&#34;https://larian.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Larian Studios&lt;/a&gt; is working on it. We&amp;rsquo;ll have our play dates soon.&lt;/li&gt;
-&lt;li&gt;Enjoying pictures of my grandson on a &lt;a href=&#34;https://auraframes.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;digital picture frame&lt;/a&gt; that my daughter and son-in-law quite regularly update.&lt;/li&gt;
-&lt;li&gt;Blog maintenance.
-&lt;ul&gt;
-&lt;li&gt;Fixed how &amp;ldquo;alt text&amp;rdquo; is applied to images that I accidentally screwed up.&lt;/li&gt;
-&lt;li&gt;Added some more metadata based on the &lt;a href=&#34;https://ogp.me/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Open Graph protocol&lt;/a&gt;:
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;meta property=&amp;quot;og:locale&amp;quot; content=&amp;quot;en_US&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;Douglas Cuthbertson&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Updated &lt;a href=&#34;https://gohugo.io&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; to version 0.120.4.&lt;/li&gt;
-&lt;li&gt;Started a page of links, &lt;a href=&#34;https://douglascuthbertson.com/bookmarks/&#34;&gt;Bookmarks&lt;/a&gt;, to websites I find interesting, but may be located in some small corner of the Internet.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This page is inspired by Derek Siver&amp;rsquo;s &lt;a href=&#34;https://sivers.org/nowff&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;/now page movement&lt;/a&gt;. You can see &lt;a href=&#34;http://nownownow.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;lots of sites&lt;/a&gt; which have &lt;code&gt;/now&lt;/code&gt; pages.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://douglascuthbertson.com/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://douglascuthbertson.com/about/</guid>
-      <description>&lt;p&gt;I am Douglas Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I&amp;rsquo;ve been writing software in &lt;a href=&#34;https://golang.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; for both Linux and Windows (it&amp;rsquo;s my new favorite programming language).&lt;/p&gt;
-&lt;p&gt;I tend to read too much about software development and not write enough code, so my intent is to use this blog to explore some of the aspects of coding and engineering I&amp;rsquo;ve enjoyed reading about and put them into practice.&lt;/p&gt;
-&lt;p&gt;Besides my professional work, I&amp;rsquo;m a husband, and a father to two really wonderful children who have grown up and are launching careers of their own.&lt;/p&gt;
-&lt;p&gt;Among other things, I&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;dream about model railroads (it was a favorite hobby of mine and I hope to get back to it one day soon)&lt;/li&gt;
-&lt;li&gt;take photographs, and occasionally sketch and draw.&lt;/li&gt;
-&lt;li&gt;enjoy gardening and cooking with my wife, Adelle.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The banner is a picture I took on a trip to Rockport, MA. with my family several years ago. The building is commonly known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Motif_Number_1&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Motif No. 1&lt;/a&gt;. It&amp;rsquo;s a replica of an old fishing shack built in 1840. The original was destroyed during the blizzard of 1978.&lt;/p&gt;
-&lt;p&gt;See my &lt;a href=&#34;https://douglascuthbertson.com/now/&#34;&gt;Now&lt;/a&gt; page for what I&amp;rsquo;ve been up to lately.&lt;/p&gt;</description>
     </item>
     
   </channel>
