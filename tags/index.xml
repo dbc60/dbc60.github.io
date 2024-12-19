@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
-    <lastBuildDate>Mon, 08 May 2023 17:01:29 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2024 08:24:59 -0500</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blog</title>
+      <link>https://douglascuthbertson.com/tags/blog/</link>
+      <pubDate>Sun, 14 Jan 2024 08:24:59 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swdev</title>
+      <link>https://douglascuthbertson.com/tags/swdev/</link>
+      <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
+      
+      <guid>https://douglascuthbertson.com/tags/swdev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Life</title>
+      <link>https://douglascuthbertson.com/tags/life/</link>
+      <pubDate>Tue, 25 Apr 2023 07:43:42 -0400</pubDate>
+      
+      <guid>https://douglascuthbertson.com/tags/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Politics</title>
+      <link>https://douglascuthbertson.com/tags/politics/</link>
+      <pubDate>Sat, 07 Nov 2020 08:23:14 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/tags/politics/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

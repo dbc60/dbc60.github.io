@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Memory Allocator on Doug&#39;s Blog</title>
+    <link>http://localhost:1313/projects/memory-allocator/</link>
+    <description>Recent content in Memory Allocator on Doug&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
+    <lastBuildDate>Sun, 14 Jan 2024 21:32:26 -0500</lastBuildDate>
+    
+        <atom:link href="http://localhost:1313/projects/memory-allocator/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Deep Look at a Memory Allocator</title>
+      <link>http://localhost:1313/projects/memory-allocator/a-deep-look-at-a-memory-allocator/</link>
+      <pubDate>Sun, 14 Jan 2024 07:38:28 -0500</pubDate>
+      
+      <guid>http://localhost:1313/projects/memory-allocator/a-deep-look-at-a-memory-allocator/</guid>
+      <description>&lt;p&gt;Doug Lea&amp;rsquo;s allocator, often referred to as &lt;a href=&#34;https://gee.cs.oswego.edu/dl/html/malloc.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;dlmalloc&lt;/a&gt;, provides implementations of the standard C memory functions &lt;code&gt;malloc()&lt;/code&gt;, &lt;code&gt;free()&lt;/code&gt;, &lt;code&gt;realloc()&lt;/code&gt;, and friends. I need a memory allocator for a personal project and Lea generously put his code in the public domain, so I thought to adapt it to my needs. Note that the latest release in 2023 relicensed it under the &lt;a href=&#34;https://opensource.org/license/mit-0/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;MIT No Attribution&amp;rdquo; (MIT-0) License&lt;/a&gt;, which is supposed to be more palatable than the public domain.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-overview&#34;&gt;1 Overview&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-current-behavior&#34;&gt;2 Current Behavior&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-algorithms&#34;&gt;3 Algorithms&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#4-data-structures&#34;&gt;4 Data Structures&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#5-api-documentation&#34;&gt;5 API Documentation&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#6-usage-examples&#34;&gt;6 Usage Examples&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#7-configuration-options&#34;&gt;7 Configuration Options&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#8-performance-characteristics&#34;&gt;8 Performance Characteristics&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#9-concurrency-considerations&#34;&gt;9 Concurrency Considerations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#10-troubleshooting-and-debugging&#34;&gt;10 Troubleshooting and Debugging&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#11-references&#34;&gt;11 References&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#12-changelog&#34;&gt;12 Changelog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#13-contributing-guidelines&#34;&gt;13 Contributing Guidelines&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#14-license-information&#34;&gt;14 License Information&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#15-feedback-mechanism&#34;&gt;15 Feedback Mechanism&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#16-documentation-format&#34;&gt;16 Documentation Format&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;p&gt;The source code, &lt;a href=&#34;https://gee.cs.oswego.edu/pub/misc/malloc.c&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;in a single source file, malloc.c&lt;/a&gt; and an &lt;a href=&#34;https://gee.cs.oswego.edu/pub/misc/malloc.h&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;optional header, malloc.h&lt;/a&gt;, is a little difficult (for me) to grok all at once. My goals here are to understand:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;how it works.&lt;/li&gt;
+&lt;li&gt;its configuration options.&lt;/li&gt;
+&lt;li&gt;if and when the code is thread-safe.&lt;/li&gt;
+&lt;li&gt;how to build it for Windows, Linux, and possibly other operating systems.&lt;/li&gt;
+&lt;li&gt;the key algorithms employed.&lt;/li&gt;
+&lt;li&gt;its internal data structures.&lt;/li&gt;
+&lt;li&gt;how to use it as a replacement for the C runtime implementation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I&amp;rsquo;m not a fan of AI for software development, but I needed a quick outline of how to do this, so I asked ChatGPT to see what it would come up with. It surprised me with a concise outline, so I&amp;rsquo;ve adapted its reply into the following outline. It&amp;rsquo;s probably too detailed, but it will do for a starting point. I can adjust it as needed.&lt;/p&gt;
+&lt;h2 id=&#34;1-overview&#34;&gt;1 Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Start with a high-level overview of &lt;code&gt;dlmalloc&lt;/code&gt;, explaining its purpose and role as a memory allocator.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide information on the primary goals of &lt;code&gt;dlmalloc&lt;/code&gt;, such as efficiency, scalability, or low fragmentation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-current-behavior&#34;&gt;2 Current Behavior&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Detail the current behavior of &lt;code&gt;dlmalloc&lt;/code&gt;, focusing on how it handles memory allocation, deallocation, and management.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Describe any unique features or characteristics that distinguish &lt;code&gt;dlmalloc&lt;/code&gt; from other allocators.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-algorithms&#34;&gt;3 Algorithms&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Document the key algorithms employed by &lt;code&gt;dlmalloc&lt;/code&gt;, including but not limited to:&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Memory Allocation Algorithm: Explain how &lt;code&gt;dlmalloc&lt;/code&gt; searches for and allocates memory blocks.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Memory Deallocation Algorithm: Describe how &lt;code&gt;dlmalloc&lt;/code&gt; frees memory and manages freed blocks.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Internal Data Structures: Highlight the data structures used for efficient bookkeeping.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Concurrency Control (if any): Detail how &lt;code&gt;dlmalloc&lt;/code&gt; handles multiple threads if it&amp;rsquo;s designed to be thread-safe.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-data-structures&#34;&gt;4 Data Structures&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide detailed information about the primary data structures used by &lt;code&gt;dlmalloc&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include diagrams or visual representations to aid understanding.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Explain the purpose and relationships between different data structures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;5-api-documentation&#34;&gt;5 API Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Document the public API of &lt;code&gt;dlmalloc&lt;/code&gt;, including function signatures, parameters, and return values.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Clarify any assumptions or requirements for using the API effectively.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6-usage-examples&#34;&gt;6 Usage Examples&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include practical usage examples to illustrate how developers can use &lt;code&gt;dlmalloc&lt;/code&gt; in their code.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Cover common scenarios and provide code snippets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7-configuration-options&#34;&gt;7 Configuration Options&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Document any compile-time or runtime configuration options available in &lt;code&gt;dlmalloc&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Explain how these options affect the behavior of the allocator.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;8-performance-characteristics&#34;&gt;8 Performance Characteristics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Discuss the expected performance characteristics of &lt;code&gt;dlmalloc&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include information on scalability, throughput, and any trade-offs made for performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;9-concurrency-considerations&#34;&gt;9 Concurrency Considerations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; If applicable, document how &lt;code&gt;dlmalloc&lt;/code&gt; handles concurrency and thread safety.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Describe any synchronization mechanisms in place.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;10-troubleshooting-and-debugging&#34;&gt;10 Troubleshooting and Debugging&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include information on common issues users might encounter and how to troubleshoot them.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide guidance on debugging techniques for memory-related problems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;11-references&#34;&gt;11 References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include references to relevant academic papers, articles, or other external sources that influenced the design or implementation of &lt;code&gt;dlmalloc&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;12-changelog&#34;&gt;12 Changelog&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; If available, provide a changelog documenting major changes, bug fixes, and enhancements across different versions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;13-contributing-guidelines&#34;&gt;13 Contributing Guidelines&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Encourage contributions by including guidelines on how users can contribute to the development or improvement of &lt;code&gt;dlmalloc&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;14-license-information&#34;&gt;14 License Information&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Clearly state the licensing terms under which &lt;code&gt;dlmalloc&lt;/code&gt; is distributed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;15-feedback-mechanism&#34;&gt;15 Feedback Mechanism&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide a way for users to offer feedback or report issues, such as a link to the issue tracker or mailing list.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;16-documentation-format&#34;&gt;16 Documentation Format&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Choose a consistent format for documentation, such as Markdown, and ensure that it is easily accessible.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

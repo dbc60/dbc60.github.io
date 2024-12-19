@@ -5,6 +5,9 @@
     <loc>https://douglascuthbertson.com/posts/</loc>
     <lastmod>2024-01-16T08:28:33-05:00</lastmod>
   </url><url>
+    <loc>https://douglascuthbertson.com/projects/blog/a-deep-look-into-my-blog/</loc>
+    <lastmod>2024-01-19T22:02:02-05:00</lastmod>
+  </url><url>
     <loc>https://douglascuthbertson.com/about/</loc>
     <lastmod>2023-04-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -15,7 +18,19 @@
     <lastmod>2024-01-16T08:28:33-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/</loc>
+    <lastmod>2024-05-03T04:53:08-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/2024/01/</loc>
     <lastmod>2024-01-19T22:02:02-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/2024/</loc>
+    <lastmod>2024-01-19T22:02:02-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/blog/</loc>
+    <lastmod>2024-01-24T17:02:32-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/</loc>
+    <lastmod>2024-01-24T17:02:32-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2023/05/</loc>
     <lastmod>2023-11-12T00:00:00+00:00</lastmod>
@@ -28,9 +43,6 @@
   </url><url>
     <loc>https://douglascuthbertson.com/tags/swdev/</loc>
     <lastmod>2023-12-07T13:04:36-05:00</lastmod>
-  </url><url>
-    <loc>https://douglascuthbertson.com/tags/</loc>
-    <lastmod>2024-01-19T22:02:02-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2023/04/</loc>
     <lastmod>2023-11-18T00:00:00+00:00</lastmod>
@@ -113,9 +125,6 @@
     <loc>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo/</loc>
     <lastmod>2024-01-19T22:02:02-05:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/tags/blog/</loc>
-    <lastmod>2024-01-19T22:02:02-05:00</lastmod>
-  </url><url>
     <loc>https://douglascuthbertson.com/2021/09/asymptotic-notation/</loc>
     <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
@@ -123,7 +132,7 @@
     <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/</loc>
-    <lastmod>2024-01-19T22:02:02-05:00</lastmod>
+    <lastmod>2024-01-24T17:02:32-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/tags/politics/</loc>
     <lastmod>2023-12-07T13:04:36-05:00</lastmod>
@@ -144,13 +153,13 @@
     <lastmod>2024-01-19T22:02:02-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/02/</loc>
-    <lastmod>2024-01-19T22:02:02-05:00</lastmod>
+    <lastmod>2024-01-24T17:02:32-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog/</loc>
-    <lastmod>2024-01-19T22:02:02-05:00</lastmod>
+    <lastmod>2024-01-24T17:02:32-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/02/restart/</loc>
-    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+    <lastmod>2024-01-24T17:02:32-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2016/11/</loc>
     <lastmod>2023-12-07T13:04:36-05:00</lastmod>
@@ -183,12 +192,12 @@
     <lastmod>2023-12-07T13:04:36-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2015/12/</loc>
-    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+    <lastmod>2024-01-24T17:02:32-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2015/</loc>
-    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+    <lastmod>2024-01-24T17:02:32-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2015/12/a-blog-on-github/</loc>
-    <lastmod>2023-12-07T13:04:36-05:00</lastmod>
+    <lastmod>2024-01-24T17:02:32-05:00</lastmod>
   </url>
 </urlset>
