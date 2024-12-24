@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>09 on Doug&#39;s Blog</title>
-    <link>https://douglascuthbertson.com/2016/09/</link>
-    <description>Recent content in 09 on Doug&#39;s Blog</description>
+    <title>09 on Doug&#39;s Patch</title>
+    <link>https://douglascuthbertson.com/2016/09.html</link>
+    <description>Recent content in 09 on Doug&#39;s Patch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
@@ -14,10 +14,10 @@
     
     <item>
       <title>Serving a Blog</title>
-      <link>https://douglascuthbertson.com/2016/09/serving-a-blog/</link>
+      <link>https://douglascuthbertson.com/2016/09/serving-a-blog.html</link>
       <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://douglascuthbertson.com/2016/09/serving-a-blog/</guid>
+      <guid>https://douglascuthbertson.com/2016/09/serving-a-blog.html</guid>
       <description>&lt;p&gt;I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve tried CMS solutions running on Linux-based servers. One of the first ones I tried many years ago was &lt;a href=&#34;http://cocoon.apache.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache Cocoon&lt;/a&gt;. I was enticed by how flexible and programmable it was with its pipeline architecture. It seemed anything was possible. Ultimately, trying to program using XML and XSLT, and configure Java servlets proved to be too complicated. The languages and processes needed to keep the site up and running were too far removed from those for adding content.&lt;/p&gt;
 &lt;p&gt;The mechanics of site maintenance took too much time away from just plain writing. I didn&amp;rsquo;t realize that was the problem at the time, so I allowed myself to be lured into other complex solutions. I tried &lt;a href=&#34;https://plone.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plone&lt;/a&gt; for a short while, but got tired of configuration bugs (the bugs were probably mine, and I was too impatient to figure out how to make Plone work correctly). I had a short run with &lt;a href=&#34;http://www.web2py.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;web2py&lt;/a&gt; and a long one with &lt;a href=&#34;https://www.drupal.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Drupal&lt;/a&gt; 5 and 6. Drupal was fun and I did get it to work fairly well. The only real problem was keeping up with patches for the core system as well as all of the plug-ins. They made it relatively easy to do, but it was another time consuming annoyance.&lt;/p&gt;

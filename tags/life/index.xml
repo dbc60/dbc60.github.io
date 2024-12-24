@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Life on Doug&#39;s Blog</title>
-    <link>https://douglascuthbertson.com/tags/life/</link>
-    <description>Recent content in Life on Doug&#39;s Blog</description>
+    <title>Life on Doug&#39;s Patch</title>
+    <link>https://douglascuthbertson.com/tags/life.html</link>
+    <description>Recent content in Life on Doug&#39;s Patch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
@@ -14,10 +14,10 @@
     
     <item>
       <title>Layoffs at F5</title>
-      <link>https://douglascuthbertson.com/2023/04/layoffs-at-f5/</link>
+      <link>https://douglascuthbertson.com/2023/04/layoffs-at-f5.html</link>
       <pubDate>Tue, 25 Apr 2023 07:43:42 -0400</pubDate>
       
-      <guid>https://douglascuthbertson.com/2023/04/layoffs-at-f5/</guid>
+      <guid>https://douglascuthbertson.com/2023/04/layoffs-at-f5.html</guid>
       <description>&lt;p&gt;In April 2023, I was laid of from &lt;a href=&#34;https://f5.com&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;F5, Inc.&lt;/a&gt;. It was a significant layoff of about 9% of the workforce, or 623 employees, worldwide. Given that the economy, at least here in the United States, doesn&amp;rsquo;t seem all that bad, I was surprised to see so many good engineers, product managers, sales people, and others let go.&lt;/p&gt;
 &lt;p&gt;I started working for F5 after it acquired Threat Stack on October 1st, 2021. At the time I worked in the Application Infrastructure Protection (AIP) division doing pretty much what I was working on before—adding features to the Windows, Linux, containerized, and Fargate agents.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s not just the layoff that upset me. I really enjoyed working in the Agent Team and particularly on the Windows agent, but now I hear that the company intends to disband AIP, and everything that Threat Stack built over the past decade or so will be gone.&lt;/p&gt;
@@ -29,10 +29,10 @@
     
     <item>
       <title>The Orchard</title>
-      <link>https://douglascuthbertson.com/2022/11/the-orchard/</link>
+      <link>https://douglascuthbertson.com/2022/11/the-orchard.html</link>
       <pubDate>Sat, 05 Nov 2022 08:07:31 -0400</pubDate>
       
-      <guid>https://douglascuthbertson.com/2022/11/the-orchard/</guid>
+      <guid>https://douglascuthbertson.com/2022/11/the-orchard.html</guid>
       <description>&lt;p&gt;My wife and I went to the Paramount Theater in Boston last night to see The Orchard, a variation of Anton Chekhov&amp;rsquo;s play, The Cherry Orchard, starring Jessica Hecht and Mikhail Baryshnikov. It was a very avant-garde play. It used a robotic arm that was its own character, a Boston Dynamics robotic dog, and a projection &lt;del&gt;screen&lt;/del&gt; curtain draped in front of the whole stage.&lt;/p&gt;
 &lt;p&gt;The projection screen was artfully and cinematically used during various scenes to strengthen the presentation of their characters inner emotional state. It also provided atmosphere (through, for example, projecting cherry blossoms blowing in the wind), and acted as an announcer for each act of the play.&lt;/p&gt;
 &lt;p&gt;The one real disappointment was that the actors didn&amp;rsquo;t project their voices and enunciate their words well enough, so I found the dialogue difficult to discern through much of the play. I suspect the hope was their microphones and the speakers would be enough to pick up and amplify their voices.&lt;/p&gt;</description>
@@ -40,10 +40,10 @@
     
     <item>
       <title>The Pursuit of Happiness Gels in the Imagination</title>
-      <link>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</link>
+      <link>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination.html</link>
       <pubDate>Wed, 09 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination/</guid>
+      <guid>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination.html</guid>
       <description>&lt;p&gt;Imagination is good, but action needs to be taken in the real world.&lt;/p&gt;
 &lt;p&gt;I wonder if the reason I have so many non-fiction books waiting to be read is that I&amp;rsquo;m looking for the thrill of living in a world of fun and self-fulfillment, but I&amp;rsquo;m not willing to create it. I have books on game programming, drawing, sketching, animation, project managment, time management, organizing, clutter reduction, investing and other topics. Even among those I have read, they don&amp;rsquo;t do me much good unless I act upon them.&lt;/p&gt;
 &lt;p&gt;The Wondermark comic No. 1204, &lt;a href=&#34;http://wondermark.com/c1204/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Cargo Cult of Adulthood&lt;/a&gt;, started me thinking about imagination versus creating and doing real things. It contrasts buying stuff with buying experiences. The chain of thought starts with buying a movie ticket to get a few hours of being in a dramatized world. Similarly, buying a lottery ticket buys a few days of dreaming there&amp;rsquo;s a chance of becoming a millionaire. The thought continues with the notion that buying stuff can transport us into a fun, but imaginary world. Things like workout clothes, cookbooks, and self-help stuff, says David Malki, the author of Wondermark, are the tickets of admission to the fun imaginary worlds of being fit, eating well and having a good life.&lt;/p&gt;

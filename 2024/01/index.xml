@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>01 on Doug&#39;s Blog</title>
-    <link>https://douglascuthbertson.com/2024/01/</link>
-    <description>Recent content in 01 on Doug&#39;s Blog</description>
+    <title>01 on Doug&#39;s Patch</title>
+    <link>https://douglascuthbertson.com/2024/01.html</link>
+    <description>Recent content in 01 on Doug&#39;s Patch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>A Deep Look Into My Blog</title>
-      <link>https://douglascuthbertson.com/projects/blog/a-deep-look-into-my-blog/</link>
+      <title>Separating Presentation from Layout</title>
+      <link>https://douglascuthbertson.com/garden/blog/separating-presentation-from-layout.html</link>
       <pubDate>Sun, 14 Jan 2024 08:24:59 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/projects/blog/a-deep-look-into-my-blog/</guid>
+      <guid>https://douglascuthbertson.com/garden/blog/separating-presentation-from-layout.html</guid>
       <description>&lt;p&gt;I want to separate the presentation of my blog from the content so, with any luck, I can create a theme and possibly substitute a more professionally-designed theme for the one I&amp;rsquo;ve hacked together. I first need to better understand the structure of what I&amp;rsquo;ve wrought here before I can reasonably refactor it, or do any major overhaul.&lt;/p&gt;
 &lt;aside class=&#34;toc&#34;&gt;
   &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;

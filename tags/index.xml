@@ -1,50 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Doug&#39;s Blog</title>
-    <link>https://douglascuthbertson.com/tags/</link>
-    <description>Recent content in Tags on Doug&#39;s Blog</description>
+    <title>Tags on Doug&#39;s Patch</title>
+    <link>https://douglascuthbertson.com/tags.html</link>
+    <description>Recent content in Tags on Doug&#39;s Patch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
-    <lastBuildDate>Sun, 14 Jan 2024 08:24:59 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 24 Dec 2024 06:36:09 -0500</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Hugo</title>
+      <link>https://douglascuthbertson.com/tags/hugo.html</link>
+      <pubDate>Tue, 24 Dec 2024 06:36:09 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/tags/hugo.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Blog</title>
-      <link>https://douglascuthbertson.com/tags/blog/</link>
+      <link>https://douglascuthbertson.com/tags/blog.html</link>
       <pubDate>Sun, 14 Jan 2024 08:24:59 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/tags/blog/</guid>
+      <guid>https://douglascuthbertson.com/tags/blog.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Swdev</title>
-      <link>https://douglascuthbertson.com/tags/swdev/</link>
+      <link>https://douglascuthbertson.com/tags/swdev.html</link>
       <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
       
-      <guid>https://douglascuthbertson.com/tags/swdev/</guid>
+      <guid>https://douglascuthbertson.com/tags/swdev.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Life</title>
-      <link>https://douglascuthbertson.com/tags/life/</link>
+      <link>https://douglascuthbertson.com/tags/life.html</link>
       <pubDate>Tue, 25 Apr 2023 07:43:42 -0400</pubDate>
       
-      <guid>https://douglascuthbertson.com/tags/life/</guid>
+      <guid>https://douglascuthbertson.com/tags/life.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Politics</title>
-      <link>https://douglascuthbertson.com/tags/politics/</link>
+      <link>https://douglascuthbertson.com/tags/politics.html</link>
       <pubDate>Sat, 07 Nov 2020 08:23:14 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/tags/politics/</guid>
+      <guid>https://douglascuthbertson.com/tags/politics.html</guid>
       <description></description>
     </item>
     

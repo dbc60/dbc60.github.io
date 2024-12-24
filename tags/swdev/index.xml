@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Swdev on Doug&#39;s Blog</title>
-    <link>https://douglascuthbertson.com/tags/swdev/</link>
-    <description>Recent content in Swdev on Doug&#39;s Blog</description>
+    <title>Swdev on Doug&#39;s Patch</title>
+    <link>https://douglascuthbertson.com/tags/swdev.html</link>
+    <description>Recent content in Swdev on Doug&#39;s Patch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
@@ -14,10 +14,10 @@
     
     <item>
       <title>Glob Patterns</title>
-      <link>https://douglascuthbertson.com/2023/05/glob-patterns/</link>
+      <link>https://douglascuthbertson.com/2023/05/glob-patterns.html</link>
       <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
       
-      <guid>https://douglascuthbertson.com/2023/05/glob-patterns/</guid>
+      <guid>https://douglascuthbertson.com/2023/05/glob-patterns.html</guid>
       <description>&lt;p&gt;Some time in 2016 or 2017, I needed a way to match file paths with &lt;a href=&#34;https://en.wikipedia.org/wiki/Glob_%28programming%29&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob patterns&lt;/a&gt;. The trick was that it had to work in a filter driver running in the Windows kernel. There weren&amp;rsquo;t a lot of ready-to-use libraries that were kernel-ready. In fact I couldn&amp;rsquo;t find any, so I wrote my own.&lt;/p&gt;
 &lt;p&gt;Back then, I wrote an implementation in C which was very Windows-centric, and didn&amp;rsquo;t hold to the syntactic rules from the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7) man page&lt;/a&gt;. It was sufficient for the job, but I wanted to revisit the problem and create something more generally useful. I uploaded &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an implementation in Go on GitHub&lt;/a&gt; that holds to the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7)&lt;/a&gt; rules, is very efficient, and runs in user space on both Windows and Linux.&lt;/p&gt;
 &lt;p&gt;This Go module accepts the &lt;code&gt;**&lt;/code&gt; wildcard (to match directory paths recursively) as well as &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;normal wildcards&lt;/a&gt;. When I originally researched how to go about building a pattern-matching function, I looked for existing code to get an idea of how to structure a solution. I hoped that I could find an open-source library where I could just transliterate the code from whatever language it was written to C (without any calls to the standard library, because that&amp;rsquo;s not a thing within the Windows kernel). All the examples I could find were either limited to the standard wildcards or had exponential behavior, as &lt;a href=&#34;https://research.swtch.com/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Russ Cox so eloquently discussed&lt;/a&gt;.&lt;/p&gt;
@@ -29,10 +29,10 @@
     
     <item>
       <title>A Quick Note on Python</title>
-      <link>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</link>
+      <link>https://douglascuthbertson.com/2016/01/a-quick-note-on-python.html</link>
       <pubDate>Mon, 04 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://douglascuthbertson.com/2016/01/a-quick-note-on-python/</guid>
+      <guid>https://douglascuthbertson.com/2016/01/a-quick-note-on-python.html</guid>
       <description>&lt;p&gt;I saw an amusing Python tutorial.&lt;/p&gt;
 &lt;p&gt;I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, &lt;a href=&#34;https://www.youtube.com/watch?v=N4mEzFDjqtA&amp;amp;list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&amp;amp;index=2&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python Programming: Learn Python in One Video&lt;/a&gt;, by &lt;a href=&#34;https://www.youtube.com/user/derekbanas&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Derek Banas&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I had no illusions it was going to cover the language in any depth. Still, it is only about 45 minutes long, so I decided to take a look. It actually hit a lot of highlights and was a nice overview of the language.&lt;/p&gt;

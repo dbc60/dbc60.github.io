@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Doug&#39;s Patch</title>
+    <link>https://douglascuthbertson.com/garden/blog.html</link>
+    <description>Recent content in Blog on Doug&#39;s Patch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
+    <lastBuildDate>Sun, 14 Jan 2024 21:28:44 -0500</lastBuildDate>
+    
+        <atom:link href="https://douglascuthbertson.com/garden/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Separating Presentation from Layout</title>
+      <link>https://douglascuthbertson.com/garden/blog/separating-presentation-from-layout.html</link>
+      <pubDate>Sun, 14 Jan 2024 08:24:59 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/garden/blog/separating-presentation-from-layout.html</guid>
+      <description>&lt;p&gt;I want to separate the presentation of my blog from the content so, with any luck, I can create a theme and possibly substitute a more professionally-designed theme for the one I&amp;rsquo;ve hacked together. I first need to better understand the structure of what I&amp;rsquo;ve wrought here before I can reasonably refactor it, or do any major overhaul.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-markdown-documentation&#34;&gt;1 Markdown Documentation&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-html-layout&#34;&gt;2 HTML Layout&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-partials&#34;&gt;3 Partials&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#4-shortcodes&#34;&gt;4 Shortcodes&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#5-css&#34;&gt;5 CSS&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#6-theme-creation&#34;&gt;6 Theme Creation&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#7-professional-theme-integration&#34;&gt;7 Professional Theme Integration&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#8-version-control&#34;&gt;8 Version Control&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#9-include-examples-and-screenshots&#34;&gt;9 Include Examples and Screenshots&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#10-test-the-documentation&#34;&gt;10 Test the Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;p&gt;I asked ChatGPT to recommend a method for documenting the various aspects of my blog, including the HTML layout, partials, shortcodes, and CSS that currently exist. It replied with the following method that I&amp;rsquo;m adapting to my needs.&lt;/p&gt;
+&lt;h2 id=&#34;1-markdown-documentation&#34;&gt;1 Markdown Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a new projects directory for documentation.&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Inside projects, create markdown files for each aspect I want to document (HTML layout, partials, shortcodes, CSS).&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Use clear headings and subheadings to organize information. This is an ongoing process. I guess it will be done when I&amp;rsquo;m satisfied with steps 2–5.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-html-layout&#34;&gt;2 HTML Layout&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Describe the overall structure of this site&amp;rsquo;s HTML layout.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include details about the main layout file and any custom layouts for different sections or content types.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mention Hugo variables and functions used in the HTML files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-partials&#34;&gt;3 Partials&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; List and describe each partial used.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Explain where these partials are included and how they contribute to the overall layout.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-shortcodes&#34;&gt;4 Shortcodes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Document the shortcodes I&amp;rsquo;ve created or are using in my content.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide examples of shortcode usage and explain their purpose.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;5-css&#34;&gt;5 CSS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Detail the structure of my CSS files.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; I haven&amp;rsquo;t used a preprocessor like Sass, but if I did I&amp;rsquo;d want to document the file structure and how styles are organized.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include information about any third-party libraries or frameworks (e.g., MathJax).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6-theme-creation&#34;&gt;6 Theme Creation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Outline the steps to create a theme based on my current documentation.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include guidelines on how to separate presentation from content.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Suggest best practices for theming in Hugo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7-professional-theme-integration&#34;&gt;7 Professional Theme Integration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Research and choose a professionally created Hugo theme that aligns with my design preferences.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Document the steps to integrate the new theme into this site.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide instructions for customizing the theme according to my needs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;8-version-control&#34;&gt;8 Version Control&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Use version control.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Keep the documentation up-to-date as this site evolves.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;9-include-examples-and-screenshots&#34;&gt;9 Include Examples and Screenshots&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add examples of code snippets, shortcode usage, and screenshots of my site to make the documentation more visual and user-friendly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;10-test-the-documentation&#34;&gt;10 Test the Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; After creating the documentation, test it by having someone else follow the steps to ensure clarity and completeness.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

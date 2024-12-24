@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Doug&#39;s Patch</title>
+    <link>https://douglascuthbertson.com/post.html</link>
+    <description>Recent content in Posts on Doug&#39;s Patch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
+    <lastBuildDate>Sun, 14 Jan 2024 20:45:58 -0500</lastBuildDate>
+    
+        <atom:link href="https://douglascuthbertson.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Glob Patterns</title>
+      <link>https://douglascuthbertson.com/2023/05/glob-patterns.html</link>
+      <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2023/05/glob-patterns.html</guid>
+      <description>&lt;p&gt;Some time in 2016 or 2017, I needed a way to match file paths with &lt;a href=&#34;https://en.wikipedia.org/wiki/Glob_%28programming%29&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob patterns&lt;/a&gt;. The trick was that it had to work in a filter driver running in the Windows kernel. There weren&amp;rsquo;t a lot of ready-to-use libraries that were kernel-ready. In fact I couldn&amp;rsquo;t find any, so I wrote my own.&lt;/p&gt;
+&lt;p&gt;Back then, I wrote an implementation in C which was very Windows-centric, and didn&amp;rsquo;t hold to the syntactic rules from the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7) man page&lt;/a&gt;. It was sufficient for the job, but I wanted to revisit the problem and create something more generally useful. I uploaded &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an implementation in Go on GitHub&lt;/a&gt; that holds to the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7)&lt;/a&gt; rules, is very efficient, and runs in user space on both Windows and Linux.&lt;/p&gt;
+&lt;p&gt;This Go module accepts the &lt;code&gt;**&lt;/code&gt; wildcard (to match directory paths recursively) as well as &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;normal wildcards&lt;/a&gt;. When I originally researched how to go about building a pattern-matching function, I looked for existing code to get an idea of how to structure a solution. I hoped that I could find an open-source library where I could just transliterate the code from whatever language it was written to C (without any calls to the standard library, because that&amp;rsquo;s not a thing within the Windows kernel). All the examples I could find were either limited to the standard wildcards or had exponential behavior, as &lt;a href=&#34;https://research.swtch.com/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Russ Cox so eloquently discussed&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That got me thinking about the shape of glob patterns. Simple patterns, made up of literal strings, the &lt;code&gt;?&lt;/code&gt; wildcard, and character classes, are matched character-by-character (with a little extra processing for character classes). The &lt;code&gt;*&lt;/code&gt; pattern matches zero-or-more characters followed by whatever simple pattern follows it. So &lt;code&gt;abc*xyz&lt;/code&gt; is a glob composed of a simple pattern, &lt;code&gt;abc&lt;/code&gt;, followed by a zero-or-more pattern &lt;code&gt;*xyz&lt;/code&gt;. The latter pattern is called a &lt;em&gt;directory pattern&lt;/em&gt;, because it&amp;rsquo;s limited to matching file and directory names within a single directory. Directory patterns amount to specifying a loop that consumes a character (except a path separator) every time the simple pattern that follows it fails to match some portion of a path.&lt;/p&gt;
+&lt;p&gt;Similarly, &lt;code&gt;**&lt;/code&gt; patterns, &lt;em&gt;recursive patterns&lt;/em&gt;, can be thought of requiring a loop that consumes any character that isn&amp;rsquo;t matched by whatever pattern follows it. The trick here is to realize that &lt;code&gt;**&lt;/code&gt; can be followed by a simple pattern and zero-or-more directory patterns. If at any point during the matching process the simple pattern or any of the directory patterns that may follow it fail, then processing continues by allowing &lt;code&gt;**&lt;/code&gt; to consume one character from the path and then matching the path to the pattern restarts from that point. This is still an $O(n)$ process, because each iteration makes progress through the path until either the whole pattern and path are consumed, or a match cannot be found.&lt;/p&gt;
+&lt;p&gt;This realization, that recursive patterns are made up of simple and directory patterns, led to a relatively simple algorithm and a fast implementation. See the &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repo&lt;/a&gt; for the code.&lt;/p&gt;
+&lt;p&gt;Updated 2023-11-12: spelling, grammar and to clarify how recursive patterns are processed.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Layoffs at F5</title>
+      <link>https://douglascuthbertson.com/2023/04/layoffs-at-f5.html</link>
+      <pubDate>Tue, 25 Apr 2023 07:43:42 -0400</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2023/04/layoffs-at-f5.html</guid>
+      <description>&lt;p&gt;In April 2023, I was laid of from &lt;a href=&#34;https://f5.com&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;F5, Inc.&lt;/a&gt;. It was a significant layoff of about 9% of the workforce, or 623 employees, worldwide. Given that the economy, at least here in the United States, doesn&amp;rsquo;t seem all that bad, I was surprised to see so many good engineers, product managers, sales people, and others let go.&lt;/p&gt;
+&lt;p&gt;I started working for F5 after it acquired Threat Stack on October 1st, 2021. At the time I worked in the Application Infrastructure Protection (AIP) division doing pretty much what I was working on before—adding features to the Windows, Linux, containerized, and Fargate agents.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not just the layoff that upset me. I really enjoyed working in the Agent Team and particularly on the Windows agent, but now I hear that the company intends to disband AIP, and everything that Threat Stack built over the past decade or so will be gone.&lt;/p&gt;
+&lt;p&gt;The agents were all well built tools providing telemetry to a backend platform that analyzed events to detect anomalous behavior. Several years ago, an intern and I developed the Windows agent from scratch. The team and I enhanced its capabilities through the years. I thought it had a few clever designs, especially when it came to monitoring activity in the file system.&lt;/p&gt;
+&lt;p&gt;File system monitoring was accomplished with a quite capable and efficient kernel minifilter. It had a glob pattern-matcher for comparing file activity against a set of rules that defined what behavior was &amp;ldquo;interesting&amp;rdquo;. Among other things, it could accurately detect file deletions, which is hard to do on NTFS. The minifilter had its own memory allocator and tagged allocations based on what the memory was used for. By running &lt;code&gt;poolmon&lt;/code&gt;, it was easy to determine which components were allocating memory, how much they were allocating, and also ensure that there were no memory leaks at all.&lt;/p&gt;
+&lt;p&gt;The agent also monitored running processes, associated those processes with the accounts they were running under, watched network connections being established and broken, and looked for significant security-related events. All of this information was relayed to the backend platform for analysis. It was a good system that provided our customers with the situational awareness they needed to mitigate attacks and even stop attacks before a serious incident occurred.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update November 2023&lt;/strong&gt;: Yeesh! F5 had another round of layoffs earlier this month. More of my friends and previous coworkers are now looking for work. It just feels wrong. Yes, there have been a lot of layoffs from much larger tech companies, but they are still raking in lots of money. I suspect F5 is still doing very well, too. They are probably eliminating projects (and thus the employees who were working on them) that don&amp;rsquo;t directly support their core hardware business and (I assume) their aspirations to develop virtual network devices and their own cloud.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Orchard</title>
+      <link>https://douglascuthbertson.com/2022/11/the-orchard.html</link>
+      <pubDate>Sat, 05 Nov 2022 08:07:31 -0400</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2022/11/the-orchard.html</guid>
+      <description>&lt;p&gt;My wife and I went to the Paramount Theater in Boston last night to see The Orchard, a variation of Anton Chekhov&amp;rsquo;s play, The Cherry Orchard, starring Jessica Hecht and Mikhail Baryshnikov. It was a very avant-garde play. It used a robotic arm that was its own character, a Boston Dynamics robotic dog, and a projection &lt;del&gt;screen&lt;/del&gt; curtain draped in front of the whole stage.&lt;/p&gt;
+&lt;p&gt;The projection screen was artfully and cinematically used during various scenes to strengthen the presentation of their characters inner emotional state. It also provided atmosphere (through, for example, projecting cherry blossoms blowing in the wind), and acted as an announcer for each act of the play.&lt;/p&gt;
+&lt;p&gt;The one real disappointment was that the actors didn&amp;rsquo;t project their voices and enunciate their words well enough, so I found the dialogue difficult to discern through much of the play. I suspect the hope was their microphones and the speakers would be enough to pick up and amplify their voices.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Table Shortcode for Hugo</title>
+      <link>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo.html</link>
+      <pubDate>Thu, 23 Sep 2021 10:59:36 -0400</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo.html</guid>
+      <description>&lt;p&gt;I write a lot of notes in Markdown files and use Hugo to display them in a browser. It makes for easy reading and jumping among them. Several months ago, I needed to create some tables where some cells spanned mulitple rows or columns. That&amp;rsquo;s not possible with Markdown tables. Creating tables in HTML with appropriate classes seemed tedious. I thought it might be less so by defining tables in &lt;a href=&#34;https://toml.io/en/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TOML&lt;/a&gt; and use a shortcode to translate them into HTML.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#the-create_table-shortcode&#34;&gt;The create_table Shortcode&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#buildtable-template&#34;&gt;buildTable Template&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#createcolgroup-template&#34;&gt;createColGroup Template&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#createrowshead-and--processmaphead-templates&#34;&gt;createRowsHead and  processMapHead Templates&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#createrows-and-processmap-templates&#34;&gt;createRows and processMap Templates&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#the-complete-create_table-shortcode&#34;&gt;The Complete create_table Shortcode&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;p&gt;I might be wrong. It turns out that it&amp;rsquo;s very hard to define a table in TOML. It&amp;rsquo;s even harder to define one where a cell can span two or more rows or columns. Once you have that, you still have to write a lot of CSS to get it to display properly.&lt;/p&gt;
+&lt;p&gt;What I have is a way to turn a TOML table stored in &lt;code&gt;/data/complete-example.toml&lt;/code&gt; into this:&lt;/p&gt;
+
+
+&lt;table class=&#34;table&#34;&gt;&lt;caption&gt;All the Features in the Create-Table Shortcode&lt;/caption&gt;&lt;colgroup&gt;
+    &lt;col span=&#34;1&#34; &gt;
+    &lt;col class=&#34;odd&#34;  span=&#34;2&#34; &gt;
+    &lt;col class=&#34;even&#34;  span=&#34;1&#34; &gt;&lt;/colgroup&gt;&lt;thead&gt;
+      &lt;tr class=&#34;head&#34;&gt;
+      &lt;th&gt;Header R2C1&lt;/th&gt;
+      &lt;th&gt;Header R2C2&lt;/th&gt;
+      &lt;th&gt;Header R2C3&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr class=&#34;head&#34;&gt;
+      &lt;th&gt;Header R3C1&lt;/th&gt;
+      &lt;th&gt;Header R3C2&lt;/th&gt;
+      &lt;th&gt;Header R3C3&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr class=&#34;head&#34;&gt;
+      &lt;th&gt;Header R4C1&lt;/th&gt;
+      &lt;th&gt;Header R4C2&lt;/th&gt;
+      &lt;th&gt;Header R4C3&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
+      &lt;tr class=&#34;body&#34;&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;c&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr class=&#34;body&#34;&gt;
+      &lt;td&gt;d&lt;/td&gt;
+      &lt;td&gt;e&lt;/td&gt;
+      &lt;td&gt;f&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr class=&#34;body&#34;&gt;
+      &lt;td&gt;Header R1C1&lt;/td&gt;
+      &lt;td&gt;Header R1C2&lt;/td&gt;
+      &lt;td&gt;Header R1C3&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;tfoot&gt;
+      &lt;tr class=&#34;body&#34;&gt;
+      &lt;td&gt;foot1&lt;/td&gt;
+      &lt;td&gt;foot2&lt;/td&gt;
+      &lt;td&gt;foot3&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;&lt;/table&gt;
+
+&lt;p&gt;It&amp;rsquo;s not a complete solution, but it&amp;rsquo;s enough given the effort to get this far.In the future, if I need fancy tables, I think I&amp;rsquo;ll just embed HTML into the markdown.&lt;/p&gt;
+&lt;p&gt;The contents of &lt;code&gt;/data/complete-example.toml&lt;/code&gt; is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# Table caption&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;caption&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;All the Features in the create_table Shortcode&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;hd1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R1C1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R1C2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R1C3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;hd1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R2C1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R2C2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R2C3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;hd1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R3C1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R3C2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R3C3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;hd2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R4C1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R4C2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Header R4C3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;e&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;f&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# Don&amp;#39;t embed colgroup in another array. It becomes an embedded map.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# [[head.colgroup]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#   span = 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# [[head.colgroup]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#   span = 2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;foot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foot1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;foot2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;foot3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# This map is at the top-level of the table and can be used to create an HTML&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# colgroup for the table. One entry for each &amp;lt;col&amp;gt; element.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;colgroup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;span&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;colgroup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;span&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;odd&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;colgroup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;span&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;even&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To use the shortcode on this file, include &lt;code&gt;{{&amp;lt; create_table src=&amp;quot;complete-example&amp;quot; &amp;gt;}}&lt;/code&gt; in a markdown file.&lt;/p&gt;
+&lt;h2 id=&#34;the-create_table-shortcode&#34;&gt;The create_table Shortcode&lt;/h2&gt;
+&lt;p&gt;This shortcode starts with realizing Hugo&amp;rsquo;s built-in &lt;code&gt;.Site.Data&lt;/code&gt; variable isn&amp;rsquo;t a path to a configured &lt;code&gt;data&lt;/code&gt; directory. It&amp;rsquo;s a map of all files in the data folder, its subfolders, the files contained in those subfolders, and the contents of all those files. On one hand, that&amp;rsquo;s rather insane. On the other, it gets all that data into memory so Hugo can operate on it more quickly than if files had to be individually loaded and parsed.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s capture that in a variable for use later:&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;p&gt;Next, get the data that&amp;rsquo;s in the given file. The file is given in the &lt;code&gt;src&lt;/code&gt; attribute:&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;p&gt;Here&amp;rsquo;s the code to pull out the data just for that file:&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;p&gt;From here, I&amp;rsquo;ll give a quick top-down view of the shortcode. It defines a table as an HTML &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; element with a class of the same name. The contents of the table is generated from a &lt;code&gt;buildTable&lt;/code&gt; template and our data:&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;h2 id=&#34;buildtable-template&#34;&gt;buildTable Template&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;buildTable&lt;/code&gt; template attempts to determine if the TOML data has a head and body. It also captures the data for a caption, any column groups, the head, body, and foot of the table. It starts with initializing some variables.&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;p&gt;The next step is to collect all the keys in the map. The keys are expected to be the components of an HTML table.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;body&lt;/li&gt;
+&lt;li&gt;caption&lt;/li&gt;
+&lt;li&gt;colgroup&lt;/li&gt;
+&lt;li&gt;head&lt;/li&gt;
+&lt;li&gt;foot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;p&gt;Now we can fill in all those variables.&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;p&gt;There are several templates used by that chunk of code. They are small, so we can go through them quickly.&lt;/p&gt;
+&lt;h2 id=&#34;createcolgroup-template&#34;&gt;createColGroup Template&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;createColGroup&lt;/code&gt; creates column groups with the &lt;code&gt;&amp;lt;col&amp;gt;&lt;/code&gt; element:&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;h2 id=&#34;createrowshead-and--processmaphead-templates&#34;&gt;createRowsHead and  processMapHead Templates&lt;/h2&gt;
+&lt;p&gt;These two templates are mutually recursive. &lt;code&gt;createRowsHead&lt;/code&gt; creates rows in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; section of the table. It processes each element of the row, creating a new &lt;code&gt;&amp;lt;th&amp;gt;&lt;/code&gt; element as it goes.&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;p&gt;If a new row needs to be generated, &lt;code&gt;createRowsHead&lt;/code&gt; calls &lt;code&gt;processMapHead&lt;/code&gt; which generates a new &lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt; element. Likewise, &lt;code&gt;processMapHead&lt;/code&gt; will call back to &lt;code&gt;createRowsHead&lt;/code&gt; in the case that a column has more than one value.&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;h2 id=&#34;createrows-and-processmap-templates&#34;&gt;createRows and processMap Templates&lt;/h2&gt;
+&lt;p&gt;These two templates are mutually recursive. &lt;code&gt;createRows&lt;/code&gt; creates the column (&lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;) elements for each row in &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;foot&amp;gt;&lt;/code&gt; element. Note that &lt;code&gt;createRows&lt;/code&gt; is a recursive template, so it can handle some weirdly designed tables.&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;p&gt;&lt;code&gt;processMap&lt;/code&gt; either creates columns in a row, or generates a new row and calls itself recursively. If a column has more than one value, it calls back to &lt;code&gt;createRows&lt;/code&gt; to process them.&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;
+&lt;h2 id=&#34;the-complete-create_table-shortcode&#34;&gt;The Complete create_table Shortcode&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s the whole thing w/o comments. It&amp;rsquo;s not that useful, but it was a journey and an education to get here.&lt;/p&gt;
+&lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;</description>
+    </item>
+    
+    <item>
+      <title>Asymptotic Notation</title>
+      <link>https://douglascuthbertson.com/2021/09/asymptotic-notation.html</link>
+      <pubDate>Thu, 23 Sep 2021 07:45:20 -0400</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2021/09/asymptotic-notation.html</guid>
+      <description>&lt;p&gt;Big-O, Big-\(\Omega\) (Big-Omega), and Big-\(\Theta\) (Big-Theta) notation are used to describe some aspect of an algorithm (usually the running time or the memory resources it needs) relative to the size of the input data.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Big-O Notation&lt;/dt&gt;
+&lt;dd&gt;describes the asymptotic upper bound. In other words, if \(f(n)\) describes the running time of an algorithm; \(f(n) \text{ is said to be } O(g(n))\) if there exists a positive constant \(C \text{ and } n_0\) such that \(0 \le f(n) \le c g(n) \text{ for all } n \ge n_0\).&lt;/dd&gt;
+&lt;dt&gt;Big-\(\Omega\) Notation&lt;/dt&gt;
+&lt;dd&gt;describes the asymptotic lower bound. In other words, if \(f(n)\) describes the running time of an algorithm; \(f(n) \text{ is said to be } \Omega(g(n))\) if there exists a positive constant \(C \text{ and } n_0\) such that \(0 \le cg(n) \le f(n) \text{ for all } n \ge n_0\).&lt;/dd&gt;
+&lt;dt&gt;Big-\(\Theta\) Notation&lt;/dt&gt;
+&lt;dd&gt;describes the running time or memory usage. It seems to exist only when \(O(g(n)) == \Omega(g(n))\). In other words, if \(f(n)\) is the running time of an algorithm, then \(f(n)\) is said to be \(\Theta(g(n))\) if \(f(n) == O(g(n)) \text{ and } f(n) == \Omega(g(n))\). Mathematically, \(0 \le f(n) \le C_{1}g(n) \text{ for } n \ge n_0 \text{ and } 0 \le C_{2}g(n) \le f(n) \text{ for } n \ge n_0\). These equations can be merged into \(0 \le C_{2}g(n) \le f(n) \le C_{1}g(n) \text{ for } n \ge n_0\). In other words, \(f(n)\) is sandwiched between \(C_{2}g(n) \text{ and } C_{1}g(n)\).&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Here is a summary of these three asymptotic notations. They are used to express the computational complexity of an algorithm.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Big-O&lt;/th&gt;
+          &lt;th&gt;Big-\(\Omega\)&lt;/th&gt;
+          &lt;th&gt;Big-\(\Theta\)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;The maximum rate of growth of an algorithm can be characterized as less than or equal to a given function.&lt;/td&gt;
+          &lt;td&gt;The minimum rate of growth of an algorithm can be characterized as greater than or equal to a given function.&lt;/td&gt;
+          &lt;td&gt;The rate of growth of an algorithm is equal to a given function.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;The algorithm&amp;rsquo;s asymptotic upper bound.&lt;/td&gt;
+          &lt;td&gt;The algorithm&amp;rsquo;s asymptotic lower bound.&lt;/td&gt;
+          &lt;td&gt;The algorithm has an asymptotically tight bound.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Worst case or ceiling of the growth rate.&lt;/td&gt;
+          &lt;td&gt;Best case or floor of the growth rate.&lt;/td&gt;
+          &lt;td&gt;The worst case and best case of the growth rate is characterized by the same function or that they converge on said function.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>Waiting for Election Results</title>
+      <link>https://douglascuthbertson.com/2020/11/waiting-for-election-results.html</link>
+      <pubDate>Sat, 07 Nov 2020 08:23:14 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2020/11/waiting-for-election-results.html</guid>
+      <description>&lt;p&gt;The election is over. All we can do is wait for the counting complete. I hope enough people who see just how terrible this failure of a human being, Donald Trump, is went to the polls and voted. The future of our country depends on it.&lt;/p&gt;
+&lt;p&gt;Nevertheless, I have to get a few things off my chest. This morning, I considered writing a post about how horrible and dangerous the actions and words of Donald Trump are and how they undermine trust in one of the most sacred aspects of American democracy, the electoral process. It is through our right to vote for our representatives in government that our democracy functions. Without trust in that process, our democracy and our country fail.&lt;/p&gt;
+&lt;p&gt;I was going to declare Trump a fascist and state that public officials who stay quiet are tacitly in agreement with his baseless claims of corruption in the election. Of course, those who publically state support for him and his lies, I was also going to slap on the fascist label. Instead of labeling Trump a fascist outright, I took a step back. I wanted to learn a little more about what a fascist really is.&lt;/p&gt;
+&lt;p&gt;I found an article by John McNeil, a professor of history at Georgetown University, &lt;a href=&#34;https://www.washingtonpost.com/posteverything/wp/2016/10/21/how-fascist-is-donald-trump-theres-actually-a-formula-for-that/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;How Fascist is Donald Trump? There&amp;rsquo;s Actually a Formula for That&lt;/a&gt;. McNeil measures Trump&amp;rsquo;s statements and behaviors against 11 traits of fascism through the lens of the two horrible dictators who created it: Benito Mussolini and Adolf Hitler. Through this comparison, I realized just how much more brutal are &lt;em&gt;real&lt;/em&gt; fascists. Thankfully, Trump can count fascism as another of his many failures.&lt;/p&gt;
+&lt;p&gt;The truth is state officials all across the country have worked very hard to ensure &lt;em&gt;all&lt;/em&gt; legal votes are counted. Most ballots are counted by machine. Both major parties have representatives observing the counting process, so if for some reason the machine can&amp;rsquo;t read a ballot, both parties view the ballot and try to understand the intent of the voter. Given the level of oversight and the difficulty of synchronizing fraud across multiple states, it is inconcievable that either party could throw the election.&lt;/p&gt;
+&lt;p&gt;Trump has been, and still is, a danger to our country. He is relentlessly undermining trust in our electoral process. He makes baseless claims of illegal ballots being counted. He falsely claimed that no ballots could be legally counted after election day - at least in Pennsylvania where he was ahead. However, he wanted counting to continue in Arizona, where we was behind. He has threatened to not leave the Office of the President if he loses. He and others who should know better (like Richard Grenell, former Acting Director of National Intelligence) have claimed that illegal votes are being counted in Nevada.&lt;/p&gt;
+&lt;p&gt;He is truly a horrible person. During his time as president, some of Trumps terrible acts are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;he refused to denounce white supremicists, and so he tacitly supports them.&lt;/li&gt;
+&lt;li&gt;he instituted a policy that separated immigrant parents from their children, caged the children, and deported the parents. There are now over 500 immigrant children who cannot be reunited with their parents. This is monstrous. Does this reach the level of a crime against humanity?&lt;/li&gt;
+&lt;li&gt;he lied about people fleeing brutality in South and Central America, characterizing them as criminals and drug addicts.&lt;/li&gt;
+&lt;li&gt;he distanced the US from her allies in Europe.&lt;/li&gt;
+&lt;li&gt;he has been duped by brutal dictators Vladimir Putin and Kim Jong-un into trusting them.&lt;/li&gt;
+&lt;li&gt;he lied to, and continues to lie to the American people about the dangers of COVID-19. Here in early November, cases are spreading at a frightening rate (over 140,000 new cases and 1200 deaths yesterday).&lt;/li&gt;
+&lt;li&gt;he continues to lie about how quickly we will recover from the pandemic. Given how fast the disease is spreading and its mortality rate (&lt;a href=&#34;https://coronavirus.jhu.edu/data/mortality&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2.4% in the US&lt;/a&gt; according to &lt;a href=&#34;https://coronavirus.jhu.edu/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Johns Hopkins University of Medicine&lt;/a&gt;) there could be thousands more deaths &lt;em&gt;per day&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vote 2020</title>
+      <link>https://douglascuthbertson.com/2020/10/vote-2020.html</link>
+      <pubDate>Wed, 28 Oct 2020 08:12:51 -0400</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2020/10/vote-2020.html</guid>
+      <description>&lt;p&gt;If you live in the United States of America, please vote! Election Day is Tuesday, November 3rd.&lt;/p&gt;
+&lt;p&gt;Vote for whomever you like, but understand that Trump is tearing apart our country.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;He lied to us Americans about the deadliness of COVID-19 and how easliy it spreads. Now well over 200,000 Americans are dead. Many of those deaths could have been prevented if we had been forewarned and taken precautions.&lt;/li&gt;
+&lt;li&gt;He has failed the economy. Many small businesses are failing and may not recover.&lt;/li&gt;
+&lt;li&gt;He ripped apart immigrant families and there are now over 500 immigrant children who can&amp;rsquo;t be reunited with their parents.&lt;/li&gt;
+&lt;li&gt;He bullies, denigrates, and belittles people who disagree with him or are less powerful than he is so he can feel superior.&lt;/li&gt;
+&lt;li&gt;He refuses to denounce white supremacists and actually commanded one group to &amp;ldquo;stand back and stand by&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Do you really want him to be our president? I don&amp;rsquo;t understand how that&amp;rsquo;s possible.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A New Hugo-Based Blog</title>
+      <link>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog.html</link>
+      <pubDate>Sat, 22 Feb 2020 17:38:32 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog.html</guid>
+      <description>&lt;p&gt;In my &lt;a href=&#34;https://douglascuthbertson.com/2020/02/restart.html&#34;&gt;previous post&lt;/a&gt; I talked a little about why and how I started this blog. Here I want to present my experience with &lt;a href=&#34;https://gohugo.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; and what I like about it.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#the-short-lived-academic-theme&#34;&gt;The Short-lived Academic Theme&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#quick-switch-to-vanilla-bootstrap&#34;&gt;Quick Switch to Vanilla Bootstrap&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#a-new-navigation-menu&#34;&gt;A New Navigation Menu&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#more-puttering-around-with-layout&#34;&gt;More Puttering Around with Layout&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#mathjax&#34;&gt;MathJax&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#pagination&#34;&gt;Pagination&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#scrollbar-jumping&#34;&gt;Scrollbar Jumping&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#scss-pipeline-processing&#34;&gt;SCSS Pipeline Processing&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#sorry-vanilla-you-have-to-go&#34;&gt;Sorry Vanilla. You have to Go&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#navigation-menu&#34;&gt;Navigation Menu&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#general-layout&#34;&gt;General Layout&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#color-consistency-and-contrast&#34;&gt;Color Consistency and Contrast&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#styling-fun&#34;&gt;Styling Fun&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#debugging-layouts&#34;&gt;Debugging Layouts&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;p&gt;Late in 2018  I came across &lt;a href=&#34;https://gohugo.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt;, a static site generator written in &lt;a href=&#34;https://golang.org&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt;. Dissatisfied with Jekyll, I needed a different static site generator, and I had been learning Go at Work. This looked like a good opportunity to try blogging again.&lt;/p&gt;
+&lt;p&gt;I stumbled quite badly a few times along the way. I thought a theme would help me get my site up and running quickly, but they don&amp;rsquo;t balance well with my need to twiddle with the site&amp;rsquo;s layout and look and feel. The long and short of it is, I took what I learned from trying out a couple of themes, and hunkered down to learn a few things about &amp;ldquo;The Hugo Way&amp;rdquo;, and the basics of HTML &amp;amp; CSS.&lt;/p&gt;
+&lt;h2 id=&#34;the-short-lived-academic-theme&#34;&gt;The Short-lived Academic Theme&lt;/h2&gt;
+&lt;p&gt;As I have a tendency to do with new tools, I dove in too deep, too fast. Hugo has themes, and they look like a good way to get something up and running quickly. I looked over [`]the theme gallery](&lt;a href=&#34;https://themes.gohugo.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://themes.gohugo.io/&lt;/a&gt;) checking all the features and how they looked. &lt;a href=&#34;https://themes.gohugo.io/themes/theme-academic-cv/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Academic&lt;/a&gt; is very flexible and chock full of features. I decided to give it a whirl in February 2019. It looked like this out of the box.&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/001-2019.02.03.01-initial-commit.png&#34;
+         alt=&#34;First Rendition using Vanilla Bootstrap Theme&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            First Try with Vanilla Bootstrap
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I tried a few small configuration changes to see how I liked it. My hope was only minor changes would be necessary so I could have a site that looked good to me and had a responsive layout. That way I could just write posts.&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/002-2019.02.03.02-title.and.footer.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/002-2019.02.03.02-title.and.footer.png&#34;
+         alt=&#34;My First Time Using the Academic Theme&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            My First Time Using the Academic Theme
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;quick-switch-to-vanilla-bootstrap&#34;&gt;Quick Switch to Vanilla Bootstrap&lt;/h2&gt;
+&lt;p&gt;Sadly, Academic was short lived. By the 9th of the month I gave up on it. For all the features it has, I found it too hard to configure and customize. Don&amp;rsquo;t get me wrong. Academic is amazing and has &lt;a href=&#34;https://sourcethemes.com/academic/docs/get-started/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;good documentation&lt;/a&gt;, but this theme &lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;has its own themes&lt;/a&gt;. It&amp;rsquo;s a little more complex than what I needed. Also, I didn&amp;rsquo;t realize at the time, but Academic isn&amp;rsquo;t just a Hugo theme. It is a website builder. It uses Hugo as an engine to bring life to a website rather than being a set of content-decorators run by Hugo.&lt;/p&gt;
+&lt;p&gt;Too new to how Hugo workds and the complexities of a website builder, I looked for a simpler solution and settled on &lt;a href=&#34;https://themes.gohugo.io/vanilla-bootstrap-hugo-theme/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Vanilla Bootstrap&lt;/a&gt;.&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/003-2019.02.09-vanilla-theme-simplification.png&#34;
+         alt=&#34;First Rendition using Vanilla Bootstrap Theme&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            First Try with Vanilla Bootstrap
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The change was dramatic and configuration was simplified. While Academic has two levels of configuration, the core through &lt;code&gt;config/_default/config.toml&lt;/code&gt; and another level controlled through the content in the &lt;code&gt;content/home&lt;/code&gt; directory, Vanilla Bootstrap requires only core configuration of Hugo and a handful of theme-specific parameters all managed through the default configuration files.&lt;/p&gt;
+&lt;h3 id=&#34;a-new-navigation-menu&#34;&gt;A New Navigation Menu&lt;/h3&gt;
+&lt;p&gt;It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in &lt;code&gt;config/_default/config.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;# See https://feathericons.com/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;# The value of pre is the icon name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nav&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Home&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;home&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;weight&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nav&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Notes&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;edit&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/notes/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;weight&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nav&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;About&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;smile&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/about/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;weight&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nav&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Now&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;play&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/now/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;weight&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nav&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;RSS&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;rss&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/index.xml&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;weight&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The theme provides the other major component in &lt;code&gt;theme/vanilla/layouts/partials/nav.html&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav-border&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;container&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;nav&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav justify-content-center&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    {{ $showActiveNav := .Site.Params.showActiveNav }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    {{ $currentPage := . }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    {{ range .Site.Menus.nav }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      {{ $active := &amp;#34;&amp;#34; }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      {{ if eq $showActiveNav true }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        {{ $isMenu := or ($currentPage.IsMenuCurrent &amp;#34;nav&amp;#34; .) ($currentPage.HasMenuCurrent &amp;#34;nav&amp;#34; .) }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        {{ if or $isMenu (eq $currentPage.Title .Name) }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          {{ $active = &amp;#34;nav-link-active&amp;#34; }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      {{ $icon := printf &amp;#34;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;data-feather&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\&amp;#34;%s\&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&amp;#34; .Pre }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      {{ $text := print $icon &amp;#34; &amp;#34; .Name | safeHTML }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav-link {{ $active }}&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;{{ .URL }}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;{{ $text }}&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;nav&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It cycles through the &lt;code&gt;menu.nav&lt;/code&gt; items in &lt;code&gt;config.toml&lt;/code&gt; and translates those values to a feather icon, text, and a link to the given URL. The site was beginning to fill out, although today the icons look silly to me.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s a &amp;ldquo;Notes&amp;rdquo; menu item, because I thought I would use the site to keep notes as well as regular blog posts. I&amp;rsquo;ve since separated my personal notes and works-in-progress from blog posts. I&amp;rsquo;m willing to go only so far in what I make public. It&amp;rsquo;s best to keep some thoughts as background material, and let others stew for a while before publicizing them.&lt;/p&gt;
+&lt;p&gt;I created a simple 404 page, and a big &amp;ldquo;jumbotron&amp;rdquo; area for all the index pages. The site was beginning to fill out. Although, today the icons look silly to me.&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/004-2019.02.10-jumbotron.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/004-2019.02.10-jumbotron.png&#34;
+         alt=&#34;Jumbotron&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            Jumbotron
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The note is dated April 8, 2019 because that was my goal for publishing the site. It took a little longer than I expected. Mostly, I was unsure about putting up my notes in public, the design was poor, and I thought I should do better.&lt;/p&gt;
+&lt;p&gt;In hindsight, content is more important than style. It would have been better to write posts and develop the site simultaneously.&lt;/p&gt;
+&lt;h3 id=&#34;more-puttering-around-with-layout&#34;&gt;More Puttering Around with Layout&lt;/h3&gt;
+&lt;p&gt;It was still early February, and I was learning how Hugo worked, it&amp;rsquo;s configuration system, and how and where to integrate CSS, SCSS, and JavaScript (particularly MathJax). I spent time breaking up the layout into partials for more consistency across the site.&lt;/p&gt;
+&lt;p&gt;I added a picture of Motif No. 1 I took in Rockport, Massachusetts to fill the jumbotron. It got cropped rather poorly, though.&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/005-2019.02.11-wide.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/005-2019.02.11-wide.png&#34;
+         alt=&#34;Wide Menu Day&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            Wide Menu Day
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;mathjax&#34;&gt;MathJax&lt;/h4&gt;
+&lt;p&gt;I was happy to learn a little about configuring MathJax. It makes it possible to display equations on web pages. To configure MathJax to automatically number equations - just include the following in &lt;code&gt;layouts/partials/script.html&lt;/code&gt; (which is included in &lt;code&gt;layouts/_default/baseof.html&lt;/code&gt;):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- Configure MathJax for automatic equation numbering. See
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    for details
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;  --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;text/x-mathjax-config&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;MathJax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Hub&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;TeX&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;equationNumbers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;autoNumber&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;AMS&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I realize that MathJax is a large JavaScript library. It&amp;rsquo;s probably stupid to try optimizations without testing, nevertheless I didn&amp;rsquo;t want to load MathJax with every page. Most pages don&amp;rsquo;t require it, so I wrap the MathJax configuration in an if-block that detects if the page (or the whole site) defines the parameter &lt;code&gt;math&lt;/code&gt;.  The configuration has been updated, as well.&lt;/p&gt;
+&lt;p&gt;Now all I have to do is add &lt;code&gt;math: true&lt;/code&gt; to the front matter of any file that includes \(\LaTeX\).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- Include MathJaX if either the page or the site params define math=true --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{- if or .Params.math .Site.Params.math -}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- Configure MathJax for automatic equation numbering. See
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    https://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    for details.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    Also, for tex2jax configuration see https://docs.mathjax.org/en/latest/
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    options/preprocessors/tex2jax.html
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    Note that the double-backslashes are very important. Without them ordinary
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    markdown will interpret (parenthetical statements) as inline math, and cause
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    similar problems if text is put between &amp;#39;[&amp;#39; and &amp;#39;]&amp;#39;.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;  --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;text/x-mathjax-config&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;MathJax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Hub&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;TeX&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;equationNumbers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;autoNumber&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;AMS&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;              &lt;span class=&#34;nx&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;AMSmath.js&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;AMSsymbols.js&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;tex2jax&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;inlineMath&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;\\(&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;\\)&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;displayMath&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;$$&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;$$&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;\\[&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;\\]&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;processEscapes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;processEnvironments&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;skipTags&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;noscript&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;style&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;textarea&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;pre&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In addition to being updated, it tries to load from a Cloudflare, but if it can&amp;rsquo;t connect it loads a local copy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;&amp;lt;!--
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    Load MathJax. Note that this is one of the most general configurations.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    See the configuration docs for others. There might be a lighter version
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    that will work for my purposes.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    https://docs.mathjax.org/en/latest/config-files.html#common-configurations
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;  --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- MathJax: Fall back to local if your computer is offline and can&amp;#39;t connect
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    to the CDN. For convenience, the configuration for the fallback deactivates
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    image fonts support (imageFont:null). This allows you to host a slim local
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    copy by deleting the PNG fonts.--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;MathJax&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;script type=&amp;#34;text/x-mathjax-config&amp;#34;&amp;gt;MathJax.Hub.Config({&amp;#34;HTML-CSS&amp;#34;:{imageFont:null}});&amp;lt;\/script&amp;gt;&amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;{{ &amp;#34;scripts/MathJax-2.7.5/MathJax.js&amp;#34; | absURL }}?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt;&amp;lt;\/script&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{- end -}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;pagination&#34;&gt;Pagination&lt;/h4&gt;
+&lt;p&gt;I had added lots of notes and the layout was still sprinkled with distracting icons, this time with a redish theme and green accents. I had at least learned how to paginate my page lists. For example, the default list (&lt;code&gt;layouts/_default/list.html&lt;/code&gt;) used Hugo&amp;rsquo;s built-in pagination:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ define &amp;#34;main&amp;#34; }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- default list template --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;article&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- &amp;#34;{{.Content}}&amp;#34; pulls from the markdown content of the corresponding _index.md --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        {{ .Content }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- Paginates through content/note/*.md --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      {{ $paginator := .Paginate (where .Pages &amp;#34;Type&amp;#34; &amp;#34;note&amp;#34;) }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      {{ range $paginator.Pages }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;h2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;font-125&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;{{ .Permalink }}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;{{ .Title }}&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;h2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;article-meta-data&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          {{ partial &amp;#34;date-and-tags.html&amp;#34; . }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- this renders based on layouts/_default/summary.html (either the
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;          local one, or the one in a theme --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          {{ .Render &amp;#34;summary&amp;#34; }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      {{ template &amp;#34;_internal/pagination.html&amp;#34; . }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;article&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/006-2019.04.08-red-green.png&#34;
+         alt=&#34;Pagination, Redish Theme, and Green Accents&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            Pagination, Redish Theme, and Green Accents
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;scrollbar-jumping&#34;&gt;Scrollbar Jumping&lt;/h4&gt;
+&lt;p&gt;At some point I noticed that when navigating from a page that had no scrollbar (like a short post or note) to one that did (such as the paginated lists of notes displayed above) the whole layout shifted slightly. I found a &lt;a href=&#34;https://css-tricks.com/elegant-fix-jumping-scrollbar-issue/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fix for it at CSS-Tricks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;At the time, I had a &lt;code&gt;layouts/partials/style.html&lt;/code&gt; partial file. All I had to do was add a few lines of CSS to it:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;margin-left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;calc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;vw&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;margin-right&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;scss-pipeline-processing&#34;&gt;SCSS Pipeline Processing&lt;/h4&gt;
+&lt;p&gt;By April I had setup a pipeline for processing SCSS into CSS. The pipeline consisted of this small amount of template code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- For more info about using SCSS and this pipeline see:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    https://github.com/gohugoio/hugo/commit/dea71670c059ab4d5a42bd22503f18c087dd22d4,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;    and https://gohugo.io/hugo-pipes/
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;  --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ $style := resources.Get &amp;#34;sass/main.scss&amp;#34; | toCSS | minify | fingerprint }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;link&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;rel&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;{{ $style.RelPermalink }}&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;integrity&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;{{ $style.Data.Digest }}&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;media&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;screen&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;main.scss&lt;/code&gt; file lived in &lt;code&gt;assets/scss/&lt;/code&gt; at the root of the repository.&lt;/p&gt;
+&lt;h2 id=&#34;sorry-vanilla-you-have-to-go&#34;&gt;Sorry Vanilla. You have to Go&lt;/h2&gt;
+&lt;p&gt;One aspect of design I didn&amp;rsquo;t enjoy was trying to figure out the correct CSS classes to apply to a given situation. For example, the body element is &lt;code&gt;&amp;lt;body class=&amp;quot;d-flex flex-column h-100&amp;quot;&amp;gt;&lt;/code&gt;. I have no idea what those classes mean and why I need them, so I started learning more about HTML and CSS.&lt;/p&gt;
+&lt;p&gt;My new goal was to really understand the structure of my site, so I know where things are, what needs to be modified as I build it to look the way I want it to, and know the elements and classes defined in the layout so they can be styled correctly. Vanilla Bootstrap was a nice place to start, but I don&amp;rsquo;t understand the choices made for structure and styling. Its use of Bootstrap added another layer of complexity to learning how changes to CSS will affect the site.&lt;/p&gt;
+&lt;p&gt;In the middle of April, I ripped out Vanilla Bootstrap and started over.&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/007-2019.04.13-back-to-basics.png&#34;
+         alt=&#34;Back to Basics&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            Back to Basics
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Weird. I started off the year with a sophisticated theme, because I thought it would help me get to a nice looking website fast. I found the large array of options in Academic to be overwhelming.&lt;/p&gt;
+&lt;p&gt;Switching to the theme to Vanilla enabled me to learn more about layout and styling, but what I wound up with was cutesy and still too difficult to reason about when it came to knowing which levers to pull and dials to turn to affect the layout and styling in a predictable way.&lt;/p&gt;
+&lt;p&gt;Ripping out Vanilla left me with a barebones layout. Here are some of the things I learned along the way to creating a site more to my liking.&lt;/p&gt;
+&lt;h3 id=&#34;navigation-menu&#34;&gt;Navigation Menu&lt;/h3&gt;
+&lt;p&gt;By late April, I learned that navigation links didn&amp;rsquo;t have to be wrapped in an unordered list. Looking through git log, I found the navigation menu had always been wrapped in an unordered list.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ul&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;navbar-nav mr-auto&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;li&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav-item&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav-link&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/#about&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;data-target&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;#about&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;span&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Home&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;span&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;li&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;li&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav-item&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nav-link&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/#publications_featured&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;data-target&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;#publications_featured&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;span&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Publications&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;span&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;li&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now I have just a &lt;code&gt;&amp;lt;nav&amp;gt;&lt;/code&gt; element that wraps a &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;nav&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;main-nav&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;main-nav__items&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;main-nav__link navLink-active&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://localhost:1414/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Home&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;main-nav__link &amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://localhost:1414/about/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;About&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;main-nav__link &amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://localhost:1414/now/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Now&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;main-nav__link &amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://localhost:1414/index.xml&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;RSS&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;nav&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The CSS for this section consists of class definitions for &lt;code&gt;main-nav&lt;/code&gt; and &lt;code&gt;main-nav__items&lt;/code&gt;. It is very simple, and doesn&amp;rsquo;t even try to style the &lt;code&gt;main-nav__link&lt;/code&gt; class.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;main-nav&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;flex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;justify-content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;flex-start&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;main-nav__items&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;font-size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.1&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;margin-right&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;ch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Unwrapping them changed navigation from:&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/008-2019.04.18-unstyled-navigation-list.png&#34;
+         alt=&#34;Unstyled Navigation List&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            Unstyled Navigation List
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;to this:&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/009-2019.04.19-plain-navigation.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/009-2019.04.19-plain-navigation.png&#34;
+         alt=&#34;Plain Navigation&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            Plain Navigation
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;general-layout&#34;&gt;General Layout&lt;/h3&gt;
+&lt;p&gt;Per the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MDN docs on box-sizing&lt;/a&gt; &lt;code&gt;border-box&lt;/code&gt; makes dealing with the sizes of elements much easier, and generally eliminates a number of pitfalls you can stumble on while laying out your content, so I set &lt;code&gt;border-box&lt;/code&gt; globally.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;box-sizing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;border-box&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I learned I can set site-wide parameters in Hugo&amp;rsquo;s configuration files. I set the site width and several other parameters in &lt;code&gt;config/_default/params.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  showActiveNav = true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  author = &amp;#34;Douglas Cuthbertson&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  description = &amp;#34;This is my soapbox for thoughts on programming, project planning, sketching, drawing, kempo, and any other topic that may suit my fancy.&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  dateFormat = &amp;#34;Monday Jan 2, 2006&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  dateFormatExtended = &amp;#34;Monday Jan 2, 2006 15:04&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  subtitle = &amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  copyright = &amp;#34;(c) 2015-2020 Douglas Cuthbertson. This work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/)&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  footerText = &amp;#34;Made with HTML, CSS, JavaScript, and perseverance. Generated by [Hugo](https://gohugo.io/)&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  hideFooter = false
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  #featured_image = &amp;#34;/images/gargoyle-overlooking-paris.jpg&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  #featured_image = &amp;#34;/images/motif-number-1.jpg&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  site_width = &amp;#34;104ch&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  componentDropCaps = &amp;#34;drop-caps_goudy&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  mainSections = [&amp;#34;note&amp;#34;, &amp;#34;post&amp;#34;, &amp;#34;project&amp;#34;]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  planck = &amp;#34;\u210E&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  reduced_planck = &amp;#34;\u210F&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and use &lt;code&gt;site_width&lt;/code&gt; in &lt;code&gt;assets/style/base.css&lt;/code&gt; as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ $siteWidth := .Site.Params.site_width }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ if not .Site.Params.site_width }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ $siteWidth = &amp;#34;936px&amp;#34; }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I&amp;rsquo;ve only recently decided that this is a bad idea. Every time I try to experiment with the site width, I have to touch the configuration. Hugo must go through a complete rebuild of the site, which takes much more time than necessary.&lt;/p&gt;
+&lt;p&gt;The only reason to put a parameter in a configuration file is if the value must be accessed from more than one place. In this case, it was needed only in a single CSS file. Once I defined the width directly in &lt;code&gt;base.css&lt;/code&gt;, site rebuilds were faster, and my CSS is no longer cluttered with Go template code. Also, &lt;code&gt;layouts/partials/head.html&lt;/code&gt; was slightly simplified. Instead of accessing &lt;code&gt;base.css&lt;/code&gt; as&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;{{&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cssBase&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;resources&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Get&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;style/base.css&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;resources&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ExecuteAsTemplate&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;style.base.css&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;the code is now&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;{{&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cssBase&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;resources&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Get&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;style/base.css&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;color-consistency-and-contrast&#34;&gt;Color Consistency and Contrast&lt;/h3&gt;
+&lt;p&gt;In May I was trying to ensure colors were being used consistently. I learned that the site should have primary and accent colors, and define the color of the body text. Some designers say that black text on a white background is too harsh and set dark gray text on a light gray background. When I look at those sites, I find the contrast is often too low and causes eye strain. I originally just went with black text on white. I figured it&amp;rsquo;s a work in progress, and that can be adjusted when the rest of the site is more to my liking.&lt;/p&gt;
+&lt;p&gt;In deference to experienced designers I now set the text to a very dark gray on a very light gray background. I created a palette using &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CSS custom properties&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;root&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#f5fffa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#7cffbb&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color300&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#00eb75&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color400&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#00c663&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color500&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#00a151&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color600&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#007c3e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color700&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#00572c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color800&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#003219&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color900&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#000b05&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--gray100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#fcfcfc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--gray200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#dedede&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--gray300&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#bfbfbf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--gray400&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#a1a1a1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--gray500&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#828282&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--gray600&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#636363&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--gray700&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#454545&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--gray800&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#262626&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--gray900&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#080808&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;/* text */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color500-complement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#a30052&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;/* anchor hover */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color500-adjacent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#0062a3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;/* drop-caps */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color500-adjacent-complement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#a34100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;/* reserved */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color700-complement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#00572b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color700-adjacent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#003457&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;--color700-adjacent-complement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#572300&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I like this aspect of CSS. It means I can define all the colors I care about in one place, and I don&amp;rsquo;t have to learn SCSS at the moment to do it.&lt;/p&gt;
+&lt;p&gt;Some sites eschew black text on a white background. For example, &lt;a href=&#34;https://jgthms.com/web-design-in-4-minutes/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Web Design in 4 Minutes&lt;/a&gt; recommends using a medium gray (&lt;code&gt;#555&lt;/code&gt;) for body text, a dark gray (&lt;code&gt;#333&lt;/code&gt;) for headings and strong text all against a white background. However that creates a rather low contrast. To make matters worse, the background for code blocks is set to &lt;code&gt;#eee&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://www.w3.org/TR/WCAG20/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Web Content Accessibility Guidelines&lt;/a&gt; recommends a contrast ratio of at least 7:1 for normal text and 4.5:1 for large text. Large text is defined as 14 point (typically 18.66px) and bold or larger, or 18 point (typically 24px) or larger. The contrast ratio for headings set to #333 against white is strong at 12.62:1. Body text set to #555 against white is barely acceptable at 7.46:1. Finally, the constrast ratio of code blocks (#555 against a background of #eee) is unacceptable at 6.42:1.&lt;/p&gt;
+&lt;p&gt;Originally, I had black text on a white background. In deference to designers who have a lot more experience creating web sites than I do, I set the background and text colors to the lightest and darkest grays in the palette, respectively.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;background-color&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gray100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gray900&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The contrast ratio is 19.52:1. Is that too high? One day I&amp;rsquo;ll look into separate degrees of contrast for body text and headings.&lt;/p&gt;
+&lt;h2 id=&#34;styling-fun&#34;&gt;Styling Fun&lt;/h2&gt;
+&lt;p&gt;One thing I particularly liked was how nice drop caps looked on &lt;a href=&#34;https://www.gwern.net/index&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gwern&lt;/a&gt;. I looked at his CSS and created a new file, &lt;code&gt;static\style\drop-caps\drop-caps.css&lt;/code&gt; with a simplified version of his CSS. I dropped it in the &lt;code&gt;static/&lt;/code&gt; directory instead of the &lt;code&gt;assets/&lt;/code&gt; folder out of expediency, and I modified &lt;code&gt;layouts/_default/baseof.html&lt;/code&gt; to pull in the drop caps definitions.&lt;/p&gt;
+
+&lt;aside class=&#34;admonition note&#34;&gt;
+  &lt;div class=&#34;admonition-title&#34;&gt;Browser-Specific Styling&lt;/div&gt;
+  &lt;div class=&#34;content-admonition&#34;&gt;&lt;p&gt;For the longest time I couldn&amp;rsquo;t get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at &lt;a href=&#34;https://www.gwern.net/index&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gwern.net&lt;/a&gt;, I realized &lt;code&gt;@supports (-moz-user-focus: normal) { ... }&lt;/code&gt; is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use &lt;code&gt;@supports not (-moz-user-focus: normal)&lt;/code&gt; to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.&lt;/p&gt;&lt;/div&gt;
+&lt;/aside&gt;
+&lt;p&gt;By the end of June I removed most of the feather icons and simplified the layout. It looked better.&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/010-2019.06.27-simple.png&#34;
+         alt=&#34;June 2019. A more simple presentation&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            June 2019. A More Simple Presentation
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;debugging-layouts&#34;&gt;Debugging Layouts&lt;/h2&gt;
+&lt;p&gt;A simple trick to help debug layouts is to put a high-contrast border and background color around the sections you&amp;rsquo;re working on.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;wrapper&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;border&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;px&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;solid&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#f08c00&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;background-color&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#ffec99&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;border-radius&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;px&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;padding&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;px&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A little thing like that helped me make a two column layout.&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/011-2019.08.04-two-column.png&#34;
+         alt=&#34;Two Column Layout&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            Two Column Layout
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;By the end of September last year, I had restructured a lot of the blog. It has a stronger two-column layout and a splash of color.&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;https://douglascuthbertson.com/images/history/012-2019.09.30-no-notes-breadcrumbs.png&#34;&gt;
+    &lt;img src=&#34;https://douglascuthbertson.com/images/history/012-2019.09.30-no-notes-breadcrumbs.png&#34;
+         alt=&#34;A Splash of Color&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            A Splash of Color
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Since then, I&amp;rsquo;ve been periodically iterating on the design. It is pretty much complete and I&amp;rsquo;m generally happy with the way it has turned out. I&amp;rsquo;ll continue to fiddle with it here and there, but I plan to write about things with which I&amp;rsquo;m more familiar.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Restart</title>
+      <link>https://douglascuthbertson.com/2020/02/restart.html</link>
+      <pubDate>Tue, 11 Feb 2020 05:48:36 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2020/02/restart.html</guid>
+      <description>&lt;p&gt;Creating a blog is hard. I admire those who are able to design their own and write regular posts, so much so that I&amp;rsquo;m trying again to create my own blog. I started this blog late in 2015. After writing a few posts, I became discouraged. I didn&amp;rsquo;t like the way it looked, the tools often broke, and I didn&amp;rsquo;t have a clear idea of what I wanted to write, or why I was blogging.&lt;/p&gt;
+&lt;p&gt;Recently I was inspired by a post by Mattias Ott from May 12, 2019, &lt;a href=&#34;https://matthiasott.com/articles/into-the-personal-website-verse&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Into the Personal-Website-Verse&lt;/a&gt;. He encouraged people to create their own personal website to write, create, share what you like, and to tinker with new technologies.&lt;/p&gt;
+&lt;p&gt;Your own blog is supposed to be a place where you can make mistakes and learn without pressure. With that in mind, I&amp;rsquo;m declaring this blog as my soapbox. My space to say what ever I want. My laboratory for experiments in web technologies. My window into my own experience from which I can reflect upon my past, figure out what&amp;rsquo;s of interest now and navigate to a better future. If I&amp;rsquo;m lucky, I might engage someone who wishes to share their own thoughts and experiences, and I&amp;rsquo;ll learn something new.&lt;/p&gt;
+&lt;h2 id=&#34;rebuilding-from-jekyll-to-hugo&#34;&gt;Rebuilding from Jekyll to Hugo&lt;/h2&gt;
+&lt;p&gt;My first priority was to find good tools for creating a static site. The original experiment was, in part, to use &lt;a href=&#34;https://jekyllrb.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jekyll&lt;/a&gt; to build the site from Markdown files and publish it from &lt;a href=&#34;https://pages.github.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Pages&lt;/a&gt;. I was familiar with git, had been using &lt;a href=&#34;https://github.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt; for years, and &lt;a href=&#34;https://jekyllrb.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;https://pages.github.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Pages&lt;/a&gt; were advertised as a hand-in-glove fit for each other, and they are.&lt;/p&gt;
+&lt;p&gt;I installed and configured Ruby (Jekyll is written in Ruby, but is not a standalone executable), Bundler to keep Ruby gems up-to-date, Compass to generate CSS from SASS/SCSS, and Jekyll of course, and settled in to learn how to create a blog. After reading a lot of docs, and experimenting a lot with HTML and SCSS, I had a working blog. It was kind of ugly, but it was functional. It had two columns, the left for posts and the right for links to posts by year. As I recall, it took quite a bit of effort to put together the markup, styling, and learn how to use the Liquid Template engine to pull together things like lists of posts by year, month, and day.&lt;/p&gt;
+&lt;p&gt;At first, the writing and learning experience was delightful. I have a note from March 7, 2016 that says, &amp;ldquo;Jekyll is really easy to install and use. What takes time is learning enough about its bells and whistles, markdown, HTML, CSS, and Sass to make a blog or website you&amp;rsquo;re own.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;I had a couple of &lt;code&gt;.bat&lt;/code&gt; files to update and launch Jekyll and Compass. The first was &lt;code&gt;_build\start.bat&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  @echo off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  REM Update all the gems and then start Compass and Jekyll
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  call bundle update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SET PROJECT_PATH=%~dp0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  call %PROJECT_PATH%quick-start.bat
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The second was &lt;code&gt;quick-start.bat&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  @echo off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  REM Start Compass and Jekyll without updating gems
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  start bundle &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; compass watch
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  REM Give compass a few seconds to start before launching jekyll.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  @ping 192.0.2.2 -n &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -w &lt;span class=&#34;m&#34;&gt;4000&lt;/span&gt; &amp;gt; nul
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  start bundle &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; jekyll s --port &lt;span class=&#34;m&#34;&gt;4000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;All I had to do was run &lt;code&gt;build\start.bat&lt;/code&gt; and open a browser to &lt;code&gt;http://localhost:4000&lt;/code&gt;. Each time I edited and saved a file, the view in the browser would update after a second or so. Blogging life was good.&lt;/p&gt;
+&lt;p&gt;Later came a series of annoyances. It started with Compass crashing a lot when editing scss files. Compass was valuable for its math library. I found the exponentiation and logarithm functions most valuable. I used them for calculating the luminance of a color and the contrast ratio between two colors.&lt;/p&gt;
+&lt;p&gt;The crashes got so annoying that I stopped using Compass in September of 2016. Compass wasn&amp;rsquo;t being maintained anymore, and I wasn&amp;rsquo;t about to start learning Ruby just to be able to write a blog. Fortunately, I learned that Jekyll had a built-in sass compiler. I also figured out how to write the color luminance and contrast ratio functions in pure sass, so I didn&amp;rsquo;t need Compass&amp;rsquo; math library either. I don&amp;rsquo;t use scss currently. I guess (hope) luminance and contrast ratios are built-in functions by now, but in case they aren&amp;rsquo;t, &lt;a href=&#34;https://gist.github.com/dbc60/451f16c588b806967b706b45829e49dc&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&amp;rsquo;s a gist&lt;/a&gt; with those functions and a few others. Feel free to use it as you will.&lt;/p&gt;
+&lt;p&gt;In October of 2016, the &lt;code&gt;--watch&lt;/code&gt; option being disabled for Windows in version 3.3.0 of Jekyll. That option was originally intended for BASH on Windows, but was extended to the default &lt;code&gt;cmd.exe&lt;/code&gt; and PowerShell. I found a fix among the &lt;a href=&#34;https://github.com/jekyll/jekyll/issues/5462#issuecomment-253982908&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;comments&lt;/a&gt; in &lt;a href=&#34;https://github.com/jekyll/jekyll/issues/5462&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jekyll issue 5462&lt;/a&gt;. The comments said the underlying problem in BASH on Windows has been fixed, so &lt;code&gt;--watch&lt;/code&gt; will be enabled in a later release. A temporary fix was to open &lt;code&gt;vendor\bundle\gems\jekyll-3.3.0\lib\jekyll\commands\build.rb&lt;/code&gt; and replace the line &lt;code&gt;if Utils::Platforms.windows?&lt;/code&gt; with &lt;code&gt;unless Utils::Platforms.windows?&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I wasn&amp;rsquo;t comfortable at all with manually modifying gem files. I didn&amp;rsquo;t know Ruby, and those files were managed by Bundler. It just seemed like a bad idea. Still, I was still able to use live-reload and see the effects of edits on HTML and SCSS a few seconds after they happened. Fast feedback loops are truly invaluable when learning anything new.&lt;/p&gt;
+&lt;p&gt;My last post was in November of 2016 after the US presidential election. I don&amp;rsquo;t remember exactly why I stopped, but part of the reason was that Jekyll was slow, and it felt like the Windows implementation was treated as a second-class citizen.&lt;/p&gt;
+&lt;p&gt;Besides blogging, I was also using it as a note taking system. I loved that I could write a markdown file, and Jekyll could turn my notes into a nice looking web page. However, when I had a few dozen notes it would take several seconds to see edits appear in a browser. I wasn&amp;rsquo;t very good with using HTML and CSS, so I became frustrated as I tried to use my notes repository to experiment with layout and design. The feedback loop was irritatingly slow.&lt;/p&gt;
+&lt;p&gt;I spent months looking into other solutions. I read about Luhmann&amp;rsquo;s Zettelkasten (the original blog is gone, but the article is &lt;a href=&#34;https://web.archive.org/web/20200812180657/https://takingnotenow.blogspot.com/2007/12/luhmanns-zettelkasten.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here on the Way Back Machine&lt;/a&gt;) for organizing my files, and &lt;a href=&#34;http://www.sphinx-doc.org/en/stable/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sphinx&lt;/a&gt;, the tool used by the Python programming language for generating all of their documentation.&lt;/p&gt;
+&lt;p&gt;Sphinx turned out to be a bit of a rabbit hole, a good one. The source documents for Sphinx are written in reStructuredText (rST). I was curious why that file format was chosen over Markdown or plain text. While rST has its issues and limitations, it is a much more rich markup language than Markdown. Also, Sphinx is a programmable environment. If it doesn&amp;rsquo;t have a directive you need, there&amp;rsquo;s a way to define new ones.&lt;/p&gt;
+&lt;p&gt;The possibilities just wowed me. I ported all my old notes from Markdown to rST and dove into Sphinx, directives, and roles. I spent a lot of time learning, writing, and even played around with CSS a little bit. Even so, Sphinx presented a kind of impedance mismatch between what I was trying to do - just have a tool that builds nice web pages from my notes - and keeping a Python environment up-to-date as I wanted to try new features added to later releases of Sphinx.&lt;/p&gt;
+&lt;p&gt;My success with Sphinx for notes left me with a desire to blog again. I was probably suffering from myopia, but at the time I didn&amp;rsquo;t realize that Jekyll is not necessary to build GitHub pages, and I didn&amp;rsquo;t know how or if Sphinx could be configured to work with GitHub pages.&lt;/p&gt;
+&lt;p&gt;Well, I spent a lot of time in 2018 learning &lt;a href=&#34;https://golang.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; for a new project at work. It&amp;rsquo;s a very nice programming language. Late in 2018, I came across &lt;a href=&#34;https://gohugo.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt;. It looked interesting, and what do you know, it&amp;rsquo;s written in Go! I had to give it a try. I figured even if it&amp;rsquo;s not to my liking, I can look at the source code, and learn something more about Go.&lt;/p&gt;
+&lt;p&gt;It turns out that not only is Hugo useful, it is fast, not too hard to integrate MathJax for nice looking equations, has a powerful template language, and it is even possible to write pages in rST - though it requires integration with the Python script &lt;a href=&#34;https://pypi.org/project/rst2html5/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rst2html5&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s enough for now. I&amp;rsquo;ll cover my adventures using &lt;a href=&#34;https://gohugo.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; in a future post.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Dangerous Spectacle</title>
+      <link>https://douglascuthbertson.com/2016/11/a-dangerous-spectacle.html</link>
+      <pubDate>Wed, 09 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2016/11/a-dangerous-spectacle.html</guid>
+      <description>&lt;p&gt;I am truly saddened by the outcome of the 2016 presidential election.&lt;/p&gt;
+&lt;p&gt;I woke up this morning to find that Donald Trump is our president elect. I feel really awful about it.&lt;/p&gt;
+&lt;p&gt;Our national anthem declares America as &amp;ldquo;the land of the free and the home of the brave.&amp;rdquo; While we don&amp;rsquo;t always live up to that ideal, it&amp;rsquo;s something we strive for. It&amp;rsquo;s something we are all proud of.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve elected as our next president a person who bullies people. He&amp;rsquo;s denigrated those with disabilities. He abuses women. He spreads fear and hate based on race and religion, and wraps it in spectacle.&lt;/p&gt;
+&lt;p&gt;I hoped more people were unwilling to overlook the pain, suffering and fear he spreads and see him for what he is - a hateful, dangerous person who cares for nothing but himself. Instead, he will become our next leader. Good luck to us all.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Serving a Blog</title>
+      <link>https://douglascuthbertson.com/2016/09/serving-a-blog.html</link>
+      <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2016/09/serving-a-blog.html</guid>
+      <description>&lt;p&gt;I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve tried CMS solutions running on Linux-based servers. One of the first ones I tried many years ago was &lt;a href=&#34;http://cocoon.apache.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache Cocoon&lt;/a&gt;. I was enticed by how flexible and programmable it was with its pipeline architecture. It seemed anything was possible. Ultimately, trying to program using XML and XSLT, and configure Java servlets proved to be too complicated. The languages and processes needed to keep the site up and running were too far removed from those for adding content.&lt;/p&gt;
+&lt;p&gt;The mechanics of site maintenance took too much time away from just plain writing. I didn&amp;rsquo;t realize that was the problem at the time, so I allowed myself to be lured into other complex solutions. I tried &lt;a href=&#34;https://plone.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plone&lt;/a&gt; for a short while, but got tired of configuration bugs (the bugs were probably mine, and I was too impatient to figure out how to make Plone work correctly). I had a short run with &lt;a href=&#34;http://www.web2py.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;web2py&lt;/a&gt; and a long one with &lt;a href=&#34;https://www.drupal.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Drupal&lt;/a&gt; 5 and 6. Drupal was fun and I did get it to work fairly well. The only real problem was keeping up with patches for the core system as well as all of the plug-ins. They made it relatively easy to do, but it was another time consuming annoyance.&lt;/p&gt;
+&lt;p&gt;I ran each of these CMS solutions from a Windows box at home and a dynamic DNS provider. Besides being cheap and rickety, there were always quirks running on Windows as most of these systems were designed and tested on Linux. Windows support varied from very well to an after thought.&lt;/p&gt;
+&lt;h2 id=&#34;simplicity&#34;&gt;Simplicity&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve come around to thinking that if I&amp;rsquo;m going to have a corner of the web to express my thoughts, the tooling and maintenance of it should be as simple and low-overhead as possible. Static sites are very appealing in this respect. Post a little content wrapped in some HTML, give it some style with CSS and it&amp;rsquo;s done.&lt;/p&gt;
+&lt;p&gt;Still, nothing is ever quite simple when it comes to digital information. I&amp;rsquo;m always concerned about having copies of data to prevent loss. I&amp;rsquo;d like be able to look back and see how I got to where I am today - especially when it comes to reverting changes that, upon reflection, weren&amp;rsquo;t so good. I also don&amp;rsquo;t have a lot of spare cash to spend, so most cloud servers are out of the questions.&lt;/p&gt;
+&lt;p&gt;I did use a small &lt;a href=&#34;https://www.digitalocean.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Digital Ocean&lt;/a&gt; droplet for a while - only $5.00 USD/month. It addressed the cash issue very well, and I used &lt;a href=&#34;http://fossil-scm.org/index.html/doc/trunk/www/index.wiki&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fossil SCM&lt;/a&gt; for version control. I also have a server running &lt;a href=&#34;http://www.freenas.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FreeNAS&lt;/a&gt; where I backup all my data.&lt;/p&gt;
+&lt;p&gt;To build anything on a computer, you need good tools. For static site generation, I settled on &lt;a href=&#34;http://jekyllrb.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jekyll&lt;/a&gt;, a static site generator that turns &lt;a href=&#34;https://daringfireball.net/projects/markdown/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown&lt;/a&gt;, HTML and CSS (and even &lt;a href=&#34;http://sass-lang.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sass&lt;/a&gt; into a website. I made changes locally, and ran Jekyll to see the results. When I was satisfied, I&amp;rsquo;d check-in  the changes to Fossil and copy, via SSH, the &lt;code&gt;_site&lt;/code&gt; folder to my droplet where &lt;a href=&#34;https://www.nginx.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;nginx&lt;/a&gt; would serve the content. I thought it was as simple as it could get.&lt;/p&gt;
+&lt;p&gt;It does get more simple. &lt;a href=&#34;https://github.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt; is an amazing site that lets anyone make a &lt;a href=&#34;https://git-scm.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git&lt;/a&gt; repository. If you don&amp;rsquo;t mind it being publicly available, then their service is &lt;em&gt;free&lt;/em&gt;! They also make it easy, with Jekyll, to create a personal website. I no longer have to be (directly) concerned with web server configuration and security. That&amp;rsquo;s offloaded to the experts at GitHub. Also, uploading changes to my site is easier. All I have to do to update my blog is to commit the changes to my local repository and execute &lt;code&gt;git push origin&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;the-remaining-complexity&#34;&gt;The Remaining Complexity&lt;/h2&gt;
+&lt;p&gt;At this stage, I can&amp;rsquo;t imagine how it could be easier (and certainly it can&amp;rsquo;t be cheaper). The only complexity left is figuring out how to make my blog appear pleasing to the eye. That&amp;rsquo;s a matter of laying out some HTML, writing content marked up with &lt;a href=&#34;https://guides.github.com/features/mastering-markdown/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github Flavored Markdown&lt;/a&gt; and using CSS and &lt;a href=&#34;http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SCSS&lt;/a&gt; to give it some style.&lt;/p&gt;
+&lt;p&gt;I originally had a complex mess inherited from previous attempts at making a personal site with varying goals. I&amp;rsquo;ve now pared it down to something much easier to manage. I&amp;rsquo;ll post again about my current, more modest goals, what inspired the current design and how I&amp;rsquo;m going about the process of reaching them.&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cocoon.apache.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache Cocoon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://plone.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.web2py.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;web2py&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.drupal.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Drupal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Digital Ocean&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://fossil-scm.org/index.html/doc/trunk/www/index.wiki&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fossil Source Control Management&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.freenas.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FreeNAS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jekyllrb.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jekyll Static Site Generator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://daringfireball.net/projects/markdown/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown Markup Language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://sass-lang.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sass Stylesheet Language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.nginx.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;nginx web server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guides.github.com/features/mastering-markdown/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Flavored Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SCSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fixing the Width</title>
+      <link>https://douglascuthbertson.com/2016/03/fixing-the-width.html</link>
+      <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2016/03/fixing-the-width.html</guid>
+      <description>&lt;p&gt;What an ugly, fragile blog.&lt;/p&gt;
+&lt;p&gt;All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.&lt;/p&gt;
+&lt;p&gt;I spent a lot of time trying to figure out what was going wrong. One of the problems was using &lt;code&gt;flex-grow: 1;&lt;/code&gt; for the left column and &lt;code&gt;width: auto;&lt;/code&gt; on the right. These settings left too many decisions up to the browser. I now calculate the column widths and margins based on the width of the whole body. The code also floats the two columns to the left and right, respectively. It may not be the best solution, but it will do until I learn how to responsive grid systems work.&lt;/p&gt;
+&lt;p&gt;I also got rid of jQuery and some other JavaScript. It was a holdover from another website I created a while ago. The only JavaScript remaining is for MathJax, which I plan to use for - what else? - math!&lt;/p&gt;
+&lt;p&gt;\[
+\begin{bmatrix}
+a &amp;amp; b &amp;amp; c &amp;amp; d \\
+e &amp;amp; f &amp;amp; g &amp;amp; h \\
+i &amp;amp; j &amp;amp; k &amp;amp; l \\
+m &amp;amp; n &amp;amp; o &amp;amp; p
+\end{bmatrix}
+\times
+\begin{bmatrix}
+x \\
+y \\
+z \\
+w
+\end{bmatrix}
+=
+\begin{bmatrix}
+ax + by + cz +dw  \\
+ex + fy + gz + hw \\
+ix + jy + kz +lw  \\
+mx + ny + oz + pw
+\end{bmatrix}
+\]&lt;/p&gt;
+&lt;p&gt;This blog is still quite ugly, but I&amp;rsquo;m feeling better about it after putting in a couple of days work to make the width behave the way I want it to. Now to learn more about layout design, typography, Sass, CSS and how best to put to use semantic HTML5 tags, like  &lt;code&gt;&amp;lt;main&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;aside&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;header&amp;gt;&lt;/code&gt; and others.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2019.07.29 Edit: typos&lt;/em&gt;
+&lt;em&gt;2019.08.07 Edit: tags&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Pursuit of Happiness Gels in the Imagination</title>
+      <link>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination.html</link>
+      <pubDate>Wed, 09 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination.html</guid>
+      <description>&lt;p&gt;Imagination is good, but action needs to be taken in the real world.&lt;/p&gt;
+&lt;p&gt;I wonder if the reason I have so many non-fiction books waiting to be read is that I&amp;rsquo;m looking for the thrill of living in a world of fun and self-fulfillment, but I&amp;rsquo;m not willing to create it. I have books on game programming, drawing, sketching, animation, project managment, time management, organizing, clutter reduction, investing and other topics. Even among those I have read, they don&amp;rsquo;t do me much good unless I act upon them.&lt;/p&gt;
+&lt;p&gt;The Wondermark comic No. 1204, &lt;a href=&#34;http://wondermark.com/c1204/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Cargo Cult of Adulthood&lt;/a&gt;, started me thinking about imagination versus creating and doing real things. It contrasts buying stuff with buying experiences. The chain of thought starts with buying a movie ticket to get a few hours of being in a dramatized world. Similarly, buying a lottery ticket buys a few days of dreaming there&amp;rsquo;s a chance of becoming a millionaire. The thought continues with the notion that buying stuff can transport us into a fun, but imaginary world. Things like workout clothes, cookbooks, and self-help stuff, says David Malki, the author of Wondermark, are the tickets of admission to the fun imaginary worlds of being fit, eating well and having a good life.&lt;/p&gt;
+&lt;p&gt;He goes on to shortcut the whole process by proposing we skip shopping and just pay someone to give us a daily pep talks about how fun our lives really are, but that&amp;rsquo;s beside the point. These things we buy are just fodder for the imagination unless some action is taken in the real world. Create something new, or clean up something old to make it useful and accessible and then actually put it to use. Put on the workout clothes and exercise. Follow the lessons in that book about sketching, put pencil to paper and practice.&lt;/p&gt;
+&lt;p&gt;First efforts will probably stink. Exercising is difficult in the beginning. The first sketch will be awful. It&amp;rsquo;s all about sticking with it. Improvement will happen.&lt;/p&gt;
+&lt;p&gt;Maybe this post is just me giving myself a pep talk (it&amp;rsquo;s ceratinly cheaper than paying someone else to do it), but I have things to do, and I feel more like getting them done.&lt;/p&gt;
+&lt;p&gt;I created this blog to become a better writer, quell demons of doubt and to workout ideas. I titled it &amp;ldquo;Dream, Sketch, Code&amp;rdquo;, because I have a lot of half-baked ideas, think about and create software, and I want to get better at sketching and drawing. Besides being a relaxing activity, I&amp;rsquo;d like to draw well enough that I can use sketches to better describe my ideas.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Quick Note on Python</title>
+      <link>https://douglascuthbertson.com/2016/01/a-quick-note-on-python.html</link>
+      <pubDate>Mon, 04 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2016/01/a-quick-note-on-python.html</guid>
+      <description>&lt;p&gt;I saw an amusing Python tutorial.&lt;/p&gt;
+&lt;p&gt;I have been meaning to learn Python for a while now. While searching for other things, I came across an amusingly titled video on YouTube, &lt;a href=&#34;https://www.youtube.com/watch?v=N4mEzFDjqtA&amp;amp;list=PLGLfVvz_LVvSX7fVd4OUFp_ODd86H0ZIY&amp;amp;index=2&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python Programming: Learn Python in One Video&lt;/a&gt;, by &lt;a href=&#34;https://www.youtube.com/user/derekbanas&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Derek Banas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I had no illusions it was going to cover the language in any depth. Still, it is only about 45 minutes long, so I decided to take a look. It actually hit a lot of highlights and was a nice overview of the language.&lt;/p&gt;
+&lt;p&gt;For example, it introduces the built-in operators and data types. It goes over the &lt;code&gt;for&lt;/code&gt; and &lt;code&gt;while&lt;/code&gt; loops. It also covers several other programming concepts. If you&amp;rsquo;ve never seen Python before, this video is worth a look.&lt;/p&gt;
+&lt;p&gt;I recently picked up a copy of Steven Skiena&amp;rsquo;s &amp;ldquo;Programming Challenges&amp;rdquo; and started going through the problems. To see if I learned anything from the video, I tried coding the first puzzle, the &lt;a href=&#34;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;category=3&amp;amp;page=show_problem&amp;amp;problem=36&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;3n+1&lt;/code&gt; problem&lt;/a&gt;. The link is to the puzzle on the &lt;a href=&#34;https://uva.onlinejudge.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UVa Online Judge&lt;/a&gt;, where one can submit code in C, C++, Java or Pascal. Sadly, they don&amp;rsquo;t support Python. Nevertheless, here&amp;rsquo;s my version in Python:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;sys&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Execute: &amp;#34;python p100.py &amp;lt; data&amp;#34; where &amp;#39;data&amp;#39; is the input file, two integers per line.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;cycle_length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;c1&#34;&gt;# n is odd, so multiply by 3 and add 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;c1&#34;&gt;# n is even, so divide by 2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Each line of input consists of two integers&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;line&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sys&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stdin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;line&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;# reset the max cycle length for each line of input&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;max_cycle_length&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;# Make a copy of the original list for output&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;original_list&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;input_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;length&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cycle_length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;length&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;max_cycle_length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;max_cycle_length&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;length&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;%d&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;%d&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;%d&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;original_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;original_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;max_cycle_length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;vm&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;__main__&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I think the only thing here that wasn&amp;rsquo;t covered in the video is reading from stdin.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Blog on GitHub</title>
+      <link>https://douglascuthbertson.com/2015/12/a-blog-on-github.html</link>
+      <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2015/12/a-blog-on-github.html</guid>
+      <description>&lt;p&gt;What do you really need to know to setup a blog on GitHub?&lt;/p&gt;
+&lt;p&gt;I want a platform to write about software development, design patterns, and anything else that came to mind. &lt;a href=&#34;https://help.github.com/articles/user-organization-and-project-pages/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub user pages&lt;/a&gt; looked like a good place to start. I&amp;rsquo;ve toyed with &lt;a href=&#34;https://jekyllrb.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;http://compass-style.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Compass&lt;/a&gt; in the past, so I thought it would be easy to setup. For the most part, it is. Along the way, I discovered a few stumbling blocks that I will share.&lt;/p&gt;
+&lt;h2 id=&#34;initial-setup&#34;&gt;Initial Setup&lt;/h2&gt;
+&lt;p&gt;The initial steps (create a GitHub repository, install and configure Jekyll) were easy. The first stumbling block I ran into was ensuring the versions of my Ruby gems and my Jekyll configuration were consistent with what GitHub supported. GitHub doesn&amp;rsquo;t yet support Jekyll v3, which is what I have installed on my desktop.&lt;/p&gt;
+&lt;p&gt;Fortunately they provide excellent &lt;a href=&#34;https://help.github.com/articles/using-jekyll-with-pages/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt;. The most important part is to add &lt;code&gt;gem &#39;github-pages&#39;&lt;/code&gt; to your &lt;code&gt;Gemfile&lt;/code&gt;. By running &lt;code&gt;bundle install&lt;/code&gt;, you get Jekyll and all the dependencies in the correct version to be compatible with Jekyll on GitHub.&lt;/p&gt;
+&lt;p&gt;I also installed &lt;a href=&#34;http://compass-style.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Compass&lt;/a&gt;. It&amp;rsquo;s a nice tool that watches the files in the repository for changes, and recompiles the .scss files as needed. GitHub doesn&amp;rsquo;t use Compass, so you have to commit the CSS files it generates to the repository.&lt;/p&gt;
+&lt;h2 id=&#34;creating-a-blog&#34;&gt;Creating a Blog&lt;/h2&gt;
+&lt;p&gt;Reading and following the documentation for GitHub pages, Jekyll and Compass will establish all of the scaffolding you need to start a blog. It will not provide any scaffolding for the structure and contents of the blog itself.&lt;/p&gt;
+&lt;p&gt;I thought I&amp;rsquo;d be able to make a cool blog with responsive CSS so it would be readable on a variety of screen sizes. I learned quickly to keep things simple. I just don&amp;rsquo;t know enough CSS right now to make that happen. I stumbled upon (Googled for &amp;ldquo;html5 sidebar layout&amp;rdquo;) one good tutorial (which used to be at &lt;code&gt;http://multimedia.journalism.berkeley.edu/tutorials/css-layout/&lt;/code&gt;, but still exists &lt;a href=&#34;https://web.archive.org/web/20130310154517/http://multimedia.journalism.berkeley.edu/tutorials/css-layout/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;on the Way Back machine&lt;/a&gt;). It enabled me to create the basic structure for this blog. Warning: I had to insert &lt;code&gt;p script { display: block;}&lt;/code&gt; to display the code blocks. Each code block is wrapped in a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; element and is written in an XML &lt;code&gt;&amp;lt;![CDATA[...]]&amp;gt;&lt;/code&gt; block. The user agent stylesheet sets &lt;code&gt;script {display: none; }&lt;/code&gt;, so I couldn&amp;rsquo;t see the code.&lt;/p&gt;
+&lt;p&gt;I made a few adjustments to the styling and HTML to suit my taste. One thing I was delighted to learn was how to make the content area and the sidebar the same height. The tutorial presented a solution in JavaScript, but that didn&amp;rsquo;t work for posts. The disqus comment block wasn&amp;rsquo;t included in the calculation.&lt;/p&gt;
+&lt;p&gt;The main content area and the sidebar are both included in &lt;code&gt;div&lt;/code&gt; section with the ID &lt;code&gt;boxes&lt;/code&gt; (&lt;code&gt;&amp;lt;div id=&amp;quot;boxes&amp;quot;&amp;gt;&lt;/code&gt;). All I had to do was style the &lt;code&gt;div&lt;/code&gt; with &lt;code&gt;display: flex;&lt;/code&gt;. Here&amp;rsquo;s the code and comment from my stylesheet.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/* Using display: flex; to make the sidebar column the same length as the main content.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   See: http://tutorialzine.com/2014/10/easiest-way-equal-height-sidebar/ for details.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#boxes {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    display: flex;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;more-to-do&#34;&gt;More To Do&lt;/h2&gt;
+&lt;p&gt;There&amp;rsquo;s a lot of work that goes into making a web page look presentable. At the very least, text should be readable, sections should be well aligned, and the color theme should be pleasing to the eye. There is a lot to fiddle with, but I think I&amp;rsquo;ve done an okay job for now. I glad I have a place to write down ideas, write about projects I want to pursue and share some thoughts in general.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
