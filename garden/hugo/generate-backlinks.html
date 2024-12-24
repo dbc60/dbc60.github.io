@@ -55,13 +55,12 @@
 </head>
 <body>
     <!-- begin body content -->
-    <div class="body-content">
-      <!-- begin masthead -->
+    <div class="body-content"><!-- begin masthead -->
       <div class="masthead"><header class="main-head">
 <div class="title-content">
   <!-- BEGIN layouts/partials/siteHeader.html -->
     <h1 class="siteTitle"><a href="https://douglascuthbertson.com/">Doug&#39;s Patch</a></h1>
-    <h1 class="siteSubTitle"><a href="https://hapgood.us/2015/10/17/the-garden-and-the-stream-a-technopastoral/" target="_blank">A Digital Garden</a></h1>
+    <h1 class="siteSubTitle"><a href="https://douglascuthbertson.com/" target="_blank">A Digital Garden</a></h1>
   <!-- END layouts/partials/siteHeader.html -->
 </div>
 <div class="hero-image">
@@ -91,7 +90,7 @@
     </div>
   </nav>
 <!-- BEGIN layouts/partials/nav__breadcrumbs.html -->
-<nav class="nav-breadcrumbs" aria-label="Breadcrumb">
+<nav class="nav-breadcrumbs" aria-label="Breadcrumb" id="top">
 <ul class="crumb-trail">
   <li class="crumb">
     <a class="crumb-link" href="/">Home</a>
@@ -108,7 +107,7 @@
 </nav>
 <!-- END layouts/partials/nav__breadcrumbs.html -->
 </div><!-- end masthead -->
-      <div class="wrapper-content" id="top"><div class="sidebar-content">
+      <div class="wrapper-content"><div class="sidebar-content">
           <ul class="wrapper-collections">
             <li class="wrapper-collection-items">
               <span class="wrapper-collection-border icon icon-books"> </span>
@@ -131,6 +130,10 @@
 <!-- BEGIN layouts/partials/items-latest.html --><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/garden/blog/separating-presentation-from-layout.html#top">
         Separating Presentation from Layout
+      </a>
+    </li><li class="collection-item">
+      <a class="secondary-nav__link" href="https://douglascuthbertson.com/garden/text-editor.html#top">
+        Text Editor
       </a>
     </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/garden/hugo/generate-backlinks.html#top">
@@ -163,10 +166,6 @@
     </li><li class="collection-item">
       <a class="secondary-nav__link" href="https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo.html#top">
         A Table Shortcode for Hugo
-      </a>
-    </li><li class="collection-item">
-      <a class="secondary-nav__link" href="https://douglascuthbertson.com/2021/09/asymptotic-notation.html#top">
-        Asymptotic Notation
       </a>
     </li><!--END layouts/partials/items-latest.html -->
 </ul>
@@ -243,8 +242,8 @@
         <h2 class="title-article">Generate Backlinks</h2>
         <!-- BEGIN layouts/partials/date-and-tags.html -->
         <header class="article-meta-data"><div class="post-metadata"><time class="post-metadata__timestamp" datetime="2024-12-24">Tuesday Dec 24, 2024</time>
-          - 1 min read - 169 words.
-          <time class="post-metadata__timestamp" datetime="2024-12-24T11:45"></time><div>Last updated: <span>Tuesday Dec 24, 2024</span></div><div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/hugo">hugo</a></div>
+          - 2 min read - 223 words.
+          <time class="post-metadata__timestamp" datetime="2024-12-24T12:13"></time><div>Last updated: <span>Tuesday Dec 24, 2024</span></div><div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/hugo.html#top">hugo</a></div>
           </div>
         </header>
         <!--END layouts/partials/date-and-tags.html -->
@@ -272,12 +271,20 @@
 </span></span></span><span class="line"><span class="cl"><span class="x">        &lt;/nav&gt;
 </span></span></span><span class="line"><span class="cl"><span class="x">    &lt;/section&gt;
 </span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span><span class="x">
-</span></span></span></code></pre></div><p>I added <code>#top</code> to the <code>.RelPermalink</code> URL. Other than that, it&rsquo;s unchanged. They warn that this template is inefficient. I&rsquo;ll revisit it eventually. There&rsquo;s <a href="https://discourse.gohugo.io/t/parsing-backlinks-in-hugo/38281" class="external-link" target="_blank" rel="noopener">a discussion in the Hugo forum</a> about it. Perhaps there are clues to a more efficient implementation there.</p></section><!--END layouts/partials/drop-caps.html -->
+</span></span></span></code></pre></div><p>I added <code>#top</code> to the <code>.RelPermalink</code> URL. Other than that, it&rsquo;s unchanged. They warn that this template is inefficient. I&rsquo;ll revisit it eventually. There&rsquo;s <a href="https://discourse.gohugo.io/t/parsing-backlinks-in-hugo/38281" class="external-link" target="_blank" rel="noopener">a discussion in the Hugo forum</a> about it. Perhaps there are clues to a more efficient implementation there.</p>
+<h2 id="other-resources">Other Resources</h2>
+<ul>
+<li><a href="https://garrido.io/notes/hugo-backlinks/" class="external-link" target="_blank" rel="noopener">Implementing Internal Backlinks in Hugo</a>.</li>
+<li><a href="https://discourse.gohugo.io/t/a-method-to-generate-backlinks/39779/1" class="external-link" target="_blank" rel="noopener">A method to generate backlinks</a>.</li>
+<li><a href="https://github.com/gohugoio/hugo/issues/8077" class="external-link" target="_blank" rel="noopener">Issue 8077</a>, Add support for page backlinks (e.g. .GetBacklinks), in the Hugo repo was opened in December 19, 2020 and is still open as of Christmas Eve, 2024. There are a number of links in the discussion that I want to pursue.</li>
+</ul></section><!--END layouts/partials/drop-caps.html -->
         
         
 
 
 
+
+    
 
     
 

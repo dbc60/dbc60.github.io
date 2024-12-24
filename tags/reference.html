@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="https://douglascuthbertson.com/style/style.min.a35449e85be25e5ef878ea3c030d6fc6fcfd7dc13e412f239d73db8dbfc30ecf.css" integrity="sha256-o1RJ6FviXl74eOo8Aw1vxvz9fcE&#43;QS8jnXPbjb/DDs8=" crossorigin="anonymous">
 
   <title>
-    Template Create Rows Head | Doug&#39;s Patch
+    Reference | Doug&#39;s Patch
   </title>
     <!-- BEGIN head__scripts.html -->
 
@@ -96,18 +96,15 @@
     <a class="crumb-link" href="/">Home</a>
   </li>
   <li class="crumb">
-    <a class="crumb-link" href="https://douglascuthbertson.com/evergreen-note.html">Evergreen Notes</a>
+    <a class="crumb-link" href="https://douglascuthbertson.com/tags.html">Tags</a>
   </li>
   <li class="crumb">
-    <a class="crumb-link" href="https://douglascuthbertson.com/evergreen-note/create-table.html">Create Table</a>
-  </li>
-  <li class="crumb">
-    <a class="crumb-link" href="https://douglascuthbertson.com/evergreen-note/create-table/template-create-rows-head.html">Template Create Rows Head</a>
+    <a class="crumb-link" href="https://douglascuthbertson.com/tags/reference.html">Reference</a>
   </li></ul>
 </nav>
 <!-- END layouts/partials/nav__breadcrumbs.html -->
 </div><!-- end masthead -->
-      <div class="wrapper-content"><div class="sidebar-content">
+      <div class="wrapper-content"><!--GETTING ROOT SECTIONS--><div class="sidebar-content">
           <ul class="wrapper-collections">
             <li class="wrapper-collection-items">
               <span class="wrapper-collection-border icon icon-books"> </span>
@@ -116,7 +113,17 @@
               
             
 
-            <!-- root: range by weight -->  
+            <!-- root: range by weight --><li class="collection-item">
+                  <a class="secondary-nav__link" href="https://douglascuthbertson.com/post.html#top">Posts</a>
+                </li><li class="collection-item">
+                  <a class="secondary-nav__link" href="https://douglascuthbertson.com/garden.html#top">Garden</a>
+                </li><li class="collection-item">
+                  <a class="secondary-nav__link" href="https://douglascuthbertson.com/about.html#top">About</a>
+                </li><li class="collection-item">
+                  <a class="secondary-nav__link" href="https://douglascuthbertson.com/now.html#top">What I Do Now</a>
+                </li><li class="collection-item">
+                  <a class="secondary-nav__link" href="https://douglascuthbertson.com/bookmark.html#top">Bookmarks</a>
+                </li>  
             </ul>
 <!--END layouts/partials/items-contents.html --> <span class="wrapper-collection-border icon icon-books"> </span>
             </li>
@@ -234,136 +241,22 @@
             </li>
           </ul>
         </div>
-        <main class="main-content"><!-- BEGIN main layouts/_default/single.html -->
-        <h2 class="title-article">Template Create Rows Head</h2>
+        <main class="main-content"><!-- BEGIN main layouts/taxonomy/tag.html -->
+<div class="content"><section class="page-summary">
+    <h2 class="title-article-item"><a href="https://douglascuthbertson.com/garden/text-editor.html#top">Text Editor</a></h2>
         <!-- BEGIN layouts/partials/date-and-tags.html -->
-        <header class="article-meta-data"><div class="post-metadata"><time class="post-metadata__timestamp" datetime="2021-09-23">Thursday Sep 23, 2021</time>
-          - 1 min read - 110 words.
-          <time class="post-metadata__timestamp" datetime="2024-12-24T10:47"></time><div>Last updated: <span>Tuesday Dec 24, 2024</span></div></div>
+        <header class="article-meta-data"><div class="post-metadata"><time class="post-metadata__timestamp" datetime="2024-12-24">Tuesday Dec 24, 2024</time>
+          - 1 min read - 20 words.
+          <time class="post-metadata__timestamp" datetime="2024-12-24T12:33"></time><div>Last updated: <span>Tuesday Dec 24, 2024</span></div><div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/reference.html#top">reference</a></div>
+          </div>
         </header>
         <!--END layouts/partials/date-and-tags.html -->
-        <!-- BEGIN layouts/partials/drop-caps.html --><section class="content c-drop-caps drop-caps_goudy"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="c">&lt;!-- Use only within thead elements. This will generate
-</span></span></span><span class="line"><span class="cl"><span class="c">   &lt;tr&gt;&lt;th&gt;...&lt;/th&gt;&lt;th&gt;...&lt;/th&gt;...&lt;/tr&gt; row sequences
-</span></span></span><span class="line"><span class="cl"><span class="c">--&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">define</span><span class="w"> </span><span class="s">&#34;createRowsHead&#34;</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$rows</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$idx</span><span class="o">,</span><span class="w"> </span><span class="nx">$row</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">$rows</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="o">(</span><span class="k">not</span><span class="w"> </span><span class="o">(</span><span class="nx">reflect</span><span class="na">.IsMap</span><span class="w"> </span><span class="nx">$row</span><span class="o">))</span><span class="w"> </span><span class="o">(</span><span class="k">not</span><span class="w"> </span><span class="o">(</span><span class="nx">reflect</span><span class="na">.IsSlice</span><span class="w"> </span><span class="nx">$row</span><span class="o">))</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl">      <span class="c">&lt;!-- row value is a scalar --&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$row</span><span class="w"> </span><span class="cp">-}}</span><span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">reflect</span><span class="na">.IsMap</span><span class="w"> </span><span class="nx">$row</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl">      <span class="c">&lt;!-- row value is a map --&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&#34;processMapHead&#34;</span><span class="w"> </span><span class="nx">$row</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">reflect</span><span class="na">.IsSlice</span><span class="w"> </span><span class="nx">$row</span><span class="cp">}}</span>
-</span></span><span class="line"><span class="cl">      <span class="c">&lt;!-- row value is a slice --&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="s">&#34;createRowsHead&#34;</span><span class="w"> </span><span class="nx">$row</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl">      <span class="c">&lt;!-- row value type is unknown --&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$idx</span><span class="w"> </span><span class="cp">-}}</span> (head-row-unknown): <span class="cp">{{-</span><span class="w"> </span><span class="nx">$row</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
-</span></span></code></pre></div></section><!--END layouts/partials/drop-caps.html -->
-        
-        
-
-
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-
-    <section class="backlinks">
-        <h2>Backlinks</h2>
-        <nav>
-            <ul>
-                
-                    <li><a href="/evergreen-note/create-table/create-table-shortcode.html#top">Create Table Shortcode</a></li>
-                
-                    <li><a href="/2021/09/a-table-shortcode-for-hugo.html#top">A Table Shortcode for Hugo</a></li>
-                
-            </ul>
-        </nav>
-    </section>
-
-<!-- END main layouts/_default/single.html -->
+    <!-- BEGIN layouts/_default/summary.html--><p>A bunch of links to information about text editors</p>
+    <footer class="read-more"><a href='https://douglascuthbertson.com/garden/text-editor.html#top'><span class="read-more">Read more →</span></a></footer>
+    <!-- END layouts/_default/summary.html-->
+  </section>
+</div>
+<!-- END main layouts/taxonomy/tag.html -->
         </main>
       </div>
       <!-- class wrapper-content -->
