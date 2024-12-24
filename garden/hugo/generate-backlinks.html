@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="https://douglascuthbertson.com/style/style.min.a35449e85be25e5ef878ea3c030d6fc6fcfd7dc13e412f239d73db8dbfc30ecf.css" integrity="sha256-o1RJ6FviXl74eOo8Aw1vxvz9fcE&#43;QS8jnXPbjb/DDs8=" crossorigin="anonymous">
 
   <title>
-    2021 | Doug&#39;s Patch
+    Generate Backlinks | Doug&#39;s Patch
   </title>
     <!-- BEGIN head__scripts.html -->
 
@@ -97,12 +97,18 @@
     <a class="crumb-link" href="/">Home</a>
   </li>
   <li class="crumb">
-    <a class="crumb-link" href="https://douglascuthbertson.com/2021.html">2021</a>
+    <a class="crumb-link" href="https://douglascuthbertson.com/garden.html">Garden</a>
+  </li>
+  <li class="crumb">
+    <a class="crumb-link" href="https://douglascuthbertson.com/garden/hugo.html">Hugo</a>
+  </li>
+  <li class="crumb">
+    <a class="crumb-link" href="https://douglascuthbertson.com/garden/hugo/generate-backlinks.html">Generate Backlinks</a>
   </li></ul>
 </nav>
 <!-- END layouts/partials/nav__breadcrumbs.html -->
 </div><!-- end masthead -->
-      <div class="wrapper-content" id="top"><!--GETTING ROOT SECTIONS--><div class="sidebar-content">
+      <div class="wrapper-content" id="top"><div class="sidebar-content">
           <ul class="wrapper-collections">
             <li class="wrapper-collection-items">
               <span class="wrapper-collection-border icon icon-books"> </span>
@@ -111,9 +117,11 @@
               
             
 
-            <li class="collection-item">
-                <a class="secondary-nav__link" href="https://douglascuthbertson.com//2021/09.html#top">2021/09</a>
-              </li>
+            <!-- root: range by weight --><li class="collection-item">
+                  <a class="secondary-nav__link" href="https://douglascuthbertson.com/garden/hugo.html#top">Hugo</a>
+                </li><li class="collection-item">
+                  <a class="secondary-nav__link" href="https://douglascuthbertson.com/garden/blog.html#top">Blog</a>
+                </li>  
             </ul>
 <!--END layouts/partials/items-contents.html --> <span class="wrapper-collection-border icon icon-books"> </span>
             </li>
@@ -231,55 +239,121 @@
             </li>
           </ul>
         </div>
-        <main class="main-content"><!-- BEGIN main layouts/taxonomy/terms.html -->
-<div class="content">
-  <section class="page-summary">
-    <div class="flex-row">
-      <div class="pl3-ns">
-        <a href="https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo.html#top" class="db grow">
-          <img src="https://douglascuthbertson.com/images/banners/chinese-alligator_00001.jpg" alt=Chinese&#32;Alligator>
-        </a>
-      </div>
-      <div class="pr3-ns">
-        <h2 class="title-article-item"><a href="https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo.html#top">A Table Shortcode for Hugo</a></h2>
+        <main class="main-content"><!-- BEGIN main layouts/_default/single.html -->
+        <h2 class="title-article">Generate Backlinks</h2>
         <!-- BEGIN layouts/partials/date-and-tags.html -->
-        <header class="article-meta-data"><div class="post-metadata"><time class="post-metadata__timestamp" datetime="2021-09-23">Thursday Sep 23, 2021</time>
-          - 4 min read - 830 words.
-          <time class="post-metadata__timestamp" datetime="2024-12-24T10:47"></time><div>Last updated: <span>Tuesday Dec 24, 2024</span></div><div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/blog">blog</a></div>
+        <header class="article-meta-data"><div class="post-metadata"><time class="post-metadata__timestamp" datetime="2024-12-24">Tuesday Dec 24, 2024</time>
+          - 1 min read - 169 words.
+          <time class="post-metadata__timestamp" datetime="2024-12-24T11:45"></time><div>Last updated: <span>Tuesday Dec 24, 2024</span></div><div class="tag-list"><a class="tag" href="https://douglascuthbertson.com/tags/hugo">hugo</a></div>
           </div>
         </header>
         <!--END layouts/partials/date-and-tags.html -->
+        <!-- BEGIN layouts/partials/drop-caps.html --><section class="content c-drop-caps drop-caps_goudy"><p>I think the only way to have Hugo generate backlinks to a page is to include a partial that loops over all of the content files.</p>
+<p>Many thanks to whoever wrote <a href="https://scripter.co/parsing-backlinks-in-hugo" class="external-link" target="_blank" rel="noopener">Parsing Backlinks in Hugo</a> for a partial to create backlinks. The partial is:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-template" data-lang="go-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">$backlinks</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">slice</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="w"> </span><span class="nx">$path_base</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.page.File.ContentBaseName</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="w"> </span><span class="nx">$path_base_re</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">printf</span><span class="w"> </span><span class="s">`[&#34;/(]%s[&#34;/)]`</span><span class="w"> </span><span class="nx">$path_base</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">where</span><span class="w"> </span><span class="nx">site</span><span class="na">.RegularPages</span><span class="w"> </span><span class="s">&#34;RelPermalink&#34;</span><span class="w"> </span><span class="s">&#34;ne&#34;</span><span class="w"> </span><span class="na">.page.RelPermalink</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="nx">findRE</span><span class="w"> </span><span class="nx">$path_base_re</span><span class="w"> </span><span class="na">.RawContent</span><span class="w"> </span><span class="nx">1</span><span class="o">)</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">        </span><span class="cp">{{</span><span class="w"> </span><span class="nx">$backlinks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$backlinks</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="nx">$backlinks</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">    &lt;section class=&#34;backlinks&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="x">        </span><span class="cp">{{</span><span class="w"> </span><span class="k">printf</span><span class="w"> </span><span class="s">&#34;%s&#34;</span><span class="w"> </span><span class="o">(</span><span class="na">$.heading</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">default</span><span class="w"> </span><span class="s">&#34;&lt;h2&gt;Backlinks&lt;/h2&gt;&#34;</span><span class="o">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">safeHTML</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">        &lt;nav&gt;
+</span></span></span><span class="line"><span class="cl"><span class="x">            &lt;ul&gt;
+</span></span></span><span class="line"><span class="cl"><span class="x">                </span><span class="cp">{{</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">                    &lt;li&gt;&lt;a href=&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.RelPermalink</span><span class="w"> </span><span class="cp">}}</span><span class="x">#top&#34;&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Title</span><span class="w"> </span><span class="cp">}}</span><span class="x">&lt;/a&gt;&lt;/li&gt;
+</span></span></span><span class="line"><span class="cl"><span class="x">                </span><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">            &lt;/ul&gt;
+</span></span></span><span class="line"><span class="cl"><span class="x">        &lt;/nav&gt;
+</span></span></span><span class="line"><span class="cl"><span class="x">    &lt;/section&gt;
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span><span class="x">
+</span></span></span></code></pre></div><p>I added <code>#top</code> to the <code>.RelPermalink</code> URL. Other than that, it&rsquo;s unchanged. They warn that this template is inefficient. I&rsquo;ll revisit it eventually. There&rsquo;s <a href="https://discourse.gohugo.io/t/parsing-backlinks-in-hugo/38281" class="external-link" target="_blank" rel="noopener">a discussion in the Hugo forum</a> about it. Perhaps there are clues to a more efficient implementation there.</p></section><!--END layouts/partials/drop-caps.html -->
+        
+        
 
-            <!-- BEGIN layouts/_default/summary.html--><p>I write a lot of notes in Markdown files and use Hugo to display them in a browser. It makes for easy reading and jumping among them. Several months ago, I needed to create some tables where some cells spanned mulitple rows or columns. That&rsquo;s not possible with Markdown tables. Creating tables in HTML with appropriate classes seemed tedious. I thought it might be less so by defining tables in <a href="https://toml.io/en/" class="external-link" target="_blank" rel="noopener">TOML</a> and use a shortcode to translate them into HTML.</p>
-    <footer class="read-more"><a href='https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo.html'><span class="read-more">Read more →</span></a></footer>
-    <!-- END layouts/_default/summary.html-->
-      </div>
-    </div>
-  </section><section class="page-summary">
-    <div class="flex-row">
-      <div class="pl3-ns">
-        <a href="https://douglascuthbertson.com/2021/09/asymptotic-notation.html#top" class="db grow">
-          <img src="https://douglascuthbertson.com/images/banners/gargoyle-overlooking-paris.jpg" alt=green&#32;gargoyle&#32;overlooking&#32;Paris>
-        </a>
-      </div>
-      <div class="pr3-ns">
-        <h2 class="title-article-item"><a href="https://douglascuthbertson.com/2021/09/asymptotic-notation.html#top">Asymptotic Notation</a></h2>
-        <!-- BEGIN layouts/partials/date-and-tags.html -->
-        <header class="article-meta-data"><div class="post-metadata"><time class="post-metadata__timestamp" datetime="2021-09-23">Thursday Sep 23, 2021</time>
-          - 2 min read - 375 words.
-          <time class="post-metadata__timestamp" datetime="2024-12-24T10:47"></time><div>Last updated: <span>Tuesday Dec 24, 2024</span></div></div>
-        </header>
-        <!--END layouts/partials/date-and-tags.html -->
 
-            <!-- BEGIN layouts/_default/summary.html--><p>Big-O, Big-\(\Omega\) (Big-Omega), and Big-\(\Theta\) (Big-Theta) notation are used to describe some aspect of an algorithm (usually the running time or the memory resources it needs) relative to the size of the input data.</p>
-    <footer class="read-more"><a href='https://douglascuthbertson.com/2021/09/asymptotic-notation.html'><span class="read-more">Read more →</span></a></footer>
-    <!-- END layouts/_default/summary.html-->
-      </div>
-    </div>
-  </section>
-</div>
 
-<!-- END main layouts/taxomony/terms.html -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+<!-- END main layouts/_default/single.html -->
         </main>
       </div>
       <!-- class wrapper-content -->
