@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>11 on Doug&#39;s Place</title>
+    <link>http://localhost:1313/2023/11.html</link>
+    <description>Recent content in 11 on Doug&#39;s Place</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>(c) 2015-2025 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
+    <lastBuildDate>Sat, 18 Nov 2023 12:04:32 +0000</lastBuildDate>
+    
+        <atom:link href="http://localhost:1313/2023/11/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Software-Development Workshop</title>
+      <link>http://localhost:1313/2023/11/software-development-workshop.html</link>
+      <pubDate>Sat, 18 Nov 2023 12:04:32 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/11/software-development-workshop.html</guid>
+      <description>&lt;p&gt;I have recently started to consider an analogy between the process of software development and a workshop as a place where a craftsperson builds stuff. A workshop for writing software is a place where a programmer can find the various tools and resources needed for creating computer programs. The programmer can select tools from the workshop to build their own development environment, or to continue the analogy, set up their workbench for the tasks at hand.&lt;/p&gt;
+&lt;p&gt;My main goal is to organize my tools and be clear about what I need and use to write software, explore the process of software development, and figure out why some tools work well and others don&amp;rsquo;t. I also want to hone my skills in a few programming languages, try out various development techniques and methodologies, and just see what works. If I find a larger project along the way and create something useful, all the better.&lt;/p&gt;
+&lt;p&gt;When I write code, it&amp;rsquo;s primarily on the Windows operating system. I&amp;rsquo;ve dabbled in Linux and FreeBSD, and I even have a MacBook Pro for work. I need to get used to it. It&amp;rsquo;s a very foreign environment. So, I hope to take the time to learn more about them along the way.&lt;/p&gt;
+&lt;p&gt;The programming languages I have the most experience with are C, C++, and &lt;a href=&#34;https://go.dev&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; (aka, golang). I mostly use Visual Studio Code for editing. For building code written in Go, except for the editor, there&amp;rsquo;s just one set of tools. When it comes to C/C++ programs I use the Community Editions of Visual Studio.&lt;/p&gt;
+&lt;p&gt;That covers only Windows programs. I want to have more experience with writing code for Linux, MacOS, and the various BSD operating systems. I have been interested in &lt;a href=&#34;https://clang.llvm.org/get_started.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clang&lt;/a&gt; for a while, so I built it from source. The tools needed for that were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cmake.org/download/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CMake&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.python.org/downloads/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://visualstudio.microsoft.com/vs/community/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visual Studio 17 2022 Community Edition&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitforwindows.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Git for Windows&lt;/a&gt; to checkout the &lt;a href=&#34;https://github.com/llvm/llvm-project.git&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;llvm repository&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Just building clang was quite an experience. Once CMake created the VS solution and project files, it took a little over 20 minutes for Visual Studio 2022 CE to build llvm, clang, clang++, and the rest of the toolset. I&amp;rsquo;m glad I built a rather beefy home computer last year, because this build took a lot of computing power. I think it&amp;rsquo;s the first time I&amp;rsquo;ve seen all 32 threads pegged at 100% and memory usage climb so high (72 GB at one point).&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;http://localhost:1313/images/building-clang.png&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/images/building-clang.png&#34;
+         alt=&#34;Building LLVM and Clang on Windows&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            Building LLVM and Clang on Windows Poof!
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I&amp;rsquo;ve had bad experiences with both Python and CMake on Windows, but after building clang my opinion of both of them has improved. I&amp;rsquo;ll be more open to Python programming down the road. On the other hand, while I might explore CMake it&amp;rsquo;s probably more complex than what I need for most of my software projects. Most often, I find that simple build scripts do the job.&lt;/p&gt;
+&lt;p&gt;Another goal I have for my &amp;ldquo;workshop&amp;rdquo; is to hone my skills in C, C++, and Go. I may eventually try some others, like &lt;a href=&#34;https://www.rust-lang.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rust&lt;/a&gt; and &lt;a href=&#34;https://ocaml.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OCaml&lt;/a&gt;. Of course, JavaScript is so pervasive that I&amp;rsquo;ll have to see what I can do with it. I used an old version of &lt;a href=&#34;https://nodejs.org/en/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Node.js&lt;/a&gt; at work a long time ago. It was used with great success for many years to develop agents for an intrusion-detection system running on Linux. We eventually ported it to Golang where the code was far easier to maintain.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve written a lot of Windows batch scripts (&lt;code&gt;bat&lt;/code&gt; or &lt;code&gt;cmd&lt;/code&gt; files) and some bash scripts (mostly while running git bash). I&amp;rsquo;d like to be better at writing PowerShell (it&amp;rsquo;s so much more powerful than the Windows command terminal), bash scripts, and to explore the &lt;a href=&#34;https://www.tcl.tk/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tcl/Tk&lt;/a&gt; scripting language.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

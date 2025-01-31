@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Draft on Doug&#39;s Place</title>
+    <link>http://localhost:1313/tags/draft.html</link>
+    <description>Recent content in Draft on Doug&#39;s Place</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>(c) 2015-2025 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
+    <lastBuildDate>Thu, 30 Jan 2025 20:40:29 -0500</lastBuildDate>
+    
+        <atom:link href="http://localhost:1313/tags/draft/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTML Layout</title>
+      <link>http://localhost:1313/garden/blog/html-layout.html</link>
+      <pubDate>Sun, 14 Jan 2024 21:34:00 -0500</pubDate>
+      
+      <guid>http://localhost:1313/garden/blog/html-layout.html</guid>
+      <description>&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
+&lt;/aside&gt;</description>
+    </item>
+    
+    <item>
+      <title>Partials</title>
+      <link>http://localhost:1313/garden/blog/partials.html</link>
+      <pubDate>Sun, 14 Jan 2024 21:34:08 -0500</pubDate>
+      
+      <guid>http://localhost:1313/garden/blog/partials.html</guid>
+      <description>&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
+&lt;/aside&gt;</description>
+    </item>
+    
+    <item>
+      <title>Shortcodes</title>
+      <link>http://localhost:1313/garden/blog/shortcodes.html</link>
+      <pubDate>Sun, 14 Jan 2024 21:34:23 -0500</pubDate>
+      
+      <guid>http://localhost:1313/garden/blog/shortcodes.html</guid>
+      <description>&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
+&lt;/aside&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>http://localhost:1313/garden/blog/css.html</link>
+      <pubDate>Sun, 14 Jan 2024 21:34:28 -0500</pubDate>
+      
+      <guid>http://localhost:1313/garden/blog/css.html</guid>
+      <description>&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
+&lt;/aside&gt;</description>
+    </item>
+    
+    <item>
+      <title>Unit Test</title>
+      <link>http://localhost:1313/2025/01/unit-test.html</link>
+      <pubDate>Thu, 30 Jan 2025 20:40:29 -0500</pubDate>
+      
+      <guid>http://localhost:1313/2025/01/unit-test.html</guid>
+      <description>&lt;p&gt;I want to get back into C programming on a regular basis, but one of the problems with writing C code is making sure it does what you intend it to do. I&amp;rsquo;ve made lots of mistakes in the past, and I&amp;rsquo;d like to reduce their likelihood a little. One way is to test the hell out of code. There are lots of test frameworks out there, like &lt;a href=&#34;https://libcheck.github.io/check/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check&lt;/a&gt;, &lt;a href=&#34;https://cunit.sourceforge.net/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CUnit&lt;/a&gt;, &lt;a href=&#34;https://cutest.sourceforge.net/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CuTest&lt;/a&gt;, and a great many others. Some of them look great, but I think that the experience of writing my own will be a gentle way to get back into a regular habit of writing C.&lt;/p&gt;
+&lt;p&gt;&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#goals&#34;&gt;Goals&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#resources&#34;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+While writing this note I found &lt;a href=&#34;https://cmocka.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cmocka&lt;/a&gt;. It has a great looking website making me think it must be very polished, so what am I doing writing my own unit test framework? For the experience, to try my own ideas of what unit tests and the testing experience should look and feel like. I hope it will be fun.&lt;/p&gt;
+&lt;h2 id=&#34;goals&#34;&gt;Goals&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ll start simply. In fact, what&amp;rsquo;s the simplest unit test framework that can get the job done? Such a project needs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A test driver. A program to load and run a set of tests.&lt;/li&gt;
+&lt;li&gt;Something that contains a set of tests, like a dynamically loadable library (DLL), aka, a shared library.&lt;/li&gt;
+&lt;li&gt;Some standard way to write tests such that the test driver can setup, run, and teardown each test.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In my mind, a DLL (or .so file) should encapsulate a suite of test cases. The test driver can be a static library that provides all of the functions needed to load and run tests, and collect results that can be reported in some manner (e.g., written to a terminal or a file).&lt;/p&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/testing-cabal/subunit&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Subunit&lt;/a&gt; is a streaming protocol for test results.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xunit.net/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xUnit.net&lt;/a&gt; is a free, open source, community-focused unit testing tool for the .NET Framework.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.martinfowler.com/bliki/Xunit.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xUnit&lt;/a&gt; article by Martin Fowler.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/testmoapp/junitxml&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Common JUnit XML Format &amp;amp; Examples&lt;/a&gt;. Apparently, the JUnit XML file format (first introduced by the Ant build tool and made popular by the JUnit project) has become the de facto standard format to exchange test results between tools (at least in the Java world).&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Templating Journey</title>
+      <link>http://localhost:1313/2024/05/a-templating-journey.html</link>
+      <pubDate>Fri, 03 May 2024 04:53:08 -0400</pubDate>
+      
+      <guid>http://localhost:1313/2024/05/a-templating-journey.html</guid>
+      <description>&lt;p&gt;It started with a desire to make templates of some &lt;code&gt;cmd&lt;/code&gt; files I wrote to build C software projects. Given the tools I had at hand and the few programming languages I know, Go templates, particularly the &lt;a href=&#34;https://pkg.go.dev/html/template&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HTML templates&lt;/a&gt; seemed like a flexible and easy to use solution, and then I fell down a rabbit hole.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#background&#34;&gt;Background&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Several years back, I started following &lt;a href=&#34;https://handmadehero.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Handmade Hero&lt;/a&gt; by Casey Muratori. Within the first few episodes, Muratori was advocating for keeping software development as simple as possible and knowing your tools. He eschewed build systems and third-party libraries (even the standard library to the greatest degree possible). He built a build system with simple &lt;code&gt;.cmd&lt;/code&gt; files (or maybe they were &lt;code&gt;.bat&lt;/code&gt; files, but that doesn&amp;rsquo;t matter much) that ran some version of Microsoft&amp;rsquo;s Visual Studio compiler with just the command-line options needed.&lt;/p&gt;
+&lt;p&gt;I liked the idea a lot, so I built on his scripts and created a set of my own that gave me build options for debug and release, that cleaned out build artifacts, built unit tests separately, and built separate components so I could refactor large components into smaller ones or add new components and have some confidence they would build and run on their own.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Deep Look at a Memory Allocator</title>
+      <link>http://localhost:1313/garden/mem-allocator/a-deep-look-at-a-memory-allocator.html</link>
+      <pubDate>Sun, 14 Jan 2024 07:38:28 -0500</pubDate>
+      
+      <guid>http://localhost:1313/garden/mem-allocator/a-deep-look-at-a-memory-allocator.html</guid>
+      <description>&lt;p&gt;Doug Lea&amp;rsquo;s allocator, often referred to as &lt;a href=&#34;https://gee.cs.oswego.edu/dl/html/malloc.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;dlmalloc&lt;/a&gt;, provides implementations of the standard C memory functions &lt;code&gt;malloc()&lt;/code&gt;, &lt;code&gt;free()&lt;/code&gt;, &lt;code&gt;realloc()&lt;/code&gt;, and friends. I need a memory allocator for a personal project and Lea generously put his code in the public domain, so I thought to adapt it to my needs. Note that the latest release in 2023 relicensed it under the &lt;a href=&#34;https://opensource.org/license/mit-0/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;MIT No Attribution&amp;rdquo; (MIT-0) License&lt;/a&gt;, which is supposed to be more palatable than the public domain.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-overview&#34;&gt;1 Overview&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-current-behavior&#34;&gt;2 Current Behavior&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-algorithms&#34;&gt;3 Algorithms&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#4-data-structures&#34;&gt;4 Data Structures&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#5-api-documentation&#34;&gt;5 API Documentation&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#6-usage-examples&#34;&gt;6 Usage Examples&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#7-configuration-options&#34;&gt;7 Configuration Options&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#8-performance-characteristics&#34;&gt;8 Performance Characteristics&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#9-concurrency-considerations&#34;&gt;9 Concurrency Considerations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#10-troubleshooting-and-debugging&#34;&gt;10 Troubleshooting and Debugging&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#11-references&#34;&gt;11 References&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#12-changelog&#34;&gt;12 Changelog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#13-contributing-guidelines&#34;&gt;13 Contributing Guidelines&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#14-license-information&#34;&gt;14 License Information&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#15-feedback-mechanism&#34;&gt;15 Feedback Mechanism&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#16-documentation-format&#34;&gt;16 Documentation Format&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;p&gt;The source code, &lt;a href=&#34;https://gee.cs.oswego.edu/pub/misc/malloc.c&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;in a single source file, malloc.c&lt;/a&gt; and an &lt;a href=&#34;https://gee.cs.oswego.edu/pub/misc/malloc.h&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;optional header, malloc.h&lt;/a&gt;, is a little difficult (for me) to grok all at once. My goals here are to understand:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;how it works.&lt;/li&gt;
+&lt;li&gt;its configuration options.&lt;/li&gt;
+&lt;li&gt;if and when the code is thread-safe.&lt;/li&gt;
+&lt;li&gt;how to build it for Windows, Linux, and possibly other operating systems.&lt;/li&gt;
+&lt;li&gt;the key algorithms employed.&lt;/li&gt;
+&lt;li&gt;its internal data structures.&lt;/li&gt;
+&lt;li&gt;how to use it as a replacement for the C runtime implementation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I&amp;rsquo;m not a fan of AI for software development, but I needed a quick outline of how to do this, so I asked ChatGPT to see what it would come up with. It surprised me with a concise outline, so I&amp;rsquo;ve adapted its reply into the following outline. It&amp;rsquo;s probably too detailed, but it will do for a starting point. I can adjust it as needed.&lt;/p&gt;
+&lt;h2 id=&#34;1-overview&#34;&gt;1 Overview&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Start with a high-level overview of &lt;code&gt;dlmalloc&lt;/code&gt;, explaining its purpose and role as a memory allocator.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide information on the primary goals of &lt;code&gt;dlmalloc&lt;/code&gt;, such as efficiency, scalability, or low fragmentation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-current-behavior&#34;&gt;2 Current Behavior&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Detail the current behavior of &lt;code&gt;dlmalloc&lt;/code&gt;, focusing on how it handles memory allocation, deallocation, and management.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Describe any unique features or characteristics that distinguish &lt;code&gt;dlmalloc&lt;/code&gt; from other allocators.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-algorithms&#34;&gt;3 Algorithms&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Document the key algorithms employed by &lt;code&gt;dlmalloc&lt;/code&gt;, including but not limited to:&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Memory Allocation Algorithm: Explain how &lt;code&gt;dlmalloc&lt;/code&gt; searches for and allocates memory blocks.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Memory Deallocation Algorithm: Describe how &lt;code&gt;dlmalloc&lt;/code&gt; frees memory and manages freed blocks.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Internal Data Structures: Highlight the data structures used for efficient bookkeeping.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Concurrency Control (if any): Detail how &lt;code&gt;dlmalloc&lt;/code&gt; handles multiple threads if it&amp;rsquo;s designed to be thread-safe.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-data-structures&#34;&gt;4 Data Structures&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide detailed information about the primary data structures used by &lt;code&gt;dlmalloc&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include diagrams or visual representations to aid understanding.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Explain the purpose and relationships between different data structures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;5-api-documentation&#34;&gt;5 API Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Document the public API of &lt;code&gt;dlmalloc&lt;/code&gt;, including function signatures, parameters, and return values.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Clarify any assumptions or requirements for using the API effectively.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6-usage-examples&#34;&gt;6 Usage Examples&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include practical usage examples to illustrate how developers can use &lt;code&gt;dlmalloc&lt;/code&gt; in their code.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Cover common scenarios and provide code snippets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7-configuration-options&#34;&gt;7 Configuration Options&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Document any compile-time or runtime configuration options available in &lt;code&gt;dlmalloc&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Explain how these options affect the behavior of the allocator.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;8-performance-characteristics&#34;&gt;8 Performance Characteristics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Discuss the expected performance characteristics of &lt;code&gt;dlmalloc&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include information on scalability, throughput, and any trade-offs made for performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;9-concurrency-considerations&#34;&gt;9 Concurrency Considerations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; If applicable, document how &lt;code&gt;dlmalloc&lt;/code&gt; handles concurrency and thread safety.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Describe any synchronization mechanisms in place.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;10-troubleshooting-and-debugging&#34;&gt;10 Troubleshooting and Debugging&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include information on common issues users might encounter and how to troubleshoot them.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide guidance on debugging techniques for memory-related problems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;11-references&#34;&gt;11 References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include references to relevant academic papers, articles, or other external sources that influenced the design or implementation of &lt;code&gt;dlmalloc&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;12-changelog&#34;&gt;12 Changelog&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; If available, provide a changelog documenting major changes, bug fixes, and enhancements across different versions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;13-contributing-guidelines&#34;&gt;13 Contributing Guidelines&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Encourage contributions by including guidelines on how users can contribute to the development or improvement of &lt;code&gt;dlmalloc&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;14-license-information&#34;&gt;14 License Information&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Clearly state the licensing terms under which &lt;code&gt;dlmalloc&lt;/code&gt; is distributed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;15-feedback-mechanism&#34;&gt;15 Feedback Mechanism&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide a way for users to offer feedback or report issues, such as a link to the issue tracker or mailing list.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;16-documentation-format&#34;&gt;16 Documentation Format&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Choose a consistent format for documentation, such as Markdown, and ensure that it is easily accessible.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Software-Development Workshop</title>
+      <link>http://localhost:1313/2023/11/software-development-workshop.html</link>
+      <pubDate>Sat, 18 Nov 2023 12:04:32 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/11/software-development-workshop.html</guid>
+      <description>&lt;p&gt;I have recently started to consider an analogy between the process of software development and a workshop as a place where a craftsperson builds stuff. A workshop for writing software is a place where a programmer can find the various tools and resources needed for creating computer programs. The programmer can select tools from the workshop to build their own development environment, or to continue the analogy, set up their workbench for the tasks at hand.&lt;/p&gt;
+&lt;p&gt;My main goal is to organize my tools and be clear about what I need and use to write software, explore the process of software development, and figure out why some tools work well and others don&amp;rsquo;t. I also want to hone my skills in a few programming languages, try out various development techniques and methodologies, and just see what works. If I find a larger project along the way and create something useful, all the better.&lt;/p&gt;
+&lt;p&gt;When I write code, it&amp;rsquo;s primarily on the Windows operating system. I&amp;rsquo;ve dabbled in Linux and FreeBSD, and I even have a MacBook Pro for work. I need to get used to it. It&amp;rsquo;s a very foreign environment. So, I hope to take the time to learn more about them along the way.&lt;/p&gt;
+&lt;p&gt;The programming languages I have the most experience with are C, C++, and &lt;a href=&#34;https://go.dev&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; (aka, golang). I mostly use Visual Studio Code for editing. For building code written in Go, except for the editor, there&amp;rsquo;s just one set of tools. When it comes to C/C++ programs I use the Community Editions of Visual Studio.&lt;/p&gt;
+&lt;p&gt;That covers only Windows programs. I want to have more experience with writing code for Linux, MacOS, and the various BSD operating systems. I have been interested in &lt;a href=&#34;https://clang.llvm.org/get_started.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clang&lt;/a&gt; for a while, so I built it from source. The tools needed for that were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cmake.org/download/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CMake&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.python.org/downloads/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://visualstudio.microsoft.com/vs/community/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visual Studio 17 2022 Community Edition&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitforwindows.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Git for Windows&lt;/a&gt; to checkout the &lt;a href=&#34;https://github.com/llvm/llvm-project.git&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;llvm repository&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Just building clang was quite an experience. Once CMake created the VS solution and project files, it took a little over 20 minutes for Visual Studio 2022 CE to build llvm, clang, clang++, and the rest of the toolset. I&amp;rsquo;m glad I built a rather beefy home computer last year, because this build took a lot of computing power. I think it&amp;rsquo;s the first time I&amp;rsquo;ve seen all 32 threads pegged at 100% and memory usage climb so high (72 GB at one point).&lt;/p&gt;
+&lt;figure class=&#34;post-image&#34; &gt;&lt;a href=&#34;http://localhost:1313/images/building-clang.png&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/images/building-clang.png&#34;
+         alt=&#34;Building LLVM and Clang on Windows&#34;&gt;&lt;/a&gt;&lt;figcaption&gt;
+            Building LLVM and Clang on Windows Poof!
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I&amp;rsquo;ve had bad experiences with both Python and CMake on Windows, but after building clang my opinion of both of them has improved. I&amp;rsquo;ll be more open to Python programming down the road. On the other hand, while I might explore CMake it&amp;rsquo;s probably more complex than what I need for most of my software projects. Most often, I find that simple build scripts do the job.&lt;/p&gt;
+&lt;p&gt;Another goal I have for my &amp;ldquo;workshop&amp;rdquo; is to hone my skills in C, C++, and Go. I may eventually try some others, like &lt;a href=&#34;https://www.rust-lang.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rust&lt;/a&gt; and &lt;a href=&#34;https://ocaml.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OCaml&lt;/a&gt;. Of course, JavaScript is so pervasive that I&amp;rsquo;ll have to see what I can do with it. I used an old version of &lt;a href=&#34;https://nodejs.org/en/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Node.js&lt;/a&gt; at work a long time ago. It was used with great success for many years to develop agents for an intrusion-detection system running on Linux. We eventually ported it to Golang where the code was far easier to maintain.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve written a lot of Windows batch scripts (&lt;code&gt;bat&lt;/code&gt; or &lt;code&gt;cmd&lt;/code&gt; files) and some bash scripts (mostly while running git bash). I&amp;rsquo;d like to be better at writing PowerShell (it&amp;rsquo;s so much more powerful than the Windows command terminal), bash scripts, and to explore the &lt;a href=&#34;https://www.tcl.tk/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tcl/Tk&lt;/a&gt; scripting language.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Testing With Permutations</title>
+      <link>http://localhost:1313/2023/05/testing-with-permutations.html</link>
+      <pubDate>Tue, 02 May 2023 10:43:42 -0400</pubDate>
+      
+      <guid>http://localhost:1313/2023/05/testing-with-permutations.html</guid>
+      <description>&lt;p&gt;How do I test a library that matches glob patterns to file paths? Glob patterns consist of literal characters, a few wildcards, &amp;lsquo;&lt;code&gt;?&lt;/code&gt;&amp;rsquo;, &amp;lsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo;, and &amp;lsquo;&lt;code&gt;*&lt;/code&gt;&amp;rsquo;, the last of which can be doubled to match paths recursively, and each of which can be escaped to match the literal character. So we have eight kinds of patterns to test: literals, four kinds of wildcards, and three escaped wildcards, which means there are $8! = 40,320$ possible permutations. Fortunately, we don&amp;rsquo;t have to test all of those possibilities to ensure reasonable code coverage.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#different-types-of-glob-patterns&#34;&gt;Different Types of Glob Patterns&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#the-easy-patterns&#34;&gt;The Easy Patterns&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#character-classes&#34;&gt;Character Classes&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#match-a-directory&#34;&gt;Match a Directory&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#match-directories-recursively&#34;&gt;Match Directories Recursively&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#permutations&#34;&gt;Permutations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#choosing-example-patterns&#34;&gt;Choosing Example Patterns&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#generating-expected-answers&#34;&gt;Generating Expected Answers&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#putting-it-all-together&#34;&gt;Putting It All Together&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#implementations&#34;&gt;Implementations&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;different-types-of-glob-patterns&#34;&gt;Different Types of Glob Patterns&lt;/h2&gt;
+&lt;p&gt;A glob pattern is a string consisting of Unicode characters and possible wildcard patterns. A wildcard is one of &amp;lsquo;&lt;code&gt;?&lt;/code&gt;&amp;rsquo;, &amp;lsquo;&lt;code&gt;*&lt;/code&gt;&amp;rsquo;, or &amp;lsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo;. Also, the backslash (&amp;rsquo;&lt;code&gt;\&lt;/code&gt;&amp;rsquo;) is used to escape each of these characters so they are not interpreted as a wildcard pattern. For example &amp;ldquo;&lt;code&gt;\?&lt;/code&gt;&amp;rdquo; will match a literal question mark instead of &amp;ldquo;any single character except a path separator.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;This leads to these patterns:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Literal strings.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&lt;code&gt;?&lt;/code&gt;&amp;rsquo; will match any single character except a path separator.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo; starts defining a character class.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&lt;code&gt;*&lt;/code&gt;&amp;rsquo; will match multiple characters except a path separator.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&lt;code&gt;**&lt;/code&gt;&amp;rsquo; will match multiple characters including path separators.&lt;/li&gt;
+&lt;li&gt;Escaped wildcards, &amp;ldquo;&lt;code&gt;\?&lt;/code&gt;&amp;rdquo;, &amp;ldquo;&lt;code&gt;\[&lt;/code&gt;&amp;rdquo;, and &amp;ldquo;&lt;code&gt;\*&lt;/code&gt;&amp;rdquo;, which match the literal wildcard characters in a path.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-easy-patterns&#34;&gt;The Easy Patterns&lt;/h2&gt;
+&lt;p&gt;Literal strings are the simplest pattern. There are no wildcards at all. They are compared to a path string character-by-character.&lt;/p&gt;
+&lt;p&gt;The simplest wildcard is the question mark (&lt;code&gt;?&lt;/code&gt;). As stated above, it matches any single character in the path except a path separator.&lt;/p&gt;
+&lt;h2 id=&#34;character-classes&#34;&gt;Character Classes&lt;/h2&gt;
+&lt;p&gt;A character class defines a set of characters that can match any single character in a path. The set is delineated by a pair of brackets (&amp;rsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo;, and &amp;lsquo;&lt;code&gt;]&lt;/code&gt;&amp;rsquo;). If the first character after the leading &amp;lsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo; is not &amp;lsquo;&lt;code&gt;!&lt;/code&gt;&amp;rsquo;, then it matches all characters enclosed in the brackets. Note that the string enclosed by the brackets is not allowed to be empty, so an unescaped &amp;lsquo;&lt;code&gt;]&lt;/code&gt;&amp;rsquo; can be included if it is the first character in the set. That leads to odd looking patterns like, &amp;ldquo;&lt;code&gt;[][!]&lt;/code&gt;&amp;rdquo; which will match &amp;lsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo;, &amp;lsquo;&lt;code&gt;]&lt;/code&gt;&amp;rsquo;, or &amp;lsquo;&lt;code&gt;!&lt;/code&gt;&amp;rsquo; in a path.&lt;/p&gt;
+&lt;p&gt;The syntax of character classes extends beyond listing a set of characters between the brackets. Two characters separated by a hyphen (&lt;code&gt;-&lt;/code&gt;) defines a range of characters, where the range is based on the value of the characters&amp;rsquo; Unicode code points. For example, &amp;ldquo;&lt;code&gt;[A-Za-z0-9]&lt;/code&gt;&amp;rdquo; defines the set of all ascii alphanumeric characters, and &amp;ldquo;&lt;code&gt;[A-Fa-f0-9]&lt;/code&gt;&amp;rdquo; defines the set of all hexadecimal digits. An explicit hyphen can be included in a character class if it is either the first or last character between the brackets, or if it is escaped (i.e., &lt;code&gt;\-&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Finally, a character class can be negated, or complemented, by placing an exclamation point as the first character between the brackets. In this case, it will match any single character NOT in the class.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A Note on Path Separators&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7) documentation&lt;/a&gt; says that a range (like &amp;ldquo;&lt;code&gt;[.-0]&lt;/code&gt;&amp;rdquo;) containing the &amp;lsquo;&lt;code&gt;/&lt;/code&gt;&amp;rsquo; character is syntactically incorrect. I suppose the reason for that is it&amp;rsquo;s safer to require an explicit path separator than to allow a hidden one in a range.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;d like any glob implementation to work on Windows as well. It would be silly to have one syntax for glob patterns on Linux and another on Windows, so &amp;lsquo;&lt;code&gt;/&lt;/code&gt;&amp;rsquo; in patterns will match &amp;lsquo;&lt;code&gt;\&lt;/code&gt;&amp;rsquo; in actual paths on Windows.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;match-a-directory&#34;&gt;Match a Directory&lt;/h3&gt;
+&lt;h3 id=&#34;match-directories-recursively&#34;&gt;Match Directories Recursively&lt;/h3&gt;
+&lt;h2 id=&#34;permutations&#34;&gt;Permutations&lt;/h2&gt;
+&lt;h2 id=&#34;choosing-example-patterns&#34;&gt;Choosing Example Patterns&lt;/h2&gt;
+&lt;h2 id=&#34;generating-expected-answers&#34;&gt;Generating Expected Answers&lt;/h2&gt;
+&lt;h2 id=&#34;putting-it-all-together&#34;&gt;Putting It All Together&lt;/h2&gt;
+&lt;h2 id=&#34;implementations&#34;&gt;Implementations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sryze/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sryze/glob&lt;/a&gt; in C++.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reference on Doug&#39;s Patch</title>
+    <title>Reference on Doug&#39;s Place</title>
     <link>https://douglascuthbertson.com/tags/reference.html</link>
-    <description>Recent content in Reference on Doug&#39;s Patch</description>
+    <description>Recent content in Reference on Doug&#39;s Place</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>(c) 2015-2024 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
+    <copyright>(c) 2015-2025 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Tue, 24 Dec 2024 12:33:11 -0500</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/tags/reference/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,7 @@
       <pubDate>Tue, 24 Dec 2024 12:33:11 -0500</pubDate>
       
       <guid>https://douglascuthbertson.com/garden/text-editor.html</guid>
-      <description>&lt;p&gt;A bunch of links to information about text editors&lt;/p&gt;
+      <description>&lt;p&gt;Links to information about text editors&lt;/p&gt;
 &lt;aside class=&#34;toc&#34;&gt;
   &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
   &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
