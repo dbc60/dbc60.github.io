@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Seedlings on Doug&#39;s Place</title>
-    <link>https://douglascuthbertson.com/garden.html</link>
+    <link>https://douglascuthbertson.com/garden/index.html</link>
     <description>Recent content in Seedlings on Doug&#39;s Place</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -18,7 +18,7 @@
       <pubDate>Tue, 24 Dec 2024 12:33:11 -0500</pubDate>
       
       <guid>https://douglascuthbertson.com/garden/text-editor.html</guid>
-      <description>&lt;p&gt;Links to information about text editors&lt;/p&gt;
+      <description>&lt;p&gt;Links to information about text editors.&lt;/p&gt;
 &lt;aside class=&#34;toc&#34;&gt;
   &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
   &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
@@ -32,19 +32,19 @@
     
     <item>
       <title>Hugo</title>
-      <link>https://douglascuthbertson.com/garden/hugo.html</link>
+      <link>https://douglascuthbertson.com/garden/hugo/index.html</link>
       <pubDate>Tue, 24 Dec 2024 04:42:57 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/garden/hugo.html</guid>
+      <guid>https://douglascuthbertson.com/garden/hugo/index.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blog</title>
-      <link>https://douglascuthbertson.com/garden/blog.html</link>
+      <link>https://douglascuthbertson.com/garden/blog/index.html</link>
       <pubDate>Sun, 14 Jan 2024 21:28:44 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/garden/blog.html</guid>
+      <guid>https://douglascuthbertson.com/garden/blog/index.html</guid>
       <description></description>
     </item>
     

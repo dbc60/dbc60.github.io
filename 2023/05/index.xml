@@ -2,29 +2,90 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>05 on Doug&#39;s Place</title>
-    <link>https://douglascuthbertson.com/2023/05.html</link>
+    <link>http://localhost:1313/2023/05.html</link>
     <description>Recent content in 05 on Doug&#39;s Place</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2025 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Mon, 08 May 2023 17:01:29 -0400</lastBuildDate>
     
-        <atom:link href="https://douglascuthbertson.com/2023/05/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/2023/05/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Glob Patterns</title>
-      <link>https://douglascuthbertson.com/2023/05/glob-patterns.html</link>
+      <link>http://localhost:1313/2023/05/glob-patterns.html</link>
       <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
       
-      <guid>https://douglascuthbertson.com/2023/05/glob-patterns.html</guid>
+      <guid>http://localhost:1313/2023/05/glob-patterns.html</guid>
       <description>&lt;p&gt;Some time in 2016 or 2017, I needed a way to match file paths with &lt;a href=&#34;https://en.wikipedia.org/wiki/Glob_%28programming%29&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob patterns&lt;/a&gt;. The trick was that it had to work in a filter driver running in the Windows kernel. There weren&amp;rsquo;t a lot of ready-to-use libraries that were kernel-ready. In fact I couldn&amp;rsquo;t find any, so I wrote my own.&lt;/p&gt;
 &lt;p&gt;Back then, I wrote an implementation in C which was very Windows-centric, and didn&amp;rsquo;t hold to the syntactic rules from the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7) man page&lt;/a&gt;. It was sufficient for the job, but I wanted to revisit the problem and create something more generally useful. I uploaded &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an implementation in Go on GitHub&lt;/a&gt; that holds to the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7)&lt;/a&gt; rules, is very efficient, and runs in user space on both Windows and Linux.&lt;/p&gt;
 &lt;p&gt;This Go module accepts the &lt;code&gt;**&lt;/code&gt; wildcard (to match directory paths recursively) as well as &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;normal wildcards&lt;/a&gt;. When I originally researched how to go about building a pattern-matching function, I looked for existing code to get an idea of how to structure a solution. I hoped that I could find an open-source library where I could just transliterate the code from whatever language it was written to C (without any calls to the standard library, because that&amp;rsquo;s not a thing within the Windows kernel). All the examples I could find were either limited to the standard wildcards or had exponential behavior, as &lt;a href=&#34;https://research.swtch.com/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Russ Cox so eloquently discussed&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That got me thinking about the shape of glob patterns. Simple patterns, made up of literal strings, the &lt;code&gt;?&lt;/code&gt; wildcard, and character classes, are matched character-by-character (with a little extra processing for character classes). The &lt;code&gt;*&lt;/code&gt; pattern matches zero-or-more characters followed by whatever simple pattern follows it. So &lt;code&gt;abc*xyz&lt;/code&gt; is a glob composed of a simple pattern, &lt;code&gt;abc&lt;/code&gt;, followed by a zero-or-more pattern &lt;code&gt;*xyz&lt;/code&gt;. The latter pattern is called a &lt;em&gt;directory pattern&lt;/em&gt;, because it&amp;rsquo;s limited to matching file and directory names within a single directory. Directory patterns amount to specifying a loop that consumes a character (except a path separator) every time the simple pattern that follows it fails to match some portion of a path.&lt;/p&gt;
 &lt;p&gt;Similarly, &lt;code&gt;**&lt;/code&gt; patterns, &lt;em&gt;recursive patterns&lt;/em&gt;, can be thought of requiring a loop that consumes any character that isn&amp;rsquo;t matched by whatever pattern follows it. The trick here is to realize that &lt;code&gt;**&lt;/code&gt; can be followed by a simple pattern and zero-or-more directory patterns. If at any point during the matching process the simple pattern or any of the directory patterns that may follow it fail, then processing continues by allowing &lt;code&gt;**&lt;/code&gt; to consume one character from the path and then matching the path to the pattern restarts from that point. This is still an $O(n)$ process, because each iteration makes progress through the path until either the whole pattern and path are consumed, or a match cannot be found.&lt;/p&gt;
-&lt;p&gt;This realization, that recursive patterns are made up of simple and directory patterns, led to a relatively simple algorithm and a fast implementation. See the &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repo&lt;/a&gt; for the code.&lt;/p&gt;
-&lt;p&gt;Updated 2023-11-12: spelling, grammar and to clarify how recursive patterns are processed.&lt;/p&gt;</description>
+&lt;p&gt;This realization, that recursive patterns are made up of simple and directory patterns, led to a relatively simple algorithm and a fast implementation. See the &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repo&lt;/a&gt; for the code.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Testing With Permutations</title>
+      <link>http://localhost:1313/2023/05/testing-with-permutations.html</link>
+      <pubDate>Tue, 02 May 2023 10:43:42 -0400</pubDate>
+      
+      <guid>http://localhost:1313/2023/05/testing-with-permutations.html</guid>
+      <description>&lt;p&gt;How do I test a library that matches glob patterns to file paths? Glob patterns consist of literal characters, a few wildcards, &amp;lsquo;&lt;code&gt;?&lt;/code&gt;&amp;rsquo;, &amp;lsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo;, and &amp;lsquo;&lt;code&gt;*&lt;/code&gt;&amp;rsquo;, the last of which can be doubled to match paths recursively, and each of which can be escaped to match the literal character. So we have eight kinds of patterns to test: literals, four kinds of wildcards, and three escaped wildcards, which means there are $8! = 40,320$ possible permutations. Fortunately, we don&amp;rsquo;t have to test all of those possibilities to ensure reasonable code coverage.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#different-types-of-glob-patterns&#34;&gt;Different Types of Glob Patterns&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#the-easy-patterns&#34;&gt;The Easy Patterns&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#character-classes&#34;&gt;Character Classes&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#match-a-directory&#34;&gt;Match a Directory&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#match-directories-recursively&#34;&gt;Match Directories Recursively&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#permutations&#34;&gt;Permutations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#choosing-example-patterns&#34;&gt;Choosing Example Patterns&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#generating-expected-answers&#34;&gt;Generating Expected Answers&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#putting-it-all-together&#34;&gt;Putting It All Together&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#implementations&#34;&gt;Implementations&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;different-types-of-glob-patterns&#34;&gt;Different Types of Glob Patterns&lt;/h2&gt;
+&lt;p&gt;A glob pattern is a string consisting of Unicode characters and possible wildcard patterns. A wildcard is one of &amp;lsquo;&lt;code&gt;?&lt;/code&gt;&amp;rsquo;, &amp;lsquo;&lt;code&gt;*&lt;/code&gt;&amp;rsquo;, or &amp;lsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo;. Also, the backslash (&amp;rsquo;&lt;code&gt;\&lt;/code&gt;&amp;rsquo;) is used to escape each of these characters so they are not interpreted as a wildcard pattern. For example &amp;ldquo;&lt;code&gt;\?&lt;/code&gt;&amp;rdquo; will match a literal question mark instead of &amp;ldquo;any single character except a path separator.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;This leads to these patterns:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Literal strings.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&lt;code&gt;?&lt;/code&gt;&amp;rsquo; will match any single character except a path separator.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo; starts defining a character class.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&lt;code&gt;*&lt;/code&gt;&amp;rsquo; will match multiple characters except a path separator.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&lt;code&gt;**&lt;/code&gt;&amp;rsquo; will match multiple characters including path separators.&lt;/li&gt;
+&lt;li&gt;Escaped wildcards, &amp;ldquo;&lt;code&gt;\?&lt;/code&gt;&amp;rdquo;, &amp;ldquo;&lt;code&gt;\[&lt;/code&gt;&amp;rdquo;, and &amp;ldquo;&lt;code&gt;\*&lt;/code&gt;&amp;rdquo;, which match the literal wildcard characters in a path.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-easy-patterns&#34;&gt;The Easy Patterns&lt;/h2&gt;
+&lt;p&gt;Literal strings are the simplest pattern. There are no wildcards at all. They are compared to a path string character-by-character.&lt;/p&gt;
+&lt;p&gt;The simplest wildcard is the question mark (&lt;code&gt;?&lt;/code&gt;). As stated above, it matches any single character in the path except a path separator.&lt;/p&gt;
+&lt;h2 id=&#34;character-classes&#34;&gt;Character Classes&lt;/h2&gt;
+&lt;p&gt;A character class defines a set of characters that can match any single character in a path. The set is delineated by a pair of brackets (&amp;rsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo;, and &amp;lsquo;&lt;code&gt;]&lt;/code&gt;&amp;rsquo;). If the first character after the leading &amp;lsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo; is not &amp;lsquo;&lt;code&gt;!&lt;/code&gt;&amp;rsquo;, then it matches all characters enclosed in the brackets. Note that the string enclosed by the brackets is not allowed to be empty, so an unescaped &amp;lsquo;&lt;code&gt;]&lt;/code&gt;&amp;rsquo; can be included if it is the first character in the set. That leads to odd looking patterns like, &amp;ldquo;&lt;code&gt;[][!]&lt;/code&gt;&amp;rdquo; which will match &amp;lsquo;&lt;code&gt;[&lt;/code&gt;&amp;rsquo;, &amp;lsquo;&lt;code&gt;]&lt;/code&gt;&amp;rsquo;, or &amp;lsquo;&lt;code&gt;!&lt;/code&gt;&amp;rsquo; in a path.&lt;/p&gt;
+&lt;p&gt;The syntax of character classes extends beyond listing a set of characters between the brackets. Two characters separated by a hyphen (&lt;code&gt;-&lt;/code&gt;) defines a range of characters, where the range is based on the value of the characters&amp;rsquo; Unicode code points. For example, &amp;ldquo;&lt;code&gt;[A-Za-z0-9]&lt;/code&gt;&amp;rdquo; defines the set of all ascii alphanumeric characters, and &amp;ldquo;&lt;code&gt;[A-Fa-f0-9]&lt;/code&gt;&amp;rdquo; defines the set of all hexadecimal digits. An explicit hyphen can be included in a character class if it is either the first or last character between the brackets, or if it is escaped (i.e., &lt;code&gt;\-&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Finally, a character class can be negated, or complemented, by placing an exclamation point as the first character between the brackets. In this case, it will match any single character NOT in the class.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A Note on Path Separators&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7) documentation&lt;/a&gt; says that a range (like &amp;ldquo;&lt;code&gt;[.-0]&lt;/code&gt;&amp;rdquo;) containing the &amp;lsquo;&lt;code&gt;/&lt;/code&gt;&amp;rsquo; character is syntactically incorrect. I suppose the reason for that is it&amp;rsquo;s safer to require an explicit path separator than to allow a hidden one in a range.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;d like any glob implementation to work on Windows as well. It would be silly to have one syntax for glob patterns on Linux and another on Windows, so &amp;lsquo;&lt;code&gt;/&lt;/code&gt;&amp;rsquo; in patterns will match &amp;lsquo;&lt;code&gt;\&lt;/code&gt;&amp;rsquo; in actual paths on Windows.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;match-a-directory&#34;&gt;Match a Directory&lt;/h3&gt;
+&lt;h3 id=&#34;match-directories-recursively&#34;&gt;Match Directories Recursively&lt;/h3&gt;
+&lt;h2 id=&#34;permutations&#34;&gt;Permutations&lt;/h2&gt;
+&lt;h2 id=&#34;choosing-example-patterns&#34;&gt;Choosing Example Patterns&lt;/h2&gt;
+&lt;h2 id=&#34;generating-expected-answers&#34;&gt;Generating Expected Answers&lt;/h2&gt;
+&lt;h2 id=&#34;putting-it-all-together&#34;&gt;Putting It All Together&lt;/h2&gt;
+&lt;h2 id=&#34;implementations&#34;&gt;Implementations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sryze/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sryze/glob&lt;/a&gt; in C++.&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

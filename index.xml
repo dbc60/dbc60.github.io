@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Doug&#39;s Place</title>
-    <link>https://douglascuthbertson.com/</link>
+    <link>https://douglascuthbertson.com/index.html</link>
     <description>Recent content on Doug&#39;s Place</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -14,28 +14,28 @@
     
     <item>
       <title>Posts</title>
-      <link>https://douglascuthbertson.com/post.html</link>
+      <link>https://douglascuthbertson.com/post/index.html</link>
       <pubDate>Sun, 14 Jan 2024 20:45:58 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/post.html</guid>
+      <guid>https://douglascuthbertson.com/post/index.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Seedlings</title>
-      <link>https://douglascuthbertson.com/garden.html</link>
+      <link>https://douglascuthbertson.com/garden/index.html</link>
       <pubDate>Sun, 14 Jan 2024 20:45:58 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/garden.html</guid>
+      <guid>https://douglascuthbertson.com/garden/index.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://douglascuthbertson.com/about.html</link>
+      <link>https://douglascuthbertson.com/about/index.html</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://douglascuthbertson.com/about.html</guid>
+      <guid>https://douglascuthbertson.com/about/index.html</guid>
       <description>&lt;p&gt;I am Douglas Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I&amp;rsquo;ve been writing software in &lt;a href=&#34;https://golang.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; for both Linux and Windows (it&amp;rsquo;s my new favorite programming language).&lt;/p&gt;
 &lt;p&gt;I tend to read too much about software development and not write enough code, so my intent is to use this blog to explore some of the aspects of coding and engineering I&amp;rsquo;ve enjoyed reading about and put them into practice.&lt;/p&gt;
 &lt;p&gt;Besides my professional work, I&amp;rsquo;m a husband, and a father to two really wonderful children who have grown up and are launching careers of their own.&lt;/p&gt;
@@ -51,10 +51,10 @@
     
     <item>
       <title>What I Do Now</title>
-      <link>https://douglascuthbertson.com/now.html</link>
+      <link>https://douglascuthbertson.com/now/index.html</link>
       <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://douglascuthbertson.com/now.html</guid>
+      <guid>https://douglascuthbertson.com/now/index.html</guid>
       <description>&lt;p&gt;As of June 2023, I work for &lt;a href=&#34;https://www.preveil.com/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PreVeil&lt;/a&gt;, provider of simple, encrypted email and file collaboration software. In my free time, I tend to a bunch of little projects.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;I&amp;rsquo;m building a &lt;a href=&#34;https://www.truenas.com/truenas-core/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TrueNAS&lt;/a&gt; storage server to see if I can make it both a local backup server and a &lt;a href=&#34;https://www.plex.tv/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plex&lt;/a&gt; or &lt;a href=&#34;https://jellyfin.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jellyfin&lt;/a&gt; media server.&lt;/li&gt;
@@ -71,7 +71,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Updated &lt;a href=&#34;https://gohugo.io&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; to version 0.120.4.&lt;/li&gt;
-&lt;li&gt;Started a page of links, &lt;a href=&#34;https://douglascuthbertson.com/bookmark.html&#34;&gt;Bookmarks&lt;/a&gt;, to websites I find interesting, but may be located in some small corner of the Internet.&lt;/li&gt;
+&lt;li&gt;Started a page of links, &lt;a href=&#34;https://douglascuthbertson.com/bookmark/index.html&#34;&gt;Bookmarks&lt;/a&gt;, to websites I find interesting, but may be located in some small corner of the Internet.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -80,10 +80,10 @@
     
     <item>
       <title>Bookmarks</title>
-      <link>https://douglascuthbertson.com/bookmark.html</link>
+      <link>https://douglascuthbertson.com/bookmark/index.html</link>
       <pubDate>Sat, 18 Nov 2023 07:51:31 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/bookmark.html</guid>
+      <guid>https://douglascuthbertson.com/bookmark/index.html</guid>
       <description>&lt;p&gt;The web used to be about links between sites so you could travel down rabbit holes of ideas and information. It still is to some extent. Some people happily publish links to other sites within their articles. There are a lot of these sites, but some (maybe most) of the small ones can be hard to find.&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&#34;https://www.marginalia.nu/log/19-website-discoverability-crisis/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Small Website Discoverability Crisis&lt;/a&gt; has a simple, but brilliant way to solve that problem. Create a list of bookmarks linking to websites you find interesting, and publish it for the world to see. You decide what constitutes &amp;ldquo;interesting&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;The author of that article published their own page of &lt;a href=&#34;https://www.marginalia.nu/links/bookmarks/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;bookmarks&lt;/a&gt;. I want to do the same, so here are a few links to start with to sites I like:&lt;/p&gt;
@@ -118,10 +118,10 @@
     
     <item>
       <title>Evergreen Notes</title>
-      <link>https://douglascuthbertson.com/evergreen-note.html</link>
+      <link>https://douglascuthbertson.com/evergreen-note/index.html</link>
       <pubDate>Wed, 10 Jun 2020 07:12:11 -0400</pubDate>
       
-      <guid>https://douglascuthbertson.com/evergreen-note.html</guid>
+      <guid>https://douglascuthbertson.com/evergreen-note/index.html</guid>
       <description></description>
     </item>
     

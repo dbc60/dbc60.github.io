@@ -2,14 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2025 on Doug&#39;s Place</title>
-    <link>https://douglascuthbertson.com/2025.html</link>
+    <link>http://localhost:1313/2025/index.html</link>
     <description>Recent content in 2025 on Doug&#39;s Place</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2025 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
+    <lastBuildDate>Thu, 30 Jan 2025 20:40:29 -0500</lastBuildDate>
     
-        <atom:link href="https://douglascuthbertson.com/2025/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/2025/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>01</title>
+      <link>http://localhost:1313/2025/01.html</link>
+      <pubDate>Thu, 30 Jan 2025 20:40:29 -0500</pubDate>
+      
+      <guid>http://localhost:1313/2025/01.html</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

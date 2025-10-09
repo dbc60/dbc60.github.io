@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Evergreen Notes on Doug&#39;s Place</title>
-    <link>https://douglascuthbertson.com/evergreen-note.html</link>
+    <link>https://douglascuthbertson.com/evergreen-note/index.html</link>
     <description>Recent content in Evergreen Notes on Doug&#39;s Place</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -14,10 +14,10 @@
     
     <item>
       <title>Create Table</title>
-      <link>https://douglascuthbertson.com/evergreen-note/create-table.html</link>
+      <link>https://douglascuthbertson.com/evergreen-note/create-table/index.html</link>
       <pubDate>Fri, 24 Sep 2021 09:05:15 -0400</pubDate>
       
-      <guid>https://douglascuthbertson.com/evergreen-note/create-table.html</guid>
+      <guid>https://douglascuthbertson.com/evergreen-note/create-table/index.html</guid>
       <description></description>
     </item>
     

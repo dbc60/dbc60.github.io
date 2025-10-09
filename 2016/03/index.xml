@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>03 on Doug&#39;s Place</title>
-    <link>https://douglascuthbertson.com/2016/03.html</link>
+    <link>http://localhost:1313/2016/03.html</link>
     <description>Recent content in 03 on Doug&#39;s Place</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2025 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Thu, 10 Mar 2016 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://douglascuthbertson.com/2016/03/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/2016/03/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fixing the Width</title>
-      <link>https://douglascuthbertson.com/2016/03/fixing-the-width.html</link>
+      <link>http://localhost:1313/2016/03/fixing-the-width.html</link>
       <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://douglascuthbertson.com/2016/03/fixing-the-width.html</guid>
+      <guid>http://localhost:1313/2016/03/fixing-the-width.html</guid>
       <description>&lt;p&gt;What an ugly, fragile blog.&lt;/p&gt;
 &lt;p&gt;All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.&lt;/p&gt;
 &lt;p&gt;I spent a lot of time trying to figure out what was going wrong. One of the problems was using &lt;code&gt;flex-grow: 1;&lt;/code&gt; for the left column and &lt;code&gt;width: auto;&lt;/code&gt; on the right. These settings left too many decisions up to the browser. I now calculate the column widths and margins based on the width of the whole body. The code also floats the two columns to the left and right, respectively. It may not be the best solution, but it will do until I learn how to responsive grid systems work.&lt;/p&gt;
@@ -51,16 +51,16 @@ mx + ny + oz + pw
     
     <item>
       <title>The Pursuit of Happiness Gels in the Imagination</title>
-      <link>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination.html</link>
+      <link>http://localhost:1313/2016/03/the-pursuit-of-happiness-gels-in-the-imagination.html</link>
       <pubDate>Wed, 09 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://douglascuthbertson.com/2016/03/the-pursuit-of-happiness-gels-in-the-imagination.html</guid>
+      <guid>http://localhost:1313/2016/03/the-pursuit-of-happiness-gels-in-the-imagination.html</guid>
       <description>&lt;p&gt;Imagination is good, but action needs to be taken in the real world.&lt;/p&gt;
-&lt;p&gt;I wonder if the reason I have so many non-fiction books waiting to be read is that I&amp;rsquo;m looking for the thrill of living in a world of fun and self-fulfillment, but I&amp;rsquo;m not willing to create it. I have books on game programming, drawing, sketching, animation, project managment, time management, organizing, clutter reduction, investing and other topics. Even among those I have read, they don&amp;rsquo;t do me much good unless I act upon them.&lt;/p&gt;
+&lt;p&gt;I wonder if the reason I have so many non-fiction books waiting to be read is that I&amp;rsquo;m looking for the thrill of living in a world of fun and self-fulfillment, but I&amp;rsquo;m not willing to create it. I have books on game programming, drawing, sketching, animation, project management, time management, organizing, clutter reduction, investing and other topics. Even among those I have read, they don&amp;rsquo;t do me much good unless I act upon them.&lt;/p&gt;
 &lt;p&gt;The Wondermark comic No. 1204, &lt;a href=&#34;http://wondermark.com/c1204/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Cargo Cult of Adulthood&lt;/a&gt;, started me thinking about imagination versus creating and doing real things. It contrasts buying stuff with buying experiences. The chain of thought starts with buying a movie ticket to get a few hours of being in a dramatized world. Similarly, buying a lottery ticket buys a few days of dreaming there&amp;rsquo;s a chance of becoming a millionaire. The thought continues with the notion that buying stuff can transport us into a fun, but imaginary world. Things like workout clothes, cookbooks, and self-help stuff, says David Malki, the author of Wondermark, are the tickets of admission to the fun imaginary worlds of being fit, eating well and having a good life.&lt;/p&gt;
 &lt;p&gt;He goes on to shortcut the whole process by proposing we skip shopping and just pay someone to give us a daily pep talks about how fun our lives really are, but that&amp;rsquo;s beside the point. These things we buy are just fodder for the imagination unless some action is taken in the real world. Create something new, or clean up something old to make it useful and accessible and then actually put it to use. Put on the workout clothes and exercise. Follow the lessons in that book about sketching, put pencil to paper and practice.&lt;/p&gt;
 &lt;p&gt;First efforts will probably stink. Exercising is difficult in the beginning. The first sketch will be awful. It&amp;rsquo;s all about sticking with it. Improvement will happen.&lt;/p&gt;
-&lt;p&gt;Maybe this post is just me giving myself a pep talk (it&amp;rsquo;s ceratinly cheaper than paying someone else to do it), but I have things to do, and I feel more like getting them done.&lt;/p&gt;
+&lt;p&gt;Maybe this post is just me giving myself a pep talk (it&amp;rsquo;s certainly cheaper than paying someone else to do it), but I have things to do, and I feel more like getting them done.&lt;/p&gt;
 &lt;p&gt;I created this blog to become a better writer, quell demons of doubt and to workout ideas. I titled it &amp;ldquo;Dream, Sketch, Code&amp;rdquo;, because I have a lot of half-baked ideas, think about and create software, and I want to get better at sketching and drawing. Besides being a relaxing activity, I&amp;rsquo;d like to draw well enough that I can use sketches to better describe my ideas.&lt;/p&gt;</description>
     </item>
     

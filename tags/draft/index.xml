@@ -66,8 +66,9 @@
       <pubDate>Thu, 30 Jan 2025 20:40:29 -0500</pubDate>
       
       <guid>http://localhost:1313/2025/01/unit-test.html</guid>
-      <description>&lt;p&gt;I want to get back into C programming on a regular basis, but one of the problems with writing C code is making sure it does what you intend it to do. I&amp;rsquo;ve made lots of mistakes in the past, and I&amp;rsquo;d like to reduce their likelihood a little. One way is to test the hell out of code. There are lots of test frameworks out there, like &lt;a href=&#34;https://libcheck.github.io/check/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check&lt;/a&gt;, &lt;a href=&#34;https://cunit.sourceforge.net/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CUnit&lt;/a&gt;, &lt;a href=&#34;https://cutest.sourceforge.net/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CuTest&lt;/a&gt;, and a great many others. Some of them look great, but I think that the experience of writing my own will be a gentle way to get back into a regular habit of writing C.&lt;/p&gt;
-&lt;p&gt;&lt;aside class=&#34;toc&#34;&gt;
+      <description>&lt;p&gt;I am getting back into C programming on a regular basis. One of the problems with writing C code is making sure it does what you intend it to do. I&amp;rsquo;ve made lots of mistakes in the past, and I&amp;rsquo;d like to reduce their likelihood a little. One way to do that is to test code thoroughly, so a unit-test framework would be useful.&lt;/p&gt;
+&lt;p&gt;There are already lots of test frameworks out there, like &lt;a href=&#34;https://libcheck.github.io/check/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check&lt;/a&gt;, &lt;a href=&#34;https://cunit.sourceforge.net/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CUnit&lt;/a&gt;, and &lt;a href=&#34;https://cutest.sourceforge.net/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CuTest&lt;/a&gt;. Some of them look great, but I think that the experience of writing my own will be a gentle way to get back into a regular habit of writing C.
+&lt;aside class=&#34;toc&#34;&gt;
   &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
   &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
@@ -77,21 +78,24 @@
 &lt;/nav&gt;
 &lt;/aside&gt;
 
-While writing this note I found &lt;a href=&#34;https://cmocka.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cmocka&lt;/a&gt;. It has a great looking website making me think it must be very polished, so what am I doing writing my own unit test framework? For the experience, to try my own ideas of what unit tests and the testing experience should look and feel like. I hope it will be fun.&lt;/p&gt;
+While writing this note and looking for a few exemplary test frameworks, I found &lt;a href=&#34;https://cmocka.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cmocka&lt;/a&gt;. It has a great looking website making me think it must be very polished. So what am I doing writing my own unit test framework? I&amp;rsquo;m writing one for the experience, to try my own ideas of what unit tests and the testing experience should look and feel like. It should be fun, too.&lt;/p&gt;
 &lt;h2 id=&#34;goals&#34;&gt;Goals&lt;/h2&gt;
 &lt;p&gt;I&amp;rsquo;ll start simply. In fact, what&amp;rsquo;s the simplest unit test framework that can get the job done? Such a project needs:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A test driver. A program to load and run a set of tests.&lt;/li&gt;
-&lt;li&gt;Something that contains a set of tests, like a dynamically loadable library (DLL), aka, a shared library.&lt;/li&gt;
-&lt;li&gt;Some standard way to write tests such that the test driver can setup, run, and teardown each test.&lt;/li&gt;
+&lt;li&gt;Test Driver: load and run test suites.&lt;/li&gt;
+&lt;li&gt;Test Suite: a set of tests to run.&lt;/li&gt;
+&lt;li&gt;Test Case: some standard way to write test cases and collect them into test suites such that a test driver can load, setup, run, and teardown each test.&lt;/li&gt;
+&lt;li&gt;Test Result: a way to indicate whether a test passed or failed, and why.&lt;/li&gt;
+&lt;li&gt;Reporting: a backend module to report test results in a consistent format.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;In my mind, a DLL (or .so file) should encapsulate a suite of test cases. The test driver can be a static library that provides all of the functions needed to load and run tests, and collect results that can be reported in some manner (e.g., written to a terminal or a file).&lt;/p&gt;
+&lt;p&gt;The bulk of a test driver can be implemented in a static library. An actual test driver can be built up from components, so a specific driver can have a particular backend, or several selectable backends for reporting results. The rest of the internals are common to all drivers.&lt;/p&gt;
+&lt;p&gt;I believe a shared library should encapsulate a suite of test cases. The test driver itself can be built as a static library that provides all of the functionality needed to load and run tests, and collect results that can be reported in some manner (e.g., written to a terminal or a file).&lt;/p&gt;
 &lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/testing-cabal/subunit&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Subunit&lt;/a&gt; is a streaming protocol for test results.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xunit.net/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xUnit.net&lt;/a&gt; is a free, open source, community-focused unit testing tool for the .NET Framework.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.martinfowler.com/bliki/Xunit.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xUnit&lt;/a&gt; article by Martin Fowler.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/testmoapp/junitxml&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Common JUnit XML Format &amp;amp; Examples&lt;/a&gt;. Apparently, the JUnit XML file format (first introduced by the Ant build tool and made popular by the JUnit project) has become the de facto standard format to exchange test results between tools (at least in the Java world).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xunit.net/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xUnit.net&lt;/a&gt; is an open-source unit testing tool for the .NET Framework.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.martinfowler.com/bliki/Xunit.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xUnit&lt;/a&gt;, by Martin Fowler.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/testmoapp/junitxml&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Common JUnit XML Format &amp;amp; Examples&lt;/a&gt;. At least in the world of Java programming, the JUnit XML file format is a standard format to exchange test results between tools. It might be worth considering as a backend to a test driver.&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
@@ -114,6 +118,15 @@ While writing this note I found &lt;a href=&#34;https://cmocka.org/&#34; class=&
 &lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Several years back, I started following &lt;a href=&#34;https://handmadehero.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Handmade Hero&lt;/a&gt; by Casey Muratori. Within the first few episodes, Muratori was advocating for keeping software development as simple as possible and knowing your tools. He eschewed build systems and third-party libraries (even the standard library to the greatest degree possible). He built a build system with simple &lt;code&gt;.cmd&lt;/code&gt; files (or maybe they were &lt;code&gt;.bat&lt;/code&gt; files, but that doesn&amp;rsquo;t matter much) that ran some version of Microsoft&amp;rsquo;s Visual Studio compiler with just the command-line options needed.&lt;/p&gt;
 &lt;p&gt;I liked the idea a lot, so I built on his scripts and created a set of my own that gave me build options for debug and release, that cleaned out build artifacts, built unit tests separately, and built separate components so I could refactor large components into smaller ones or add new components and have some confidence they would build and run on their own.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Memory Allocator</title>
+      <link>http://localhost:1313/garden/mem-allocator/index.html</link>
+      <pubDate>Sun, 14 Jan 2024 21:32:26 -0500</pubDate>
+      
+      <guid>http://localhost:1313/garden/mem-allocator/index.html</guid>
+      <description></description>
     </item>
     
     <item>
@@ -317,8 +330,7 @@ While writing this note I found &lt;a href=&#34;https://cmocka.org/&#34; class=&
 &lt;blockquote&gt;
 &lt;p&gt;A Note on Path Separators&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7) documentation&lt;/a&gt; says that a range (like &amp;ldquo;&lt;code&gt;[.-0]&lt;/code&gt;&amp;rdquo;) containing the &amp;lsquo;&lt;code&gt;/&lt;/code&gt;&amp;rsquo; character is syntactically incorrect. I suppose the reason for that is it&amp;rsquo;s safer to require an explicit path separator than to allow a hidden one in a range.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;d like any glob implementation to work on Windows as well. It would be silly to have one syntax for glob patterns on Linux and another on Windows, so &amp;lsquo;&lt;code&gt;/&lt;/code&gt;&amp;rsquo; in patterns will match &amp;lsquo;&lt;code&gt;\&lt;/code&gt;&amp;rsquo; in actual paths on Windows.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;I&amp;rsquo;d like any glob implementation to work on Windows as well. It would be silly to have one syntax for glob patterns on Linux and another on Windows, so &amp;lsquo;&lt;code&gt;/&lt;/code&gt;&amp;rsquo; in patterns will match &amp;lsquo;&lt;code&gt;\&lt;/code&gt;&amp;rsquo; in actual paths on Windows.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;match-a-directory&#34;&gt;Match a Directory&lt;/h3&gt;
 &lt;h3 id=&#34;match-directories-recursively&#34;&gt;Match Directories Recursively&lt;/h3&gt;
 &lt;h2 id=&#34;permutations&#34;&gt;Permutations&lt;/h2&gt;

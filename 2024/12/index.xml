@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>12 on Doug&#39;s Place</title>
-    <link>https://douglascuthbertson.com/2024/12.html</link>
+    <link>http://localhost:1313/2024/12.html</link>
     <description>Recent content in 12 on Doug&#39;s Place</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>(c) 2015-2025 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Tue, 24 Dec 2024 12:33:11 -0500</lastBuildDate>
     
-        <atom:link href="https://douglascuthbertson.com/2024/12/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/2024/12/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Text Editor</title>
-      <link>https://douglascuthbertson.com/garden/text-editor.html</link>
+      <link>http://localhost:1313/garden/text-editor.html</link>
       <pubDate>Tue, 24 Dec 2024 12:33:11 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/garden/text-editor.html</guid>
-      <description>&lt;p&gt;Links to information about text editors&lt;/p&gt;
+      <guid>http://localhost:1313/garden/text-editor.html</guid>
+      <description>&lt;p&gt;Links to information about text editors.&lt;/p&gt;
 &lt;aside class=&#34;toc&#34;&gt;
   &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
   &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
@@ -32,10 +32,10 @@
     
     <item>
       <title>Generate Backlinks</title>
-      <link>https://douglascuthbertson.com/garden/hugo/generate-backlinks.html</link>
+      <link>http://localhost:1313/garden/hugo/generate-backlinks.html</link>
       <pubDate>Tue, 24 Dec 2024 11:45:32 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/garden/hugo/generate-backlinks.html</guid>
+      <guid>http://localhost:1313/garden/hugo/generate-backlinks.html</guid>
       <description>&lt;p&gt;I think the only way to have Hugo generate backlinks to a page is to include a partial that loops over all of the content files.&lt;/p&gt;
 &lt;p&gt;Many thanks to whoever wrote &lt;a href=&#34;https://scripter.co/parsing-backlinks-in-hugo&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Parsing Backlinks in Hugo&lt;/a&gt; for a partial to create backlinks. The partial is:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-template&#34; data-lang=&#34;go-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$backlinks&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;slice&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
@@ -71,12 +71,12 @@
     
     <item>
       <title>New Content</title>
-      <link>https://douglascuthbertson.com/garden/hugo/new-content.html</link>
+      <link>http://localhost:1313/garden/hugo/new-content.html</link>
       <pubDate>Tue, 24 Dec 2024 06:36:09 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/garden/hugo/new-content.html</guid>
+      <guid>http://localhost:1313/garden/hugo/new-content.html</guid>
       <description>&lt;p&gt;To create a new content file, simply run &lt;code&gt;hugo new &amp;lt;path&amp;gt; &amp;lt;options&amp;gt;&lt;/code&gt; from the root directory. All of my content is in the &lt;code&gt;content&lt;/code&gt; folder, so this file was created by &lt;code&gt;hugo new content/garden/hugo/new-content.md&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Now, should content be segregated into different folders or not? Each folder directly under &lt;code&gt;content/&lt;/code&gt; defines a new &lt;a href=&#34;https://douglascuthbertson.com/garden/hugo/content-type.html&#34;&gt;Type&lt;/a&gt;. Does it make sense to create different content types for a digital garden? I&amp;rsquo;m not sure.&lt;/p&gt;
+&lt;p&gt;Now, should content be segregated into different folders or not? Each folder directly under &lt;code&gt;content/&lt;/code&gt; defines a new &lt;a href=&#34;http://localhost:1313/garden/hugo/content-type.html&#34;&gt;Type&lt;/a&gt;. Does it make sense to create different content types for a digital garden? I&amp;rsquo;m not sure.&lt;/p&gt;
 &lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.jakewiesler.com/blog/hugo-directory-structure&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&amp;rsquo;s Directory Structure Explained&lt;/a&gt;.&lt;/li&gt;
@@ -85,20 +85,20 @@
     
     <item>
       <title>Sections</title>
-      <link>https://douglascuthbertson.com/garden/hugo/sections.html</link>
+      <link>http://localhost:1313/garden/hugo/sections.html</link>
       <pubDate>Tue, 24 Dec 2024 04:48:23 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/garden/hugo/sections.html</guid>
+      <guid>http://localhost:1313/garden/hugo/sections.html</guid>
       <description>&lt;p&gt;A section is a top-level content directory, or any content directory with an _index.md file. A content directory with an _index.md file is also known as a &lt;a href=&#34;https://gohugo.io/getting-started/glossary/#branch-bundle&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;branch bundle&lt;/a&gt;. Section templates receive one or more page &lt;a href=&#34;https://gohugo.io/getting-started/glossary/#collection&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;collections&lt;/a&gt; in &lt;a href=&#34;https://gohugo.io/getting-started/glossary/#context&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;context&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Content Type</title>
-      <link>https://douglascuthbertson.com/garden/hugo/content-type.html</link>
+      <link>http://localhost:1313/garden/hugo/content-type.html</link>
       <pubDate>Tue, 24 Dec 2024 04:38:35 -0500</pubDate>
       
-      <guid>https://douglascuthbertson.com/garden/hugo/content-type.html</guid>
+      <guid>http://localhost:1313/garden/hugo/content-type.html</guid>
       <description>&lt;p&gt;A content type is a way to organize your content. Hugo resolves the content type from either the type in front matter or, if not set, the first directory in the file path. For example, &lt;code&gt;content/blog/my-first-event.md&lt;/code&gt; will be of type &lt;code&gt;blog&lt;/code&gt; if no type is set.&lt;/p&gt;
 &lt;p&gt;A content type is used to&lt;/p&gt;
 &lt;ul&gt;

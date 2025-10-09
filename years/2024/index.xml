@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2024 on Doug&#39;s Place</title>
+    <link>https://douglascuthbertson.com/years/2024.html</link>
+    <description>Recent content in 2024 on Doug&#39;s Place</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>(c) 2015-2025 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
+    <lastBuildDate>Tue, 24 Dec 2024 12:33:11 -0500</lastBuildDate>
+    
+        <atom:link href="https://douglascuthbertson.com/years/2024/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Separating Presentation from Layout</title>
+      <link>https://douglascuthbertson.com/garden/blog/separating-presentation-from-layout.html</link>
+      <pubDate>Sun, 14 Jan 2024 08:24:59 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/garden/blog/separating-presentation-from-layout.html</guid>
+      <description>&lt;p&gt;I want to separate the presentation of my blog from the content so, with any luck, I can create a theme and possibly substitute a more professionally-designed theme for the one I&amp;rsquo;ve hacked together. I first need to better understand the structure of what I&amp;rsquo;ve wrought here before I can reasonably refactor it, or do any major overhaul.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-markdown-documentation&#34;&gt;1 Markdown Documentation&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-html-layout&#34;&gt;2 HTML Layout&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-partials&#34;&gt;3 Partials&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#4-shortcodes&#34;&gt;4 Shortcodes&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#5-css&#34;&gt;5 CSS&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#6-theme-creation&#34;&gt;6 Theme Creation&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#7-professional-theme-integration&#34;&gt;7 Professional Theme Integration&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#8-version-control&#34;&gt;8 Version Control&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#9-include-examples-and-screenshots&#34;&gt;9 Include Examples and Screenshots&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#10-test-the-documentation&#34;&gt;10 Test the Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;p&gt;I asked ChatGPT to recommend a method for documenting the various aspects of my blog, including the HTML layout, partials, shortcodes, and CSS that currently exist. It replied with the following method that I&amp;rsquo;m adapting to my needs.&lt;/p&gt;
+&lt;h2 id=&#34;1-markdown-documentation&#34;&gt;1 Markdown Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a new projects directory for documentation.&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Inside projects, create markdown files for each aspect I want to document (HTML layout, partials, shortcodes, CSS).&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Use clear headings and subheadings to organize information. This is an ongoing process. I guess it will be done when I&amp;rsquo;m satisfied with steps 2–5.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-html-layout&#34;&gt;2 HTML Layout&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Describe the overall structure of this site&amp;rsquo;s HTML layout.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include details about the main layout file and any custom layouts for different sections or content types.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mention Hugo variables and functions used in the HTML files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-partials&#34;&gt;3 Partials&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; List and describe each partial used.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Explain where these partials are included and how they contribute to the overall layout.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-shortcodes&#34;&gt;4 Shortcodes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Document the shortcodes I&amp;rsquo;ve created or are using in my content.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide examples of shortcode usage and explain their purpose.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;5-css&#34;&gt;5 CSS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Detail the structure of my CSS files.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; I haven&amp;rsquo;t used a preprocessor like Sass, but if I did I&amp;rsquo;d want to document the file structure and how styles are organized.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include information about any third-party libraries or frameworks (e.g., MathJax).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6-theme-creation&#34;&gt;6 Theme Creation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Outline the steps to create a theme based on my current documentation.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Include guidelines on how to separate presentation from content.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Suggest best practices for theming in Hugo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7-professional-theme-integration&#34;&gt;7 Professional Theme Integration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Research and choose a professionally created Hugo theme that aligns with my design preferences.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Document the steps to integrate the new theme into this site.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Provide instructions for customizing the theme according to my needs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;8-version-control&#34;&gt;8 Version Control&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Use version control.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Keep the documentation up-to-date as this site evolves.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;9-include-examples-and-screenshots&#34;&gt;9 Include Examples and Screenshots&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add examples of code snippets, shortcode usage, and screenshots of my site to make the documentation more visual and user-friendly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;10-test-the-documentation&#34;&gt;10 Test the Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; After creating the documentation, test it by having someone else follow the steps to ensure clarity and completeness.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Text Editor</title>
+      <link>https://douglascuthbertson.com/garden/text-editor.html</link>
+      <pubDate>Tue, 24 Dec 2024 12:33:11 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/garden/text-editor.html</guid>
+      <description>&lt;p&gt;Links to information about text editors.&lt;/p&gt;
+&lt;aside class=&#34;toc&#34;&gt;
+  &lt;h2 class=&#34;toc-title&#34;&gt;Contents&lt;/h2&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://9p.io/sys/doc/sam/sam.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Text Editor sam&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://news.ycombinator.com/item?id=42447012&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HN: Ad. An Adaptable Text Editor&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Generate Backlinks</title>
+      <link>https://douglascuthbertson.com/garden/hugo/generate-backlinks.html</link>
+      <pubDate>Tue, 24 Dec 2024 11:45:32 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/garden/hugo/generate-backlinks.html</guid>
+      <description>&lt;p&gt;I think the only way to have Hugo generate backlinks to a page is to include a partial that loops over all of the content files.&lt;/p&gt;
+&lt;p&gt;Many thanks to whoever wrote &lt;a href=&#34;https://scripter.co/parsing-backlinks-in-hugo&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Parsing Backlinks in Hugo&lt;/a&gt; for a partial to create backlinks. The partial is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go-template&#34; data-lang=&#34;go-template&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$backlinks&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;slice&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$path_base&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.page.File.ContentBaseName&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$path_base_re&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;`[&amp;#34;/(]%s[&amp;#34;/)]`&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$path_base&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;site&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.RegularPages&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;RelPermalink&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;ne&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.page.RelPermalink&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;findRE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$path_base_re&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.RawContent&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$backlinks&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$backlinks&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;with&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$backlinks&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    &amp;lt;section class=&amp;#34;backlinks&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%s&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;$.heading&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;lt;h2&amp;gt;Backlinks&amp;lt;/h2&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;safeHTML&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;        &amp;lt;nav&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;            &amp;lt;ul&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;                &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;                    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.RelPermalink&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;#top&amp;#34;&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;na&#34;&gt;.Title&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;                &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;            &amp;lt;/ul&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;        &amp;lt;/nav&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    &amp;lt;/section&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I added &lt;code&gt;#top&lt;/code&gt; to the &lt;code&gt;.RelPermalink&lt;/code&gt; URL. Other than that, it&amp;rsquo;s unchanged. They warn that this template is inefficient. I&amp;rsquo;ll revisit it eventually. There&amp;rsquo;s &lt;a href=&#34;https://discourse.gohugo.io/t/parsing-backlinks-in-hugo/38281&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;a discussion in the Hugo forum&lt;/a&gt; about it. Perhaps there are clues to a more efficient implementation there.&lt;/p&gt;
+&lt;h2 id=&#34;other-resources&#34;&gt;Other Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://garrido.io/notes/hugo-backlinks/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Implementing Internal Backlinks in Hugo&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://discourse.gohugo.io/t/a-method-to-generate-backlinks/39779/1&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A method to generate backlinks&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gohugoio/hugo/issues/8077&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Issue 8077&lt;/a&gt;, Add support for page backlinks (e.g. .GetBacklinks), in the Hugo repo was opened in December 19, 2020 and is still open as of Christmas Eve, 2024. There are a number of links in the discussion that I want to pursue.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>New Content</title>
+      <link>https://douglascuthbertson.com/garden/hugo/new-content.html</link>
+      <pubDate>Tue, 24 Dec 2024 06:36:09 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/garden/hugo/new-content.html</guid>
+      <description>&lt;p&gt;To create a new content file, simply run &lt;code&gt;hugo new &amp;lt;path&amp;gt; &amp;lt;options&amp;gt;&lt;/code&gt; from the root directory. All of my content is in the &lt;code&gt;content&lt;/code&gt; folder, so this file was created by &lt;code&gt;hugo new content/garden/hugo/new-content.md&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, should content be segregated into different folders or not? Each folder directly under &lt;code&gt;content/&lt;/code&gt; defines a new &lt;a href=&#34;https://douglascuthbertson.com/garden/hugo/content-type.html&#34;&gt;Type&lt;/a&gt;. Does it make sense to create different content types for a digital garden? I&amp;rsquo;m not sure.&lt;/p&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jakewiesler.com/blog/hugo-directory-structure&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&amp;rsquo;s Directory Structure Explained&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sections</title>
+      <link>https://douglascuthbertson.com/garden/hugo/sections.html</link>
+      <pubDate>Tue, 24 Dec 2024 04:48:23 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/garden/hugo/sections.html</guid>
+      <description>&lt;p&gt;A section is a top-level content directory, or any content directory with an _index.md file. A content directory with an _index.md file is also known as a &lt;a href=&#34;https://gohugo.io/getting-started/glossary/#branch-bundle&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;branch bundle&lt;/a&gt;. Section templates receive one or more page &lt;a href=&#34;https://gohugo.io/getting-started/glossary/#collection&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;collections&lt;/a&gt; in &lt;a href=&#34;https://gohugo.io/getting-started/glossary/#context&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;context&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Content Type</title>
+      <link>https://douglascuthbertson.com/garden/hugo/content-type.html</link>
+      <pubDate>Tue, 24 Dec 2024 04:38:35 -0500</pubDate>
+      
+      <guid>https://douglascuthbertson.com/garden/hugo/content-type.html</guid>
+      <description>&lt;p&gt;A content type is a way to organize your content. Hugo resolves the content type from either the type in front matter or, if not set, the first directory in the file path. For example, &lt;code&gt;content/blog/my-first-event.md&lt;/code&gt; will be of type &lt;code&gt;blog&lt;/code&gt; if no type is set.&lt;/p&gt;
+&lt;p&gt;A content type is used to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Determine how the content is rendered. See Template Lookup Order and Content Views for more.&lt;/li&gt;
+&lt;li&gt;Determine which archetype template to use for new content.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The path to this file is &lt;code&gt;content/garden/hugo/content-type.md&lt;/code&gt; and there&amp;rsquo;s no type set in the front matter, so its type is &lt;code&gt;garden&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The breadcrumbs path is Home &amp;gt; Garden &amp;gt; Hugo &amp;gt; Content Type.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Glob Patterns</title>
+      <link>https://douglascuthbertson.com/2023/05/glob-patterns.html</link>
+      <pubDate>Mon, 08 May 2023 17:01:29 -0400</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2023/05/glob-patterns.html</guid>
+      <description>&lt;p&gt;Some time in 2016 or 2017, I needed a way to match file paths with &lt;a href=&#34;https://en.wikipedia.org/wiki/Glob_%28programming%29&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob patterns&lt;/a&gt;. The trick was that it had to work in a filter driver running in the Windows kernel. There weren&amp;rsquo;t a lot of ready-to-use libraries that were kernel-ready. In fact I couldn&amp;rsquo;t find any, so I wrote my own.&lt;/p&gt;
+&lt;p&gt;Back then, I wrote an implementation in C which was very Windows-centric, and didn&amp;rsquo;t hold to the syntactic rules from the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7) man page&lt;/a&gt;. It was sufficient for the job, but I wanted to revisit the problem and create something more generally useful. I uploaded &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;an implementation in Go on GitHub&lt;/a&gt; that holds to the &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;glob(7)&lt;/a&gt; rules, is very efficient, and runs in user space on both Windows and Linux.&lt;/p&gt;
+&lt;p&gt;This Go module accepts the &lt;code&gt;**&lt;/code&gt; wildcard (to match directory paths recursively) as well as &lt;a href=&#34;https://man7.org/linux/man-pages/man7/glob.7.html&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;normal wildcards&lt;/a&gt;. When I originally researched how to go about building a pattern-matching function, I looked for existing code to get an idea of how to structure a solution. I hoped that I could find an open-source library where I could just transliterate the code from whatever language it was written to C (without any calls to the standard library, because that&amp;rsquo;s not a thing within the Windows kernel). All the examples I could find were either limited to the standard wildcards or had exponential behavior, as &lt;a href=&#34;https://research.swtch.com/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Russ Cox so eloquently discussed&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That got me thinking about the shape of glob patterns. Simple patterns, made up of literal strings, the &lt;code&gt;?&lt;/code&gt; wildcard, and character classes, are matched character-by-character (with a little extra processing for character classes). The &lt;code&gt;*&lt;/code&gt; pattern matches zero-or-more characters followed by whatever simple pattern follows it. So &lt;code&gt;abc*xyz&lt;/code&gt; is a glob composed of a simple pattern, &lt;code&gt;abc&lt;/code&gt;, followed by a zero-or-more pattern &lt;code&gt;*xyz&lt;/code&gt;. The latter pattern is called a &lt;em&gt;directory pattern&lt;/em&gt;, because it&amp;rsquo;s limited to matching file and directory names within a single directory. Directory patterns amount to specifying a loop that consumes a character (except a path separator) every time the simple pattern that follows it fails to match some portion of a path.&lt;/p&gt;
+&lt;p&gt;Similarly, &lt;code&gt;**&lt;/code&gt; patterns, &lt;em&gt;recursive patterns&lt;/em&gt;, can be thought of requiring a loop that consumes any character that isn&amp;rsquo;t matched by whatever pattern follows it. The trick here is to realize that &lt;code&gt;**&lt;/code&gt; can be followed by a simple pattern and zero-or-more directory patterns. If at any point during the matching process the simple pattern or any of the directory patterns that may follow it fail, then processing continues by allowing &lt;code&gt;**&lt;/code&gt; to consume one character from the path and then matching the path to the pattern restarts from that point. This is still an $O(n)$ process, because each iteration makes progress through the path until either the whole pattern and path are consumed, or a match cannot be found.&lt;/p&gt;
+&lt;p&gt;This realization, that recursive patterns are made up of simple and directory patterns, led to a relatively simple algorithm and a fast implementation. See the &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repo&lt;/a&gt; for the code.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Layoffs at F5</title>
+      <link>https://douglascuthbertson.com/2023/04/layoffs-at-f5.html</link>
+      <pubDate>Tue, 25 Apr 2023 07:43:42 -0400</pubDate>
+      
+      <guid>https://douglascuthbertson.com/2023/04/layoffs-at-f5.html</guid>
+      <description>&lt;p&gt;In April 2023, I was laid of from &lt;a href=&#34;https://f5.com&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;F5, Inc.&lt;/a&gt;. It was a significant layoff of about 9% of the workforce, or 623 employees, worldwide. Given that the economy, at least here in the United States, doesn&amp;rsquo;t seem all that bad, I was surprised to see so many good engineers, product managers, sales people, and others let go.&lt;/p&gt;
+&lt;p&gt;I started working for F5 after it acquired Threat Stack on October 1st, 2021. At the time I worked in the Application Infrastructure Protection (AIP) division doing pretty much what I was working on before—adding features to the Windows, Linux, containerized, and Fargate agents.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not just the layoff that upset me. I really enjoyed working in the Agent Team and particularly on the Windows agent, but now I hear that the company intends to disband AIP, and everything that Threat Stack built over the past decade or so will be gone.&lt;/p&gt;
+&lt;p&gt;The agents were all well built tools providing telemetry to a backend platform that analyzed events to detect anomalous behavior. Several years ago, an intern and I developed the Windows agent from scratch. The team and I enhanced its capabilities through the years. I thought it had a few clever designs, especially when it came to monitoring activity in the file system.&lt;/p&gt;
+&lt;p&gt;File system monitoring was accomplished with a quite capable and efficient kernel minifilter. It had a glob pattern-matcher for comparing file activity against a set of rules that defined what behavior was &amp;ldquo;interesting&amp;rdquo;. Among other things, it could accurately detect file deletions, which is hard to do on NTFS. The minifilter had its own memory allocator and tagged allocations based on what the memory was used for. By running &lt;code&gt;poolmon&lt;/code&gt;, it was easy to determine which components were allocating memory, how much they were allocating, and also ensure that there were no memory leaks at all.&lt;/p&gt;
+&lt;p&gt;The agent also monitored running processes, associated those processes with the accounts they were running under, watched network connections being established and broken, and looked for significant security-related events. All of this information was relayed to the backend platform for analysis. It was a good system that provided our customers with the situational awareness they needed to mitigate attacks and even stop attacks before a serious incident occurred.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update November 2023&lt;/strong&gt;: Yeesh! F5 had another round of layoffs earlier this month. More of my friends and previous coworkers are now looking for work. It just feels wrong. Yes, there have been a lot of layoffs from much larger tech companies, but they are still raking in lots of money. I suspect F5 is still doing very well, too. They are probably eliminating projects (and thus the employees who were working on them) that don&amp;rsquo;t directly support their core hardware business and (I assume) their aspirations to develop virtual network devices and their own cloud.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
