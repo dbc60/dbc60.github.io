@@ -6,10 +6,11 @@
     <description>Recent content in Posts on Doug&#39;s Place</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>(c) 2015-2025 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0), International License](https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
+    <copyright>(c) 2015-2025 Douglas Cuthbertson (except where indicated otherwise). The content of this work is licensed under the Creative Commons Attribution 4.0 (CC BY 4.0), International License (https://creativecommons.org/licenses/by/4.0/), again except where indicated otherwise</copyright>
     <lastBuildDate>Sun, 14 Jan 2024 20:45:58 -0500</lastBuildDate>
     
         <atom:link href="https://douglascuthbertson.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
     
     <item>
@@ -24,6 +25,7 @@
 &lt;p&gt;That got me thinking about the shape of glob patterns. Simple patterns, made up of literal strings, the &lt;code&gt;?&lt;/code&gt; wildcard, and character classes, are matched character-by-character (with a little extra processing for character classes). The &lt;code&gt;*&lt;/code&gt; pattern matches zero-or-more characters followed by whatever simple pattern follows it. So &lt;code&gt;abc*xyz&lt;/code&gt; is a glob composed of a simple pattern, &lt;code&gt;abc&lt;/code&gt;, followed by a zero-or-more pattern &lt;code&gt;*xyz&lt;/code&gt;. The latter pattern is called a &lt;em&gt;directory pattern&lt;/em&gt;, because it&amp;rsquo;s limited to matching file and directory names within a single directory. Directory patterns amount to specifying a loop that consumes a character (except a path separator) every time the simple pattern that follows it fails to match some portion of a path.&lt;/p&gt;
 &lt;p&gt;Similarly, &lt;code&gt;**&lt;/code&gt; patterns, &lt;em&gt;recursive patterns&lt;/em&gt;, can be thought of requiring a loop that consumes any character that isn&amp;rsquo;t matched by whatever pattern follows it. The trick here is to realize that &lt;code&gt;**&lt;/code&gt; can be followed by a simple pattern and zero-or-more directory patterns. If at any point during the matching process the simple pattern or any of the directory patterns that may follow it fail, then processing continues by allowing &lt;code&gt;**&lt;/code&gt; to consume one character from the path and then matching the path to the pattern restarts from that point. This is still an $O(n)$ process, because each iteration makes progress through the path until either the whole pattern and path are consumed, or a match cannot be found.&lt;/p&gt;
 &lt;p&gt;This realization, that recursive patterns are made up of simple and directory patterns, led to a relatively simple algorithm and a fast implementation. See the &lt;a href=&#34;https://github.com/dbc60/glob&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repo&lt;/a&gt; for the code.&lt;/p&gt;</description>
+      <category>sweng</category>
     </item>
     
     <item>
@@ -39,6 +41,7 @@
 &lt;p&gt;File system monitoring was accomplished with a quite capable and efficient kernel minifilter. It had a glob pattern-matcher for comparing file activity against a set of rules that defined what behavior was &amp;ldquo;interesting&amp;rdquo;. Among other things, it could accurately detect file deletions, which is hard to do on NTFS. The minifilter had its own memory allocator and tagged allocations based on what the memory was used for. By running &lt;code&gt;poolmon&lt;/code&gt;, it was easy to determine which components were allocating memory, how much they were allocating, and also ensure that there were no memory leaks at all.&lt;/p&gt;
 &lt;p&gt;The agent also monitored running processes, associated those processes with the accounts they were running under, watched network connections being established and broken, and looked for significant security-related events. All of this information was relayed to the backend platform for analysis. It was a good system that provided our customers with the situational awareness they needed to mitigate attacks and even stop attacks before a serious incident occurred.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Update November 2023&lt;/strong&gt;: Yeesh! F5 had another round of layoffs earlier this month. More of my friends and previous coworkers are now looking for work. It just feels wrong. Yes, there have been a lot of layoffs from much larger tech companies, but they are still raking in lots of money. I suspect F5 is still doing very well, too. They are probably eliminating projects (and thus the employees who were working on them) that don&amp;rsquo;t directly support their core hardware business and (I assume) their aspirations to develop virtual network devices and their own cloud.&lt;/p&gt;</description>
+      <category>life</category>
     </item>
     
     <item>
@@ -50,6 +53,7 @@
       <description>&lt;p&gt;My wife and I went to the Paramount Theater in Boston last night to see The Orchard, a variation of Anton Chekhov&amp;rsquo;s play, The Cherry Orchard, starring Jessica Hecht and Mikhail Baryshnikov. It was a very avant-garde play. It used a robotic arm that was its own character, a Boston Dynamics robotic dog, and a projection &lt;del&gt;screen&lt;/del&gt; curtain draped in front of the whole stage.&lt;/p&gt;
 &lt;p&gt;The projection screen was artfully and cinematically used during various scenes to strengthen the presentation of their characters inner emotional state. It also provided atmosphere (through, for example, projecting cherry blossoms blowing in the wind), and acted as an announcer for each act of the play.&lt;/p&gt;
 &lt;p&gt;The one real disappointment was that the actors didn&amp;rsquo;t project their voices and enunciate their words well enough, so I found the dialogue difficult to discern through much of the play. I suspect the hope was their microphones and the speakers would be enough to pick up and amplify their voices.&lt;/p&gt;</description>
+      <category>life</category>
     </item>
     
     <item>
@@ -189,6 +193,7 @@
 &lt;h2 id=&#34;the-complete-create_table-shortcode&#34;&gt;The Complete create_table Shortcode&lt;/h2&gt;
 &lt;p&gt;Here&amp;rsquo;s the whole thing w/o comments. It&amp;rsquo;s not that useful, but it was a journey and an education to get here.&lt;/p&gt;
 &lt;!-- BEGIN evergreen shortcode --&gt;&lt;!-- END evergreen shortcode --&gt;</description>
+      <category>blog</category>
     </item>
     
     <item>
@@ -233,6 +238,7 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</description>
+      
     </item>
     
     <item>
@@ -257,6 +263,7 @@
 &lt;li&gt;he lied to, and continues to lie to the American people about the dangers of COVID-19. Here in early November, cases are spreading at a frightening rate (over 140,000 new cases and 1200 deaths yesterday).&lt;/li&gt;
 &lt;li&gt;he continues to lie about how quickly we will recover from the pandemic. Given how fast the disease is spreading and its mortality rate (&lt;a href=&#34;https://coronavirus.jhu.edu/data/mortality&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2.4% in the US&lt;/a&gt; according to &lt;a href=&#34;https://coronavirus.jhu.edu/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Johns Hopkins University of Medicine&lt;/a&gt;) there could be thousands more deaths &lt;em&gt;per day&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;</description>
+      <category>politics</category>
     </item>
     
     <item>
@@ -275,6 +282,7 @@
 &lt;li&gt;He refuses to denounce white supremacists and actually commanded one group to &amp;ldquo;stand back and stand by&amp;rdquo;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Do you really want him to be our president? I don&amp;rsquo;t understand how that&amp;rsquo;s possible.&lt;/p&gt;</description>
+      <category>politics</category>
     </item>
     
     <item>
@@ -691,6 +699,7 @@
 &lt;/figure&gt;
 
 &lt;p&gt;Since then, I&amp;rsquo;ve been periodically iterating on the design. It is pretty much complete and I&amp;rsquo;m generally happy with the way it has turned out. I&amp;rsquo;ll continue to fiddle with it here and there, but I plan to write about things with which I&amp;rsquo;m more familiar.&lt;/p&gt;</description>
+      <category>blog</category>
     </item>
     
     <item>
@@ -735,6 +744,7 @@
 &lt;p&gt;Well, I spent a lot of time in 2018 learning &lt;a href=&#34;https://golang.org/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; for a new project at work. It&amp;rsquo;s a very nice programming language. Late in 2018, I came across &lt;a href=&#34;https://gohugo.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt;. It looked interesting, and what do you know, it&amp;rsquo;s written in Go! I had to give it a try. I figured even if it&amp;rsquo;s not to my liking, I can look at the source code, and learn something more about Go.&lt;/p&gt;
 &lt;p&gt;It turns out that not only is Hugo useful, it is fast, not too hard to integrate MathJax for nice looking equations, has a powerful template language, and it is even possible to write pages in rST - though it requires integration with the Python script &lt;a href=&#34;https://pypi.org/project/rst2html5/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rst2html5&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s enough for now. I&amp;rsquo;ll cover my adventures using &lt;a href=&#34;https://gohugo.io/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; in a future post.&lt;/p&gt;</description>
+      <category>blog</category>
     </item>
     
     <item>
@@ -748,6 +758,7 @@
 &lt;p&gt;Our national anthem declares America as &amp;ldquo;the land of the free and the home of the brave.&amp;rdquo; While we don&amp;rsquo;t always live up to that ideal, it&amp;rsquo;s something we strive for. It&amp;rsquo;s something we are all proud of.&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;ve elected as our next president a person who bullies people. He&amp;rsquo;s denigrated those with disabilities. He abuses women. He spreads fear and hate based on race and religion, and wraps it in spectacle.&lt;/p&gt;
 &lt;p&gt;I hoped more people were unwilling to overlook the pain, suffering and fear he spreads and see him for what he is - a hateful, dangerous person who cares for nothing but himself. Instead, he will become our next leader. Good luck to us all.&lt;/p&gt;</description>
+      <category>politics</category>
     </item>
     
     <item>
@@ -787,6 +798,7 @@
 &lt;li&gt;&lt;a href=&#34;https://guides.github.com/features/mastering-markdown/&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Flavored Markdown&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SCSS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
+      <category>blog</category>
     </item>
     
     <item>
@@ -824,6 +836,7 @@ mx + ny + oz + pw
 &lt;p&gt;This blog is still quite ugly, but I&amp;rsquo;m feeling better about it after putting in a couple of days work to make the width behave the way I want it to. Now to learn more about layout design, typography, Sass, CSS and how best to put to use semantic HTML5 tags, like  &lt;code&gt;&amp;lt;main&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;aside&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;header&amp;gt;&lt;/code&gt; and others.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;2019.07.29 Edit: typos&lt;/em&gt;
 &lt;em&gt;2019.08.07 Edit: tags&lt;/em&gt;&lt;/p&gt;</description>
+      <category>blog</category>
     </item>
     
     <item>
@@ -839,6 +852,7 @@ mx + ny + oz + pw
 &lt;p&gt;First efforts will probably stink. Exercising is difficult in the beginning. The first sketch will be awful. It&amp;rsquo;s all about sticking with it. Improvement will happen.&lt;/p&gt;
 &lt;p&gt;Maybe this post is just me giving myself a pep talk (it&amp;rsquo;s certainly cheaper than paying someone else to do it), but I have things to do, and I feel more like getting them done.&lt;/p&gt;
 &lt;p&gt;I created this blog to become a better writer, quell demons of doubt and to workout ideas. I titled it &amp;ldquo;Dream, Sketch, Code&amp;rdquo;, because I have a lot of half-baked ideas, think about and create software, and I want to get better at sketching and drawing. Besides being a relaxing activity, I&amp;rsquo;d like to draw well enough that I can use sketches to better describe my ideas.&lt;/p&gt;</description>
+      <category>life</category>
     </item>
     
     <item>
@@ -896,6 +910,7 @@ mx + ny + oz + pw
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;vm&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;__main__&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I think the only thing here that wasn&amp;rsquo;t covered in the video is reading from stdin.&lt;/p&gt;</description>
+      <category>sweng</category>
     </item>
     
     <item>
@@ -923,6 +938,7 @@ mx + ny + oz + pw
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;more-to-do&#34;&gt;More To Do&lt;/h2&gt;
 &lt;p&gt;There&amp;rsquo;s a lot of work that goes into making a web page look presentable. At the very least, text should be readable, sections should be well aligned, and the color theme should be pleasing to the eye. There is a lot to fiddle with, but I think I&amp;rsquo;ve done an okay job for now. I glad I have a place to write down ideas, write about projects I want to pursue and share some thoughts in general.&lt;/p&gt;</description>
+      <category>blog</category>
     </item>
     
   </channel>
