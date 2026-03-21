@@ -5,6 +5,9 @@
     <loc>https://douglascuthbertson.com/post/index.html</loc>
     <lastmod>2024-01-14T20:45:58-05:00</lastmod>
   </url><url>
+    <loc>https://douglascuthbertson.com/garden/blog/three-color-design-principle.html</loc>
+    <lastmod>2026-03-19T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://douglascuthbertson.com/garden/blog/separating-presentation-from-layout.html</loc>
     <lastmod>2024-01-14T08:24:59-05:00</lastmod>
   </url><url>
@@ -26,8 +29,35 @@
     <loc>https://douglascuthbertson.com/commentary/index.html</loc>
     <lastmod>2025-11-25T08:00:00-05:00</lastmod>
   </url><url>
+    <loc>https://douglascuthbertson.com/years/2026.html</loc>
+    <lastmod>2026-03-19T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/blog.html</loc>
+    <lastmod>2026-03-19T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/design.html</loc>
+    <lastmod>2026-03-19T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://douglascuthbertson.com/index.html</loc>
-    <lastmod>2025-11-25T08:00:00-05:00</lastmod>
+    <lastmod>2026-03-19T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/index.html</loc>
+    <lastmod>2026-03-19T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/years/index.html</loc>
+    <lastmod>2026-03-19T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/years/2025.html</loc>
+    <lastmod>2025-01-30T20:40:29-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/c.html</loc>
+    <lastmod>2025-01-30T20:40:29-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/tags/testing.html</loc>
+    <lastmod>2025-01-30T20:40:29-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/2025/01/writing-a-unit-test-framework-in-c.html</loc>
+    <lastmod>2025-01-30T20:40:29-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/years/2024.html</loc>
     <lastmod>2024-12-24T12:33:11-05:00</lastmod>
@@ -35,14 +65,8 @@
     <loc>https://douglascuthbertson.com/tags/reference.html</loc>
     <lastmod>2024-12-24T12:33:11-05:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/tags/index.html</loc>
-    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://douglascuthbertson.com/garden/text-editor.html</loc>
     <lastmod>2024-12-24T12:33:11-05:00</lastmod>
-  </url><url>
-    <loc>https://douglascuthbertson.com/years/index.html</loc>
-    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/garden/hugo/generate-backlinks.html</loc>
     <lastmod>2024-12-24T11:45:32-05:00</lastmod>
@@ -62,16 +86,22 @@
     <loc>https://douglascuthbertson.com/garden/hugo/content-type.html</loc>
     <lastmod>2024-12-24T04:38:35-05:00</lastmod>
   </url><url>
+    <loc>https://douglascuthbertson.com/tags/draft.html</loc>
+    <lastmod>2024-01-14T21:32:26-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/garden/mem-allocator/index.html</loc>
+    <lastmod>2024-01-14T21:32:26-05:00</lastmod>
+  </url><url>
     <loc>https://douglascuthbertson.com/garden/blog/index.html</loc>
     <lastmod>2024-01-14T21:28:44-05:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/tags/blog.html</loc>
-    <lastmod>2024-01-14T08:24:59-05:00</lastmod>
-  </url><url>
-    <loc>https://douglascuthbertson.com/2023/05/glob-patterns.html</loc>
-    <lastmod>2023-11-12T00:00:00+00:00</lastmod>
+    <loc>https://douglascuthbertson.com/garden/mem-allocator/a-deep-look-at-a-memory-allocator.html</loc>
+    <lastmod>2024-01-14T07:38:28-05:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/tags/sweng.html</loc>
+    <lastmod>2024-01-14T07:38:28-05:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/2023/05/glob-patterns.html</loc>
     <lastmod>2023-11-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2023/04/layoffs-at-f5.html</loc>
@@ -86,61 +116,61 @@
     <loc>https://douglascuthbertson.com/2022/11/the-orchard.html</loc>
     <lastmod>2022-11-05T08:07:31-04:00</lastmod>
   </url><url>
+    <loc>https://douglascuthbertson.com/reference/create-table/index.html</loc>
+    <lastmod>2021-09-24T09:05:15-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/reference/index.html</loc>
+    <lastmod>2021-09-24T09:05:15-04:00</lastmod>
+  </url><url>
     <loc>https://douglascuthbertson.com/years/2021.html</loc>
-    <lastmod>2021-09-24T09:05:15-04:00</lastmod>
-  </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/index.html</loc>
-    <lastmod>2021-09-24T09:05:15-04:00</lastmod>
-  </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/create-table-heading.html</loc>
     <lastmod>2021-09-23T17:59:37-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/create-table-shortcode.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/create-table-heading.html</loc>
+    <lastmod>2021-09-23T17:59:37-04:00</lastmod>
+  </url><url>
+    <loc>https://douglascuthbertson.com/reference/create-table/create-table-shortcode.html</loc>
     <lastmod>2021-09-23T17:48:37-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/template-process-map.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/template-process-map.html</loc>
     <lastmod>2021-09-23T17:39:44-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/template-process-map-head.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/template-process-map-head.html</loc>
     <lastmod>2021-09-23T17:33:06-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/template-create-rows.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/template-create-rows.html</loc>
     <lastmod>2021-09-23T17:23:13-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/template-create-rows-head.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/template-create-rows-head.html</loc>
     <lastmod>2021-09-23T17:20:53-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/template-create-colgroup.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/template-create-colgroup.html</loc>
     <lastmod>2021-09-23T17:15:15-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/end.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/end.html</loc>
     <lastmod>2021-09-23T15:13:51-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/begin-buildtable-template.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/begin-buildtable-template.html</loc>
     <lastmod>2021-09-23T15:08:37-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/template-build-table.html</loc>
-    <lastmod>2021-09-23T14:42:34-04:00</lastmod>
-  </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/table-capture-values.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/table-capture-values.html</loc>
     <lastmod>2021-09-23T14:41:10-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/table-collect-keys.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/table-collect-keys.html</loc>
     <lastmod>2021-09-23T14:36:45-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/table-top-level-definition.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/table-top-level-definition.html</loc>
     <lastmod>2021-09-23T14:30:09-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/src-file-data.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/src-file-data.html</loc>
     <lastmod>2021-09-23T14:28:43-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/src-file-path.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/src-file-path.html</loc>
     <lastmod>2021-09-23T14:26:52-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/store-site-data.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/store-site-data.html</loc>
     <lastmod>2021-09-23T14:24:22-04:00</lastmod>
   </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/create-table/build-table-initialization.html</loc>
+    <loc>https://douglascuthbertson.com/reference/create-table/build-table-initialization.html</loc>
     <lastmod>2021-09-23T14:21:15-04:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2021/09/a-table-shortcode-for-hugo.html</loc>
@@ -160,9 +190,6 @@
   </url><url>
     <loc>https://douglascuthbertson.com/2020/10/vote-2020.html</loc>
     <lastmod>2020-10-28T08:12:51-04:00</lastmod>
-  </url><url>
-    <loc>https://douglascuthbertson.com/evergreen-note/index.html</loc>
-    <lastmod>2020-06-10T07:12:11-04:00</lastmod>
   </url><url>
     <loc>https://douglascuthbertson.com/2020/02/a-new-hugo-based-blog.html</loc>
     <lastmod>2020-02-22T17:38:32-05:00</lastmod>
