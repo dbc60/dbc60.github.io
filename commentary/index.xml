@@ -58,7 +58,7 @@ I should note that I don&amp;rsquo;t have Linux. I use Windows, and so I need co
 &lt;/ul&gt;
 &lt;h2 id=&#34;what-came-next&#34;&gt;What Came Next&lt;/h2&gt;
 &lt;p&gt;The framework described here was completed and is called &lt;a href=&#34;https://github.com/dbc60/but&#34; class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Basic Unit Test&lt;/a&gt; (BUT). A follow-up post will cover the implementation in detail. After working with BUT, I identified one big design problem and several improvements worth pursuing, so I built a second framework called &lt;strong&gt;Faultline&lt;/strong&gt;. I&amp;rsquo;ll push that to GitHub soon and write more on that in a subsequent series. It was quite a journey.&lt;/p&gt;</description>
-      <category>blog</category><category>c</category><category>testing</category>
+      <category>c</category><category>testing</category>
     </item>
     
     <item>
